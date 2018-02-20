@@ -1,0 +1,69 @@
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<%= simple_form_for(@teacher_profile) do |f| %>
+  <h1> personal inforamtion </h1>
+
+  <div class='form-group'>
+    <%= label_tag 'name', 'Full Name' %> <%= current_user.name%>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :street_address %>
+    <%= f.text_area :street_address, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :apt, 'Apt #' %>
+    <%= f.text_area :apt, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'postal_code', 'Postal Code'%> <%= current_user.postal_code%>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :hear_of_site, 'How did you hear of network' %>
+    <%= f.text_field :hear_of_site, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :home_phone, 'Home Phone' %>
+    <%= f.text_field :home_phone, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :cell, 'Cell' %>
+    <%= f.text_field :cell, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :work %>
+    <%= f.text_field :work, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'Email' %> <%= current_user.email%>
+  </div>
+  <h1> personal inforamtion </h1>
+  <div class='form-group'>
+    <%= f.label :apartment %>
+    <%= f.text_field :apartment, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :house %>
+    <%= f.text_field :house, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :floor %>
+    <%= f.text_field :floor, class: 'form-control' %>
+  </div>
+  <div class='form-group'>
+    <%= f.label :is_basement, '' %>
+    <%= f.select :is_basement, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='actions'>
+    <button name="button" type="submit" class="send_invite_btn">Create Company
+    </button>
+  </div>
+
+<% end %>

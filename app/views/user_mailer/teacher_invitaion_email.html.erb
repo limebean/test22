@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to wonder school, <%= @teacher.name %></h1>
+    <p>
+      <p>
+        To get started, click on the link below.
+      </p>
+      <p>
+        <%=link_to "http://localhost:3000/password_reset", "http://localhost:3000/teachers/#{@teacher.invitation_token}/new_password"%>
+      </p>
+
+    </p>
+
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
