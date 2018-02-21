@@ -1,18 +1,26 @@
 Rails.application.routes.draw do
-  root 'teachers#new'
+
+  root 'welcome#index'
+
+  get :partner, to: 'teachers#new'
+
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :teachers do
     member do
       resources :teacher_profiles
-      get :new_password
-      put :update_password
-      get :approve
+      get :set_password
+      patch :update_password
     end
   end
 
   namespace :admin do
-    resources :teachers
+    get '', to: "teachers#index"
+    resources :teachers, only: [:index] do
+      member do
+        patch :approve
+      end
+    end
   end
 
 end

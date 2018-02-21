@@ -1,16 +1,18 @@
-class Admin::TeachersController < ApplicationController
-  # before_action :set_admin
+class Admin::TeachersController < Admin::AdminBaseController
 
   def index
-    binding.pry
     @teachers = Teacher.all
-     # sign_in(@admin, bypass: true)
   end
 
-  private
-
-  # def set_admin
-  #   @admin = Admin.find(params[:id])
-  # end
+  def approve
+    teacher = Teacher.find(params[:id])
+    if teacher.present? && teacher.update_attribute(:is_approve, true)
+      UserMailer.teacher_invitaion_email(teacher).deliver_now
+      flash[:notice] = 'Teacher successfully approved.'
+    else
+      flash[:notice] = 'Something went wrong! Try again later.'
+    end
+    redirect_to admin_teachers_path
+  end
 
 end

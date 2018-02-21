@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.string "home_phone"
     t.string "cell"
     t.string "work"
-    t.string "apartment", null: false
-    t.string "house", null: false
+    t.string "apartment"
+    t.string "house"
     t.string "floor"
+    t.boolean "is_basement"
     t.boolean "is_condo"
     t.boolean "is_two_exits"
-    t.boolean "is_basement"
     t.boolean "is_smoking"
     t.boolean "is_pets"
     t.boolean "is_vaccinations"

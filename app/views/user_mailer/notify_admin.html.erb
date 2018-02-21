@@ -7,15 +7,12 @@
     <h1>Hello Admin,</h1>
     <p>
       <p>
-        Use link below to approve teacher.
+        You have a new application from a teacher, Please have a look at the information and take the action.
       </p>
       <p>
-        <%#=link_to "http://localhost:3000/approve", "http://localhost:3000/teachers/#{@teacher.id}/approve" %>
-        <%=link_to "http://localhost:3000/approve", "http://localhost:3000/admin/teachers" %>
+        <%=link_to "Teachers list", admin_teachers_path %>
       </p>
-
     </p>
-
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
