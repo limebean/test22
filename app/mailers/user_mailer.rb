@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
   default from: 'test@demo.com'
 
-  def notify_admin(teacher)
+  def notify_admin_for_new_application(teacher)
     @teacher = teacher
     mail(to: 'web_ds@adware.com', subject: 'Approve the teacher profile')
   end
