@@ -1,5 +1,7 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: %i(update_password new_password)
+
+  before_action :set_teacher, only: [ :update_password, :set_password ]
+
   def new
     @teacher = Teacher.new
   end
@@ -10,40 +12,27 @@ class TeachersController < ApplicationController
       teacher.invitation_token
       redirect_to root_path, notice: "Thanks for register, Please open email for reset passowrd and complete registration"
     else
-      render :new, alert: "Teacher was not successfully created."
+      render :new, alert: "Something went wrong! Please try again."
     end
   end
 
   def update_password
-    binding.pry
     if @teacher.update(permitted_teacher_password_params)
       bypass_sign_in(@teacher)
-      redirect_to  new_teacher_profile_path, notice: 'Password successfully updated.'
+      redirect_to new_teacher_profile_path, notice: 'Your password has been set successfully. You can now update your profile.'
     else
-      redirect_to root_path, alert: 'Password cannot updated.'
+      redirect_to root_path, alert: 'Password could not be set.'
     end
   end
 
-  def new_password
+  def set_password
     @teacher
-  end
-
-  def approve
-    teacher = Teacher.find(params[:id])
-    if teacher.present?
-      teacher.update_attributes(is_approve: true)
-      UserMailer.teacher_invitaion_email(teacher).deliver_now
-      redirect_to admin_teachers_path, notice: 'Teacher successfully approved.'
-    else
-      redirect_to root_path, notice: 'Teacher not found.'
-    end
-
   end
 
   private
 
     def set_teacher
-      @teacher = Teacher.find_by(invitation_token: params[:id])
+      @teacher = Teacher.find_by(invitation_token: params[:token])
     end
 
     def permitted_teacher_password_params
@@ -54,8 +43,7 @@ class TeachersController < ApplicationController
     end
 
     def permitted_teacher_params
-      generated_password = Devise.friendly_token.first(8)
-      params[:teacher][:password] = generated_password
+      params[:teacher][:password] = Devise.friendly_token.first(8)
       params.require(:teacher).permit(
         :name,
         :email,

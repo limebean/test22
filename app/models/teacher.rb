@@ -1,9 +1,9 @@
 class Teacher < User
   has_one :teacher_profile, dependent: :destroy
-  after_create :notify_admin
+  after_create :notify_admin_for_new_application
 
-  def notify_admin
-    UserMailer.notify_admin(self).deliver_now
+  def notify_admin_for_new_application
+    UserMailer.notify_admin_for_new_application(self).deliver_now
   end
 
   # def invitation

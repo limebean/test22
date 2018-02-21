@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.date "date_of_birth"
     t.string "language", null: false
     t.string "work"
+
     t.integer "legal_to_work", null: false
     t.string "apartment"
     t.string "floor", null: false
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.boolean "is_basement", null: false
     t.boolean "is_two_exits", null: false
     t.integer "home_smoke", null: false
+
     t.boolean "is_pets"
     t.integer "vaccine", null: false
     t.string "goal"

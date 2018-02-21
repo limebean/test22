@@ -5,14 +5,12 @@
   </head>
   <body>
     <h1>Welcome to wonder school, <%= @teacher.name %></h1>
+    <p>Your application has been approved.</p>
     <p>
-      <p>
-        To get started, click on the link below.
-      </p>
-      <p>
-        <%=link_to "http://localhost:3000/password_reset", "http://localhost:3000/teachers/#{@teacher.invitation_token}/new_password"%>
-      </p>
-
+      To get started, click on the link below.
+    </p>
+    <p>
+      <%= link_to set_password_teacher_url(@teacher), set_password_teacher_url(@teacher, token: @teacher.invitation_token) %>
     </p>
 
     <p>Thanks for joining and have a great day!</p>

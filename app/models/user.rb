@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   ROLE = %w(Teacher Parent Admin)
 
-  validates :name, :email, :postal_code, presence: true
-  validates :email, uniqueness: true
+  validates :name, :postal_code, presence: true
   validates :postal_code, numericality: {only_integer: true}
   validates :postal_code, length: { maximum: 6 }
   has_secure_token :invitation_token

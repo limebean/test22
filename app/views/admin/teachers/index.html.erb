@@ -1,5 +1,4 @@
-
-<h1>Approve Teacher profile</h1>
+<h1>Teachers applications</h1>
 <table>
   <thead>
     <tr>
@@ -16,7 +15,7 @@
         <td><%= teacher.name %></td>
         <td><%= teacher.email %></td>
         <td><%= teacher.postal_code %></td>
-        <td><%= link_to 'Approve', approve_teacher_path(teacher) %>
+        <td><%= link_to 'Approve', approve_admin_teacher_path(teacher), method: :patch %>
       </tr>
     <% end %>
   </tbody>
