@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'test@demo.com'
+  default from: 'no-reply@web_ds.com'
 
   def notify_admin_for_new_application(teacher)
     @teacher = teacher
