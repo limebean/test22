@@ -7,13 +7,16 @@ class TeachersController < ApplicationController
   end
 
   def create
-    teacher = Teacher.new(permitted_teacher_params)
-    if teacher.save
-      teacher.invitation_token
+    @teacher = Teacher.new(permitted_teacher_params)
+    if @teacher.save
+      @teacher.invitation_token
       redirect_to root_path, notice: "Thanks for register, Please open email for reset passowrd and complete registration"
     else
       render :new, alert: "Something went wrong! Please try again."
     end
+  end
+
+  def show
   end
 
   def update_password

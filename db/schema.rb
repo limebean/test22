@@ -37,23 +37,21 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.date "date_of_birth"
     t.string "language", null: false
     t.string "work"
-
     t.integer "legal_to_work", null: false
     t.string "apartment"
     t.string "floor", null: false
-    t.boolean "is_condo", null: false
+    t.boolean "condo"
     t.string "house"
-    t.boolean "is_basement", null: false
-    t.boolean "is_two_exits", null: false
-    t.integer "home_smoke", null: false
-
-    t.boolean "is_pets"
+    t.boolean "basement_premises"
+    t.boolean "two_exit"
+    t.boolean "home_smoke"
+    t.boolean "pet"
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "is_local_school", null: false
-    t.string "school_name"
-    t.text "comments"
+    t.boolean "local_school", null: false
+    t.string "school_name", null: false
+    t.text "comments", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
@@ -63,8 +61,8 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "postal_code", null: false
-    t.boolean "is_approve", default: false
+    t.string "postal_code", null: false
+    t.boolean "approve", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

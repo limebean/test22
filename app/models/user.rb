@@ -6,8 +6,6 @@ class User < ApplicationRecord
   ROLE = %w(Teacher Parent Admin)
 
   validates :name, :postal_code, presence: true
-  validates :postal_code, numericality: {only_integer: true}
-  validates :postal_code, length: { maximum: 6 }
   has_secure_token :invitation_token
   validates :type, inclusion: { in: ROLE }
 

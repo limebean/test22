@@ -5,7 +5,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Postal Code</th>
-      <th>Action</th>
+      <th colspan="2">Action</th>
     </tr>
   </thead>
 
@@ -15,7 +15,13 @@
         <td><%= teacher.name %></td>
         <td><%= teacher.email %></td>
         <td><%= teacher.postal_code %></td>
-        <td><%= link_to 'Approve', approve_admin_teacher_path(teacher), method: :patch %>
+        <% if teacher.approve %>
+          <td>Approved</td>
+          <td><%= link_to 'Edit', edit_teacher_profile_path(teacher), method: :get %>
+        <% else %>
+          <td><%= link_to 'Approve', approve_admin_teacher_path(teacher), method: :patch %>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>

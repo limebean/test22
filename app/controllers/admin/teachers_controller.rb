@@ -6,7 +6,7 @@ class Admin::TeachersController < Admin::AdminBaseController
 
   def approve
     teacher = Teacher.find(params[:id])
-    if teacher.present? && teacher.update_attribute(:is_approve, true)
+    if teacher.present? && teacher.update_attribute(:approve, true)
       UserMailer.teacher_invitaion_email(teacher).deliver_now
       flash[:notice] = 'Teacher successfully approved.'
     else

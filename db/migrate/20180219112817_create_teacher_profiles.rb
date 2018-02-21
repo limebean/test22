@@ -16,21 +16,21 @@ class CreateTeacherProfiles < ActiveRecord::Migration[5.1]
 
       t.string :apartment
       t.string :floor,       null: false
-      t.boolean :is_condo,  null: false
+      t.boolean :condo
 
       t.string :house
-      t.boolean :is_basement, null: false
-      t.boolean :is_two_exits, null: false
+      t.boolean :basement_premises
+      t.boolean :two_exit
 
-      t.integer :home_smoke, null: false
-      t.boolean :is_pets
+      t.boolean :home_smoke
+      t.boolean :pet
       t.integer :vaccine, null: false
 
       t.string :goal
       t.string :age_range, null: false
-      t.boolean :is_local_school, null: false
-      t.string :school_name
-      t.text :comments
+      t.boolean :local_school, null: false
+      t.string :school_name, null: false
+      t.text :comments, null: false
 
       #t.string :hear_of_site
       #t.string :work
