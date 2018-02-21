@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.bigint "teacher_profile_id"
     t.string "full_name", null: false
     t.integer "age", null: false
-    t.boolean "is_family", default: false
-    t.boolean "is_private_placed", default: false
+    t.integer "care_by", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
@@ -28,28 +27,31 @@ ActiveRecord::Schema.define(version: 20180219121827) do
 
   create_table "teacher_profiles", force: :cascade do |t|
     t.bigint "teacher_id"
-    t.text "street_address"
-    t.string "apt"
-    t.string "hear_of_site"
-    t.string "home_phone"
-    t.string "cell"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.text "street_address", null: false
+    t.string "apt_no"
+    t.string "city", null: false
+    t.string "home_phone", null: false
+    t.string "cell_phone", null: false
+    t.date "date_of_birth"
+    t.string "language", null: false
     t.string "work"
-    t.string "apartment", null: false
-    t.string "house", null: false
-    t.string "floor"
-    t.boolean "is_condo"
-    t.boolean "is_two_exits"
-    t.boolean "is_basement"
-    t.boolean "is_smoking"
+    t.integer "legal_to_work", null: false
+    t.string "apartment"
+    t.string "floor", null: false
+    t.boolean "is_condo", null: false
+    t.string "house"
+    t.boolean "is_basement", null: false
+    t.boolean "is_two_exits", null: false
+    t.integer "home_smoke", null: false
     t.boolean "is_pets"
-    t.boolean "is_vaccinations"
-    t.string "language"
-    t.boolean "is_ability_to_work"
-    t.boolean "is_legal_to_work"
-    t.string "age_range"
-    t.boolean "is_local_school"
+    t.integer "vaccine", null: false
+    t.string "goal"
+    t.string "age_range", null: false
+    t.boolean "is_local_school", null: false
     t.string "school_name"
-    t.string "comments"
+    t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"

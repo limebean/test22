@@ -3,7 +3,13 @@
   <h1> personal inforamtion </h1>
 
   <div class='form-group'>
-    <%= label_tag 'name', 'Full Name' %> <%= current_user.name%>
+    <%= f.label :first_name, 'First Name' %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :last_name, 'Last Name' %>
+    <%= f.text_field :last_name, class: 'form-control' %>
   </div>
 
   <div class='form-group'>
@@ -12,8 +18,8 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :apt, 'Apt #' %>
-    <%= f.text_area :apt, class: 'form-control' %>
+    <%= f.label :apt_no, 'Apt #' %>
+    <%= f.text_area :apt_no, class: 'form-control' %>
   </div>
 
   <div class='form-group'>
@@ -21,9 +27,14 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :hear_of_site, 'How did you hear of network' %>
-    <%= f.text_field :hear_of_site, class: 'form-control' %>
+    <%= f.label :city, 'City' %>
+    <%= f.text_field :city, class: 'form-control' %>
   </div>
+
+  <!-- <div class='form-group'>
+    <%#= f.label :hear_of_site, 'How did you hear of network' %>
+    <%#= f.text_field :hear_of_site, class: 'form-control' %>
+  </div> -->
 
   <div class='form-group'>
     <%= f.label :home_phone, 'Home Phone' %>
@@ -31,18 +42,28 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :cell, 'Cell' %>
-    <%= f.text_field :cell, class: 'form-control' %>
+    <%= f.label :cell_phone, 'Cell' %>
+    <%= f.text_field :cell_phone, class: 'form-control' %>
   </div>
 
   <div class='form-group'>
-    <%= f.label :work %>
+    <%= f.label :date_of_birth, 'Date of birth' %>
+    <%= f.date_select :date_of_birth, :start_year=>1900 %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :language, 'Cell' %>
+    <%= f.text_field :language, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :work, 'ABILITY TO WORK' %>
     <%= f.text_field :work, class: 'form-control' %>
   </div>
 
-  <div class='form-group'>
-    <%= label_tag 'Email' %> <%= current_user.email%>
-  </div>
+  <!-- <div class='form-group'>
+    <%#= label_tag 'Email' %> <%= current_user.email%>
+  </div> -->
   <h1> personal inforamtion </h1>
   <div class='form-group'>
     <%= f.label :apartment %>
@@ -60,6 +81,58 @@
     <%= f.label :is_basement, '' %>
     <%= f.select :is_basement, options_for_select(choose_option), class: 'form-control' %>
   </div>
+
+  <div class='form-group'>
+    <%= f.label :is_condo, '' %>
+    <%= f.select :is_condo, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :is_two_exits, '' %>
+    <%= f.select :is_two_exits, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :is_pets, '' %>
+    <%= f.select :is_pets, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :is_smoking, '' %>
+    <%= f.select :is_smoking, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :is_vaccinations, '' %>
+    <%= f.select :is_vaccinations, options_for_select(choose_option), class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :floor %>
+    <%= f.text_field :floor, class: 'form-control' %>
+  </div>
+
+  <h4> CHILDREN IN HOME: </h4>
+  <%= f.fields_for :children do |c| %>
+  <div  class="row">
+    <div class='col-md-6'>
+      <%=c.input :full_name, label: 'Full _name', placeholder: 'Full Name' %>
+    </div>
+    <div class='col-md-6'>
+      <%= c.input :age, label: 'Age', placeholder: 'Age' %>
+    </div>
+  </div>
+  <div  class="row">
+    <div class='col-md-6'>
+      <%=c.input :care_by, as: :select, label: 'Care provided by', placeholder: 'Mobile Number' %>
+      <%= c.input :care_by, as: :select, collection: care_options, label: false%>
+    </div>
+  </div>
+  <%= c.link_to_remove 'Remove' %>
+  <% end %>
+
+  <%= f.link_to_add 'Add contact', :children  %>
+
 
   <div class='actions'>
     <button name="button" type="submit" class="send_invite_btn">Create Company
