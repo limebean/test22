@@ -613,9 +613,9 @@ label+.button, label+button, label+input[type=submit], label+label {
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .school-logo {
-    height: 26px;
-    margin-left: 30px;
-    margin-right: 30px;
+    height: 22px;
+    margin-left: 10px;
+    margin-right: 0px;
     margin-top: 16px;
   }
   .section-news {

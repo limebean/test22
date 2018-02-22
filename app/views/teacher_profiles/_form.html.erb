@@ -61,9 +61,8 @@
 
   <div class='form-group'>
     <%= f.label :legal_to_work, '*Are you legally able to work in Canada? (Have SIN or applied for it):' %>
-    <%= f.select :legal_to_work, options_for_select(TeacherProfile::OPTION_WITH_NA), class: 'form-control' %>
+    <%= f.select :legal_to_work, options_for_select(option_with_na), class: 'form-control' %>
   </div>
-  <%#= e.input :job_level, collection: EmployeeDetail::JOBLEVEL, label: false, prompt: false, input_html: { class: 'form-control', id: 'exampleSelect1' } %>
   <!-- <div class='form-group'>
     <%#= label_tag 'Email' %> <%= current_user.email%>
   </div> -->
@@ -141,7 +140,7 @@
   </div>
   <div class='form-group'>
     <%= f.label :local_school, '*Are you willing to take children to local schools?' %>
-    <%= f.text_field :local_school, class: 'form-control' %>
+    <%= f.select :local_school, options_for_select(choose_option), class: 'form-control' %>
   </div>
   <div class='form-group'>
     <%= f.label :school_name, '*Name of School(s):' %>

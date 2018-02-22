@@ -1,5 +1,7 @@
 class TeacherProfilesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_teacher_profile, only: %i[edit show update]
+
   def new
     @teacher_profile = TeacherProfile.new
     @teacher_profile.children.build
@@ -8,30 +10,33 @@ class TeacherProfilesController < ApplicationController
   def create
     @teacher_profile = current_user.build_teacher_profile(permitted_teacher_params)
     if @teacher_profile.save
-      flash[:notice] = 'Teacher successfully approved.'
-      redirect_to teacher_path
+      flash[:notice] = 'Teacher profile successfully created.'
+      redirect_to teacher_profile_path(@teacher_profile)
     else
       flash[:notice] = 'Something went wrong! Try again later.'
       render :new
     end
   end
 
-  def edit
-    @teacher_profile = Teacher.find(params[:id]).teacher_profile
+  def edit; end
+
+  def update
+    if @teacher_profile.present? && @teacher_profile.update_attributes(permitted_teacher_params)
+      flash[:notice] = 'Teacher profile successfully updated.'
+      redirect_to :back
+    else
+      flash[:notice] = 'Something went wrong! Try again later.'
+      render :new
+    end
   end
 
-  # def update
-  #   @teacher_profile = TeacherProfile.find(params[:])
-  #   if @teacher_profile.save
-  #     flash[:notice] = 'Teacher successfully approved.'
-  #     redirect_to teacher_path
-  #   else
-  #     flash[:notice] = 'Something went wrong! Try again later.'
-  #     render :new
-  #   end
-  # end
+  def show;  end
 
   private
+
+    def set_teacher_profile
+      @teacher_profile = TeacherProfile.find(params[:id])
+    end
 
     def permitted_teacher_params
       params.require(:teacher_profile).permit(
