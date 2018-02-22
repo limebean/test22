@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   layout :set_layout
   before_action :set_teacher, only: [ :update_password, :set_password ]
+  before_action :ensure_teacher, only: :dashboard
 
   def new
     @teacher = Teacher.new
@@ -66,6 +67,11 @@ class TeachersController < ApplicationController
       else
         'application'
       end
-          
+    end
+
+    def ensure_teacher
+      unless current_user && current_user.teacher?
+        redirect_to admin_dashboard_path
+      end
     end
 end

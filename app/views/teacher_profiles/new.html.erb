@@ -1,7 +1,8 @@
-<%= simple_form_for @teacher_profile do |f| %>
-  <%= render 'form', f: f %>
-  <div class='actions'>
-    <button name="button" type="submit">Submit
-    </button>
-  </div>
-<% end %>
+<div class="form-content">
+  <%= simple_form_for @teacher_profile, html: { class: 'form-horizontal' } do |f| %>
+    <%= render 'form', f: f %>
+    <div class="form-actions">
+      <%=f.submit 'Submit', class: 'btn btn-primary btn-custom'%>
+    </div>
+  <% end %>
+</div>
