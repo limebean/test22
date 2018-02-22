@@ -6,7 +6,7 @@
     </li>
     <%if current_user.admin? %>
       <li>
-        <a href="#">Teachers</a>
+        <%= link_to 'Teachers', admin_teachers_path %>
       </li>
       <li>
         <a href="#">Curriculum PDF</a>

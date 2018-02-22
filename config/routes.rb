@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :teachers, only: [:index] do
       member do
         patch :approve
+        patch :reject
       end
     end
   end
