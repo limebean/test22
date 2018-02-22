@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'about', to: 'welcome#about'
+  get 'terms_of_use', to: 'welcome#terms_of_use'
+  get 'privacy_policy', to: 'welcome#privacy_policy'
+
   get :partner, to: 'teachers#new'
 
   devise_for :users, controllers: { registrations: "users/registrations" }
