@@ -17,7 +17,9 @@
         <td><%= teacher.postal_code %></td>
         <% if teacher.approve %>
           <td>Approved</td>
-          <td><%= link_to 'Edit', edit_teacher_profile_path(teacher), method: :get %>
+          <% if teacher.teacher_profile.present? %>
+            <td><%= link_to 'Edit', edit_teacher_profile_path(teacher.teacher_profile), method: :get %>
+          <% end %>
         <% else %>
           <td><%= link_to 'Approve', approve_admin_teacher_path(teacher), method: :patch %>
         <% end %>
