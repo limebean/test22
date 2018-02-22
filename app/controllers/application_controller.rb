@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     def ensure_is_admin
       unless current_user.admin?
-        redirect to root_path, alert: 'You are not authorised to access this area.'
-      end 
+        redirect_to root_path, alert: 'You are not authorised to access this area.'
+      end
     end
 end

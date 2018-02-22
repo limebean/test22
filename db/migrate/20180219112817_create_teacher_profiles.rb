@@ -28,7 +28,7 @@ class CreateTeacherProfiles < ActiveRecord::Migration[5.1]
 
       t.string :goal
       t.string :age_range, null: false
-      t.boolean :local_school, null: false
+      t.boolean :local_school
       t.string :school_name, null: false
       t.text :comments, null: false
 

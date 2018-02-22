@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
   resources :teachers do
     member do
-      resources :teacher_profiles
       get :set_password
       patch :update_password
     end
   end
+  resources :teacher_profiles
 
   namespace :admin do
     get '', to: "teachers#index"
