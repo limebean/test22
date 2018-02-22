@@ -110,7 +110,7 @@ body {
 
 
 .bg-no-overlay {
-  background-image: url(https://www.wonderschool.com/images/home/hero.jpg);
+  background-image: url(cover.jpg);
   background-size: cover;
   background-position: 50%;
   position: relative;
