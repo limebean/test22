@@ -1,100 +1,32 @@
-<h1> personal inforamtion </h1>
-
+<h1> Personal Information </h1>
+  <%= f.input :first_name%>
+  <%= f.input :last_name %>
+  <%= f.input :street_address %>
+  <%= f.input :apt_no%>
   <div class='form-group'>
-    <%= f.label :first_name, '*First Name' %>
-    <%= f.text_field :first_name, class: 'form-control' %>
+    <%= label_tag 'postal_code', 'Postal Code'%>
+    <input class="form-control string required" type="text" value="<%= current_user.postal_code%>" disabled="true">
+  </div>
+  <%= f.input :city%>
+  <%= f.input :home_phone%>
+  <%= f.input :cell_phone%>
+  <%= f.input :date_of_birth%>
+  <%= f.input :language%>
+  <%= f.input :work%>
+  <%= f.input :legal_to_work, as: :select, collection: option_with_na, label: 'Are you legally able to work in Canada? (Have SIN or applied for it)'%>
+
+  <%= f.check_box :apartment %>Apartment:
+  <div id = "apartment">
+    <%= f.input :floor%>
+    <%= f.input :condo, as: :select, collection: choose_option, label: '*If Apartment, is this a Condo?'%>
   </div>
 
-  <div class='form-group'>
-    <%= f.label :last_name, '*Last Name' %>
-    <%= f.text_field :last_name, class: 'form-control' %>
-  </div>
 
-  <div class='form-group'>
-    <%= f.label :street_address, '*Street Address' %>
-    <%= f.text_area :street_address, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :apt_no, 'Apt #' %>
-    <%= f.text_field :apt_no, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= label_tag 'postal_code', 'Postal Code'%> <%= current_user.postal_code%>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :city, '*City' %>
-    <%= f.text_field :city, class: 'form-control' %>
-  </div>
-
-  <!-- <div class='form-group'>
-    <%#= f.label :hear_of_site, 'How did you hear of network' %>
-    <%#= f.text_field :hear_of_site, class: 'form-control' %>
-  </div> -->
-
-  <div class='form-group'>
-    <%= f.label :home_phone, '*Home Phone' %>
-    <%= f.text_field :home_phone, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :cell_phone, '*Cell Phone' %>
-    <%= f.text_field :cell_phone, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :date_of_birth, 'Date of birth' %>
-    <%= f.date_select :date_of_birth, :start_year=>1900 %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :language, '*Languages Spoken' %>
-    <%= f.text_field :language, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :work, 'ABILITY TO WORK' %>
-    <%= f.text_field :work, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :legal_to_work, '*Are you legally able to work in Canada? (Have SIN or applied for it):' %>
-    <%= f.select :legal_to_work, options_for_select(option_with_na), class: 'form-control' %>
-  </div>
-  <!-- <div class='form-group'>
-    <%#= label_tag 'Email' %> <%= current_user.email%>
-  </div> -->
-  <!-- <h1> personal inforamtion </h1> -->
-  <div class='form-group'>
-    <%= f.label :apartment, 'Apartment:' %>
-    <%= f.text_field :apartment, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :floor, '*If Apartment, what floor?' %>
-    <%= f.text_field :floor, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :condo, '*If Apartment, is this a Condo?' %>
-    <%= f.select :condo, options_for_select(choose_option), class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :house, 'House:' %>
-    <%= f.text_field :house, class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :basement_premises, '*Is child care space in the basement of the premises?' %>
-    <%= f.select :basement_premises, options_for_select(choose_option), class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :two_exit, '*Are there two exits?' %>
-    <%= f.select :two_exit, options_for_select(choose_option), class: 'form-control' %>
+  <%#= f.input :house%>
+  <%= f.check_box :house %>House:
+  <div id = "house">
+    <%= f.input :basement_premises, as: :select, collection: choose_option, label: 'Is child care space in the basement of the premises?'%>
+    <%= f.input :basement_premises, as: :select, collection: choose_option, label: '*Are there two exits?'%>
   </div>
 
   <div class='form-group'>
@@ -123,30 +55,25 @@
   </div>
 
 
+<div class="form-group">
+  <%= f.label :goal, 'GOAL:'%>
+  <%= f.text_field :goal, class: 'form-control'%>
+</div>
 
-  <%#= f.semantic_fields_for :children do |child| %>
-    <%#= render 'child_field', f: child %>
-  <%# end %>
-  <%#= f.link_to_add 'Add contact', :children  %>
+<div class='form-group'>
+  <%= f.label :age_range, '*Age range you want to have?' %>
+  <%= f.text_field :age_range, class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :local_school, '*Are you willing to take children to local schools?' %>
+  <%= f.select :local_school, options_for_select(choose_option), class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :school_name, '*Name of School(s):' %>
+  <%= f.text_area :school_name, class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :comments, '*Comments' %>
+  <%= f.text_area :comments, class: 'form-control' %>
+</div>
 
-  <div class="form-group">
-    <%= f.label :goal, 'GOAL:'%>
-    <%= f.text_field :goal, class: 'form-control'%>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :age_range, '*Age range you want to have?' %>
-    <%= f.text_field :age_range, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    <%= f.label :local_school, '*Are you willing to take children to local schools?' %>
-    <%= f.select :local_school, options_for_select(choose_option), class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    <%= f.label :school_name, '*Name of School(s):' %>
-    <%= f.text_area :school_name, class: 'form-control' %>
-  </div>
-  <div class='form-group'>
-    <%= f.label :comments, '*Comments' %>
-    <%= f.text_area :comments, class: 'form-control' %>
-  </div>

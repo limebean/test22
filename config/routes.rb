@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'terms_of_use', to: 'welcome#terms_of_use'
   get 'privacy_policy', to: 'welcome#privacy_policy'
 
-  get :dashboard, to: 'teachers#dashboard'
+  get :dashboard, to: 'teachers#dashboard', as: :dashboard
 
   get :partner, to: 'teachers#new'
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :teacher_profiles
 
   namespace :admin do
-    get '', to: "teachers#index"
+    get '', to: "teachers#index", as: :dashboard
     resources :teachers, only: [:index] do
       member do
         patch :approve

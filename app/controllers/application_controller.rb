@@ -4,11 +4,10 @@ class ApplicationController < ActionController::Base
 
   protected
     def after_sign_in_path_for(_resource)
-      binding.pry
       if current_user.admin?
-         admin_teachers_path
+         admin_dashboard_path
       elsif current_user.teacher?
-        teacher_profile_path(current_user.teacher_profile)
+        dashboard_path
       end
     end
 

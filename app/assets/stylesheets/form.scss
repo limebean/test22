@@ -1,0 +1,93 @@
+.form-content{
+    padding: 0 32px;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #eee;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .form-group{
+      margin-bottom: 25px;
+      .form-control{
+        font-family: Lato,Helvetica,Arial,sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.5;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: none;
+        color: #333;
+        height: 45px;
+        margin: 0;
+        outline: none;
+        padding: 8px 16px;
+        width: 100%;
+        &:focus{
+          border-color: #5196cb;
+        }
+      }
+      select{
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.5;
+        -webkit-appearance: none;
+        background-color: rgb(255, 255, 255);
+        box-shadow: none;
+        color: rgb(51, 51, 51);
+        height: 48px;
+        width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(221, 221, 221);
+        border-image: initial;
+        border-radius: 4px;
+        margin: 0px;
+        outline: none;
+        padding: 8px 16px;
+      }
+    }
+    label{
+      &.control-label{
+        color: #333;
+        font-family: Lato,Helvetica,Arial,sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: inherit;
+        cursor: pointer;
+        display: block;
+        text-align: left;
+      }
+    }
+    .form-actions{
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .btn-custom{
+      background-color: rgb(81, 150, 203);
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 700;
+      height: auto;
+      line-height: 1;
+      text-align: center;
+      text-transform: inherit;
+      vertical-align: top;
+      white-space: nowrap;
+      border-width: initial;
+      border-style: none;
+      border-color: initial;
+      border-image: initial;
+      border-radius: 4px;
+      margin: 0px;
+      padding: 10.5px 16px;
+      text-decoration: none;
+      transition: all 0.1s ease;
+    }
+}
