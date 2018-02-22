@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-
+  layout :set_layout
   before_action :set_teacher, only: [ :update_password, :set_password ]
 
   def new
@@ -28,6 +28,10 @@ class TeachersController < ApplicationController
     end
   end
 
+  def dashboard
+    
+  end
+
   def set_password
     @teacher
   end
@@ -35,7 +39,7 @@ class TeachersController < ApplicationController
   private
 
     def set_teacher
-      @teacher = Teacher.find_by(invitation_token: params[:token])
+      @teacher ||= Teacher.find_by(invitation_token: params[:token])
     end
 
     def permitted_teacher_password_params
@@ -53,5 +57,15 @@ class TeachersController < ApplicationController
         :postal_code,
         :password
       )
+    end
+
+    def set_layout
+      case action_name
+      when 'dashboard'
+        'admin'
+      else
+        'application'
+      end
+          
     end
 end

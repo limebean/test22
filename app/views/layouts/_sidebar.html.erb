@@ -1,0 +1,29 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <a href="#">Dashboard</a>
+    </li>
+    <%if current_user.admin? %>
+      <li>
+        <a href="#">Teachers</a>
+      </li>
+      <li>
+        <a href="#">Curriculum PDF</a>
+      </li>
+      <li>
+        <a href="#">Transaction Settings</a>
+      </li>
+    <%elsif current_user.teacher? %>
+      <li>
+        <a href="#">Enrollments</a>
+      </li>
+      <li>
+        <a href="#">Calendar</a>
+      </li>
+      <li>
+        <a href="#">Payments</a>
+      </li>
+    <%end%>
+  </ul>
+</div>
