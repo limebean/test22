@@ -7,6 +7,7 @@ class TeachersController < ApplicationController
   end
 
   def create
+    binding.pry
     @teacher = Teacher.new(permitted_teacher_params)
     if @teacher.save
       @teacher.invitation_token

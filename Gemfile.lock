@@ -45,6 +45,9 @@ GEM
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-glyphicons (0.0.1)
+      railties (>= 3.0)
+      sass (>= 3.2)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -79,6 +82,8 @@ GEM
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.21)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -211,12 +216,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-glyphicons
   bootstrap-sass (~> 3.3.7)
   byebug
   capybara (~> 2.13)
   cocoon
   coffee-rails (~> 4.2)
   devise
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener

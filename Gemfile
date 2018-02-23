@@ -36,6 +36,8 @@ gem 'simple_form'
 #gem 'nested_form'
 gem "cocoon"
 gem 'jquery-rails'
+gem "font-awesome-rails"
+gem 'bootstrap-glyphicons'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

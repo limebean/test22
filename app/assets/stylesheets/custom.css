@@ -886,3 +886,301 @@ h3 {
   letter-spacing: .1rem;
   line-height: 1.3;
 }
+
+
+/*Partner page css*/
+
+.new_image_hero {
+  background: linear-gradient(#28335b,#000);
+  position: relative;
+}
+
+.new_image_hero_image {
+  background-image: url(https://www.wonderschool.com/images/partner/hero.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  bottom: 0;
+  content: " ";
+  height: 100%;
+  left: 0;
+  opacity: .2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.new_image_hero_content {
+  position: relative;
+}
+.new_partner_page_hero {
+  padding: 40px 16px;
+}
+.new_partner_page_hero_messaging_head, .new_partne_Page_hero_messaging_subhead {
+  color: #fff;
+  font-size: 28px;
+  line-height: 42px;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.new_partner_page_hero_messaging_head {
+  font-weight: 300;
+}
+.new_partner_page_hero_messaging_subhead {
+  font-weight: 400;
+}
+.new_partner_page_hero_cta {
+  margin-top: 24px;
+}
+.new_partner_page_hero_cta_form {
+  background: #eee;
+  padding: 32px 16px;
+}
+.new_partner_page_hero_cta_head {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.new_prospect_capture_form_form_control+.new_prospect_capture_form_form_control {
+  margin-top: 8px;
+}
+.button.button__large {
+  padding: 16px 24px;
+  text-transform: uppercase;
+}
+
+.P+.P {
+  margin-top: 16px;
+}
+.new_colored_text__gray {
+  color: #9a9a9a;
+}
+.small_text {
+  font-size: 13px;
+}
+.new_partner_page_section__white {
+  background: #fff;
+}
+
+.new_partner_page_section_head {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.new_partner_page_why_grid_image {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.new_partner_page_section_subhead {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.new_partner_page_section_narrow {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.new_partner_page_how_grid_image {
+  margin-bottom: 16px;
+  text-align: center;
+}
+.new_partner_page_section_subhead {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.new_partner_page_how_grid_list {
+  padding-left: 30px;
+}
+.new_partner_page_how_grid_list li+li {
+  margin-top: 8px;
+}
+.new_partner_page_how_grid+.new_partner_page_how_grid {
+  margin-top: 55px;
+}
+
+.new_partner_page_what_grid_image {
+  margin: 0 auto 24px;
+}
+.new_aligned_text__center {
+  text-align: center;
+}
+.new_partner_page_video {
+  margin-bottom: 40px;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+}
+.new_partner_page_video_iframe {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.grid__skinnygutters {
+  margin: -8px 0 0 -8px;
+}
+.grid__align_items_center {
+  align-items: center;
+}
+.grid_cell__flexnone {
+  flex: none;
+}
+.new_partner_page_video_headshot {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+.new_partner_page_video_button {
+  background: #5196cb;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+.new_partner_page_video_button_play {
+  background: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 2px 3px 3px;
+}
+.new_partner_page_video_button_play:before {
+  border-bottom: 2px solid transparent;
+  border-left: 5px solid #5196cb;
+  border-top: 2px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  margin-left: 1px;
+  width: 0;
+}
+.new_partner_page_section__blue {
+  background: #5196cb;
+  color: #fff;
+}
+.new_partner_page_bottom_cta_form {
+  margin: 32px auto 0;
+  max-width: 300px;
+}
+.new_text_input__white .new_text_input_control {
+  /*background-color: hsla(0,0%,100%,.15);*/
+  border-color: hsla(0,0%,100%,.3);
+  color: #fff;
+}
+.new_text_input__white .new_text_input_control:active, .new_text_input__white .new_text_input_control:focus, .new_text_input__white .new_text_input_control:hover {
+  border-color: hsla(0,0%,100%,.8);
+}
+.new_text_input .new_text_input_control:active, .new_text_input .Tnew_text_input_control:focus, .new_text_input .new_text_input_control:hover {
+  border-color: #5196cb;
+}
+.button.button__white {
+  background-color: #fff;
+  color: #5196cb;
+}
+.tosagree_light {
+  opacity: .7;
+}
+.colored_text_white {
+  color: #fff;
+}
+.underlined_text {
+  text-decoration: underline;
+}
+.new_partner_page_hero_messaging_head, .new_partner_page_hero_messaging_subhead {
+  color: #fff;
+  font-size: 28px;
+  line-height: 42px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .new_partner_page_why_grid_cell {
+    display: flex;
+  }
+  .new_partner_page_why_grid_image {
+    flex: none;
+    width: 90px;
+  }
+  .new_partner_page_why_grid_cell+.new_partner_page_why_grid_cell {
+    margin-top: 32px;
+  }
+  .new_partner_page_section {
+    padding: 40px 16px;
+  }
+  .new_partner_page_section_subhead {
+    text-align: center;
+  }
+  .grid__full>.Grid-cell, .grid__full>.GridCell--flex2 {
+    flex: 0 0 100%;
+  }
+
+}
+
+
+
+@media (min-width: 768px) {
+  .new_partner_page_hero {
+    align-items: center;
+    display: flex;
+    padding: 100px 60px;
+  }
+  .new_partner_page_hero_messaging {
+    flex: 3;
+  }
+  .new_partner_page_hero_messaging_head, .new_partner_page_hero_messaging_subhead {
+    font-size: 36px;
+    line-height: 52px;
+  }
+  .new_partner_page_hero_cta {
+    flex: 2;
+    margin-top: 0;
+    padding-left: 16px;
+  }
+  .new_partner_page_hero_cta_form {
+    padding: 40px;
+  }
+  .new_partner_page_section {
+    padding: 90px 30px;
+  }
+ 
+  .new_partner_page_section_head {
+    font-size: 36px;
+    margin-bottom: 60px;
+    margin-top: 0px;
+  }
+  .new_partner_page_why_grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+  }
+  .new_partner_page_why_grid_cell {
+    flex-shrink: 1;
+    max-width: 270px;
+    padding: 0 10px;
+  }
+  .new_partner_page_how_grid {
+    align-items: center;
+    display: flex;
+  }
+  .new_partner_page_how_grid_image {
+    flex: none;
+    margin: 0;
+    width: 175px;
+  }
+  .new_partner_page_how_grid_content {
+    flex: 1;
+    padding-left: 45px;
+  }
+  .new_partner_page_how_grid {
+    align-items: center;
+    display: flex;
+  }
+  .new_partner_page_what_grid_image {
+    max-width: 90%;
+  }
+}
