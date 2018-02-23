@@ -31,7 +31,7 @@
          </div>
          <div class="Grid-cell">
             <div>
-               <div class="section_page_footer_link_list_title">Wonderschool</div>
+               <div class="section_page_footer_link_list_title">Dreamschools</div>
                <%=link_to 'About Us', about_path, class: 'new-link link_blend'%>
                <br>
                <%=link_to 'Terms of Use', terms_of_use_path, class: 'new-link link_blend'%>
@@ -39,11 +39,7 @@
                <%=link_to 'Privacy Policy', privacy_policy_path, class: 'new-link link_blend'%>
             </div>
          </div>
-         <div class="Grid-cell"><!-- <a class="new-link " href="#"> -->
-         <%= link_to partner_path do %>
-           <button class="button button_arrow  button_outline_blue" type="button">Partner with Wonderschool</button>
-         <% end %>
-        <!--  </a> --></div>
+         <div class="Grid-cell"><a class="new-link " href="<%=partner_path%>"><button class="button button_arrow  button_outline_blue" type="button">Partner with Dreamschools</button></a></div>
       </div>
    </div>
 </footer>
