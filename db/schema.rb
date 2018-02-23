@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219121827) do
+ActiveRecord::Schema.define(version: 20180222131559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,8 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.string "language", null: false
     t.string "work"
     t.integer "legal_to_work", null: false
-    t.string "apartment"
-    t.string "floor", null: false
+    t.string "floor", default: "", null: false
     t.boolean "condo"
-    t.string "house"
     t.boolean "basement_premises"
     t.boolean "two_exit"
     t.boolean "home_smoke"
@@ -54,6 +52,8 @@ ActiveRecord::Schema.define(version: 20180219121827) do
     t.text "comments", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "apartment", default: false
+    t.boolean "house", default: false
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 

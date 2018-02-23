@@ -17,13 +17,11 @@
         <td><%= teacher.postal_code %></td>
         <% if teacher.approve %>
           <% if teacher.teacher_profile.present? %>
-            <td><%= link_to 'Edit', edit_teacher_profile_path(teacher.teacher_profile), method: :get %></td>
+            <td><%= link_to 'Edit', edit_admin_teacher_path(teacher.teacher_profile), method: :get %></td>
             <td><%= link_to 'Show', teacher_profile_path(teacher.teacher_profile), method: :get %></td>
-            <% if teacher.approve? %>
-              <td><%= link_to 'Reject', reject_admin_teacher_path(teacher), method: :patch %></td>
-            <% end %>
           <% end %>
-        <% elsif teacher %>
+          <td><%= link_to 'Reject', reject_admin_teacher_path(teacher), method: :patch %></td>
+        <% else%>
           <td><%= link_to 'Approve', approve_admin_teacher_path(teacher), method: :patch %></td>
           <td></td>
           <td></td>

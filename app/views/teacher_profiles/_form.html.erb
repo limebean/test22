@@ -13,20 +13,18 @@
   <%= f.input :date_of_birth%>
   <%= f.input :language%>
   <%= f.input :work%>
-  <%= f.input :legal_to_work, as: :select, collection: option_with_na, label: 'Are you legally able to work in Canada? (Have SIN or applied for it)'%>
+  <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>
 
-  <%= f.check_box :apartment %>Apartment:
+  <%= f.input :apartment, inline_label: 'Apartment:' %>
   <div id = "apartment">
     <%= f.input :floor%>
-    <%= f.input :condo, as: :select, collection: choose_option, label: '*If Apartment, is this a Condo?'%>
+    <%= f.input :condo, as: :select, label: '*If Apartment, is this a Condo?', collection: choose_option, include_blank: false, include_hidden: false %>
   </div>
 
-
-  <%#= f.input :house%>
-  <%= f.check_box :house %>House:
+  <%= f.input :house, inline_label: 'House:' %>
   <div id = "house">
-    <%= f.input :basement_premises, as: :select, collection: choose_option, label: 'Is child care space in the basement of the premises?'%>
-    <%= f.input :basement_premises, as: :select, collection: choose_option, label: '*Are there two exits?'%>
+    <%= f.input :basement_premises, as: :select, label: 'Is child care space in the basement of the premises?', collection: choose_option, include_blank: false, include_hidden: false %>
+    <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
   </div>
 
   <div class='form-group'>

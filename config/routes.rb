@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
-    resources :teachers, only: [:index] do
+    resources :teachers, only: [:index, :edit, :update] do
       member do
         patch :approve
         patch :reject

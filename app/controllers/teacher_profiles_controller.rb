@@ -11,7 +11,7 @@ class TeacherProfilesController < ApplicationController
     @teacher_profile = current_user.build_teacher_profile(permitted_teacher_params)
     if @teacher_profile.save
       flash[:notice] = 'Teacher profile successfully created.'
-      redirect_to teacher_profile_path(@teacher_profile)
+      redirect_to dashboard_path
     else
       flash[:notice] = 'Something went wrong! Try again later.'
       render :new
