@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default custom-navbar" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to root_path do %>
+      <%= image_tag('logo.png', class: 'school-logo')%>
+    <% end %>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+    <div class="col-sm-6 col-md-4">
+        <form class="" role="search">
+                <div class="input-group page_header_desktop_search_control">
+                <input type="text" class="form-control page_header_desktop_search_input" placeholder="Where are you looking for child care?" name="q">
+                <div class="input-group-btn">
+                  <button class="btn btn-default custom_page_header_desktop_search_submit_button" type="submit"><i class="glyphicon glyphicon-search submit-search-icon"></i></button>
+                </div>
+                </div>
+            </form>
+    </div>
+    <ul class="nav navbar-nav navbar-right custom-right-navbar">
+      <li><%=link_to 'ABOUT',about_path,class: 'nav-link'%></li>
+      <li><a href="#" class="nav-link">START A WONDERSCHOOL</a></li>
+      <li><%#= link_to 'SIGN UP', new_user_registration_path%> <a href="#">SIGN UP</a></li>
+      <li><%#= link_to 'LOG IN', new_user_session_path%><a href="#">LOG IN</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
