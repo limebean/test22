@@ -19,10 +19,10 @@ body {
 }
 
 .school-logo {
-  height: 24.8px;
+  height: 70px;
   margin-left: 28px;
   margin-right: 14.5px;
-  margin-top: 23.5px;
+  margin-top: 2px;
 }
 
 .custom-right-navbar {
@@ -115,6 +115,7 @@ body {
   background-position: 50%;
   position: relative;
   padding: 16px 24px;
+  height: 450px;
 }
 
 @media (min-width: 768px) {
@@ -613,10 +614,10 @@ label+.button, label+button, label+input[type=submit], label+label {
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .school-logo {
-    height: 22px;
+    height: 70px;
     margin-left: 10px;
     margin-right: 0px;
-    margin-top: 16px;
+    margin-top: 2px;
   }
   .section-news {
     display: none;
@@ -631,6 +632,9 @@ label+.button, label+button, label+input[type=submit], label+label {
     left: 0;
     top: 20px;
     margin-bottom: 25px;
+  }
+  .bg-no-overlay {
+    height: auto;
   }
   .about-home-image {
     width: 100%;
@@ -649,6 +653,21 @@ label+.button, label+button, label+input[type=submit], label+label {
   .new_quotes_quote {
     padding: 24px 24px 32px;
   } 
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .school-logo {
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 2px;
+  }
+  .custom-right-navbar li a.nav-link {
+    display: none;
+  }
+  .custom-right-navbar {
+    right: 22px;
+  }
 }
 
 
