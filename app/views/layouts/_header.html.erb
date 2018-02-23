@@ -29,7 +29,7 @@
         <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
         <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
       <%else%>
-        <li><a href="/partner" class="nav-link">START A WONDERSCHOOL</a></li>
+        <li><a href="/partner" class="nav-link">START A DREAMSCHOOLS</a></li>
         <li><%= link_to 'SIGN UP', new_user_registration_path%></li>
         <li><%= link_to 'LOG IN', new_user_session_path%></li>
       <%end%>

@@ -360,7 +360,7 @@ button.button.button_naked.custom-btn {
 /*Lead capture*/
 
 .new_homepage_leadcapture {
-  background-image: url(https://www.wonderschool.com/images/home/lead-hero.png);
+  background-image: url(lead-hero.png);
   background-position: 50% 0;
   min-height: 530px;
   padding: 48px 16px;
@@ -915,7 +915,7 @@ h3 {
 }
 
 .new_image_hero_image {
-  background-image: url(https://www.wonderschool.com/images/partner/hero.jpg);
+  background-image: url(partner-section.jpg);
   background-position: 50% 50%;
   background-size: cover;
   bottom: 0;
@@ -1088,7 +1088,7 @@ h3 {
 .new_text_input__white .new_text_input_control {
   /*background-color: hsla(0,0%,100%,.15);*/
   border-color: hsla(0,0%,100%,.3);
-  color: #fff;
+  /*color: #fff;*/
 }
 .new_text_input__white .new_text_input_control:active, .new_text_input__white .new_text_input_control:focus, .new_text_input__white .new_text_input_control:hover {
   border-color: hsla(0,0%,100%,.8);

@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
 
-  get :partner, to: 'teachers#new'
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :teachers do
+    
     member do
       get :set_password
       patch :update_password
@@ -29,5 +29,5 @@ Rails.application.routes.draw do
       end
     end
   end
-
+  get '/partner', to: "teachers#new", as: :partner
 end
