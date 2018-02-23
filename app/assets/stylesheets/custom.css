@@ -1088,7 +1088,7 @@ h3 {
 .new_text_input__white .new_text_input_control {
   /*background-color: hsla(0,0%,100%,.15);*/
   border-color: hsla(0,0%,100%,.3);
-  color: #fff;
+  /*color: #fff;*/
 }
 .new_text_input__white .new_text_input_control:active, .new_text_input__white .new_text_input_control:focus, .new_text_input__white .new_text_input_control:hover {
   border-color: hsla(0,0%,100%,.8);

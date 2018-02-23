@@ -244,25 +244,25 @@
           Can your dream become a reality? Let’s&nbsp;talk&nbsp;about&nbsp;it.<br>Schedule your free 15 minute consultation now. We’re excited to chat with you!
           <div class="new_partner_page_bottom_cta_form">
             <div class="new_prospect_capture_form">
-              <form novalidate="">
+              <%= simple_form_for(@teacher) do |f| %>
                 <div class="new_prospect_capture_form_form_control">
                   <div class="new_text_input new_text_input__white">
-                    <input type="text" class="new_text_input_control" placeholder="Name" value="" spellcheck="true">
+                    <%= f.text_field :name, :placeholder => "Name", class: 'form-control new_text_input_control', required: true %>
                   </div>
                 </div>
                 <div class="new_prospect_capture_form_form_control">
                   <div class="new_text_input new_text_input__white">
-                    <input type="email" class="new_text_input_control" placeholder="Email" value="" spellcheck="false">
+                    <%= f.email_field :email, :placeholder => "Email", class: 'form-control new_text_input_control', required: true %>
                   </div>
                 </div>
                 <div class="new_prospect_capture_form_form_control">
                   <div class="new_text_input new_text_input__white">
-                    <input type="text" class="new_text_input_control" placeholder="Postal Code" value="" spellcheck="true">
+                    <%= f.text_field :postal_code, :placeholder => "Postal Code", class: 'form-control new_text_input_control', required: true %>
                   </div>
                 </div>
                 <div class="new_prospect_capture_form_form_control">
                   <div class="P">
-                    <button class="button button_full button__large button_arrow  button__white" type="submit">Submit</button>
+                    <%= f.submit 'Submit', class: "button button_full button__large button_arrow  button__white" %>
                   </div>
                   <div class="P">
                     <div class="Ttos_agree_light">
@@ -274,7 +274,7 @@
                     </div>
                   </div>
                 </div>
-              </form>
+              <% end %>
             </div>
           </div>
         </div>
