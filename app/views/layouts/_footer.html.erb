@@ -39,7 +39,11 @@
                <%=link_to 'Privacy Policy', privacy_policy_path, class: 'new-link link_blend'%>
             </div>
          </div>
-         <div class="Grid-cell"><a class="new-link " href="#"><button class="button button_arrow  button_outline_blue" type="button">Partner with Wonderschool</button></a></div>
+         <div class="Grid-cell"><!-- <a class="new-link " href="#"> -->
+         <%= link_to new_teacher_path do %>
+           <button class="button button_arrow  button_outline_blue" type="button">Partner with Wonderschool</button>
+         <% end %>
+        <!--  </a> --></div>
       </div>
    </div>
 </footer>
