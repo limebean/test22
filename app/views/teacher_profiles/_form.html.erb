@@ -10,7 +10,7 @@
   <%= f.input :city%>
   <%= f.input :home_phone%>
   <%= f.input :cell_phone%>
-  <%= f.input :date_of_birth, input_html: {class: 'dob'}%>
+  <%= f.input :date_of_birth, input_html: {class: 'dob custom-dob'}%>
   <%= f.input :language%>
   <%= f.input :work%>
   <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>

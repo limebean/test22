@@ -1,4 +1,5 @@
 class TeacherProfilesController < ApplicationController
+  layout :set_layout
   before_action :authenticate_user!
   before_action :set_teacher_profile, only: %i[edit show update]
 
@@ -23,10 +24,10 @@ class TeacherProfilesController < ApplicationController
   def update
     if @teacher_profile.present? && @teacher_profile.update_attributes(permitted_teacher_params)
       flash[:notice] = 'Teacher profile successfully updated.'
-      redirect_to :back
+      redirect_to dashboard_path
     else
       flash[:notice] = 'Something went wrong! Try again later.'
-      render :new
+      render :edit
     end
   end
 
@@ -49,6 +50,15 @@ class TeacherProfilesController < ApplicationController
         :local_school, :school_name, :comments,
         children_attributes: [:id, :full_name, :age, :care_by, :_destroy]
       )
+    end
+
+    def set_layout
+      case action_name
+      when 'edit'
+        'admin'
+      else
+        'application'
+      end
     end
 
 end

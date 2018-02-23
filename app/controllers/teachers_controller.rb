@@ -30,7 +30,7 @@ class TeachersController < ApplicationController
   end
 
   def dashboard
-    
+
   end
 
   def set_password
