@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require js.cookie
+//= require jquery.steps
+//= require jquery.validate
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap-sprockets
