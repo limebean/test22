@@ -6,3 +6,16 @@
   width: 32%;
   margin-right: 0.88%;
 }
+
+div.form-content.custom-form-content form.form-horizontal div.wizard div.content {
+  background: #eee;
+  display: block;
+  margin: 0.5em;
+  min-height: 60em;
+  overflow-y: scroll;
+  position: relative;
+  width: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}

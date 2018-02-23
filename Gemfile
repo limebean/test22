@@ -63,3 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rails-jquery-steps'
 gem 'jquery-validation-rails'
+gem 'bootstrap-datepicker-rails'
