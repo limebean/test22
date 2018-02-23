@@ -10,7 +10,7 @@
   <%= f.input :city%>
   <%= f.input :home_phone%>
   <%= f.input :cell_phone%>
-  <%= f.input :date_of_birth, input_html: {class: 'dob'}%>
+  <%= f.input :date_of_birth, input_html: {class: 'dob custom-dob'}%>
   <%= f.input :language%>
   <%= f.input :work%>
   <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>
@@ -27,20 +27,9 @@
     <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
   </div>
 
-  <div class='form-group'>
-    <%= f.label :home_smoke, '*Smoking in home:' %>
-    <%= f.select :home_smoke, options_for_select(choose_option), class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :pet, '*Pets in home?' %>
-    <%= f.select :pet, options_for_select(choose_option), class: 'form-control' %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :vaccine, '*Vaccinations are current?' %>
-    <%= f.select :vaccine, options_for_select(option_with_na), class: 'form-control' %>
-  </div>
+  <%= f.input :home_smoke, as: :select, collection: choose_option, label: '*Smoking in home:' %>
+  <%= f.input :pet, as: :select, collection: choose_option, label: '*Pets in home?' %>
+  <%= f.input :vaccine, as: :select, collection: option_with_na, label: '*Vaccinations are current?' %>
 
   <h4> CHILDREN IN HOME: </h4>
   <div id='children'>
@@ -48,30 +37,13 @@
       <%= render 'child_fields', :f => child %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'add child', f, :children %>
+      <%= link_to_add_association 'Add child', f, :children %>
     </div>
   </div>
 
-
-<div class="form-group">
-  <%= f.label :goal, 'GOAL:'%>
-  <%= f.text_field :goal, class: 'form-control'%>
-</div>
-
-<div class='form-group'>
-  <%= f.label :age_range, '*Age range you want to have?' %>
-  <%= f.text_field :age_range, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :local_school, '*Are you willing to take children to local schools?' %>
-  <%= f.select :local_school, options_for_select(choose_option), class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :school_name, '*Name of School(s):' %>
-  <%= f.text_area :school_name, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :comments, '*Comments' %>
-  <%= f.text_area :comments, class: 'form-control' %>
-</div>
+  <%= f.input :goal, label: 'GOAL:' %>
+  <%= f.input :age_range, label: 'Age range you want to have?' %>
+  <%= f.input :local_school, as: :select, collection: choose_option, label: '*Are you willing to take children to local schools?' %>
+  <%= f.input :school_name, label: 'Name of School(s):' %>
+  <%= f.input :comments, label: 'Comments' %>
 

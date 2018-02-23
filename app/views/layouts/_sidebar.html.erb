@@ -16,6 +16,10 @@
       </li>
     <%elsif current_user.teacher? %>
       <li>
+        <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
+        <%= link_to 'Profile Settings', settings_path %>
+      </li>
+      <li>
         <a href="#">Enrollments</a>
       </li>
       <li>
