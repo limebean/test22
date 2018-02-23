@@ -26,10 +26,11 @@
     <%= f.input :basement_premises, as: :select, label: 'Is child care space in the basement of the premises?', collection: choose_option, include_blank: false, include_hidden: false %>
     <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
   </div>
+  <%= f.input :home_smoke, as: :select, label: '*Smoking in home:', collection: choose_option, include_blank: false, include_hidden: false %>
 
-  <%= f.input :home_smoke, as: :select, collection: choose_option, label: '*Smoking in home:' %>
-  <%= f.input :pet, as: :select, collection: choose_option, label: '*Pets in home?' %>
-  <%= f.input :vaccine, as: :select, collection: option_with_na, label: '*Vaccinations are current?' %>
+  <%= f.input :pet, as: :select, label: '*Pets in home?', collection: choose_option, include_blank: false, include_hidden: false %>
+
+  <%= f.input :vaccine, as: :select, label: '*Vaccinations are current?', collection: option_with_na, include_blank: false, include_hidden: false %>
 
   <h4> CHILDREN IN HOME: </h4>
   <div id='children'>
@@ -43,7 +44,8 @@
 
   <%= f.input :goal, label: 'GOAL:' %>
   <%= f.input :age_range, label: 'Age range you want to have?' %>
-  <%= f.input :local_school, as: :select, collection: choose_option, label: '*Are you willing to take children to local schools?' %>
+  <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
+
   <%= f.input :school_name, label: 'Name of School(s):' %>
   <%= f.input :comments, label: 'Comments' %>
 
