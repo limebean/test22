@@ -1,0 +1,6 @@
+<div class='nested-fields'>
+  <%=f.input :full_name, label: 'Full _name', placeholder: 'Full Name' %>
+  <%= f.input :age, label: 'Age', placeholder: 'Age' %>
+  <%= f.select :care_by, options_for_select(Child::CARE_BY), class: 'form-control' %>
+  <%= link_to_remove_association "remove child", f %>
+</div>

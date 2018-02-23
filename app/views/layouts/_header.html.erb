@@ -26,8 +26,7 @@
     <ul class="nav navbar-nav navbar-right custom-right-navbar">
       <li><%=link_to 'ABOUT',about_path,class: 'nav-link'%></li>
       <%if current_user %>
-        <%dashboard = if current_user.admin? then '/admin' elsif current_user.teacher? then '/partner' end %>
-        <li><a href="<%=dashboard%>" class="nav-link">DASHBOARD</a></li>
+        <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
         <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
       <%else%>
         <li><a href="/partner" class="nav-link">START A WONDERSCHOOL</a></li>
