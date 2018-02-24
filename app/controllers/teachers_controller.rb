@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
   layout :set_layout
+  before_action :authenticate_user!, except: :show
   before_action :set_teacher, only: [ :update_password, :set_password ]
   before_action :ensure_teacher, only: :dashboard
 
@@ -30,7 +31,9 @@ class TeachersController < ApplicationController
   end
 
   def dashboard
-
+    unless current_user.teacher_profile.presence
+      redirect_to new_teacher_profile_path, notice: 'You need to update your profile!'
+    end
   end
 
   def set_password

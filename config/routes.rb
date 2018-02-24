@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get '', to: "teachers#index", as: :dashboard
     resources :teachers, only: [:index, :edit, :update] do
       member do
+        get :edit_profile
         patch :approve
         patch :reject
       end

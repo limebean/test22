@@ -1,15 +1,16 @@
 class Admin::TeachersController < Admin::AdminBaseController
+  before_action :set_teacher, except: [:index]
 
   def index
     @teachers = Teacher.all
   end
 
-  def edit
-    @teacher_profile = TeacherProfile.find(params[:id])
+  def edit_profile
+    @teacher_profile = @teacher.teacher_profile.present? ? @teacher.teacher_profile : @teacher.build_teacher_profile
   end
 
   def update
-    @teacher_profile = TeacherProfile.find(params[:id])
+    @teacher_profile = @teacher.teacher_profile.present? ? @teacher.teacher_profile : @teacher.build_teacher_profile
     if @teacher_profile.present? && @teacher_profile.update_attributes(permitted_teacher_params)
       flash[:notice] = 'Teacher profile successfully updated.'
       redirect_to admin_teachers_path
@@ -52,6 +53,10 @@ class Admin::TeachersController < Admin::AdminBaseController
         :local_school, :school_name, :comments,
         children_attributes: [:id, :full_name, :age, :care_by, :_destroy]
       )
+    end
+
+    def set_teacher
+      @teacher = Teacher.find(params[:id])
     end
 
 end

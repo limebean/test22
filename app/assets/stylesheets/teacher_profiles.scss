@@ -8,7 +8,7 @@
 }
 
 div.form-content.custom-form-content form.form-horizontal div.wizard div.content {
-  background: #eee;
+  background: #fff;
   display: block;
   margin: 0.5em;
   min-height: 60em;
@@ -18,4 +18,11 @@ div.form-content.custom-form-content form.form-horizontal div.wizard div.content
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+.wizard > .steps a, .wizard > .steps a:hover, .wizard > .steps a:active{
+  font-size: 12px;
+  font-weight: bold;
+}
+.wizard > .steps .number{
+  font-size: 1.3em;
 }
