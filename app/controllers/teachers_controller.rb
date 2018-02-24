@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   layout :set_layout
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :new, :create, :set_password, :update_password]
   before_action :set_teacher, only: [ :update_password, :set_password ]
   before_action :ensure_teacher, only: :dashboard
 
