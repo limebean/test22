@@ -176,9 +176,6 @@
   <div class="new_partner_page_section">
     <div class="custom_content_width_constraint">
       <h3 id="PartnerPage-video" class="new_partner_page_section_head">Meet our partners</h3>
-      <div class="new_partner_page_video">
-        <iframe class="new_partner_page_video_iframe" src="https://www.youtube.com/embed/wCo6lmtXPTE" frameborder="0" allowfullscreen=""></iframe>
-      </div>
       <div class="custom_grid Grid--wideGutters grid__full ">
         <div class="Grid-cell">
           <div class="P">
@@ -258,6 +255,11 @@
                 <div class="new_prospect_capture_form_form_control">
                   <div class="new_text_input new_text_input__white">
                     <%= f.email_field :email, :placeholder => "Email", class: 'form-control new_text_input_control', required: true %>
+                  </div>
+                </div>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="new_text_input new_text_input__white">
+                    <%= f.text_field :telephone_no, :placeholder => "Telephone Number", class: 'form-control new_text_input_control', required: true %>
                   </div>
                 </div>
                 <div class="new_prospect_capture_form_form_control">
