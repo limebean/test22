@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to (image_tag('new_logo.png', class: 'school-logo')), root_path%>
+    <%= link_to (image_tag('new_logo.png', class: 'school-logo')), root_path %>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,9 +29,9 @@
         <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
         <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
       <%else%>
-        <li><a href="/partner" class="nav-link">START A DREAMSCHOOLS</a></li>
-        <li><%= link_to 'SIGN UP', new_user_registration_path%></li>
+        <li><a href="/partner" class="nav-link">START A DREAMSCHOOL</a></li>
         <li><%= link_to 'LOG IN', new_user_session_path%></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path%></li>
       <%end%>
     </ul>
   </div><!-- /.navbar-collapse -->

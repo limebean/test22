@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
       @teacher.invitation_token
       redirect_to root_path, notice: "Thanks for register, Please open email for reset passowrd and complete registration"
     else
-      render :new, alert: "Something went wrong! Please try again."
+      redirect_to partner_path, alert: "Something went wrong! Please try again."
     end
   end
 
@@ -58,6 +58,7 @@ class TeachersController < ApplicationController
       params.require(:teacher).permit(
         :name,
         :email,
+        :telephone_no,
         :postal_code,
         :password
       )

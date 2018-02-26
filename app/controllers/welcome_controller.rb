@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
+  before_action :check_if_teacher_or_admin, only: :index
+    def index
 
     end
 
@@ -17,5 +18,12 @@ class WelcomeController < ApplicationController
 
     def privacy_policy
 
+    end
+
+  private
+    def check_if_teacher_or_admin
+        if current_user && (current_user.teacher? || current_user.admin?)
+            redirect_to dashboard_path
+        end
     end
 end

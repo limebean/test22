@@ -46,6 +46,9 @@ body {
   text-decoration: none;
   padding-right: 1px;
 }
+ul.nav.navbar-nav.navbar-right.custom-right-navbar li:last-child {
+  font-weight: bold;
+}
 
 .page_header_desktop_search_control {
   width: 500px;
@@ -201,7 +204,7 @@ body {
   margin-right: 16px;
 }
 
-/*school searchbar*/ 
+/*school searchbar*/
 
 .search_bar_school {
   background-color: #333333;;
@@ -646,13 +649,13 @@ label+.button, label+button, label+input[type=submit], label+label {
   .Grid--full>.Grid-cell, .Grid--full>.GridCell--flex2 {
       -ms-flex: 0 0 100%;
       flex: 0 0 100%;
-  }  
+  }
 }
 
 @media (min-width: 768px) {
   .new_quotes_quote {
     padding: 24px 24px 32px;
-  } 
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1169,7 +1172,7 @@ h3 {
   .new_partner_page_section {
     padding: 90px 30px;
   }
- 
+
   .new_partner_page_section_head {
     font-size: 36px;
     margin-bottom: 60px;
