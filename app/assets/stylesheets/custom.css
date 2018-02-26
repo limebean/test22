@@ -851,6 +851,10 @@ label+.button, label+button, label+input[type=submit], label+label {
   width: 100%;
 }
 
+.about_logo {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .section_about_header {
     padding: 100px 0 80px;
