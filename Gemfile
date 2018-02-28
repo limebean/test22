@@ -65,3 +65,6 @@ gem 'rails-jquery-steps'
 gem 'jquery-validation-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'stripe'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+gem "montrose"

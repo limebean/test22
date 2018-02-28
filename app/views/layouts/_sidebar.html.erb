@@ -5,7 +5,7 @@
       <a href="#">Dashboard</a>
     </li>
     <%if current_user.admin? %>
-      <li>
+      <li class="<%=is_active_menu('index')%>">
         <%= link_to 'Teachers', admin_teachers_path %>
       </li>
       <li>
@@ -15,9 +15,12 @@
         <a href="#">Transaction Settings</a>
       </li>
     <%elsif current_user.teacher? %>
-      <li>
+      <li  class=" <%=is_active_menu('edit')%>">
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
         <%= link_to 'Profile Settings', settings_path %>
+      </li>
+      <li class="<%=is_active_menu('availability')%>" >
+        <%= link_to 'Setting of Availability', availability_teacher_path(current_user) %>
       </li>
       <li>
         <a href="#">Enrollments</a>

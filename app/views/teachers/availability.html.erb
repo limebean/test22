@@ -1,0 +1,8 @@
+<div id="timeslot-cal-container">
+  <%= form_tag set_availability_teacher_path, id: 'availability_form', method: :post do |f| %>
+    <%= hidden_field_tag "person_id", current_user.id, id: "person_id" %>
+    <%= link_to "Reset", "javascript:void(0);", id: "clear", class: "btn btn-primary" %>
+    <div id="timeslot-cal"></div>
+    <%= submit_tag 'Save availability',  data: {disable_with: "Wait..." }, class: "send_button_account button" %>
+  <% end %>
+</div>

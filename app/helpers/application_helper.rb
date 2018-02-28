@@ -13,4 +13,8 @@ module ApplicationHelper
     end
   end
 
+  def is_active_menu(menu)
+    action_name == menu ? "active": nil
+  end
+
 end

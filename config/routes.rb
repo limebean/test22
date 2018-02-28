@@ -12,12 +12,17 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :teachers do
-    
     member do
       get :set_password
       patch :update_password
+      post :set_availability
+      get :availability
+    end
+    collection do
+      get :get_availability
     end
   end
+
   resources :teacher_profiles
 
   namespace :admin do

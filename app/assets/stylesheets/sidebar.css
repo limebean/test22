@@ -67,6 +67,10 @@
   line-height: 40px;
 }
 
+.sidebar-nav li.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .sidebar-nav li a {
   display: block;
   text-decoration: none;

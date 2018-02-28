@@ -36,6 +36,37 @@ class TeachersController < ApplicationController
     end
   end
 
+  def availability
+  end
+
+  def set_availability
+    calander_events = JSON.parse(params[:calander_events])
+    if calander_events.present?
+      current_user.availabilities.destroy_all
+      calander_events.each do |ce|
+        @availability = current_user.availabilities.new(day_index: ce["week_day"], start_time: ce["hour_from"], end_time: ce["hour_to"])
+        if @availability.save
+          flash[:notice] = 'Teacher availability successfully created.'
+        else
+          flash[:notice] = 'Something went wrong! Try again later.'
+        end
+      end
+    end
+    redirect_to availability_teacher_path
+  end
+
+  def get_availability
+    get_availabilities = current_user.availabilities
+    availabilities = get_availabilities.map do |availabilitly|
+      {
+        day_of_week: availabilitly.day_index,
+        start_hour: availabilitly.start_time.strftime("%H:%M:%S"),
+        end_hour: availabilitly.end_time.strftime("%H:%M:%S")
+      }
+    end
+    render json: availabilities
+  end
+
   def set_password
     @teacher
   end
@@ -66,7 +97,7 @@ class TeachersController < ApplicationController
 
     def set_layout
       case action_name
-      when 'dashboard'
+      when 'dashboard', 'availability'
         'admin'
       else
         'application'

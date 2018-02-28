@@ -19,4 +19,10 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require bootstrap-datepicker
+// require moment
+// require fullcalendar
+// require fullcalendar/gcal
 //= require_tree .
+
+
+
