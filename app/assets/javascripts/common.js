@@ -3,6 +3,7 @@ ready = function() {
     $('#teacher_profile_date_of_birth').datepicker({
         format: 'dd/mm/yyyy', "autoclose": true
     });
+
     $("#apartment").css('display', 'none');
     $("#house").css('display', 'none');
     $('#teacher_profile_apartment').on('click', function () {
@@ -29,6 +30,11 @@ ready = function() {
 form.validate({
     errorPlacement: function errorPlacement(error, element) { element.before(error); }
 });
+
+$('#birth_date').datepicker({
+    format: 'dd/mm/yyyy', "autoclose": true
+});
+
 form.children("div").steps({
     headerTag: "h3",
     bodyTag: "section",

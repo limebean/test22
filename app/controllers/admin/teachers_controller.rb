@@ -2,7 +2,7 @@ class Admin::TeachersController < Admin::AdminBaseController
   before_action :set_teacher, except: [:index]
 
   def index
-    @teachers = Teacher.all
+    @teachers = Teacher.all.order(:id)
   end
 
   def edit_profile

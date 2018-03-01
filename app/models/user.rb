@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   ROLE = %w(Teacher Parent Admin)
 
-  validates :name, :telephone_no, :postal_code, presence: true
+  validates :name, :postal_code, presence: true
   has_secure_token :invitation_token
   validates :type, inclusion: { in: ROLE }
 

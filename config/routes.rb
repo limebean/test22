@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
+      match :bank_account, via: [:get, :post]
     end
     collection do
       get :get_availability

@@ -68,3 +68,4 @@ gem 'stripe'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "montrose"
+gem 'figaro'

@@ -67,11 +67,74 @@ class TeachersController < ApplicationController
     render json: availabilities
   end
 
+
+  def bank_account
+    unless request.get?
+      file = File.new(params[:stripe_verification_file].path) rescue nil
+      upload_result = upload_identity(file)
+      begin
+        stripe_account = Stripe::Account.create({
+          type: 'custom',
+          country: 'US',
+          email: current_user.email,
+          legal_entity: {
+            type: 'individual',
+            first_name: current_user.first_name,
+            last_name:  current_user.last_name,
+            address: {
+              city: params[:address_city],
+              state: params[:address_state],
+              country: 'US',
+              postal_code: params[:address_postal_code],
+              line1: params[:address_line1],
+            },
+            dob: {
+              day: params[:birth_date].to_date.day,
+              month: params[:birth_date].to_date.month,
+              year: params[:birth_date].to_date.year,
+            },
+            verification: {
+              document: upload_result.id,
+            },
+          },
+          external_account: {
+            object: 'bank_account',
+            country: 'US',
+            currency: 'usd',
+            account_number: params[:bank_account_number],
+            account_holder_name: params[:bank_holder_name],
+            routing_number: params[:bank_routing_number],
+            account_holder_type: 'individual',
+          },
+
+          tos_acceptance: {
+            date: Time.now.to_i,
+            ip: request.remote_ip,
+          }
+        })
+
+        current_user.teacher_profile.update_attributes(stripe_account_id: stripe_account.id) if stripe_account.present?
+        redirect_to dashboard_path, notice: 'Stripe account succesfully created'
+      rescue Stripe::StripeError => e
+        render 'bank_account', alert: e.message
+      end
+    end
+  end
+
   def set_password
     @teacher
   end
 
   private
+
+    def upload_identity(file)
+      Stripe::FileUpload.create(
+        {
+          purpose: 'identity_document',
+          file: file
+        },
+      )
+    end
 
     def set_teacher
       @teacher ||= Teacher.find_by(invitation_token: params[:token])
@@ -97,7 +160,7 @@ class TeachersController < ApplicationController
 
     def set_layout
       case action_name
-      when 'dashboard', 'availability'
+      when 'dashboard', 'availability', 'bank_account'
         'admin'
       else
         'application'

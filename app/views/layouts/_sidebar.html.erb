@@ -22,6 +22,9 @@
       <li class="<%=is_active_menu('availability')%>" >
         <%= link_to 'Setting of Availability', availability_teacher_path(current_user) %>
       </li>
+      <li class="<%=is_active_menu('bank_account')%>" >
+        <%= link_to 'Stripe Setting', bank_account_teacher_path(current_user) %>
+      </li>
       <li>
         <a href="#">Enrollments</a>
       </li>
