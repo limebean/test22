@@ -67,6 +67,14 @@ class TeachersController < ApplicationController
     render json: availabilities
   end
 
+  def bank_account_detail
+    stripe_account_id = current_user.teacher_profile.stripe_account_id
+    begin
+      @stripe_account_details = Stripe::Account.retrieve(stripe_account_id)
+    rescue Exception => e
+      redirect_to dashboard_path, alert: e.message
+    end
+  end
 
   def bank_account
     unless request.get?
@@ -114,7 +122,7 @@ class TeachersController < ApplicationController
         })
 
         current_user.teacher_profile.update_attributes(stripe_account_id: stripe_account.id) if stripe_account.present?
-        redirect_to dashboard_path, notice: 'Stripe account succesfully created'
+        redirect_to bank_account_detail_teachers_path, notice: 'Stripe account succesfully created'
       rescue Stripe::StripeError => e
         render 'bank_account', alert: e.message
       end
@@ -160,7 +168,7 @@ class TeachersController < ApplicationController
 
     def set_layout
       case action_name
-      when 'dashboard', 'availability', 'bank_account'
+      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail'
         'admin'
       else
         'application'

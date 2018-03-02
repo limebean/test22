@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     end
     collection do
       get :get_availability
+      get :bank_account_detail
     end
   end
 

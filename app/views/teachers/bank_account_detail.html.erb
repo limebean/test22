@@ -1,0 +1,11 @@
+<div class="form-content custom-form-content">
+  <h3 class="text-center">Stripe Account Information.</h3>
+  <br>
+  <p><strong>Stripe Account ID: </strong> <%= @stripe_account_details.id %></p>
+  <p><strong>Account Holder Name: </strong> <%= @stripe_account_details.external_accounts.data[0].account_holder_name %></p>
+  <p><strong>Bank Account Number: </strong> <%= "********* #{@stripe_account_details.external_accounts.data[0].last4}" %></p>
+  <p><strong>Address: </strong>  <%= @stripe_account_details.legal_entity.address.line1 %></p>
+  <p><strong>City: </strong> <%= @stripe_account_details.legal_entity.address.city %></p>
+  <p><strong>State: </strong> <%= @stripe_account_details.legal_entity.address.state %></p>
+  <p><strong>Postal Code: </strong> <%= @stripe_account_details.legal_entity.address.postal_code %></p>
+</div>
