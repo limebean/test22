@@ -32,7 +32,8 @@ form.validate({
 });
 
 $('#birth_date').datepicker({
-    format: 'dd/mm/yyyy', "autoclose": true
+    format: 'dd/mm/yyyy', "autoclose": true,
+    endDate: '-13y',
 });
 
 form.children("div").steps({
