@@ -4,7 +4,7 @@ ready = function() {
     "user[name]": {required: true},
     "user[last_name]": {required: true},
     "user[email]": {required: true, email: true, remote: "/parents/check_email_availability"},
-    "user[password]": {required: true, minlength: 8},
+    "user[password]": {required: true, minlength: 6},
     },
     messages: {
       "user[email]": {required: "Email is already used. "}
