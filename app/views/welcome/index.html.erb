@@ -11,14 +11,17 @@
 </div>
 
 <div class="search_bar_school">
-  <form class="" role="search">
+  <%= form_tag search_path, id: 'search_form', method: :get do |f| %>
+  <!-- <form class="" role="search"> -->
     <div class="input-group search-input-group">
-        <input type="text" class="form-control search-school-input" placeholder="Where are you looking for child care?" name="q">
+      <%= text_field_tag :q, nil, placeholder: "Where are you looking for child care?", class: 'form-control search-school-input' %>
+        <!-- <input type="text" class="form-control search-school-input" placeholder="Where are you looking for child care?" name="q"> -->
         <div class="input-group-btn">
             <button class="btn btn-default search-school-btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </div>
     </div>
-  </form>
+  <% end %>
+  <!-- </form> -->
 </div>
 
 <div class="search_homepage_result">
