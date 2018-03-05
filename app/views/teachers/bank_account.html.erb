@@ -42,12 +42,12 @@
 
     <div class='form-group'>
       <%= label_tag :date_of_birth, 'Date of birth *' %>
-      <%= text_field_tag :birth_date, nil, required: true, placeholder: 'dd/mm/yyyy', class: 'dob custom-dob' %>
+      <%= text_field_tag :birth_date, nil, required: true, placeholder: 'dd/mm/yyyy', class: 'dob form-control custom-dob' %>
       <%#= date_field(:account_info, :birth_date) %>
     </div>
 
     <div class='form-group'>
-      <%= label_tag :account_number, 'Account name *' %>
+      <%= label_tag :account_number, 'Account holder name *' %>
       <%= text_field_tag(:bank_holder_name, nil, required: true, class: 'form-control') %>
     </div>
     <div class='form-group'>
@@ -61,7 +61,7 @@
     </div>
 
     <div class='form-group'>
-      <%= label_tag :verification_file, 'Verification File *' %>
+      <%= label_tag :verification_file, 'Verification Document *' %>
       <%= file_field_tag 'stripe_verification_file', required: true, accept: 'image/png,image/gif,image/jpeg' %>
     </div>
 
