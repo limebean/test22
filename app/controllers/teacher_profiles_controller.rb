@@ -3,12 +3,12 @@ class TeacherProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_teacher_profile, only: %i[edit show update]
 
-  def new
+  def new    
     @teacher_profile = current_user.build_teacher_profile
     @teacher_profile.children.build
   end
 
-  def create
+  def create    
     @teacher_profile = current_user.build_teacher_profile(permitted_teacher_params)
     if @teacher_profile.save
       flash[:notice] = 'Teacher profile successfully created.'
