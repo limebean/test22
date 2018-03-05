@@ -17,13 +17,13 @@
     <%elsif current_user.teacher? %>
       <li  class=" <%=is_active_menu('edit')%>">
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
-        <%= link_to 'Profile Settings', settings_path %>
+        <%= link_to 'Profile Details', settings_path %>
       </li>
       <li class="<%=is_active_menu('availability')%>" >
-        <%= link_to 'Setting of Availability', availability_teacher_path(current_user) %>
+        <%= link_to 'Manage Availability', availability_teacher_path(current_user) %>
       </li>
       <li class="<%=is_active_menu('bank_account')%>" >
-        <%= link_to 'Stripe Setting', bank_account_teacher_path(current_user) %>
+        <%= link_to 'Bank Account', bank_account_teacher_path(current_user) %>
       </li>
       <li>
         <a href="#">Enrollments</a>

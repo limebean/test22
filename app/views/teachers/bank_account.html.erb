@@ -46,7 +46,7 @@
     </div>
 
     <div class='form-group'>
-      <%= label_tag :account_number, 'Account name *' %>
+      <%= label_tag :account_number, 'Account holder name *' %>
       <%= text_field_tag(:bank_holder_name, nil, required: true, class: 'form-control') %>
     </div>
     <div class='form-group'>
@@ -60,7 +60,7 @@
     </div>
 
     <div class='form-group'>
-      <%= label_tag :verification_file, 'Verification File *' %>
+      <%= label_tag :verification_file, 'Verification Document *' %>
       <%= file_field_tag 'stripe_verification_file', required: true, accept: 'image/png,image/gif,image/jpeg' %>
     </div>
 

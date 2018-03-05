@@ -53,7 +53,6 @@ form.children("div").steps({
     onFinished: function (event, currentIndex)
     {
       form.submit();
-      alert("Submitted!");
     }
 });
 };
