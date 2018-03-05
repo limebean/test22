@@ -120,7 +120,9 @@ ul.nav.navbar-nav.navbar-right.custom-right-navbar li:last-child {
   padding: 16px 24px;
   height: 450px;
 }
-
+.paret_para {
+    font-size: 18px;
+}
 @media (min-width: 768px) {
   .bg-no-overlay {
     padding: 80px 24px 48px;
