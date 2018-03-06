@@ -70,6 +70,9 @@ gem 'momentjs-rails'
 gem "montrose"
 gem 'figaro'
 gem 'carrierwave', '~> 1.0'
+<<<<<<< HEAD
 # gem 'mini_magick'
 # gem 'rmagick'
+=======
+>>>>>>> 8f8a1ec4d75b1e00447cc9373d8b996d0c685198
 

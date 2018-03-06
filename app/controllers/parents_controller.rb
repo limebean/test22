@@ -2,8 +2,7 @@ class ParentsController < ApplicationController
   layout :set_layout
   before_action :ensure_parent, only: :dashboard
 
-  def check_email_availability
-    byebug
+  def check_email_availability  
     @user = User.find_by_email(params[:user][:email])
     respond_to do |format|
         format.json { render :json => !@user }
