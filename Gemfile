@@ -45,7 +45,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'  
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -69,4 +69,7 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "montrose"
 gem 'figaro'
+gem 'carrierwave', '~> 1.0'
+# gem 'mini_magick'
+# gem 'rmagick'
 

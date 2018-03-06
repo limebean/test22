@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305070849) do
+ActiveRecord::Schema.define(version: 20180306070042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20180305070849) do
     t.boolean "apartment", default: false
     t.boolean "house", default: false
     t.string "stripe_account_id"
+    t.string "profile_image"
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 
