@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
     end
 
     def search
-
+      @teachers = Teacher.where(postal_code: params[:q])
     end
 
   private
