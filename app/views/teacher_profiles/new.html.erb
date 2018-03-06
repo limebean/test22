@@ -1,61 +1,63 @@
-<div class="form-content custom-form-content">
-  <%= simple_form_for @teacher_profile, html: { class: 'form-horizontal' } do |f| %>
-    <div>
-      <h3>Personal Information</h3>
-        <section>
-          <%= f.input :first_name%>
-          <%= f.input :last_name %>
-          <%= f.input :street_address %>
-          <%= f.input :apt_no%>
-          <%= f.input :city%>
-          <%= f.input :home_phone%>
-          <%= f.input :cell_phone%>
-          <%= f.input :date_of_birth, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-          <p>(*) Mandatory</p>
-        </section>
-        <h3>Premises:</h3>
-        <section>
-          <%= f.input :apartment, inline_label: 'Apartment:' %>
-          <div id = "apartment">
-            <%= f.input :floor%>
-            <%= f.input :condo, as: :select, label: '*If Apartment, is this a Condo?', collection: choose_option, include_blank: false, include_hidden: false %>
-          </div>
-
-          <%= f.input :house, inline_label: 'House:' %>
-          <div id = "house">
-            <%= f.input :basement_premises, as: :select, label: 'Is child care space in the basement of the premises?', collection: choose_option, include_blank: false, include_hidden: false %>
-            <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
-          </div>
-          <%= f.input :home_smoke, as: :select, label: '*Smoking in home:', collection: choose_option, include_blank: false, include_hidden: false %>
-
-          <%= f.input :pet, as: :select, label: '*Pets in home?', collection: choose_option, include_blank: false, include_hidden: false %>
-
-          <%= f.input :vaccine, as: :select, label: '*Vaccinations are current?', collection: option_with_na, include_blank: false, include_hidden: false %>
-          <%= f.input :language%>
-          <%= f.input :work%>
-          <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>
-          <p>(*) Mandatory</p>
-        </section>
-        <h3>CHILDREN IN HOME:</h3>
-        <section>
-          <div id='children'>
-            <%= f.simple_fields_for :children do |child| %>
-              <%= render 'child_fields', :f => child %>
-            <% end %>
-            <div class='links'>
-              <%= link_to_add_association 'Add child', f, :children %>
+<div class="login-signup-form"> 
+  <div class="form-content custom-form-content">
+    <%= simple_form_for @teacher_profile, html: { class: 'form-horizontal' } do |f| %>
+      <div>
+        <h3>Personal Information</h3>
+          <section>
+            <%= f.input :first_name%>
+            <%= f.input :last_name %>
+            <%= f.input :street_address %>
+            <%= f.input :apt_no%>
+            <%= f.input :city%>
+            <%= f.input :home_phone%>
+            <%= f.input :cell_phone%>
+            <%= f.input :date_of_birth, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+            <p>(*) Mandatory</p>
+          </section>
+          <h3>Premises:</h3>
+          <section>
+            <%= f.input :apartment, inline_label: 'Apartment:' %>
+            <div id = "apartment">
+              <%= f.input :floor%>
+              <%= f.input :condo, as: :select, label: '*If Apartment, is this a Condo?', collection: choose_option, include_blank: false, include_hidden: false %>
             </div>
-          </div>
-        </section>
-        <h3>Finish</h3>
-        <section>
-          <%= f.input :goal, label: 'GOAL:' %>
-          <%= f.input :age_range, label: 'Age range you want to have?' %>
-          <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
 
-          <%= f.input :school_name, label: 'Name of School(s):' %>
-          <%= f.input :comments, label: 'Comments' %>
-        </section>
-    </div>
-  <% end %>
+            <%= f.input :house, inline_label: 'House:' %>
+            <div id = "house">
+              <%= f.input :basement_premises, as: :select, label: 'Is child care space in the basement of the premises?', collection: choose_option, include_blank: false, include_hidden: false %>
+              <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
+            </div>
+            <%= f.input :home_smoke, as: :select, label: '*Smoking in home:', collection: choose_option, include_blank: false, include_hidden: false %>
+
+            <%= f.input :pet, as: :select, label: '*Pets in home?', collection: choose_option, include_blank: false, include_hidden: false %>
+
+            <%= f.input :vaccine, as: :select, label: '*Vaccinations are current?', collection: option_with_na, include_blank: false, include_hidden: false %>
+            <%= f.input :language%>
+            <%= f.input :work%>
+            <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>
+            <p>(*) Mandatory</p>
+          </section>
+          <h3>CHILDREN IN HOME:</h3>
+          <section>
+            <div id='children'>
+              <%= f.simple_fields_for :children do |child| %>
+                <%= render 'child_fields', :f => child %>
+              <% end %>
+              <div class='links'>
+                <%= link_to_add_association 'Add child', f, :children %>
+              </div>
+            </div>
+          </section>
+          <h3>Finish</h3>
+          <section>
+            <%= f.input :goal, label: 'GOAL:' %>
+            <%= f.input :age_range, label: 'Age range you want to have?' %>
+            <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
+
+            <%= f.input :school_name, label: 'Name of School(s):' %>
+            <%= f.input :comments, label: 'Comments' %>
+          </section>
+      </div>
+    <% end %>
+  </div>
 </div>
