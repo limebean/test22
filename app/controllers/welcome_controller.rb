@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
     end
 
     def search
-        
+
     end
 
   private

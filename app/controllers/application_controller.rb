@@ -8,11 +8,13 @@ class ApplicationController < ActionController::Base
         admin_dashboard_path
       elsif current_user.teacher?
         dashboard_path
+      elsif current_user.parent?
+        parents_dashboard_path
       end
     end
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :postal_code])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name])
     end
 
     def ensure_is_admin

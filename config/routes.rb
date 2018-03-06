@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/parents/check_email_availability', to: 'parents#check_email_availability'
+  get '/parents/dashboard', to: 'parents#dashboard'
+
   resources :teacher_profiles
 
   namespace :admin do

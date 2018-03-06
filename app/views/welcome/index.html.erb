@@ -1,4 +1,4 @@
-<div class="bg-no-overlay u-textCenter">
+ <div class="bg-no-overlay u-textCenter">
   <div class="custom_content_width_constraint">
     <div class="wrapper_hero">
       <div class="section_hero">
@@ -11,24 +11,27 @@
 </div>
 
 <div class="search_bar_school">
-  <form class="" role="search">
+  <%= form_tag search_path, id: 'search_form', method: :get do |f| %>
+  <!-- <form class="" role="search"> -->
     <div class="input-group search-input-group">
-        <input type="text" class="form-control search-school-input" placeholder="Where are you looking for child care?" name="q">
+      <%= text_field_tag :q, nil, placeholder: "Where are you looking for child care?", class: 'form-control search-school-input' %>
+        <!-- <input type="text" class="form-control search-school-input" placeholder="Where are you looking for child care?" name="q"> -->
         <div class="input-group-btn">
             <button class="btn btn-default search-school-btn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
         </div>
     </div>
-  </form>
+  <% end %>
+  <!-- </form> -->
 </div>
 
 <div class="search_homepage_result">
    <div class="custom_content_width_constraint">
-      <div class="custom_grid Grid--full ">
+      <!-- <div class="custom_grid Grid--full ">
          <div class="Grid-cell   ">
             <a class="new-link " href="/wa/seattle/queenanne">
                <div class="custom_callout_school">
                   <div class="custom_callout_school_aspect_ratio_image">
-                    <%=image_tag('school-child.jpg', class: 'custom_callout_school_aspect_ratio_image_img')%>
+                    <%#=image_tag('school-child.jpg', class: 'custom_callout_school_aspect_ratio_image_img')%>
                   </div>
                   <div class="custom_callout_school_bookmark">
                      <button class="button button_naked custom-btn" type="button">
@@ -55,7 +58,7 @@
             <a class="new-link" href="/wa/seattle/hummingbird">
                <div class="custom_callout_school">
                   <div class="custom_callout_school_aspect_ratio_image">
-                    <%= image_tag('grid_image.jpg', class: 'custom_callout_school_aspect_ratio_image_img')%>
+                    <%#= image_tag('grid_image.jpg', class: 'custom_callout_school_aspect_ratio_image_img')%>
                   </div>
                   <div class="custom_callout_school_bookmark">
                      <button class="button button_naked custom-btn" type="button">
@@ -111,7 +114,7 @@
             <a class="new_link " href="/ny/port-jefferson/littlesunflower">
                <div class="custom_callout_school">
                   <div class="custom_callout_school_aspect_ratio_image">
-                    <%= image_tag('school-grid.jpg' , class: "custom_callout_school_aspect_ratio_image_img")%>
+                    <%#= image_tag('school-grid.jpg' , class: "custom_callout_school_aspect_ratio_image_img")%>
                   </div>
                   <div class="custom_callout_school_bookmark">
                      <button class="button button_naked custom-btn" type="button">
@@ -149,7 +152,15 @@
                </div>
             </a>
          </div>
-      </div>
+      </div> -->
+      <div class="paret_para">
+      <p>The early childhood experience you’ve been dreamingofis <i><u>almost </u></i>here!</p>
+      <p>Dreamschool provides affordable, high-quality child careclose to home, while offering qualified early childhood educators with the support they need to provide child care in their homes.</p>
+      <p>We connect <i><u><b>parents </b></u></i> with qualified early childhood educators offering child care that is affordable, safe, reliable, and convenient.Parents can get real-time updates of their child’s day, and much more. Learn more here <%= link_to 'www.wedreamcare.com','https://www.wedreamcare.com',target:'_blank' %></p>
+      <p><i><b>Secure a spot for yourchild in your local area. <%= link_to 'Sign up here',new_user_registration_path %>.</b></i></p>
+      <p>We work with qualified <i><u><b>early childhood educators</b></u></i> to set-up and run their own child care centres in their homes. We save educators valuable time with easy tools for learning, assessment and communication. We also help manage enrollment, reporting and online billing.</p>
+      <p><i>Are you a qualified early childhood educator? Do you want to own your own child care centre? Do you live in or around Toronto? If yes, we want to talk to you! </i></p>
+      <p><i><b>Schedule an appointment to meet our team today!</b></i></p></div>
    </div>
 </div>
 
