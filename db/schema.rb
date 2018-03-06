@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180305070849) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school"
+    t.boolean "local_school", null: false
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false
