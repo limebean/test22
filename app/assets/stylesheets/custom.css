@@ -13,6 +13,7 @@ body {
   position: fixed;
   right: 0;
   left: 0;
+  top: 0;
   z-index: 1023;
 }
 .custom-navbar {
@@ -162,7 +163,7 @@ p.about-section-bold-para {
 .bg-no-overlay {
   background-image: url(cover.jpg);
   background-size: cover;
-  background-position: 50%;
+/*  background-position: 50%;*/
   position: relative;
   padding: 16px 24px;
   height: 450px;
@@ -260,6 +261,7 @@ p.about-section-bold-para {
   background-color: #333333;;
   margin: 0;
   padding: 24px;
+  padding-top: 95px;
 }
 .search-input-group {
   margin: 0 auto;
