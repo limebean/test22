@@ -99,6 +99,11 @@ h5.about-section-underline {
 p.about-section-bold-para {
     font-weight: bold;
 }
+.about-mission-section-2 {
+    font-size: 60px;
+    text-align: center;
+    margin-top: -30px;
+}
 
 .page_header_desktop_search_input{
   color: #333;
@@ -845,6 +850,7 @@ label+.button, label+button, label+input[type=submit], label+label {
     font-size: 40px;
     margin-bottom: 24px;
     text-align: center;
+    margin-top: -30px;
 }
 .section_about_story_wrapper {
     font-size: 20px;
@@ -926,6 +932,8 @@ label+.button, label+button, label+input[type=submit], label+label {
     font-size: 50px;
     padding: 0 140px;
     margin-bottom: 50px;
+    margin-top: -40px;
+
   }
   .section_about_mission_wrapper {
     padding: 90px 0;
