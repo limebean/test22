@@ -3,6 +3,7 @@
   <%= f.input :last_name %>
   <%= f.input :street_address %>
   <%= f.input :apt_no%>
+  <%= f.input :postal_code%>
   <div class='form-group'>
     <%= label_tag 'postal_code', 'Postal Code'%>
     <input class="form-control string required" type="text" value="<%= current_user.postal_code%>" disabled="true">

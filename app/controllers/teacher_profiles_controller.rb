@@ -3,7 +3,7 @@ class TeacherProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_teacher_profile, only: %i[edit show update]
 
-  def new
+  def new 
     @teacher_profile = current_user.build_teacher_profile
     @teacher_profile.children.build
   end
@@ -44,7 +44,7 @@ class TeacherProfilesController < ApplicationController
         :first_name, :last_name, :street_address,
         :apt_no, :city, :home_phone, :cell_phone,
         :date_of_birth, :language, :work,
-        :legal_to_work, :apartment, :floor,
+        :legal_to_work, :apartment, :floor,:postal_code,
         :condo, :house, :basement_premises, :two_exit,
         :home_smoke, :pet, :vaccine, :goal, :age_range,
         :local_school, :school_name, :comments, :profile_image,

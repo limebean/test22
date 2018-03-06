@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306070042) do
+ActiveRecord::Schema.define(version: 20180306110121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180306070042) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school", null: false
+    t.boolean "local_school"
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20180306070042) do
     t.boolean "house", default: false
     t.string "stripe_account_id"
     t.string "profile_image"
+    t.string "postal_code"
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 
@@ -89,6 +90,8 @@ ActiveRecord::Schema.define(version: 20180306070042) do
     t.datetime "updated_at", null: false
     t.string "telephone_no"
     t.string "last_name"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
