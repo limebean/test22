@@ -1,4 +1,4 @@
-<div class="login-signup-form"> 
+<div class="login-signup-form">
   <div class="form-content custom-form-content">
     <%= simple_form_for @teacher_profile, html: { class: 'form-horizontal' } do |f| %>
       <div>
@@ -47,12 +47,16 @@
                 <%= link_to_add_association 'Add child', f, :children %>
               </div>
             </div>
-          </section>
-          <h3>Finish</h3>
-          <section>
-            <%= f.input :goal, label: 'GOAL:' %>
-            <%= f.input :age_range, label: 'Age range you want to have?' %>
-            <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
+          </div>
+        </section>
+        <h3>Finish</h3>
+        <section>
+          <%#= f.label :logo, 'Upload Logo'%>
+          <%#= f.file_field :profile_image, label: false %>
+           <%= f.input :profile_image, as: :file, label: 'Profile Image', required: true%>
+          <%= f.input :goal, label: 'GOAL:' %>
+          <%= f.input :age_range, label: 'Age range you want to have?' %>
+          <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
 
             <%= f.input :school_name, label: 'Name of School(s):' %>
             <%= f.input :comments, label: 'Comments' %>

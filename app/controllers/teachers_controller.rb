@@ -8,7 +8,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new
   end
 
-  def create 
+  def create
     @teacher = Teacher.new(permitted_teacher_params)
     if @teacher.save
       @teacher.invitation_token
