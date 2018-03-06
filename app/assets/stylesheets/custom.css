@@ -14,8 +14,12 @@ body {
   margin: 0 auto;
   border: none;
   min-height: 72px;
-  position: relative;
+  position: fixed;
   background: #fff;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-radius: 0px; 
 }
 
 .school-logo {
@@ -119,6 +123,7 @@ ul.nav.navbar-nav.navbar-right.custom-right-navbar li:last-child {
   position: relative;
   padding: 16px 24px;
   height: 450px;
+  top: 72px;
 }
 
 @media (min-width: 768px) {
@@ -1209,4 +1214,25 @@ h3 {
   .new_partner_page_what_grid_image {
     max-width: 90%;
   }
+}
+
+/*search page*/
+
+.custom-search-section {
+  padding-top: 72px;
+}
+
+.row {
+  margin: 0px;
+}
+.col-md-8.custom-md {
+  padding: 0px;
+  overflow-y: scroll;
+  height: 530px;
+}
+
+.col-md-4.custom-md {
+  padding: 0px;
+  overflow-y: scroll;
+  height: auto;
 }
