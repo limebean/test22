@@ -8,7 +8,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new
   end
 
-  def create 
+  def create
     @teacher = Teacher.new(permitted_teacher_params)
     if @teacher.save
       @teacher.invitation_token
@@ -22,7 +22,6 @@ class TeachersController < ApplicationController
   end
 
   def update_password
-    debugger
     if @teacher.update(permitted_teacher_password_params)
       bypass_sign_in(@teacher)
       redirect_to new_teacher_profile_path, notice: 'Your password has been set successfully. You can now update your profile.'

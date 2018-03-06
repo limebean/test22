@@ -49,6 +49,9 @@
         </section>
         <h3>Finish</h3>
         <section>
+          <%#= f.label :logo, 'Upload Logo'%>
+          <%#= f.file_field :profile_image, label: false %>
+           <%= f.input :profile_image, as: :file, label: 'Profile Image', required: true%>
           <%= f.input :goal, label: 'GOAL:' %>
           <%= f.input :age_range, label: 'Age range you want to have?' %>
           <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
