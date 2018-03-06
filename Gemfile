@@ -69,4 +69,5 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem "montrose"
 gem 'figaro'
+gem 'carrierwave', '~> 1.0'
 
