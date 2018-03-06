@@ -9,16 +9,18 @@ body {
 }
 
 /*custom-navbar */
-
+.fixed-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1023;
+}
 .custom-navbar {
   margin: 0 auto;
   border: none;
   min-height: 72px;
-  position: fixed;
+  position: relative;
   background: #fff;
-  right: 0;
-  left: 0;
-  z-index: 1030;
   border-radius: 0px; 
 }
 
@@ -723,7 +725,11 @@ label+.button, label+button, label+input[type=submit], label+label {
 
 
 /*about_us_page*/
-
+.about-page {
+  padding-top: 72px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .section_about_header {
   display: flex;
   flex-direction: column;
@@ -950,8 +956,9 @@ label+.button, label+button, label+input[type=submit], label+label {
 /*privacy-policy and terms-of-use*/
 
 .section_page_content {
-  margin: 48px auto;
+  margin: 0px auto;
   padding: 0 32px;
+  padding-top: 72px;
 }
 
 h6 {
@@ -978,6 +985,7 @@ h3 {
 .new_image_hero {
   background: linear-gradient(#28335b,#000);
   position: relative;
+  padding-top: 72px;
 }
 
 .new_image_hero_image {
@@ -1289,4 +1297,20 @@ h3 {
   padding: 0px;
   overflow-y: scroll;
   height: auto;
+}
+
+.login-signup-form {
+  padding-top: 72px;
+}
+.alert.alert-info {
+  padding-top: 72px;
+}
+.custom-admin-wrapper {
+  padding-top: 72px;
+}
+
+.teacher-show-profile {
+  padding-top: 72px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
