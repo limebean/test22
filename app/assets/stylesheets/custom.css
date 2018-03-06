@@ -55,12 +55,54 @@ body {
 ul.nav.navbar-nav.navbar-right.custom-right-navbar li:last-child {
   font-weight: bold;
 }
+h3.mission-section {
+    font-size: 36px;
+    text-align: center;
+}
 
+.about-mission-section-2 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: -40px;
+}
+
+/*.our-mission-para {
+    font-size: 25px;
+}
+.about-mission-content {
+    font-size: 20px;
+}*/
+ul.about-section-list {
+   font-weight: bold;
+}
 .page_header_desktop_search_control {
   width: 500px;
   position: relative;
   top: 16px;
 }
+
+h3.new_partner_page_section_head {
+    font-size: 36px;
+ 
+}
+ol.new_partner_page_how_grid_list {
+    /*font-size: 20px;*/
+}
+.new-patner-para {
+    /*font-size: 25px;*/
+    margin-left: 20px;
+} 
+.new_partner_page_section_narrow {
+   /* font-size: 20px;*/
+}
+h5.about-section-underline {
+    text-decoration: underline;
+    font-weight: bold;
+}
+p.about-section-bold-para {
+    font-weight: bold;
+}
+
 
 .page_header_desktop_search_input{
   color: #333;
@@ -80,7 +122,6 @@ ul.nav.navbar-nav.navbar-right.custom-right-navbar li:last-child {
   padding-right: 0;
   width: 100%;
 }
-
 .custom_page_header_desktop_search_submit_button, .custom_page_header_desktop_search_submit_button:active, .custom_page_header_desktop_search_submit_button:focus,.custom_page_header_desktop_search_submit_button:hover {
   background-color: #fff;
   border: 1px solid #e2e2e2;
@@ -808,9 +849,18 @@ label+.button, label+button, label+input[type=submit], label+label {
 }
 
 .section_about_story_title {
-  font-size: 32px;
-  margin-bottom: 24px;
+    font-size: 36px;
+    margin-bottom: 24px;
+    text-align: center;
+    margin-top: -30px;
 }
+.section_about_story_wrapper {
+    
+}
+.section_about_story {
+    background-color: white;
+}
+
 
 .section_about_story_text {
   margin-right: 16px;
@@ -881,8 +931,10 @@ label+.button, label+button, label+input[type=submit], label+label {
     margin-bottom: 24px;
   }
   .section_about_header_copy {
-    font-size: 40px;
+    font-size: 36px;
     padding: 0 140px;
+    margin-top: -40px;
+
   }
   .section_about_mission_wrapper {
     padding: 90px 0;
