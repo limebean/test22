@@ -101,6 +101,7 @@ GEM
     geocoder (1.4.6)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   font-awesome-rails
   fullcalendar-rails
   geocoder
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-validation-rails

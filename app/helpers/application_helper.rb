@@ -17,4 +17,8 @@ module ApplicationHelper
     action_name == menu ? "active": nil
   end
 
+  def google_map(center)
+    "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=400x600&zoom=17"
+  end
+
 end

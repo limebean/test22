@@ -22,6 +22,7 @@
 // require moment
 // require fullcalendar
 // require fullcalendar/gcal
+//= require gmaps/google
 //= require_tree .
 
 

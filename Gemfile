@@ -71,4 +71,5 @@ gem "montrose"
 gem 'figaro'
 gem 'carrierwave', '~> 1.0'
 gem 'geocoder'
+gem 'gmaps4rails'
 

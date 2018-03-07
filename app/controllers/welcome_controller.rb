@@ -21,7 +21,11 @@ class WelcomeController < ApplicationController
     end
 
     def search
-      @teachers = Teacher.where(postal_code: params[:q])
+      @teachers = params[:q].present? ? TeacherProfile.where(postal_code: params[:q]) : TeacherProfile.all
+      @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
+          marker.lat teacher.latitude
+          marker.lng teacher.longitude
+        end
     end
 
   private
