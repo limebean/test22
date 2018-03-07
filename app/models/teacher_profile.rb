@@ -8,9 +8,8 @@ class TeacherProfile < ApplicationRecord
  
 
   OPTION_WITH_NA =  { 0=> 'Yes', 1=> 'No', 2=> 'N/A'}
-  attr_accessor :postal_code, :latitude, :longitude
   geocoded_by :postal_code
-  after_validation :postal_code 
+  after_validation :geocode,  if: ->(obj){ obj.postal_code.present? and obj.postal_code_changed? }
 
 end
 
