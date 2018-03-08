@@ -1,4 +1,9 @@
+
+<%= javascript_include_tag "https://maps.google.com/maps/api/js?key=AIzaSyDVNuWNguQz4vB25OdDpztwxE3QR_CzG0g" %>
+<%= javascript_include_tag "https://cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"%>
+<%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"%>
 <div class="new-school-page-wrapper">
+
   <div class="new-image-hero">
     <div class="new-image-hero-image" style="background-image: url(&quot;https://www.wonderschool.com/images/school/school-profile-top.jpg&quot;);"></div>
     <div class="new-image-hero-content">
@@ -209,10 +214,10 @@
                <div>
                   <p><Strong>First Name </strong><%= @teacher_profile.first_name%></p>
                   <p><Strong>Last Name </strong><%= @teacher_profile.last_name%></p>
-                  <p><Strong>Apt# </strong><%= @teacher_profile.@teacher_profile.apt_no%></p>
+                  <p><Strong>Apt# </strong><%= @teacher_profile.apt_no%></p>
                   <p><Strong>Street Address </strong><%= @teacher_profile.street_address%></p>
                   <p><Strong>City </strong><%= @teacher_profile.city%></p>
-                  <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code%>%></p>
+                  <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code%></p>
                   <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
                   <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
                </div>
@@ -256,7 +261,7 @@
             </div>
          </div>
          <div class="school-page-rail">
-            <div class="school-page-save-and-compare">
+            <!-- <div class="school-page-save-and-compare">
                <button class="button button_naked" type="button">
                   <div class="new-school-page-bookmark-icon">
                      <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
@@ -270,41 +275,64 @@
                   </div>
                </button>
                <div class="school-page-save-and-compare-text">Save and Compare</div>
-            </div>
+            </div> -->
             <div class="rail-section mobile-hidden">
                <h5 class="rail-section-title">Location</h5>
                <ul class="school-page-list">
                   <li class="school-page-list-item">
                      <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-address.svg" role="presentation">
-                     <div class="school-page-list-item-value">125 Terryville Road Apt 9E, Port Jefferson, NY 11776</div>
+                     <div class="school-page-list-item-value"><%= "#{@teacher_profile.street_address}, #{@teacher_profile.city}, #{@teacher_profile.postal_code} "%></div>
                   </li>
                   <li class="school-page-list-item">
                      <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-phone.svg" role="presentation">
                      <div class="school-page-list-item-value">
-                        <div class="h6"><button class="button button--link" type="button">See Phone Number</button></div>
+                        <div class="h6">
+                        <%= @teacher_profile.cell_phone%>
+                        <!-- <button class="button button--link" type="button">See Phone Number</button> --></div>
                      </div>
                   </li>
                   <li class="school-page-list-item">
                      <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-email.svg" role="presentation">
                      <div class="school-page-list-item-value">
-                        <div class="h6"><button class="button button--link" type="button">See Email</button></div>
+                        <%= @teacher_profile.teacher.email%>
+                        <div class="h6">
+                        <!-- <button class="button button--link" type="button">See Email</button> --></div>
                      </div>
                   </li>
                </ul>
                <div class="school-page-rail-Map">
-                map
+                <div style='width: 400px;'>
+                  <div id="map" style='width: 400px; height: 400px;'></div>
+                </div>
                </div>
             </div>
             <div class="school-page-sticky">
                <div class="rail-section">
                   <h5 class="rail-section-title">Related Schools</h5>
-                  <div class="P">We’re still expanding into this area. Want to be the first to know about great Wonderschools in this area?</div>
+                  <!-- <div class="P">We’re still expanding into this area. Want to be the first to know about great Wonderschools in this area?</div>
                   <div class="P">
                      <div class="h6"><button class="button button--link" type="button">Notify Me</button></div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>
       </div>
    </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([
+        {
+          "lat": <%= @teacher_profile.latitude %>,
+          "lng": <%= @teacher_profile.longitude %>,
+          "infowindow": "hello!"
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+});
+  })
+</script>
