@@ -1316,3 +1316,319 @@ h3 {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+/*Listing Details Page*/ 
+
+.new-school-page-wrapper {
+  background: #fff;
+  padding-top: 72px;
+} 
+.new-image-hero {
+    background: linear-gradient(#28335b,#000);
+    position: relative;
+}
+.new-image-hero-image {
+    background-position: 50% 50%;
+    background-size: cover;
+    bottom: 0;
+    content: " ";
+    height: 100%;
+    left: 0;
+    opacity: .2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+.new-image-hero-content {
+    position: relative;
+}
+.new-hero-module-hero-3-uYE {
+    padding: 32px 0 48px;
+    position: relative;
+    text-align: center;
+}
+.new-hero-module-constraint-3CioB {
+    padding: 0 16px;
+}
+.new-Hero-module-title-2P-GS {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+.new-hero-module-subtitle-3tmqs, .new-Hero-module-title-2P-GS {
+    color: #fff;
+    margin-bottom: 0;
+}
+.new-hero-module-subtitle-3tmqs {
+    color: hsla(0,0%,100%,.8);
+    font-size: 22px;
+    font-weight: 300;
+}
+.new-hero-module_inquiry-button-2NVd5 {
+    margin: 16px auto;
+}
+.new-school-page-mobile-header {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    position: relative;
+}
+.new-school-page-bookmark-icon, .new-school-page-gallery-icon {
+    width: 30px;
+}
+.school-page-mobile-header-director {
+    margin-top: -38px;
+}
+.school-page-director {
+    text-align: center;
+}
+.school-page-director-avatar {
+    background: 50% 50% #9a9a9a;
+    background-size: cover;
+    border: 5px solid #fff;
+    border-radius: 38px;
+    height: 75px;
+    margin: 0 auto;
+    width: 75px;
+}
+.school-page-director-name {
+    color: #333;
+    font-family: "Lato,Helvetica,Arial,sans-serif";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 4px;
+}
+.school-page-director-title {
+    color: #9a9a9a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+}
+.school-page-tabbar {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+.Tabbar, .Tabbar-link {
+    display: -ms-flexbox;
+    display: flex;
+}
+.Tabbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 50px;
+}
+.Tabbar-link {
+    color: #9a9a9a;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.Tabbar-link-text-selected {
+    box-shadow: inset 0 -3px 0 #5196cb;
+    color: #5196cb;
+}
+.Tabbar-link-text {
+    box-shadow: inset 0 0 0 #5196cb;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: box-shadow .5s ease,color .5s ease;
+}
+.school-page-container {
+    background: #fff;
+    font-weight: 300;
+    padding: 48px 16px;
+}
+.school-page-rail {
+    position: relative;
+}
+.school-page-rail-director {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+}
+.school-page-director {
+    text-align: center;
+}
+.rail-section {
+    padding: 16px 0 24px;
+}
+.rail-section-title {
+    color: #9a9a9a;
+    margin-bottom: 16px;
+}
+.school-page-list {
+    font-weight: 300;
+    list-style-type: none;
+    padding-left: 0;
+}
+.school-page-list-item {
+    align-items: center;
+    display: flex;
+    margin-bottom: 16px;
+}
+.school-page-list-item-bullet {
+    flex: none;
+    margin-right: 16px;
+    margin-top: -1px;
+    opacity: .5;
+    width: 22px;
+}
+.school-page-list-item-value {
+    flex: 1;
+}
+.school-page-table {
+    width: 100%;
+}
+.school-page-table-row-left .school-page-table-key {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.school-page-table-row-left .school-page-table-key, .school-page-table-row-left .school-page-table-value {
+    vertical-align: top;
+}
+.school-page-table-key, .school-page-table-value {
+    font-weight: 300;
+    padding: 8px;
+}
+.school-page-table-header, .school-page-table-key, .school-page-table-value {
+    padding: 8px;
+}
+
+.school-page-table-row-left .school-page-table-value {
+    font-weight: 300;
+    text-align: left;
+}
+.school-page-table-value {
+    font-weight: 700;
+    text-align: right;
+}
+.rail-section-synopsis {
+    font-size: 14px;
+    font-weight: 300;
+}
+.school-page-section {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+.school-page-save-and-compare {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+.school-page-save-and-compare-text {
+    margin-left: 16px;
+}
+.h6 {
+    color: #9a9a9a;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+.button.button--link {
+    background-color: inherit;
+    color: #5196cb;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: 0;
+    line-height: inherit;
+    padding: 0;
+}
+.school-page-rail-Map {
+    height: 120px;
+}
+.map-embed {
+    height: 100%;
+    width: 100%;
+}
+.school-page-sticky {
+    top: 10px;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+  .school-page-hide-mobile {
+      display: none;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  .school-page-save-and-compare {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .new-hero-module-hero-3-uYE {
+    padding: 144px 0 192px;
+  }
+  .new-hero-module-constraint-3CioB {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  .new-Hero-module-title-2P-GS  {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #fff;
+    font-weight: 700;
+  } 
+  .new-hero-module_inquiry-button-2NVd5 {
+    margin-bottom: 0;
+  } 
+  .new-school-page-mobile-header {
+    display: none;
+  }
+  .school-page-director-avatar {
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+  }
+  .school-page-tabbar {
+    display: none;
+  }
+  .school-page-container {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .school-page-rail {
+    flex: 1;
+    padding-top: 65px;
+  }
+  .rail-section {
+    border-top: 1px solid #eee;
+    padding: 16px 0 48px;
+  }
+  .school-page-content {
+    flex: 2;
+    padding: 0 16px;
+  }
+  .school-page-sticky {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
