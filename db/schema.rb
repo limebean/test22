@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school"
+    t.boolean "local_school", null: false
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false
@@ -92,8 +92,6 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.datetime "updated_at", null: false
     t.string "telephone_no"
     t.string "last_name"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

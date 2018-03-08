@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'terms_of_use', to: 'welcome#terms_of_use'
   get 'privacy_policy', to: 'welcome#privacy_policy'
   get 'search', to: 'welcome#search'
+  get 'show', to: 'welcome#show'
 
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
 
