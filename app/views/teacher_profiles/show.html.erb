@@ -209,27 +209,45 @@
                <div>
                   <p><Strong>First Name </strong><%= @teacher_profile.first_name%></p>
                   <p><Strong>Last Name </strong><%= @teacher_profile.last_name%></p>
-                  <p><Strong>Apt# </strong><%= @teacher_profile.@teacher_profile.apt_no%></p>
+                  <p><Strong>Apt# </strong><%=@teacher_profile.apt_no%></p>
                   <p><Strong>Street Address </strong><%= @teacher_profile.street_address%></p>
                   <p><Strong>City </strong><%= @teacher_profile.city%></p>
                   <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code%>%></p>
-                  <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
-                  <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
+                  <p><Strong>Home Phone </strong>><%= @teacher_profile.home_phone%></p>
+                  <p><Strong>Cell Phone </strong>><%= @teacher_profile.cell_phone%>
+                  </p>
+                  <p><Strong>Date of Birth </strong>><%= @teacher_profile.date_of_birth%>
+                  </p>                  
+                  <p><Strong>Work </strong>><%= @teacher_profile.work%>
+                  </p>                                                      
                </div>
             </div>
             <div class="school-page-section">
-               <h2 class="school-page-section-title">Admissions</h2>
-               <div>
-                  <p>Join the Little Sunflower Learning Center community in four easy steps:</p>
-                  <h4 id="1-explore-our-website">1. Explore our website</h4>
-                  <p>We’ve provided information about our philosophies and offerings to help you decide if our program may be right for your family.</p>
-                  <h4 id="2-tour-our-school">2. Tour our school</h4>
-                  <p>Come see what makes Little Sunflower Learning Center unique. Please schedule a tour by filling out the “Schedule Tour” form.</p>
-                  <h4 id="3-submit-an-enrollment-application">3. Submit an Enrollment Application</h4>
-                  <p>If you would like to enroll, please submit an application at www.wonderschool.com/littlesunflower/apply – Please note that we require tours for all prospective families. If you have not toured the school please schedule a tour when submitting your enrollment.</p>
-                  <h4 id="4-enroll">4. Enroll</h4>
-                  <p>After reviewing your application, we’ll send an enrollment invitation. Upon accepting your invitation, you’ll pay your deposit (usually equal to one month’s tuition), fill out enrollment documents and review our Parent Handbook.</p>
-               </div>
+               <h2 class="school-page-section-title">PREMISES</h2>
+              <div>
+               <h3 class="school-page-section-title-subheading-first">Apartment</h3>
+                  <p><Strong>Apt No </strong>><%= @teacher_profile.apt_no%>
+                  </p>
+                  <p><Strong>Condo </strong>><%= @teacher_profile.condo%>
+                  </p> 
+                <h3 class="school-page-section-title-subheading-Second">House</h3>
+                  <p><Strong>Basement Premises </strong>><%= @teacher_profile.basement_premises%>
+                  </p>
+                  <p><Strong>Two exit</strong>><%= @teacher_profile.two_exit%>
+                  </p>  
+                <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
+                  <p><Strong>Home Smoke</strong>><%= @teacher_profile.home_smoke%>
+                  </p>
+                  <p><Strong>Pet</strong>><%= @teacher_profile.pet%>
+                  </p> 
+                  <p><Strong>Vaccine</strong>><%= @teacher_profile.vaccine%></p>
+                  <h3 class="school-page-section-title-subheading-forth">Languages Spoken</h3>
+                  <p><Strong>Language </strong>><%= @teacher_profile.language%>
+                  </p>
+                  <h3 class="school-page-section-title-subheading-fifth">Ability to Work</h3>
+                  <p><Strong>Legal to Work </strong>><%= @teacher_profile.legal_to_work%>
+                  </p>
+              </div>
             </div>
             <div class="school-page-section">
                <h2 class="school-page-section-title">About Our School</h2>
