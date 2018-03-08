@@ -1,106 +1,310 @@
-<div class="teacher-show-profile">
-  <h1>teacher profile </h1>
-  <h2> PERSONAL INFORMATION: </h1>
-
-    <div class='form-group'>
-      <%= label_tag 'first_name', 'First Name'%> <%= @teacher_profile.first_name%>
+<div class="new-school-page-wrapper">
+  <div class="new-image-hero">
+    <div class="new-image-hero-image" style="background-image: url(&quot;https://www.wonderschool.com/images/school/school-profile-top.jpg&quot;);"></div>
+    <div class="new-image-hero-content">
+      <div class="new-hero-module-hero-3-uYE">
+        <div class="new-hero-module-constraint-3CioB">
+          <h1 class="new-Hero-module-title-2P-GS">Little Sunflower Learning Center</h1>
+          <p class="new-hero-module-subtitle-3tmqs">A creative, fun and loving 'home away from home' for little ones</p>
+          <!-- <p class="new-hero-module-subtitle-3tmqs">Coming Soon Summer 2018</p> -->
+          <div class="new-hero-module_inquiry-button-2NVd5">
+            <!-- <button class="button button__large" type="button">Request Info</button> -->
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class='form-group'>
-      <%= label_tag 'last_name', 'last Name'%> <%= @teacher_profile.last_name%>
+  </div>
+  <div class="new-school-page-mobile-header">
+    <div class="new-school-page-gallery-icon"></div>
+    <div class="school-page-mobile-header-director">
+      <div class="school-page-director">
+        <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);">
+        </div>
+        <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
+        <!-- <div class="school-page-director-title">School Director</div> -->
+      </div>
     </div>
-
-    <div class='form-group'>
-      <%= label_tag 'street_address', 'Street Address'%> <%= @teacher_profile.street_address%>
+    <button class="button button_naked" type="button">
+      <div class="new-school-page-bookmark-icon">
+        <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
+             <svg class="SVGResponsive-svg" viewBox="0 0 29 24" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg">
+                <g fill-rule="nonzero" fill="none">
+                   <path fill="#dedede" fill-rule="evenodd" d="M14.12 4.441c-.036.038-.072.038-.109 0l-2.22-2.315C10.481.759 8.734 0 6.915 0a6.69 6.69 0 0 0-4.877 2.126A7.344 7.344 0 0 0 0 7.212c0 1.936.728 3.758 2.038 5.086L11.9 22.585a3.074 3.074 0 0 0 2.22.95c.838 0 1.602-.343 2.22-.95l9.863-10.287a7.344 7.344 0 0 0 2.038-5.086c0-1.936-.728-3.758-2.038-5.086-2.766-2.81-7.17-2.81-9.863 0L14.12 4.44z"></path>
+                   <path stroke="#dedede" stroke-width="2" d="M14.842 5.133a1.064 1.064 0 0 1-1.553 0l-2.22-2.315C9.947 1.648 8.461 1 6.915 1A5.698 5.698 0 0 0 2.76 2.818 6.344 6.344 0 0 0 1 7.212c0 1.678.628 3.246 1.76 4.394l9.862 10.287c.394.41.934.641 1.498.641.555 0 1.073-.224 1.499-.64l9.862-10.288a6.344 6.344 0 0 0 1.76-4.394c0-1.678-.628-3.246-1.75-4.385-2.373-2.41-6.128-2.41-8.429-.01l-2.22 2.316z"></path>
+                </g>
+             </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+  <div class="custom_content_width_constraint">
+    <div class="school-page-tabbar">
+      <div class="Tabbar">
+        <a class="Tabbar-link"><span class="Tabbar-link-text Tabbar-link-text-selected">About</span></a>
+        <a class="Tabbar-link"><span class="Tabbar-link-text">Basics</span></a>
+      </div>
     </div>
-
-    <div class='form-group'>
-      <%= label_tag 'apt_no', 'Apt#'%> <%= @teacher_profile.apt_no%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'postal_code', 'Postal Code'%> <%= current_user.postal_code%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'city', 'City'%> <%= @teacher_profile.city%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'home_phone', 'Home Phone'%> <%= @teacher_profile.home_phone%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'cell_phone', 'Cell Phone'%> <%= @teacher_profile.cell_phone%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'date_of_birth', 'Date of Birth'%> <%= @teacher_profile.date_of_birth%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'language', 'Languages Spoken'%> <%= @teacher_profile.language%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'work', 'ABILITY TO WORK'%> <%= @teacher_profile.work%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'legal_to_work', 'Are you legally able to work in Canada? (Have SIN or applied for it):'%> <%= TeacherProfile::OPTION_WITH_NA[@teacher_profile.legal_to_work]%>
-    </div>
-
-    <h1> PREMISES: </h1>
-    <div class='form-group'>
-      <%= label_tag 'apartment', 'Apartment:'%> <%= @teacher_profile.apartment%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'floor', 'If Apartment, what floor?'%> <%= @teacher_profile.floor%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'condo', 'If Apartment, is this a Condo?'%> <%= @teacher_profile.condo%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'house', 'House'%> <%= @teacher_profile.house%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'basement_premises', 'Is child care space in the basement of the premises?'%> <%= @teacher_profile.basement_premises%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'two_exit', 'Are there two exits?'%> <%= @teacher_profile.two_exit%>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'home_smoke', 'Smoking in home:'%> <%= @teacher_profile.home_smoke %>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'pet', 'Pets in home?'%> <%= @teacher_profile.pet %>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'vaccine', 'Vaccinations are current?'%> <%= TeacherProfile::OPTION_WITH_NA[@teacher_profile.vaccine]%>
-    </div>
-
-    <div class="form-group">
-      <%= label_tag 'goal', 'GOAL:'%> <%= @teacher_profile.goal %>
-    </div>
-
-    <div class='form-group'>
-      <%= label_tag 'age_range', 'Age range you want to have?'%> <%= @teacher_profile.age_range %>
-    </div>
-    <div class='form-group'>
-      <%= label_tag 'local_school', 'Are you willing to take children to local schools?'%> <%= @teacher_profile.local_school %>
-    </div>
-    <div class='form-group'>
-      <%= label_tag 'school_name', 'Name of School(s):'%> <%= @teacher_profile.school_name %>
-    </div>
-    <div class='form-group'>
-      <%= label_tag 'comments', 'Comments:'%> <%= @teacher_profile.comments %>
-    </div>
+    <div class="school-page-container">
+      <div class="school-page-rail school-page-hide-mobile">
+        <div class="school-page-rail-director">
+           <div class="school-page-director">
+              <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);"></div>
+              <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
+              <!-- <div class="school-page-director-name-title">School Director</div> -->
+           </div>
+        </div>
+        <!-- <div class="rail-section">
+           <h5 class="rail-section-title">Amenities</h5>
+           <ul class="school-page-list">
+              <li class="school-page-list-item">
+                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-philosophy.svg" role="presentation">
+                 <div class="school-page-list-item-value">A creative, fun and loving 'home away from home' for little ones.</div>
+              </li>
+              <li class="school-page-list-item">
+                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-ages.svg" role="presentation">
+                 <div class="school-page-list-item-value">6 weeks to school age.</div>
+              </li>
+              <li class="school-page-list-item">
+                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-hours.svg" role="presentation">
+                 <div class="school-page-list-item-value">7:00am to 6:00pm</div>
+              </li>
+              <li class="school-page-list-item">
+                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-mealsProvided.svg" role="presentation">
+                 <div class="school-page-list-item-value">Yes, home made organic or all natural meals will be provided.</div>
+              </li>
+              <li class="school-page-list-item">
+                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-snacksProvided.svg" role="presentation">
+                 <div class="school-page-list-item-value">Yes, home made organic or all natural snacks will be provided</div>
+              </li>
+           </ul>
+        </div>
+        <div class="rail-section">
+           <h5 class="rail-section-title">Rhythm of the Day</h5>
+           <table class="school-page-table">
+              <tbody>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">7:00 to 8:30</td>
+                    <td class="school-page-table-value">Arrival/Free Play</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">8:30 to 9:00</td>
+                    <td class="school-page-table-value">Table Top Toys/Fine Motor Activities</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">9:00 to 9:30 </td>
+                    <td class="school-page-table-value">Breakfast</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">9:30 to 10:00</td>
+                    <td class="school-page-table-value">Circle Time</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">10:00 to 11:00</td>
+                    <td class="school-page-table-value">Centers</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">11:00 to 12:00</td>
+                    <td class="school-page-table-value">Gross Motor Activities/Outdoor Playtime</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">12:00 to 12:30 </td>
+                    <td class="school-page-table-value">Lunch</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">12:30 to 2:30</td>
+                    <td class="school-page-table-value">Nap/Rest Time</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">2:30 to 3:00</td>
+                    <td class="school-page-table-value">Snack</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">3:00 to Close</td>
+                    <td class="school-page-table-value">Free Play, Group Game Time, and Good Bye's!</td>
+                 </tr>
+              </tbody>
+           </table>
+           <div class="rail-section-synopsis">Each week will have a Thematic Unit for the children to learn about.  The units include: songs, finger-plays, sensory activities, arts and crafts, and dramatic play.  At times there will be cooking activities incorporated into the units along with  science and technology activities.   </div>
+        </div> -->
+       <!--  <div class="rail-section">
+           <h5 class="rail-section-title">2018-2019 Calendar</h5>
+           <table class="school-page-table">
+              <tbody>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">September 3</td>
+                    <td class="school-page-table-value">Labor Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">October 8</td>
+                    <td class="school-page-table-value">Columbus Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">October 31</td>
+                    <td class="school-page-table-value">LSLC Halloween Party (Time TBA)! Center Closing at 3:00</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">November 12</td>
+                    <td class="school-page-table-value">Veteran's Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">November 21</td>
+                    <td class="school-page-table-value">LSLC Thanksgiving Kids' Only Feast!</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">November 22-23</td>
+                    <td class="school-page-table-value">Thanksgiving Break - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">December 24</td>
+                    <td class="school-page-table-value">LSLC Holiday Party (Time TBA)! Center Closing at 3:00</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">December 25</td>
+                    <td class="school-page-table-value">Christmas Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">December 31-January 1</td>
+                    <td class="school-page-table-value">New Year's Eve &amp; Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">January 21</td>
+                    <td class="school-page-table-value">MLK Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">February 14</td>
+                    <td class="school-page-table-value">LSLC Valentine's Day Kids's Only Party!</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">February 18</td>
+                    <td class="school-page-table-value">President's Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">March 15</td>
+                    <td class="school-page-table-value">LSLC St. Patrick's Day Kids' Only Party!</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">April Break</td>
+                    <td class="school-page-table-value">TBA</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">May 10</td>
+                    <td class="school-page-table-value">Mother's Day Tea Party (Time TBA)!</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">May 27</td>
+                    <td class="school-page-table-value">Memorial Day - CLOSED</td>
+                 </tr>
+                 <tr class="school-page-table-row school-page-table-row-left">
+                    <td class="school-page-table-key">June 14</td>
+                    <td class="school-page-table-value">Father's Day/End of the Year BBQ (Time TBA)!</td>
+                 </tr>
+              </tbody>
+           </table>
+           <div class="rail-section-synopsis">We hold ongoing  new enrollment as space allows.  Check back here for Opening Day!  Also check here for any schedule changes including updates to party times and for the Summer 2019 calendar.  </div>
+        </div> -->
+      </div>
+         <div class="school-page-content">
+            <div class="school-page-section">
+               <h2 class="school-page-section-title">PERSONAL INFORMATION</h2>
+               <div>
+                  <p><Strong>First Name </strong><%= @teacher_profile.first_name%></p>
+                  <p><Strong>Last Name </strong><%= @teacher_profile.last_name%></p>
+                  <p><Strong>Apt# </strong><%= @teacher_profile.@teacher_profile.apt_no%></p>
+                  <p><Strong>Street Address </strong><%= @teacher_profile.street_address%></p>
+                  <p><Strong>City </strong><%= @teacher_profile.city%></p>
+                  <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code%>%></p>
+                  <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
+                  <p><Strong>First Name </strong>><%= @teacher_profile.first_name%></p>
+               </div>
+            </div>
+            <div class="school-page-section">
+               <h2 class="school-page-section-title">Admissions</h2>
+               <div>
+                  <p>Join the Little Sunflower Learning Center community in four easy steps:</p>
+                  <h4 id="1-explore-our-website">1. Explore our website</h4>
+                  <p>We’ve provided information about our philosophies and offerings to help you decide if our program may be right for your family.</p>
+                  <h4 id="2-tour-our-school">2. Tour our school</h4>
+                  <p>Come see what makes Little Sunflower Learning Center unique. Please schedule a tour by filling out the “Schedule Tour” form.</p>
+                  <h4 id="3-submit-an-enrollment-application">3. Submit an Enrollment Application</h4>
+                  <p>If you would like to enroll, please submit an application at www.wonderschool.com/littlesunflower/apply – Please note that we require tours for all prospective families. If you have not toured the school please schedule a tour when submitting your enrollment.</p>
+                  <h4 id="4-enroll">4. Enroll</h4>
+                  <p>After reviewing your application, we’ll send an enrollment invitation. Upon accepting your invitation, you’ll pay your deposit (usually equal to one month’s tuition), fill out enrollment documents and review our Parent Handbook.</p>
+               </div>
+            </div>
+            <div class="school-page-section">
+               <h2 class="school-page-section-title">About Our School</h2>
+               <div>
+                  <p>Little Sunflower Learning Center's learning environment is a unique blend of different, but effective teaching and parenting styles.  Throughout her career Miss Katie has utilized many teaching methodologies to help her children and her students learn.  At LSLC, we will be teaching the whole child through the use all of their senses using different Learning Centers.  We use a blend of Child Led Learning and Teacher Led Learning.  Discipline and respect are also taught throughout the day to help each child learn to self regulate and make good choices.    </p>
+                  <p>Children will be exposed to many important activities to help facilitate their learning.  The Infant/Toddler room has many stimulating materials such as textile toys, musical toys, and an area to practice large gross motor activities which will help them learn to sit up, crawl, and walk.  In our main play area the children will have opportunities to build with mega blocks, play dress up, create amazing artwork while socializing with their peers and our staff.  Our daily schedule includes a fun, interactive, singing Circle Time that will be tailored to fit the needs of the children's learning goals.  Our outdoor play area is a great area for the children to explore nature!  The children can have fun digging and dumping in our sandbox. They will be planting many vegetables and flowers in the garden area.  Our equipment includes slides, swings, tires to climb over and into, and fun wagon rides!  Weather permitting we will have our lunches and snacks outside, too!   </p>
+                  <p>At Little Sunflower Learning Center we hope to prepare the children for the outside world by giving them a fun and safe learning environment.  We have you covered from infancy to school age!Children will love to learn if you give them the right environment and support.  Check out LSLC and see if it's the right place for your child and your family!</p>
+                  <p>&#8203;</p>
+               </div>
+            </div>
+            <div class="school-page-section">
+               <h2 class="school-page-section-title">Our Teachers</h2>
+               <div>
+                  <p>THE BASICS!</p>
+                  <p>Hi and welcome to Little Sunflower Learning Center! My name is Kathleen Gallant, but please call me Katie!  I am a happily remarried mother of 2.    Our children are Abby, age 12 and JJ, age 22 months.   My husband, Jim, and I love spending time with our kids, going for rides out east, checking out attractions like local Farmer’s Markets and cooking. </p>
+                  <p>MY CHILDHOOD:</p>
+                  <p>I grew up in Coram and attended a mixture of public schools and private schools.  I have 3 older brothers who all still live on the islandwith their families.  We always had a lot of animals; cats, dogs, birds, snakes, you name it chances are we had it!  I participated in dance at a few schools, my favorite being Amy Tyler’s School of Dance where Abby now attends.</p>
+                  <p>MY EDUCATION &amp; CAREER</p>
+                  <p>After graduating Newfield HS in 1998, I went on to SUNY Cobleskill for my associate's in Early Childhood  Education, received my bachelor’s in Elementary Education from St. Joseph’s College and then my Master’s in Special Education at CW POST/LIU.  I have worked with all ages and abilities.  I started out in daycare while still in high school then went to work with adults with special needs. The bulk of my experience has been in Early Intervention working with children that have special needs such as Autism, Speech Delays, etc ages birth through 3 years of age.  I also worked in various districts and Eastern Suffolk BOCES as a Substitute and an Assistant.  My favorite age groups to work with are infant, toddlers and preschoolers.   </p>
+                  <p>&#8203;</p>
+                  <p>&#8203;</p>
+                  <p>&#8203;</p>
+               </div>
+            </div>
+         </div>
+         <div class="school-page-rail">
+            <div class="school-page-save-and-compare">
+               <button class="button button_naked" type="button">
+                  <div class="new-school-page-bookmark-icon">
+                     <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
+                        <svg class="SVGResponsive-svg" viewBox="0 0 29 24" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg">
+                           <g fill-rule="nonzero" fill="none">
+                              <path fill="#dedede" fill-rule="evenodd" d="M14.12 4.441c-.036.038-.072.038-.109 0l-2.22-2.315C10.481.759 8.734 0 6.915 0a6.69 6.69 0 0 0-4.877 2.126A7.344 7.344 0 0 0 0 7.212c0 1.936.728 3.758 2.038 5.086L11.9 22.585a3.074 3.074 0 0 0 2.22.95c.838 0 1.602-.343 2.22-.95l9.863-10.287a7.344 7.344 0 0 0 2.038-5.086c0-1.936-.728-3.758-2.038-5.086-2.766-2.81-7.17-2.81-9.863 0L14.12 4.44z"></path>
+                              <path stroke="#dedede" stroke-width="2" d="M14.842 5.133a1.064 1.064 0 0 1-1.553 0l-2.22-2.315C9.947 1.648 8.461 1 6.915 1A5.698 5.698 0 0 0 2.76 2.818 6.344 6.344 0 0 0 1 7.212c0 1.678.628 3.246 1.76 4.394l9.862 10.287c.394.41.934.641 1.498.641.555 0 1.073-.224 1.499-.64l9.862-10.288a6.344 6.344 0 0 0 1.76-4.394c0-1.678-.628-3.246-1.75-4.385-2.373-2.41-6.128-2.41-8.429-.01l-2.22 2.316z"></path>
+                           </g>
+                        </svg>
+                     </div>
+                  </div>
+               </button>
+               <div class="school-page-save-and-compare-text">Save and Compare</div>
+            </div>
+            <div class="rail-section mobile-hidden">
+               <h5 class="rail-section-title">Location</h5>
+               <ul class="school-page-list">
+                  <li class="school-page-list-item">
+                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-address.svg" role="presentation">
+                     <div class="school-page-list-item-value">125 Terryville Road Apt 9E, Port Jefferson, NY 11776</div>
+                  </li>
+                  <li class="school-page-list-item">
+                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-phone.svg" role="presentation">
+                     <div class="school-page-list-item-value">
+                        <div class="h6"><button class="button button--link" type="button">See Phone Number</button></div>
+                     </div>
+                  </li>
+                  <li class="school-page-list-item">
+                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-email.svg" role="presentation">
+                     <div class="school-page-list-item-value">
+                        <div class="h6"><button class="button button--link" type="button">See Email</button></div>
+                     </div>
+                  </li>
+               </ul>
+               <div class="school-page-rail-Map">
+                map
+               </div>
+            </div>
+            <div class="school-page-sticky">
+               <div class="rail-section">
+                  <h5 class="rail-section-title">Related Schools</h5>
+                  <div class="P">We’re still expanding into this area. Want to be the first to know about great Wonderschools in this area?</div>
+                  <div class="P">
+                     <div class="h6"><button class="button button--link" type="button">Notify Me</button></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>

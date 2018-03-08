@@ -1,9 +1,9 @@
 class TeacherProfilesController < ApplicationController
   layout :set_layout
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[show]
   before_action :set_teacher_profile, only: %i[edit show update]
 
-  def new 
+  def new
     @teacher_profile = current_user.build_teacher_profile
     @teacher_profile.children.build
   end
