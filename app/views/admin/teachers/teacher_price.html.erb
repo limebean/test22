@@ -1,0 +1,19 @@
+<div class="form-content">
+  <h3>Teacher Price </h3>
+  <table class = 'price_table'>
+  <tr>
+    <th class = 'price_head'></th>
+    <th class = 'price_head'>2 days/wk</th>
+    <th class = 'price_head'>3 days/wk</th>
+    <th class = 'price_head'>5 days/wk</th>
+  </tr>
+  <% @prices.each do |p|%>
+      <tr>
+        <td class = 'price_data'><%= p.child_time %></td>
+        <td class = 'price_data'><%= p.two_days_price%></td>
+        <td class = 'price_data'><%= p.three_days_price%></td>
+        <td class = 'price_data'><%= p.five_days_price%></td>
+      </tr>
+    <% end %>
+</table>
+</div>

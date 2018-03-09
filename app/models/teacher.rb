@@ -2,6 +2,7 @@ class Teacher < User
 
   has_one :teacher_profile, foreign_key: :teacher_id, dependent: :destroy
   has_many :availabilities, dependent: :destroy
+  has_many :prices,  dependent: :destroy
 
   delegate :first_name, :last_name, :street_address, :date_of_birth, to: :teacher_profile, allow_nil: true
 

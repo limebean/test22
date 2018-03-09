@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306113731) do
+ActiveRecord::Schema.define(version: 20180308105238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
   end
 
+  create_table "prices", force: :cascade do |t|
+    t.bigint "teacher_id"
+    t.integer "child_time"
+    t.float "two_days_price"
+    t.float "three_days_price"
+    t.float "five_days_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_prices_on_teacher_id"
+  end
+
   create_table "teacher_profiles", force: :cascade do |t|
     t.bigint "teacher_id"
     t.string "first_name", null: false
@@ -57,7 +68,7 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school", null: false
+    t.boolean "local_school"
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false

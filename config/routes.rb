@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     get '', to: "teachers#index", as: :dashboard
     resources :teachers, only: [:index, :edit, :update] do
       member do
+        match :price, via: [:get, :post]
+        get :teacher_price
         get :edit_profile
         patch :approve
         patch :reject

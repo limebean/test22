@@ -1,0 +1,51 @@
+<h3>Update Teacher Price </h3>
+<%= form_for(@price, url: price_admin_teacher_path, html: { method: :post }) do |f| %>
+  <table>
+  <tbody>
+    <tr>
+      <th></th>
+      <th>2 days/wk</th>
+      <th>3 days/wk</th>
+      <th>5 days/wk</th>
+    </tr>
+    <tr>
+      <%= f.fields_for '0' do |first_option| %>
+        <td class="day_time_over_2"><%= label_tag 'day_time_over_2', 'Daytime, Over 2 Years Old'%></td>
+        <%= first_option.hidden_field :child_time, value: Price.child_times['Daytime, Over 2 Years Old'] %>
+        <td><%= first_option.number_field :two_days_price %></td>
+        <td><%= first_option.number_field :three_days_price %></td>
+        <td><%= first_option.number_field :five_days_price %></td>
+      <% end%>
+    </tr>
+    <tr>
+      <%= f.fields_for '1' do |second_option| %>
+        <td class="day_time_over_2"><%= label_tag 'day_time_under_2', 'Daytime, Under 2 Years Old'%></td>
+        <%= second_option.hidden_field :child_time, value: Price.child_times['Daytime, Under 2 Years Old'] %>
+        <td class="Box-size"><%= second_option.number_field :two_days_price %></td>
+        <td class="Box-size"><%= second_option.number_field :three_days_price %></td>
+        <td class="Box-size"><%= second_option.number_field :five_days_price %></td>
+      <% end%>
+    </tr>
+    <tr>
+      <%= f.fields_for '2' do |third_option| %>
+        <td class="day_time_over_2"><%= label_tag 'night_time_over_2', 'Nighttime, Over 2 Years Old'%></td>
+        <%= third_option.hidden_field :child_time, value: Price.child_times['Nighttime, Over 2 Years Old'] %>
+        <td class="Box-size"><%= third_option.number_field :two_days_price %></td>
+        <td class="Box-size"><%= third_option.number_field :three_days_price %></td>
+        <td class="Box-size"><%= third_option.number_field :five_days_price %></td>
+      <% end%>
+    </tr>
+    <tr>
+      <%= f.fields_for '3' do |fourth_option| %>
+        <td class="day_time_over_2"><%= label_tag 'night_time_under_2', 'Nighttime, Under 2 Years Old'%></td>
+        <%= fourth_option.hidden_field :child_time, value: Price.child_times['Nighttime, Under 2 Years Old'] %>
+        <td><%= fourth_option.number_field :two_days_price %></td>
+        <td><%= fourth_option.number_field :three_days_price %></td>
+        <td><%= fourth_option.number_field :five_days_price %></td>
+      <% end%>
+    </tr>
+  </table>
+  <div class="form-actions">
+    <%=f.submit 'Submit', class: 'btn btn-primary btn-custom'%>
+  </div>
+<% end %>
