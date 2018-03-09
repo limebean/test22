@@ -5,7 +5,7 @@ class TeacherProfile < ApplicationRecord
 
   validates :first_name, :last_name, :street_address, :apt_no, :city, :home_phone, :cell_phone, :date_of_birth, :language, :work, :legal_to_work, :vaccine, :goal, :age_range, :school_name, :comments, presence: true
   mount_uploader :profile_image, ImageUploader
- 
+  mount_uploader :cover_photo, ImageUploader
 
   OPTION_WITH_NA =  { 0=> 'Yes', 1=> 'No', 2=> 'N/A'}
   geocoded_by :postal_code

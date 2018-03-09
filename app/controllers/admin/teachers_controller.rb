@@ -72,7 +72,7 @@ class Admin::TeachersController < Admin::AdminBaseController
         :legal_to_work, :apartment, :floor,
         :condo, :house, :basement_premises, :two_exit,
         :home_smoke, :pet, :vaccine, :goal, :age_range,
-        :local_school, :school_name, :comments,
+        :local_school, :school_name, :comments, :profile_image, :cover_photo,
         children_attributes: [:id, :full_name, :age, :care_by, :_destroy]
       )
     end
