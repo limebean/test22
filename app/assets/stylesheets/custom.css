@@ -22,7 +22,7 @@ body {
   min-height: 72px;
   position: relative;
   background: #fff;
-  border-radius: 0px; 
+  border-radius: 0px;
 }
 
 .school-logo {
@@ -84,7 +84,7 @@ ul.about-section-list {
 
 h3.new_partner_page_section_head {
     font-size: 36px;
- 
+
 }
 ol.new_partner_page_how_grid_list {
     /*font-size: 20px;*/
@@ -92,7 +92,7 @@ ol.new_partner_page_how_grid_list {
 .new-patner-para {
     /*font-size: 25px;*/
     margin-left: 20px;
-} 
+}
 .new_partner_page_section_narrow {
    /* font-size: 20px;*/
 }
@@ -857,7 +857,7 @@ label+.button, label+button, label+input[type=submit], label+label {
     margin-top: -30px;
 }
 .section_about_story_wrapper {
-    
+
 }
 .section_about_story {
     background-color: white;
@@ -1317,12 +1317,12 @@ h3 {
   padding-left: 10px;
 }
 
-/*Listing Details Page*/ 
+/*Listing Details Page*/
 
 .new-school-page-wrapper {
   background: #fff;
   padding-top: 72px;
-} 
+}
 .new-image-hero {
     background: linear-gradient(#28335b,#000);
     position: relative;
@@ -1596,10 +1596,10 @@ h3 {
     line-height: 1.1;
     color: #fff;
     font-weight: 700;
-  } 
+  }
   .new-hero-module_inquiry-button-2NVd5 {
     margin-bottom: 0;
-  } 
+  }
   .new-school-page-mobile-header {
     display: none;
   }
@@ -1631,4 +1631,55 @@ h3 {
     max-height: 100vh;
     overflow-y: auto;
   }
+}
+.day_time_over_2 {
+    white-space: pre;
+}
+
+.SchoolPage-table {
+    width: 100%;
+}
+
+.SchoolPage-tableHeader {
+    border-bottom: 1px solid #eee;
+    padding-left: 0;
+    padding: 8px;
+    font-weight: 700;
+}
+
+.SchoolPage-tableRow:nth-child(2n) {
+    background: #fbfbfb;
+}
+
+.SchoolPage-tableKey, .SchoolPage-tableValue {
+    font-weight: 300;
+    padding: 8px;
+}
+
+.SchoolPage-tableValue {
+    font-weight: 700;
+    text-align: right;
+}
+
+
+
+.Modal-title {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.Modal-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 24px;
+    padding: 0 32px 16px 0;
+}
+
+.Modal-closeButton {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    z-index: 1001;
 }

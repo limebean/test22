@@ -27,9 +27,9 @@ class WelcomeController < ApplicationController
           marker.lng teacher.longitude
           marker.picture({
             marker_anchor: [40, 58],
-            url: teacher.profile_image.url,
-            width: "32",
-            height: "37"
+            url: ActionController::Base.helpers.asset_path("new_logo.png"),
+            width: "42",
+            height: "45"
           })
           marker.title teacher.school_name
           marker.infowindow render_to_string(:partial => "/welcome/info", locals: {:teacher => teacher})
@@ -37,7 +37,7 @@ class WelcomeController < ApplicationController
     end
 
     def show
-      
+
     end
 
   private

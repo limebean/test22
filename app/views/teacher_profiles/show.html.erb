@@ -126,6 +126,96 @@
            </table>
            <div class="rail-section-synopsis">Each week will have a Thematic Unit for the children to learn about.  The units include: songs, finger-plays, sensory activities, arts and crafts, and dramatic play.  At times there will be cooking activities incorporated into the units along with  science and technology activities.   </div>
         </div> -->
+        <%if @prices.present? %>
+          <div class="RailSection">
+            <h5 class="RailSection-title">Enrollment</h5>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Daytime, Over 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal">
+                    <span class="NormalWeightText">See Pricing</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal">
+                    <span class="NormalWeightText">See Pricing</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Daytime, Under 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Nighttime, Over 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Nighttime, Under 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue"><button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="RailSection-synopsis">For families in need of scholarships or financial assistance, we accept subsidy payments from Wu Yee and Children’s Council of San Francisco. Inquire to learn more.</div>
+          </div>
+        <% end %>
        <!--  <div class="rail-section">
            <h5 class="rail-section-title">2018-2019 Calendar</h5>
            <table class="school-page-table">
@@ -217,9 +307,9 @@
                   <p><Strong>Cell Phone </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.cell_phone%>
                   </p>
                   <p><Strong>Date of Birth </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.date_of_birth%>
-                  </p>                  
+                  </p>
                   <p><Strong>Work </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.work%>
-                  </p>                                                      
+                  </p>
                </div>
             </div>
             <div class="school-page-section">
@@ -229,17 +319,17 @@
                   <p><Strong>Apt No </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.apt_no%>
                   </p>
                   <p><Strong>Condo </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.condo%>
-                  </p> 
+                  </p>
                 <h3 class="school-page-section-title-subheading-Second">House</h3>
                   <p><Strong>Basement Premises </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.basement_premises%>
                   </p>
                   <p><Strong>Two exit</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.two_exit%>
-                  </p>  
+                  </p>
                 <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
                   <p><Strong>Home Smoke</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_smoke%>
                   </p>
                   <p><Strong>Pet</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.pet%>
-                  </p> 
+                  </p>
                   <p><Strong>Vaccine</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.vaccine%></p>
                   <h3 class="school-page-section-title-subheading-forth">Languages Spoken</h3>
                   <p><Strong>Language </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.language%>
@@ -315,9 +405,9 @@
                   </li>
                </ul>
                <div class="school-page-rail-Map">
-                <div style='width:px;'>  
-                  <div id="map" style='width: 300px; height: 300px;'></div>  
-                  </div> 
+                <div style='width:px;'>
+                  <div id="map" style='width: 300px; height: 300px;'></div>
+                  </div>
               </div>
             <div class="school-page-sticky">
                <div class="rail-section">
@@ -333,21 +423,24 @@
    </div>
 </div>
 
-<script type="text/javascript">  
-handler = Gmaps.build('Google');  
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){  
-  markers = handler.addMarkers([  
-    {  
-      "lat": <%=@teacher_profile.latitude%>,  
-      "lng": <%=@teacher_profile.longitude%>,  
-      "picture": {  
-        "width":  32,  
-        "height": 32  
-      },  
-      "infowindow": "SJSU"  
-    }  
-  ]);  
-  handler.bounds.extendWith(markers);  
-  handler.fitMapToBounds();  
-});  
+
+<%= render 'price_modal' %>
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": <%=@teacher_profile.latitude%>,
+      "lng": <%=@teacher_profile.longitude%>,
+      "picture": {
+        "width":  32,
+        "height": 32
+      },
+      "infowindow": "SJSU"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
 </script>

@@ -12,9 +12,9 @@
       <%= f.fields_for '0' do |first_option| %>
         <td class="day_time_over_2"><%= label_tag 'day_time_over_2', 'Daytime, Over 2 Years Old'%></td>
         <%= first_option.hidden_field :child_time, value: Price.child_times['Daytime, Over 2 Years Old'] %>
-        <td><%= first_option.number_field :two_days_price %></td>
-        <td><%= first_option.number_field :three_days_price %></td>
-        <td><%= first_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= first_option.number_field :two_days_price %></td>
+        <td class="Box-size"><%= first_option.number_field :three_days_price %></td>
+        <td class="Box-size"><%= first_option.number_field :five_days_price %></td>
       <% end%>
     </tr>
     <tr>
@@ -39,9 +39,9 @@
       <%= f.fields_for '3' do |fourth_option| %>
         <td class="day_time_over_2"><%= label_tag 'night_time_under_2', 'Nighttime, Under 2 Years Old'%></td>
         <%= fourth_option.hidden_field :child_time, value: Price.child_times['Nighttime, Under 2 Years Old'] %>
-        <td><%= fourth_option.number_field :two_days_price %></td>
-        <td><%= fourth_option.number_field :three_days_price %></td>
-        <td><%= fourth_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= fourth_option.number_field :two_days_price %></td>
+        <td class="Box-size"><%= fourth_option.number_field :three_days_price %></td>
+        <td class="Box-size"><%= fourth_option.number_field :five_days_price %></td>
       <% end%>
     </tr>
   </table>
