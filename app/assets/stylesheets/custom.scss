@@ -181,7 +181,7 @@ p.about-section-bold-para {
 }
 
 .bg-no-overlay {
-  background-image: url(cover.jpg);
+  background-image: asset-url('cover.jpg');
   background-size: cover;
   /*  background-position: 50%;*/
   position: relative;
@@ -448,7 +448,7 @@ button.button.button_naked.custom-btn {
 /*Lead capture*/
 
 .new_homepage_leadcapture {
-  background-image: url(lead-hero.png);
+  background-image: asset-url('lead-hero.png');
   background-position: 50% 0;
   min-height: 530px;
   padding: 48px 16px;
@@ -940,7 +940,7 @@ input {
 }
 
 /*.section_about_mission_bullet:before {
-  background-image: url(img/mark.png);
+  background-image: asset-url('mark.png');
   background-position: 50%;
   background-repeat: no-repeat;
   content: "";
@@ -1097,7 +1097,7 @@ h3 {
 }
 
 .new_image_hero_image {
-  background-image: url(partner-section.jpg);
+  background-image: asset-url('partner-section.jpg');
   background-position: 50% 50%;
   background-size: cover;
   bottom: 0;

@@ -53,79 +53,6 @@
               <!-- <div class="school-page-director-name-title">School Director</div> -->
            </div>
         </div>
-        <!-- <div class="rail-section">
-           <h5 class="rail-section-title">Amenities</h5>
-           <ul class="school-page-list">
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-philosophy.svg" role="presentation">
-                 <div class="school-page-list-item-value">A creative, fun and loving 'home away from home' for little ones.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-ages.svg" role="presentation">
-                 <div class="school-page-list-item-value">6 weeks to school age.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-hours.svg" role="presentation">
-                 <div class="school-page-list-item-value">7:00am to 6:00pm</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-mealsProvided.svg" role="presentation">
-                 <div class="school-page-list-item-value">Yes, home made organic or all natural meals will be provided.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-snacksProvided.svg" role="presentation">
-                 <div class="school-page-list-item-value">Yes, home made organic or all natural snacks will be provided</div>
-              </li>
-           </ul>
-        </div>
-        <div class="rail-section">
-           <h5 class="rail-section-title">Rhythm of the Day</h5>
-           <table class="school-page-table">
-              <tbody>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">7:00 to 8:30</td>
-                    <td class="school-page-table-value">Arrival/Free Play</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">8:30 to 9:00</td>
-                    <td class="school-page-table-value">Table Top Toys/Fine Motor Activities</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">9:00 to 9:30 </td>
-                    <td class="school-page-table-value">Breakfast</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">9:30 to 10:00</td>
-                    <td class="school-page-table-value">Circle Time</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">10:00 to 11:00</td>
-                    <td class="school-page-table-value">Centers</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">11:00 to 12:00</td>
-                    <td class="school-page-table-value">Gross Motor Activities/Outdoor Playtime</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">12:00 to 12:30 </td>
-                    <td class="school-page-table-value">Lunch</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">12:30 to 2:30</td>
-                    <td class="school-page-table-value">Nap/Rest Time</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">2:30 to 3:00</td>
-                    <td class="school-page-table-value">Snack</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">3:00 to Close</td>
-                    <td class="school-page-table-value">Free Play, Group Game Time, and Good Bye's!</td>
-                 </tr>
-              </tbody>
-           </table>
-           <div class="rail-section-synopsis">Each week will have a Thematic Unit for the children to learn about.  The units include: songs, finger-plays, sensory activities, arts and crafts, and dramatic play.  At times there will be cooking activities incorporated into the units along with  science and technology activities.   </div>
-        </div> -->
         <%if @prices.present? %>
           <div class="RailSection">
             <h5 class="RailSection-title">Enrollment</h5>
@@ -380,24 +307,20 @@
                      </div>
                   </div> -->
                </button>
-               <!-- <div class="school-page-save-and-compare-text">Save and Compare</div>
-  -->           </div>
+            </div>
             <div class="rail-section mobile-hidden">
                <h5 class="rail-section-title">Location</h5>
                <ul class="school-page-list">
                   <li class="school-page-list-item">
-                    <!--  <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-address.svg" role="presentation"> -->
                      <p><%="#{@teacher_profile.city}, #{@teacher_profile.street_address},#{@teacher_profile.postal_code}" %></p>
                   </li>
                   <li class="school-page-list-item">
-                     <!-- <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-phone.svg" role="presentation"> -->
                      <div class="school-page-list-item-value">
                         <div class="h6"><button class="button button--link" type="button">See Phone Number</button></div>
                         <p><%=@teacher_profile.home_phone%></p>
                      </div>
                   </li>
                   <li class="school-page-list-item">
-                    <!--  <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-email.svg" role="presentation"> -->
                      <div class="school-page-list-item-value">
                         <div class="h6"><button class="button button--link" type="button">See Email</button></div>
                         <p><%=@teacher_profile.teacher.email%></p>
