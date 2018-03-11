@@ -12,7 +12,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new(permitted_teacher_params)
     if @teacher.save
       @teacher.invitation_token
-      redirect_to root_path, notice: "Thanks for register, Please open email for reset passowrd and complete registration"
+      redirect_to root_path, notice: "Thanks for register, We are reviewing your application. You will receive an email upon approval of your profile."
     else
       redirect_to partner_path, alert: "Something went wrong! Please try again."
     end
