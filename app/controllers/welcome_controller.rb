@@ -27,8 +27,8 @@ class WelcomeController < ApplicationController
           marker.lng teacher.longitude
           marker.picture({
             marker_anchor: [40, 58],
-            url: ActionController::Base.helpers.asset_path("new_logo.png"),
-            width: "42",
+            url: ActionController::Base.helpers.asset_path("map_icon.png"),
+            width: "45",
             height: "45"
           })
           marker.title teacher.school_name
