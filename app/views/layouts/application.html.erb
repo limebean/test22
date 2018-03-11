@@ -15,10 +15,12 @@
   <body>
     <%= render 'layouts/header'%>
     <%= render 'layouts/flash_messages'%>
-    <%= yield %>
-    <% unless action_name == 'search' %>
-      <%= render 'layouts/footer'%>
-    <% end %>
+    <div id="page-content" class="<%=flash.present? ? 'flash-page-content' : ''%>">
+      <%= yield %>
+      <% unless action_name == 'search' %>
+        <%= render 'layouts/footer'%>
+      <% end %>
+    </div>
   </body>
 </html>
 

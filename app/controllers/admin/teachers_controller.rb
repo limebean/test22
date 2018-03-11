@@ -21,9 +21,8 @@ class Admin::TeachersController < Admin::AdminBaseController
   end
 
   def approve
-    #teacher = Teacher.find(params[:id])
-    if teacher.present? && teacher.update_attribute(:approve, true)
-      UserMailer.teacher_invitaion_email(teacher).deliver_now
+    if @teacher.present? && @teacher.update_attribute(:approve, true)
+      UserMailer.teacher_invitaion_email(@teacher).deliver_now
       flash[:notice] = 'Teacher successfully approved.'
     else
       flash[:notice] = 'Something went wrong! Try again later.'
@@ -32,8 +31,7 @@ class Admin::TeachersController < Admin::AdminBaseController
   end
 
   def reject
-    #teacher = Teacher.find(params[:id])
-    if teacher.present? && teacher.update_attribute(:approve, false)
+    if @teacher.present? && @teacher.update_attribute(:approve, false)
       flash[:notice] = 'Teacher successfully rejected.'
     else
       flash[:notice] = 'Something went wrong! Try again later.'

@@ -193,6 +193,9 @@ p.about-section-bold-para {
 .paret_para {
   font-size: 18px;
 }
+.automatic_fadeout{
+  padding-top: 72px;
+}
 
 @media (min-width: 768px) {
   .bg-no-overlay {
@@ -1447,7 +1450,7 @@ h3 {
 }
 
 .login-signup-form, .alert.alert-info, .custom-admin-wrapper {
-  padding-top: 72px;
+  margin-bottom: 0;
 }
 
 .teacher-show-profile {
@@ -1461,6 +1464,13 @@ h3 {
 .new-school-page-wrapper {
   background: #fff;
   padding-top: 72px;
+}
+
+#page-content{
+  padding-top: 72px;
+  &.flash-page-content{
+    padding-top: 0;
+  }
 }
 
 .new-image-hero {
