@@ -1,5 +1,4 @@
 class Teacher < User
-
   has_one :teacher_profile, foreign_key: :teacher_id, dependent: :destroy
   has_many :availabilities, dependent: :destroy
 

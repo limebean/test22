@@ -27,11 +27,21 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :children do
+    member do
+      get :abcd
+    end
+  end
+
   get '/parents/check_email_availability', to: 'parents#check_email_availability'
   get '/parents/dashboard', to: 'parents#dashboard'
 
-  resources :teacher_profiles
-
+  resources :teacher_profiles do
+    collection do
+      get 'enroll_application'
+    end
+  end
+  
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
     resources :teachers, only: [:index, :edit, :update] do

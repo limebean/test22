@@ -50,7 +50,11 @@
            <div class="school-page-director">
               <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);"></div>
               <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
+              <%= link_to enroll_application_teacher_profiles_path do %>
+                <button type="button" class="btn btn-info">Enroll Me</button>
+              <% end %>
               <!-- <div class="school-page-director-name-title">School Director</div> -->
+
            </div>
         </div>
         <!-- <div class="rail-section">

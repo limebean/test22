@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306113731) do
+ActiveRecord::Schema.define(version: 20180309130058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,11 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.integer "care_by", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "date_of_birth"
+    t.bigint "user_id"
+    t.string "place_of_birth"
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
+    t.index ["user_id"], name: "index_children_on_user_id"
   end
 
   create_table "teacher_profiles", force: :cascade do |t|
@@ -57,7 +61,7 @@ ActiveRecord::Schema.define(version: 20180306113731) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school", null: false
+    t.boolean "local_school"
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false
@@ -97,4 +101,5 @@ ActiveRecord::Schema.define(version: 20180306113731) do
   end
 
   add_foreign_key "children", "teacher_profiles"
+  add_foreign_key "children", "users"
 end

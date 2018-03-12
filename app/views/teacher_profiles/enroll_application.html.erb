@@ -1,0 +1,24 @@
+<div class="enrollment_application">
+  <div class="main_enroll_heading"><h1>Enrollment Application</h1></div>
+  <div class="form_area" id="appned_child_form">
+    <div class="enroll_start_area">
+      <p>We are so excited that you would like to enroll your child at Gramercy Park Childcare and Playgroup! Please submit the information below; Afsana Khundkar will review the information and send you an enrollment invitation. After you accept the invitation, you’ll pay your deposit and sign your parent handbook.</p>
+      <div class="Add_child_area">
+        <h3>CHILD</h3>
+        <p><%#= link_to ,'javascript:void(0)' %>
+          <%= link_to 'ADD A CHILD', {controller: "children", action: "new"}, remote: :true %>
+        </p>
+        <div class="append_childs">
+          
+        </div>
+      </div>
+      <div class="start_date_form">
+        <p class="under_form_details">Please submit separate applications for each child.</p>
+        <form class="form_of_calender">
+          <h3>START DATE</h3>
+          <input type="text" name="" placeholder="MM/DD/YYYY" id="enroll_start_date"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

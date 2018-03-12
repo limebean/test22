@@ -35,6 +35,14 @@ $('#birth_date').datepicker({
     format: 'dd/mm/yyyy', "autoclose": true,
     endDate: '-13y',
 });
+$('#enroll_start_date').datepicker({
+    format: 'dd/mm/yyyy', "autoclose": true,
+    endDate: '-13y',
+});
+$('#enroll_start_date1').datepicker({
+    format: 'dd/mm/yyyy', "autoclose": true,
+    endDate: '-13y',
+});
 
 form.children("div").steps({
     headerTag: "h3",
