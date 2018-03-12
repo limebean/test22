@@ -1871,3 +1871,208 @@ h3 {
   top: 24px;
   z-index: 1001;
 }
+@media (min-width: 768px){
+  .Section-heading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+}
+.Section {
+    margin: 0 auto;
+}
+
+
+.Section-heading {
+  border-bottom: 1px solid #cbcbcb;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.Grid--justifyContentSpaceBetween {
+    justify-content: space-between;
+}
+
+.Grid--alignItemsFlexEnd {
+    align-items: flex-end;
+}
+
+.Grid-cell {
+    flex: 1;
+    padding: 24px 0 0 24px;
+}
+
+.ScheduleTour-day {
+    border: 3px solid #8ddaa9;
+    color: rgba(0,0,0,.5);
+    cursor: pointer;
+    height: 46px;
+    line-height: 43px;
+    text-align: center;
+    width: 100%;
+}
+
+.ScheduleTour-selectedDay {
+    -ms-flex-align: center;
+    align-items: center;
+    border: 3px solid #eee;
+    display: flex;
+    height: 46px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.ScheduleTour-selectedDayLabel {
+    color: #333;
+        flex: 1;
+    margin-top: -1px;
+    padding-left: 8px;
+}
+
+.ScheduleTour-selectedDayLink {
+    color: #5196cb;
+    cursor: pointer;
+    flex: none;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 1px;
+    padding: 8px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.SelectInput {
+    display: block;
+}
+
+.SelectInput-control.SelectInput-control {
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+.SelectInput .SelectInput-control {
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: none;
+    color: #333;
+    height: 48px;
+    margin: 0;
+    outline: none;
+    padding: 8px 16px;
+    width: 100%;
+}
+Button.Button--full {
+    width: 100%;
+}
+
+.Button.Button, .Button.Button:visited {
+
+    font-family: Lato,Helvetica,Arial,sans-serif;
+
+    background-color: #5196cb;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: all .1s ease;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+SearchCriteriaQuestions-body {
+    text-align: center;
+}
+
+@media (min-width: 768px)
+{
+.SearchCriteriaQuestions-progress {
+    margin: 0 auto;
+    max-width: 30%;
+}
+  }
+.SearchCriteriaQuestions-title {
+    color: #333;
+    font-family: Merriweather,Gerogia,serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.SearchCriteriaQuestions-image {
+    margin-bottom: 16px;
+    width: 160px;
+}
+
+.Grid--skinnyGutters {
+    margin: -8px 0 0 -8px;
+}
+.Grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+}
+
+.Grid--skinnyGutters>.Grid-cell {
+    padding: 8px 0 0 8px;
+}
+
+.Grid-cell {
+
+    flex: 1;
+
+}
+
+.SelectInput {
+    display: block;
+}
+.Grid-cell--flexNone {
+
+    flex: none;
+}
+
+.Button.Button--arrow {
+    padding-right: 32px;
+    position: relative;
+}
+
+.Button.Button--large {
+    padding: 16px 24px;
+    text-transform: uppercase;
+}
+
+.SearchCriteriaQuestions-answer {
+    border: 2px solid #5196cb;
+    color: #5196cb;
+    cursor: pointer;
+    font-size: 14px;
+    max-width: 100%;
+    min-width: 130px;
+    padding: 16px 24px;
+    text-transform: uppercase;
+}
