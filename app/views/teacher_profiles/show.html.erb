@@ -207,18 +207,18 @@
             <div class="school-page-section">
                <h2 class="school-page-section-title">PERSONAL INFORMATION</h2>
                <div>
-                  <p><Strong>First Name </strong><%= @teacher_profile.first_name%></p>
-                  <p><Strong>Last Name </strong><%= @teacher_profile.last_name%></p>
-                  <p><Strong>Apt# </strong><%=@teacher_profile.apt_no%></p>
-                  <p><Strong>Street Address </strong><%= @teacher_profile.street_address%></p>
-                  <p><Strong>City </strong><%= @teacher_profile.city%></p>
-                  <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code%>%></p>
-                  <p><Strong>Home Phone </strong>><%= @teacher_profile.home_phone%></p>
-                  <p><Strong>Cell Phone </strong>><%= @teacher_profile.cell_phone%>
+                  <p><Strong>First Name </strong><%= @teacher_profile.first_name %></p>
+                  <p><Strong>Last Name </strong><%= @teacher_profile.last_name %></p>
+                  <p><Strong>Apt# </strong><%=@teacher_profile.apt_no %></p>
+                  <p><Strong>Street Address </strong><%= @teacher_profile.street_address %></p>
+                  <p><Strong>City </strong><%= @teacher_profile.city %></p>
+                  <p><Strong>Postal Code </strong><%= @teacher_profile.postal_code %></p>
+                  <p><Strong>Home Phone </strong>><%= @teacher_profile.home_phone %></p>
+                  <p><Strong>Cell Phone </strong>><%= @teacher_profile.cell_phone %>
                   </p>
-                  <p><Strong>Date of Birth </strong>><%= @teacher_profile.date_of_birth%>
+                  <p><Strong>Date of Birth </strong>><%= @teacher_profile.date_of_birth %>
                   </p>                  
-                  <p><Strong>Work </strong>><%= @teacher_profile.work%>
+                  <p><Strong>Work </strong>><%= @teacher_profile.work %>
                   </p>                                                      
                </div>
             </div>
@@ -226,14 +226,14 @@
                <h2 class="school-page-section-title">PREMISES</h2>
               <div>
                <h3 class="school-page-section-title-subheading-first">Apartment</h3>
-                  <p><Strong>Apt No </strong>><%= @teacher_profile.apt_no%>
+                  <p><Strong>Apt No </strong>><%= @teacher_profile.apt_no %>
                   </p>
-                  <p><Strong>Condo </strong>><%= @teacher_profile.condo%>
+                  <p><Strong>Condo </strong>><%= @teacher_profile.condo %>
                   </p> 
                 <h3 class="school-page-section-title-subheading-Second">House</h3>
-                  <p><Strong>Basement Premises </strong>><%= @teacher_profile.basement_premises%>
+                  <p><Strong>Basement Premises </strong>><%= @teacher_profile.basement_premises %>
                   </p>
-                  <p><Strong>Two exit</strong>><%= @teacher_profile.two_exit%>
+                  <p><Strong>Two exit</strong>><%= @teacher_profile.two_exit %>
                   </p>  
                 <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
                   <p><Strong>Home Smoke</strong>><%= @teacher_profile.home_smoke%>
@@ -302,13 +302,23 @@
                   <li class="school-page-list-item">
                      <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-phone.svg" role="presentation">
                      <div class="school-page-list-item-value">
-                        <div class="h6"><button class="button button--link" type="button">See Phone Number</button></div>
+                      <% if current_user.present? %>
+                        <div class="h6"><span><%= @teacher_profile.cell_phone %></span></div>
+                      <% else%>
+                        <div class="h6 contact_seen"><button class="button button--link" type="button">See Phone Number</button></div>
+                        <div class="h6 real_contact"><span><%= @teacher_profile.cell_phone %></span></div>
+                      <% end %>
                      </div>
                   </li>
                   <li class="school-page-list-item">
                      <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-email.svg" role="presentation">
                      <div class="school-page-list-item-value">
-                        <div class="h6"><button class="button button--link" type="button">See Email</button></div>
+                      <% if current_user.present? %>
+                        <div class="h6"><span><%= @teacher_profile.teacher.email %></span></div>
+                      <% else %>
+                        <div class="h6 contact_seen"><button class="button button--link" type="button">See Email</button></div>
+                        <div class="h6 real_contact"><span><%= @teacher_profile.teacher.email %></span></div>
+                      <% end %>
                      </div>
                   </li>
                </ul>
@@ -329,3 +339,9 @@
       </div>
    </div>
 </div>
+<script type="text/javascript">
+  $(".contact_seen").click(function(){
+    $(this).hide();
+    $(this).siblings('.real_contact').show();
+  });
+</script>
