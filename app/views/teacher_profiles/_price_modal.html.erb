@@ -1,0 +1,55 @@
+<div class="modal fade" id="see_price_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Pricing</h4>
+      </div>
+      <div class="modal-body modal_content">
+        <div class="SchoolPagePricingModal">
+          <div id= 'price_id'>
+            <div class="SchoolPagePricingModal-pricing">
+              <% @prices.each do |price|%>
+                <table class="SchoolPage-table">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" class="SchoolPage-tableHeader">
+                      <%= price.child_time%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">2 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.two_days_price%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">3 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.three_days_price%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">5 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.five_days_price%></td>
+                    </tr>
+                  </tbody>
+                </table>
+              <% end %>
+            </div>
+          </div>
+          <div class="SchoolPagePricingModal-callout">
+            <div class="Callout Callout--arrowLeft">
+              <div class="P"><span class="BoldText">Share your opinion:</span><br>How do these prices compare to similar child care programs in your area?</div>
+              <div class="P">
+                <div>
+                  <radiogroup>
+                    <div class="Radio "><input type="radio" class="Radio-control" id="3c13ceb0-241e-11e8-bd47-f7c875226a7a" name="pricing-level" value="higher than average"><label class="Radio-label" for="3c13ceb0-241e-11e8-bd47-f7c875226a7a">Higher</label></div>
+                    <div class="Radio "><input type="radio" class="Radio-control" id="3c141cd0-241e-11e8-bd47-f7c875226a7a" name="pricing-level" value="average"><label class="Radio-label" for="3c141cd0-241e-11e8-bd47-f7c875226a7a">About the Same</label></div>
+                    <div class="Radio "><input type="radio" class="Radio-control" id="3c141cd1-241e-11e8-bd47-f7c875226a7a" name="pricing-level" value="lower than average"><label class="Radio-label" for="3c141cd1-241e-11e8-bd47-f7c875226a7a">Lower</label></div>
+                  </radiogroup>
+                </div>
+              </div>
+              <div class="P"><span class="SmallText">While prices are generally non-negotiable, we value feedback from our community.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -80,7 +80,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if true
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
@@ -88,4 +88,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.default_url_options = { host: '165.227.35.89'}
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.sendgrid.net',
+    :port                 => 587,
+    :domain               => 'sendgrid.net',
+    :user_name            => 'apikey',
+    :password             => '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',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
+
 end

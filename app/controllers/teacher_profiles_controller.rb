@@ -31,7 +31,9 @@ class TeacherProfilesController < ApplicationController
     end
   end
 
-  def show;  end
+  def show
+    @prices = @teacher_profile.teacher.prices
+  end
 
   private
 

@@ -29,15 +29,14 @@ class WelcomeController < ApplicationController
       else
         @teachers = TeacherProfile.all
       end
-      #@teachers =  ? ( || TeacherProfile.near("%#{params[:q]}%")) : TeacherProfile.all
       @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
         marker.lat teacher.latitude
         marker.lng teacher.longitude
         marker.picture({
           marker_anchor: [40, 58],
-          url: teacher.profile_image.url,
-          width: "32",
-          height: "37"
+          url: ActionController::Base.helpers.asset_path("map_icon.png"),
+          width: "45",
+          height: "45"
         })
         marker.title teacher.school_name
         marker.infowindow render_to_string(:partial => "/welcome/info", locals: {:teacher => teacher})
@@ -45,7 +44,7 @@ class WelcomeController < ApplicationController
     end
 
     def show
-      
+
     end
 
   private

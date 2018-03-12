@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post :set_availability
       get :availability
       match :bank_account, via: [:get, :post]
+      get :get_price
     end
     collection do
       get :get_availability
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
     get '', to: "teachers#index", as: :dashboard
     resources :teachers, only: [:index, :edit, :update] do
       member do
+        match :price, via: [:get, :post]
+        get :teacher_price
         get :edit_profile
         patch :approve
         patch :reject

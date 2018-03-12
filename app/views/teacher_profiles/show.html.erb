@@ -53,79 +53,114 @@
               <!-- <div class="school-page-director-name-title">School Director</div> -->
            </div>
         </div>
-        <!-- <div class="rail-section">
-           <h5 class="rail-section-title">Amenities</h5>
-           <ul class="school-page-list">
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-philosophy.svg" role="presentation">
-                 <div class="school-page-list-item-value">A creative, fun and loving 'home away from home' for little ones.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-ages.svg" role="presentation">
-                 <div class="school-page-list-item-value">6 weeks to school age.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-hours.svg" role="presentation">
-                 <div class="school-page-list-item-value">7:00am to 6:00pm</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-mealsProvided.svg" role="presentation">
-                 <div class="school-page-list-item-value">Yes, home made organic or all natural meals will be provided.</div>
-              </li>
-              <li class="school-page-list-item">
-                 <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/amenity-icons/ic-snacksProvided.svg" role="presentation">
-                 <div class="school-page-list-item-value">Yes, home made organic or all natural snacks will be provided</div>
-              </li>
-           </ul>
-        </div>
-        <div class="rail-section">
-           <h5 class="rail-section-title">Rhythm of the Day</h5>
-           <table class="school-page-table">
+        <%if @prices.present? %>
+          <div class="RailSection">
+            <h5 class="RailSection-title">Enrollment</h5>
+            <table class="SchoolPage-table">
               <tbody>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">7:00 to 8:30</td>
-                    <td class="school-page-table-value">Arrival/Free Play</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">8:30 to 9:00</td>
-                    <td class="school-page-table-value">Table Top Toys/Fine Motor Activities</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">9:00 to 9:30 </td>
-                    <td class="school-page-table-value">Breakfast</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">9:30 to 10:00</td>
-                    <td class="school-page-table-value">Circle Time</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">10:00 to 11:00</td>
-                    <td class="school-page-table-value">Centers</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">11:00 to 12:00</td>
-                    <td class="school-page-table-value">Gross Motor Activities/Outdoor Playtime</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">12:00 to 12:30 </td>
-                    <td class="school-page-table-value">Lunch</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">12:30 to 2:30</td>
-                    <td class="school-page-table-value">Nap/Rest Time</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">2:30 to 3:00</td>
-                    <td class="school-page-table-value">Snack</td>
-                 </tr>
-                 <tr class="school-page-table-row school-page-table-row-left">
-                    <td class="school-page-table-key">3:00 to Close</td>
-                    <td class="school-page-table-value">Free Play, Group Game Time, and Good Bye's!</td>
-                 </tr>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Daytime, Over 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
               </tbody>
-           </table>
-           <div class="rail-section-synopsis">Each week will have a Thematic Unit for the children to learn about.  The units include: songs, finger-plays, sensory activities, arts and crafts, and dramatic play.  At times there will be cooking activities incorporated into the units along with  science and technology activities.   </div>
-        </div> -->
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Daytime, Under 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Nighttime, Over 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                    <!-- <button class="Button Button--link" type="button" id="see_price" data-toggle="modal" data-target="#see_price_Modal"><span class="NormalWeightText">See Pricing</span></button> -->
+                    </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="SchoolPage-table">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="SchoolPage-tableHeader">Nighttime, Under 2 Years Old</td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">2 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">3 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+                <tr class="SchoolPage-tableRow ">
+                  <td class="SchoolPage-tableKey">5 days/wk</td>
+                  <td class="SchoolPage-tableValue">
+                    <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="RailSection-synopsis">For families in need of scholarships or financial assistance, we accept subsidy payments from Wu Yee and Children’s Council of San Francisco. Inquire to learn more.</div>
+          </div>
+        <% end %>
        <!--  <div class="rail-section">
            <h5 class="rail-section-title">2018-2019 Calendar</h5>
            <table class="school-page-table">
@@ -207,6 +242,7 @@
             <div class="school-page-section">
                <h2 class="school-page-section-title">PERSONAL INFORMATION</h2>
                <div>
+<<<<<<< HEAD
                   <p><Strong>First Name </strong><%= @teacher_profile.first_name %></p>
                   <p><Strong>Last Name </strong><%= @teacher_profile.last_name %></p>
                   <p><Strong>Apt# </strong><%=@teacher_profile.apt_no %></p>
@@ -220,12 +256,28 @@
                   </p>                  
                   <p><Strong>Work </strong>><%= @teacher_profile.work %>
                   </p>                                                      
+=======
+                  <p><Strong>First Name </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.first_name%></p>
+                  <p><Strong>Last Name </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.last_name%></p>
+                  <p><Strong>Apt# </strong>&nbsp;&nbsp;&nbsp;<%=@teacher_profile.apt_no%></p>
+                  <p><Strong>Street Address </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.street_address%></p>
+                  <p><Strong>City </strong><%= @teacher_profile.city%></p>
+                  <p><Strong>Postal Code </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.postal_code%></p>
+                  <p><Strong>Home Phone </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_phone%></p>
+                  <p><Strong>Cell Phone </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.cell_phone%>
+                  </p>
+                  <p><Strong>Date of Birth </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.date_of_birth%>
+                  </p>
+                  <p><Strong>Work </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.work%>
+                  </p>
+>>>>>>> 97e3e46db97d1a1f42f3796bad0dc4e63fa73f47
                </div>
             </div>
             <div class="school-page-section">
                <h2 class="school-page-section-title">PREMISES</h2>
               <div>
                <h3 class="school-page-section-title-subheading-first">Apartment</h3>
+<<<<<<< HEAD
                   <p><Strong>Apt No </strong>><%= @teacher_profile.apt_no %>
                   </p>
                   <p><Strong>Condo </strong>><%= @teacher_profile.condo %>
@@ -235,34 +287,45 @@
                   </p>
                   <p><Strong>Two exit</strong>><%= @teacher_profile.two_exit %>
                   </p>  
-                <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
-                  <p><Strong>Home Smoke</strong>><%= @teacher_profile.home_smoke%>
+=======
+                  <p><Strong>Apt No </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.apt_no%>
                   </p>
-                  <p><Strong>Pet</strong>><%= @teacher_profile.pet%>
-                  </p> 
-                  <p><Strong>Vaccine</strong>><%= @teacher_profile.vaccine%></p>
+                  <p><Strong>Condo </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.condo%>
+                  </p>
+                <h3 class="school-page-section-title-subheading-Second">House</h3>
+                  <p><Strong>Basement Premises </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.basement_premises%>
+                  </p>
+                  <p><Strong>Two exit</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.two_exit%>
+                  </p>
+>>>>>>> 97e3e46db97d1a1f42f3796bad0dc4e63fa73f47
+                <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
+                  <p><Strong>Home Smoke</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_smoke%>
+                  </p>
+                  <p><Strong>Pet</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.pet%>
+                  </p>
+                  <p><Strong>Vaccine</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.vaccine%></p>
                   <h3 class="school-page-section-title-subheading-forth">Languages Spoken</h3>
-                  <p><Strong>Language </strong>><%= @teacher_profile.language%>
+                  <p><Strong>Language </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.language%>
                   </p>
                   <h3 class="school-page-section-title-subheading-fifth">Ability to Work</h3>
-                  <p><Strong>Legal to Work </strong>><%= @teacher_profile.legal_to_work%>
+                  <p><Strong>Legal to Work </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.legal_to_work%>
                   </p>
                   <h3 class="school-page-section-title-subheading-six">Children in Home</h3>
-                  <p><Strong>Legal to Work </strong>><%= @teacher_profile.legal_to_work%>
+                  <p><Strong>Total children</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.children.count%>
                   </p>
               </div>
             </div>
             <div class="school-page-section">
-               <h2 class="school-page-section-title">About Our School</h2>
+               <!-- <h2 class="school-page-section-title">About Our School</h2>
                <div>
                   <p>Little Sunflower Learning Center's learning environment is a unique blend of different, but effective teaching and parenting styles.  Throughout her career Miss Katie has utilized many teaching methodologies to help her children and her students learn.  At LSLC, we will be teaching the whole child through the use all of their senses using different Learning Centers.  We use a blend of Child Led Learning and Teacher Led Learning.  Discipline and respect are also taught throughout the day to help each child learn to self regulate and make good choices.    </p>
                   <p>Children will be exposed to many important activities to help facilitate their learning.  The Infant/Toddler room has many stimulating materials such as textile toys, musical toys, and an area to practice large gross motor activities which will help them learn to sit up, crawl, and walk.  In our main play area the children will have opportunities to build with mega blocks, play dress up, create amazing artwork while socializing with their peers and our staff.  Our daily schedule includes a fun, interactive, singing Circle Time that will be tailored to fit the needs of the children's learning goals.  Our outdoor play area is a great area for the children to explore nature!  The children can have fun digging and dumping in our sandbox. They will be planting many vegetables and flowers in the garden area.  Our equipment includes slides, swings, tires to climb over and into, and fun wagon rides!  Weather permitting we will have our lunches and snacks outside, too!   </p>
                   <p>At Little Sunflower Learning Center we hope to prepare the children for the outside world by giving them a fun and safe learning environment.  We have you covered from infancy to school age!Children will love to learn if you give them the right environment and support.  Check out LSLC and see if it's the right place for your child and your family!</p>
                   <p>&#8203;</p>
-               </div>
+               </div> -->
             </div>
             <div class="school-page-section">
-               <h2 class="school-page-section-title">Our Teachers</h2>
+              <!--  <h2 class="school-page-section-title">Our Teachers</h2>
                <div>
                   <p>THE BASICS!</p>
                   <p>Hi and welcome to Little Sunflower Learning Center! My name is Kathleen Gallant, but please call me Katie!  I am a happily remarried mother of 2.    Our children are Abby, age 12 and JJ, age 22 months.   My husband, Jim, and I love spending time with our kids, going for rides out east, checking out attractions like local Farmer’s Markets and cooking. </p>
@@ -273,12 +336,12 @@
                   <p>&#8203;</p>
                   <p>&#8203;</p>
                   <p>&#8203;</p>
-               </div>
+               </div> -->
             </div>
          </div>
          <div class="school-page-rail">
             <div class="school-page-save-and-compare">
-               <button class="button button_naked" type="button">
+            <!--    <button class="button button_naked" type="button">
                   <div class="new-school-page-bookmark-icon">
                      <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
                         <svg class="SVGResponsive-svg" viewBox="0 0 29 24" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg">
@@ -288,19 +351,16 @@
                            </g>
                         </svg>
                      </div>
-                  </div>
+                  </div> -->
                </button>
-               <div class="school-page-save-and-compare-text">Save and Compare</div>
             </div>
             <div class="rail-section mobile-hidden">
                <h5 class="rail-section-title">Location</h5>
                <ul class="school-page-list">
                   <li class="school-page-list-item">
-                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-address.svg" role="presentation">
-                     <div class="school-page-list-item-value">125 Terryville Road Apt 9E, Port Jefferson, NY 11776</div>
+                     <p><%="#{@teacher_profile.city}, #{@teacher_profile.street_address},#{@teacher_profile.postal_code}" %></p>
                   </li>
                   <li class="school-page-list-item">
-                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-phone.svg" role="presentation">
                      <div class="school-page-list-item-value">
                       <% if current_user.present? %>
                         <div class="h6"><span><%= @teacher_profile.cell_phone %></span></div>
@@ -311,7 +371,6 @@
                      </div>
                   </li>
                   <li class="school-page-list-item">
-                     <img class="school-page-list-item-bullet" src="https://www.wonderschool.com/images/school/location-icons/ic-email.svg" role="presentation">
                      <div class="school-page-list-item-value">
                       <% if current_user.present? %>
                         <div class="h6"><span><%= @teacher_profile.teacher.email %></span></div>
@@ -323,9 +382,10 @@
                   </li>
                </ul>
                <div class="school-page-rail-Map">
-                map
-               </div>
-            </div>
+                <div style='width:px;'>
+                  <div id="map" style='width: 300px; height: 300px;'></div>
+                  </div>
+              </div>
             <div class="school-page-sticky">
                <div class="rail-section">
                   <h5 class="rail-section-title">Related Schools</h5>
@@ -339,9 +399,26 @@
       </div>
    </div>
 </div>
+<%= render 'price_modal' %>
 <script type="text/javascript">
   $(".contact_seen").click(function(){
     $(this).hide();
     $(this).siblings('.real_contact').show();
+  });
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": <%=@teacher_profile.latitude%>,
+        "lng": <%=@teacher_profile.longitude%>,
+        "picture": {
+          "width":  32,
+          "height": 32
+        },
+        "infowindow": "SJSU"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
   });
 </script>

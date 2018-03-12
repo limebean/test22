@@ -1,0 +1,7 @@
+<div class="form-content">
+  <% if @teacher_prices.nil? %>
+    <%= render 'price_new' %>
+  <% else %>
+    <%= render 'price_edit' %>
+  <% end %>
+</div>

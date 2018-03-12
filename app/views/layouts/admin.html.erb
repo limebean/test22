@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" %>
-    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.8.0/fullcalendar.min.js"%>
+    <%#= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" %>
+    <%#= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.8.0/fullcalendar.min.js"%>
   </head>
 
   <body>
     <%= render 'layouts/header'%>
     <%= render 'layouts/flash_messages'%>
-    <div id="wrapper" class="toggled custom-admin-wrapper">
-      <%= render partial: 'layouts/sidebar'%>
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <%= yield %>
+    <div id="page-content" class="<%=flash.present? ? 'flash-page-content' : ''%>">
+      <div id="wrapper" class="toggled custom-admin-wrapper">
+        <%= render partial: 'layouts/sidebar'%>
+        <div id="page-content-wrapper">
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>
