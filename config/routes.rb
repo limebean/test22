@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post :set_availability
       get :availability
       match :bank_account, via: [:get, :post]
+      get :get_price
     end
     collection do
       get :get_availability

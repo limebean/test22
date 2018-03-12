@@ -7,29 +7,31 @@
       </div>
       <div class="modal-body modal_content">
         <div class="SchoolPagePricingModal">
-          <div class="SchoolPagePricingModal-pricing">
-            <% @prices.each do |price|%>
-              <table class="SchoolPage-table">
-                <tbody>
-                  <tr>
-                    <td colspan="2" class="SchoolPage-tableHeader">
-                    <%= price.child_time%></td>
-                  </tr>
-                  <tr class="SchoolPage-tableRow ">
-                    <td class="SchoolPage-tableKey">2 days/wk</td>
-                    <td class="SchoolPage-tableValue">$<%= price.two_days_price%></td>
-                  </tr>
-                  <tr class="SchoolPage-tableRow ">
-                    <td class="SchoolPage-tableKey">3 days/wk</td>
-                    <td class="SchoolPage-tableValue">$<%= price.three_days_price%></td>
-                  </tr>
-                  <tr class="SchoolPage-tableRow ">
-                    <td class="SchoolPage-tableKey">5 days/wk</td>
-                    <td class="SchoolPage-tableValue">$<%= price.five_days_price%></td>
-                  </tr>
-                </tbody>
-              </table>
-            <% end %>
+          <div id= 'price_id'>
+            <div class="SchoolPagePricingModal-pricing">
+              <% @prices.each do |price|%>
+                <table class="SchoolPage-table">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" class="SchoolPage-tableHeader">
+                      <%= price.child_time%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">2 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.two_days_price%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">3 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.three_days_price%></td>
+                    </tr>
+                    <tr class="SchoolPage-tableRow ">
+                      <td class="SchoolPage-tableKey">5 days/wk</td>
+                      <td class="SchoolPage-tableValue">$<%= price.five_days_price%></td>
+                    </tr>
+                  </tbody>
+                </table>
+              <% end %>
+            </div>
           </div>
           <div class="SchoolPagePricingModal-callout">
             <div class="Callout Callout--arrowLeft">
