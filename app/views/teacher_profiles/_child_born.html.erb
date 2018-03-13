@@ -1,0 +1,96 @@
+<div id = 'first_step_born'>
+  <div class="SearchCriteriaQuestions-progress">
+    <div class="ProgressBar">
+      <div class="ProgressBar-progress " style="width: 0%;"></div>
+    </div>
+  </div>
+  <div class="SearchCriteriaQuestions-body">
+    <h3 class="SearchCriteriaQuestions-title">What month was your child born?</h3>
+    <svg class="SearchCriteriaQuestions-image " viewBox="0 0 154 151" aria-labelledby="tid2d7e4dc9-2564-486c-b809-ce1f219c71c8 " xmlns="http://www.w3.org/2000/svg">
+      <title id="tid2d7e4dc9-2564-486c-b809-ce1f219c71c8">Search</title>
+      <g fill="none" fill-rule="evenodd">
+        <path d="M68.22 3C37.742 3 13.034 27.625 13.034 58s24.708 55 55.186 55 55.187-24.625 55.187-55H68.22V3z" fill="#FD9688"></path>
+        <path d="M63.203 3C29.953 3 3 29.863 3 63c0 33.138 26.954 60 60.203 60 33.25 0 60.204-26.862 60.204-60H63.203V3zM33.726 22.564c1.14-.827 2.316-1.607 3.522-2.34" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M13.034 63c0-1.51.068-3.002.198-4.48.133-1.473.33-2.93.587-4.367.257-1.435.58-2.85.957-4.243.382-1.39.818-2.757 1.312-4.097.493-1.343 1.043-2.656 1.645-3.94.604-1.283 1.262-2.538 1.966-3.76.71-1.223 1.466-2.413 2.272-3.568.805-1.155 1.658-2.275 2.553-3.355.896-1.082 1.836-2.125 2.822-3.128M151 50.5h-17.56L123.408 63M40.627 138c0 5.523-4.493 10-10.034 10-5.54 0-10.034-4.477-10.034-10s4.492-10 10.033-10c5.54 0 10.034 4.477 10.034 10zM105.847 138c0 5.523-4.492 10-10.033 10-5.542 0-10.034-4.477-10.034-10s4.492-10 10.034-10c5.54 0 10.033 4.477 10.033 10z" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </g>
+    </svg>
+    <form novalidate="">
+      <div class="Grid  Grid--skinnyGutters    ">
+        <div class="Grid-cell   ">
+          <div class="SelectInput">
+            <select class="SelectInput-control" name="month">
+              <option value="">MM</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+        <div class="Grid-cell   ">
+          <div class="SelectInput">
+            <select class="SelectInput-control" name="year">
+              <option value="">YYYY</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+            </select>
+          </div>
+        </div>
+        <div class="Grid-cell  Grid-cell--flexNone ">
+        <%= link_to 'Next', '#', class: 'Button Button--large Button--arrow next_born_btn', id: 'sdasdasd'%>
+       <!--  <button class="Button     Button--large Button--arrow  " type="submit">Next</button> --></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div id = next_born_body>
+  <div class="SearchCriteriaQuestions-progress">
+    <div class="ProgressBar">
+      <div class="ProgressBar-progress " style="width: 50%;"></div>
+    </div>
+  </div>
+  <div class="SearchCriteriaQuestions-body">
+    <h3 class="SearchCriteriaQuestions-title">How soon do you need child care?</h3>
+    <svg class="SearchCriteriaQuestions-image " viewBox="0 0 161 161" aria-labelledby="tid369c215e-91c0-4222-8559-f8b436685732 " xmlns="http://www.w3.org/2000/svg">
+      <title id="tid369c215e-91c0-4222-8559-f8b436685732">Search</title>
+      <g fill="none" fill-rule="evenodd">
+        <path d="M33 78.238c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.667-52.5-52.667S33 49.15 33 78.24" fill="#9EE2B6"></path>
+        <path d="M93 120.873c13.805 0 25-23.58 25-52.667 0-29.087-11.195-52.666-25-52.666S68 39.12 68 68.206c0 29.087 11.195 52.667 25 52.667zM40.5 68.206h105M44.45 48.143H141.55M59 28.08H127M44.45 88.27H141.55M93 15.54v105.333" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M93 133.413c35.843 0 65-29.253 65-65.207C158 32.253 128.843 3 93 3S28 32.253 28 68.206c0 35.954 29.157 65.207 65 65.207z" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M40.5 68.206c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.666-52.5-52.666S40.5 39.12 40.5 68.206zM59 108.333H127M53.925 120.295L17.35 156.99c-2 2.005-5.25 2.005-7.275 0l-5.577-5.597c-1.998-2.03-1.998-5.29 0-7.298l36.577-36.69M31.926 142.367l-12.853-12.894" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </g>
+    </svg>
+    <div class="SearchCriteriaQuestions-answers">
+      <div class="SearchCriteriaQuestions-answer">ASAP</div>
+      <div class="SearchCriteriaQuestions-answer">Next Few Months</div>
+      <div class="SearchCriteriaQuestions-answer">Just Browsing</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#next_born_body").hide();
+    $(".next_born_btn").click(function(event) {
+        event.preventDefault();
+        $('#first_step_born').hide();
+        $("#next_born_body").toggle();
+    });
+});
+</script>

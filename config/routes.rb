@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :availability
       match :bank_account, via: [:get, :post]
       get :get_price
+      get :get_schedule
     end
     collection do
       get :get_availability
@@ -31,7 +32,11 @@ Rails.application.routes.draw do
   get '/parents/check_email_availability', to: 'parents#check_email_availability'
   get '/parents/dashboard', to: 'parents#dashboard'
 
-  resources :teacher_profiles
+  resources :teacher_profiles do
+    member do
+      get :request_info
+    end
+  end
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard

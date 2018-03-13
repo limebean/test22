@@ -43,6 +43,16 @@ class TeachersController < ApplicationController
     @prices = Teacher.find(params[:id]).prices
   end
 
+  def get_schedule
+    #binding.pry
+    teacher = Teacher.find(params[:id])
+    availabilty = teacher.availabilities.where(day_index: params[:date].to_date.wday)
+    if availabilty.present?
+      @start_time = availabilty.first.start_time.to_s(:time)
+      @end_time = availabilty.first.end_time.to_s(:time)
+    end
+  end
+
   def availability
   end
 

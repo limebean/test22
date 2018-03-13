@@ -1,0 +1,4 @@
+<% start_date = Date.today() +2 %>
+<% 6.times do |i| %>
+  <div class="ScheduleTour-day"><%= link_to (start_date + i).strftime('%A %B %dth'), get_schedule_teacher_path(@teacher_profile.teacher, date: start_date + i), remote: true %></div>
+<% end %>

@@ -8,7 +8,13 @@
           <p class="new-hero-module-subtitle-3tmqs">A creative, fun and loving 'home away from home' for little ones</p>
           <!-- <p class="new-hero-module-subtitle-3tmqs">Coming Soon Summer 2018</p> -->
           <div class="new-hero-module_inquiry-button-2NVd5">
-            <!-- <button class="button button__large" type="button">Request Info</button> -->
+          <% if current_user%>
+            <%= link_to 'Request Info', request_info_teacher_profile_path(@teacher_profile, status: "login"), class: 'button button__large', remote: true %>
+          <% else %>
+            <%= link_to 'Request Info', request_info_teacher_profile_path(@teacher_profile, status: "without_login"), class: 'button button__large', remote: true %>
+          <% end %>
+
+            <!-- <button class="button button__large" type="button" id="request_info" data-toggle="modal" data-target="#request_info_modal">Request Info</button> -->
           </div>
         </div>
       </div>
@@ -260,16 +266,16 @@
             <div class="school-page-section">
                <h2 class="school-page-section-title">PREMISES</h2>
               <div>
-               <h3 class="school-page-section-title-subheading-first">Apartment</h3>
-                  <p><Strong>Apt No </strong>><%= @teacher_profile.apt_no %>
+                  <p><Strong>Apt No </strong><%= @teacher_profile.apt_no %>
                   </p>
-                  <p><Strong>Condo </strong>><%= @teacher_profile.condo %>
+                  <p><Strong>Condo </strong><%= @teacher_profile.condo %>
                   </p> 
                 <h3 class="school-page-section-title-subheading-Second">House</h3>
-                  <p><Strong>Basement Premises </strong>><%= @teacher_profile.basement_premises %>
+                  <p><Strong>Basement Premises </strong><%= @teacher_profile.basement_premises %>
                   </p>
-                  <p><Strong>Two exit</strong>><%= @teacher_profile.two_exit %>
+                  <p><Strong>Two exit</strong><%= @teacher_profile.two_exit %>
                   </p>  
+               <h3 class="school-page-section-title-subheading-first">Apartment</
                 <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
                   <p><Strong>Home Smoke</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_smoke%>
                   </p>
@@ -372,6 +378,12 @@
    </div>
 </div>
 <%= render 'price_modal' %>
+
+<%= render 'request_info'%>
+
+
+
+
 <script type="text/javascript">
   $(".contact_seen").click(function(){
     $(this).hide();
