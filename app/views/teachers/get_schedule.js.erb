@@ -1,3 +1,2 @@
-<%# binding.pry %>
-$("#date_schedule").html('<%=j render("set_tour_time", start_time: @start_time, end_time: @end_time)%>')
+$("#date_schedule").html('<%=j render("set_tour_time", teacher_profile: @teacher.teacher_profile, start_time: @start_time, end_time: @end_time, date: params[:date])%>')
 $('#request_info_modal').modal('show')
