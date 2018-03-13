@@ -1,0 +1,32 @@
+<div class="Section">
+  <div class="P">
+    <%= form_tag login_parents_path, id: 'sign_in_form', method: :get do |f| %>
+      <div class="LoginForm-instructions">Please enter your password to log in.</div>
+      <div class="FormGroup">
+        <div class="FormControl ">
+          <label class="FormControl-label" for="ad959320-26e4-11e8-a2d4-d92d7563bdd4">Email</label><label class="FormControl-sublabel" for="ad959320-26e4-11e8-a2d4-d92d7563bdd4"></label>
+          <div class="FormControl-control">
+            <div class="TextInput   ">
+              <%= text_field_tag :email, email, readonly: true, class: 'TextInput-control' %>
+              <%#= f.input :email, label: false, input_html: {readonly: true, value: email }, class: 'TextInput-control' %>
+              <!-- <input type="email" class="TextInput-control" id="ad959320-26e4-11e8-a2d4-d92d7563bdd4" placeholder="" value="anwar17ali@gmail.com" disabled="" spellcheck="false"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="FormGroup">
+        <div class="FormControl ">
+          <label class="FormControl-label" for="ad959321-26e4-11e8-a2d4-d92d7563bdd4">Password</label><label class="FormControl-sublabel" for="ad959321-26e4-11e8-a2d4-d92d7563bdd4"></label>
+          <div class="FormControl-control">
+            <div class="TextInput   ">
+              <%= password_field_tag 'password', nil,  autocomplete: "off", class: "TextInput-control"%>
+              <!-- <input type="password" class="TextInput-control" id="ad959321-26e4-11e8-a2d4-d92d7563bdd4" placeholder="" value="" spellcheck="true"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="LoginForm-emailFormForgotPassword"><a class="Link " href="#">Forgot Password?</a></div>
+      <div class="FormActions "><button class="Button   Button--full     " type="submit">Log In</button></div>
+   <% end %>
+  </div>
+</div>

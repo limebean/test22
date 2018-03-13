@@ -39,7 +39,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :parents, only: [:create]
+  resources :parents, only: [:create] do
+    collection do
+      get :login
+    end
+  end
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard

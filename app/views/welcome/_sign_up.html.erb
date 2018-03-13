@@ -1,0 +1,48 @@
+<div id = 'sing_up_body'>
+    <%= simple_form_for(Parent.new, url: parents_path, method: :post, remote: true) do |f| %>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a62f520-268e-11e8-84d9-054058ff6835">Email</label><label class="FormControl-sublabel" for="2a62f520-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+            <%= f.input :email, label: false, input_html: {readonly: true, value: email }, class: 'TextInput-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c30-268e-11e8-84d9-054058ff6835">First Name</label><label class="FormControl-sublabel" for="2a631c30-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :name, class: 'TextInput-control', label: false %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c31-268e-11e8-84d9-054058ff6835">Last Name</label><label class="FormControl-sublabel" for="2a631c31-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :last_name, label: false, class: 'TextInput-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c32-268e-11e8-84d9-054058ff6835">Password</label><label class="FormControl-sublabel" for="2a631c32-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :password, label: false, class: "TextInput-control", autocomplete: "off" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormActions ">
+      <div class="P"><button class="Button   Button--full     " type="submit">Sign Up</button></div>
+      <div class="P"><span class="ColoredText ColoredText--gray"><span class="SmallText">By performing this action, you agree to our <a class="Link " target="_blank" href="/terms-of-use">Terms&nbsp;of&nbsp;Use</a> and <a class="Link " target="_blank" href="/privacy-policy">Privacy&nbsp;Policy</a>.</span></span></div>
+    </div>
+  <% end %>
+</div>

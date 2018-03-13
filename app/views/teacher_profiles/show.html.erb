@@ -269,12 +269,12 @@
                   <p><Strong>Apt No </strong><%= @teacher_profile.apt_no %>
                   </p>
                   <p><Strong>Condo </strong><%= @teacher_profile.condo %>
-                  </p> 
+                  </p>
                 <h3 class="school-page-section-title-subheading-Second">House</h3>
                   <p><Strong>Basement Premises </strong><%= @teacher_profile.basement_premises %>
                   </p>
                   <p><Strong>Two exit</strong><%= @teacher_profile.two_exit %>
-                  </p>  
+                  </p>
                <h3 class="school-page-section-title-subheading-first">Apartment</
                 <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
                   <p><Strong>Home Smoke</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_smoke%>
@@ -378,13 +378,17 @@
    </div>
 </div>
 <%= render 'price_modal' %>
-
 <%= render 'request_info'%>
 
 
 
 
 <script type="text/javascript">
+  pop_up = Cookies.get('pop_up')
+  if(pop_up == 'true'){
+    $('#request_info_modal').modal('show')
+    Cookies.set('pop_up', null)
+  }
   $(".contact_seen").click(function(){
     $(this).hide();
     $(this).siblings('.real_contact').show();
