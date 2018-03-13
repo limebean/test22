@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
+      post :tour_booking
     end
     collection do
       get :get_availability
