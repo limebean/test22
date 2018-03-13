@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312093938) do
+
+ActiveRecord::Schema.define(version: 20180312131415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +33,40 @@ ActiveRecord::Schema.define(version: 20180312093938) do
     t.integer "care_by", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "date_of_birth"
+    t.bigint "user_id"
+    t.string "place_of_birth"
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
+    t.index ["user_id"], name: "index_children_on_user_id"
+  end
+
+  create_table "parent_profiles", force: :cascade do |t|
+    t.string "guardian_name"
+    t.string "guardian_email"
+    t.string "guardian_occupation"
+    t.string "guardian_phone"
+    t.string "second_guardian_name"
+    t.string "second_guardian_email"
+    t.string "second_guardian_phone"
+    t.string "child_name"
+    t.date "child_date_of_birth"
+    t.date "start_of_care"
+    t.string "end_of_care"
+    t.string "weekly_schedule"
+    t.string "past_child_care"
+    t.string "child_eat_habits"
+    t.string "child_sleep_habits"
+    t.string "describe_child"
+    t.string "child_temperament"
+    t.string "behavioral_situation"
+    t.string "factor_to_enroll"
+    t.string "parent_needs"
+    t.string "child_accomodation_needs"
+    t.string "recent_reaction"
+    t.string "school_meeting_concern"
+    t.string "hear_about_us"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "prices", force: :cascade do |t|
@@ -119,4 +153,5 @@ ActiveRecord::Schema.define(version: 20180312093938) do
   end
 
   add_foreign_key "children", "teacher_profiles"
+  add_foreign_key "children", "users"
 end
