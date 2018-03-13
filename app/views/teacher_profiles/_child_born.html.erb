@@ -37,17 +37,7 @@
         </div>
         <div class="Grid-cell   ">
           <div class="SelectInput">
-            <select class="SelectInput-control" name="year">
-              <option value="">YYYY</option>
-              <option value="2012">2012</option>
-              <option value="2013">2013</option>
-              <option value="2014">2014</option>
-              <option value="2015">2015</option>
-              <option value="2016">2016</option>
-              <option value="2017">2017</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-            </select>
+            <%= select_year(Date.today, :start_year => Date.today.year, :end_year =>  Date.today.year-10,)%>
           </div>
         </div>
         <div class="Grid-cell  Grid-cell--flexNone ">
@@ -77,20 +67,112 @@
       </g>
     </svg>
     <div class="SearchCriteriaQuestions-answers">
-      <div class="SearchCriteriaQuestions-answer">ASAP</div>
-      <div class="SearchCriteriaQuestions-answer">Next Few Months</div>
-      <div class="SearchCriteriaQuestions-answer">Just Browsing</div>
+      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">ASAP</button>
+      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">Next Few Months</button>
+      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">Just Browsing</button>
     </div>
   </div>
+</div>
+
+
+
+<div id = 'email_body'>
+  <p>Please log in or create an account so we can get in touch with you.</p>
+    <%= form_tag('/check_email', id: 'check_mail', method: :get, remote: true)do %>
+      <div class="FormGroup">
+        <div class="FormControl ">
+          <label class="FormControl-label" for="127f6000-268a-11e8-856c-110e22d94a4a">Email</label>
+          <label class="FormControl-sublabel" for="127f6000-268a-11e8-856c-110e22d94a4a"></label>
+        <div class="FormControl-control">
+          <div class="TextInput">
+          <%= text_field_tag :email_id, nil, required: true, class: 'TextInput-control email_user' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormActions ">
+      <button class="Button Button--full" type="submit">Next</button>
+    </div>
+    <% end %>
+</div>
+
+<div id = 'sing_up_body'>
+    <%= simple_form_for(Parent.new, url: parents_path, method: :post, remote: true) do |f| %>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a62f520-268e-11e8-84d9-054058ff6835">Email</label><label class="FormControl-sublabel" for="2a62f520-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">          
+          <div class="TextInput   ">
+            <%= f.input :email, label: false, input_html: {readonly: true}, class: 'TextInput-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c30-268e-11e8-84d9-054058ff6835">First Name</label><label class="FormControl-sublabel" for="2a631c30-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :name, class: 'TextInput-control', label: false %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c31-268e-11e8-84d9-054058ff6835">Last Name</label><label class="FormControl-sublabel" for="2a631c31-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :last_name, label: false, class: 'TextInput-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormGroup">
+      <div class="FormControl ">
+        <label class="FormControl-label" for="2a631c32-268e-11e8-84d9-054058ff6835">Password</label><label class="FormControl-sublabel" for="2a631c32-268e-11e8-84d9-054058ff6835"></label>
+        <div class="FormControl-control">
+          <div class="TextInput   ">
+          <%= f.input :password, label: false, class: "TextInput-control", autocomplete: "off" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormActions ">
+      <div class="P"><button class="Button   Button--full     " type="submit">Sign Up</button></div>
+      <div class="P"><span class="ColoredText ColoredText--gray"><span class="SmallText">By performing this action, you agree to our <a class="Link " target="_blank" href="/terms-of-use">Terms&nbsp;of&nbsp;Use</a> and <a class="Link " target="_blank" href="/privacy-policy">Privacy&nbsp;Policy</a>.</span></span></div>
+    </div>
+  <% end %>
 </div>
 
 <script type="text/javascript">
   $(function() {
     $("#next_born_body").hide();
+    $("#email_body").hide();
+    $("#sing_up_body").hide();
     $(".next_born_btn").click(function(event) {
         event.preventDefault();
         $('#first_step_born').hide();
         $("#next_born_body").toggle();
     });
+
+    $(".second_step_btn").click(function(event) {
+        event.preventDefault();
+        $('#first_step_born').hide();
+        $("#next_born_body").hide();
+        $("#email_body").toggle();
+    });
+
 });
+
+  $(".Third_step_btn").click(function(event) {
+      alert('asdsadsad');
+      var email_id = $('.email_user').val();
+      // $.ajax({
+      //   url: '/check_email',
+      //   type: 'get',
+      //   data: {"email_id": email_id}
+      // })
+  });
+
 </script>

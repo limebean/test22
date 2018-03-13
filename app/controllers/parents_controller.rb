@@ -2,10 +2,21 @@ class ParentsController < ApplicationController
   layout :set_layout
   before_action :ensure_parent, only: :dashboard
 
+  def create
+    parent = Parent.new(permitted_parent_params)
+    if parent.save
+    else
+    end
+  end
+
   def check_email_availability
-    @user = User.find_by_email(params[:user][:email])
-    respond_to do |format|
-        format.json { render :json => !@user }
+    if params[status].present?
+      @user = User.find_by_email(params[:user][:email])
+    else
+      @user = User.find_by_email(params[:user][:email])
+      respond_to do |format|
+          format.json { render :json => !@user }
+      end
     end
   end
 
@@ -13,6 +24,13 @@ class ParentsController < ApplicationController
   end
 
   private
+
+    def permitted_parent_params
+      params.require(:parent).permit(
+        :email, :name, :last_name, :password
+      )
+    end
+
     def set_layout
       case action_name
       when 'dashboard'

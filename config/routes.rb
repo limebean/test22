@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'welcome#privacy_policy'
   get 'search', to: 'welcome#search'
   get 'show', to: 'welcome#show'
-
+  get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
 
 
@@ -37,6 +37,8 @@ Rails.application.routes.draw do
       get :request_info
     end
   end
+
+  resources :parents, only: [:create]
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard

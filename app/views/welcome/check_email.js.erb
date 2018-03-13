@@ -1,0 +1,10 @@
+<% binding.pry %>
+<% if @user.present? %>
+	
+<% else %>
+	$('#first_step_born').hide();
+	$("#next_born_body").hide();
+	$("#email_body").hide();
+	// $('#parent_email').val(<%= params[:email_id] %>)	
+	$("#sing_up_body").show();
+<% end %>
