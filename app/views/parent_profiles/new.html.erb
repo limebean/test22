@@ -1,62 +1,175 @@
-<div class="form-content custom-form-content">
-  <%= simple_form_for @teacher_profile, html: { class: 'form-horizontal' } do |f| %>
-    <div>
-      <h3>Personal Information</h3>
-        <section>
-          <%= f.input :first_name%>
-          <%= f.input :last_name %>
-          <%= f.input :street_address %>
-          <%= f.input :apt_no%>
-          <%= f.input :postal_code%>
-          <%= f.input :city%>
-          <%= f.input :home_phone%>
-          <%= f.input :cell_phone%>          
-          <%= f.input :date_of_birth, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-          <p>(*) Mandatory</p>
-        </section>
-        <h3>Premises:</h3>
-        <section>
-          <%= f.input :apartment, inline_label: 'Apartment:' %>
-          <div id = "apartment">
-            <%= f.input :floor%>
-            <%= f.input :condo, as: :select, label: '*If Apartment, is this a Condo?', collection: choose_option, include_blank: false, include_hidden: false %>
+<div class="form-content custom-form-content for_parent_profile">
+  <%= simple_form_for @parent_profile, html: { class: 'form-horizontal' } do |f| %>
+    <h3 class="fonts_profile">Family Profile</h3>
+    <hr>
+    <p>We'd love to know a little more about your family before we talk. Please take a moment to fill this out. You'll only fill this out once for all Wonderschools. Wonderschool is a network of boutique in-home early childhood programs. Learn more »</p>
+    <hr>
+      <section class="parent_section_form">
+        <div class="hide_for_next">
+          <%= f.label :guardian_name,"PARENT/GUARDIAN NAME", class:'heading_label' %>
+          <%= f.input :guardian_name, label:false %>
+          <%= f.label :guardian_name, "PARENT/GUARDIAN EMAIL", class:'heading_label' %>
+          <%= f.input :guardian_email, label:false %>
+          <%= f.label :guardian_name, "PARENT/GUARDIAN EMPLOYER/OCCUPATION", class:'heading_label' %>
+          <%= f.input :guardian_occupation, label:false %>
+          <%= f.label :guardian_name, "PARENT/GUARDIAN PHONE", class:'heading_label' %>
+          <%= f.input :guardian_phone, label:false %>
+          <%= f.label :guardian_name, "SECOND PARENT/GUARDIAN NAME", class:'heading_label' %>
+          <%= f.input :second_guardian_name, label:false %>
+          <%= f.label :guardian_name, "SECOND PARENT/GUARDIAN EMAIL", class:'heading_label' %>
+          <%= f.input :second_guardian_email, label:false %>
+          <%= f.label :guardian_name, "SECOND PARENT/GUARDIAN EMPLOYER/OCCUPATION", class:'heading_label' %>
+          <%= f.input :second_guardian_occupation, label:false %>
+          <%= f.input :second_guardian_phone, label:'SECOND PARENT/GUARDIAN PHONE' %>
+          <%= f.input :child_name, label:'CHILD NAME' %>          
+          <%= f.input :child_date_of_birth, label:'CHILD DATE OF BIRTH' %>
+          <%= f.input :start_of_care, label:'DESIRED START OF CARE' %>
+          <%= f.input :end_of_care, label:'PROBABLE END OF CARE' %>
+          <%= f.label :weekly_schedule,'PREFFERD WEEKLY SCHEDULE' %>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Monday', checked('Monday'), id:'weekly_schedule_mon'%>
+            <%= label_tag 'weekly_schedule_mon' ,'Monday' %>
           </div>
-
-          <%= f.input :house, inline_label: 'House:' %>
-          <div id = "house">
-            <%= f.input :basement_premises, as: :select, label: 'Is child care space in the basement of the premises?', collection: choose_option, include_blank: false, include_hidden: false %>
-            <%= f.input :two_exit, as: :select, label: '*Are there two exits?', collection: choose_option, include_blank: false, include_hidden: false %>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Tuesday', checked('Tuesday'), id:'weekly_schedule_tues'%>
+            <%= label_tag 'weekly_schedule_tues' ,'Tuesday' %>
           </div>
-          <%= f.input :home_smoke, as: :select, label: '*Smoking in home:', collection: choose_option, include_blank: false, include_hidden: false %>
-
-          <%= f.input :pet, as: :select, label: '*Pets in home?', collection: choose_option, include_blank: false, include_hidden: false %>
-
-          <%= f.input :vaccine, as: :select, label: '*Vaccinations are current?', collection: option_with_na, include_blank: false, include_hidden: false %>
-          <%= f.input :language%>
-          <%= f.input :work%>
-          <%= f.input :legal_to_work, :as => :select, :label => 'Are you legally able to work in Canada? (Have SIN or applied for it)', :collection => option_with_na, include_blank: false, include_hidden: false %>
-          <p>(*) Mandatory</p>
-        </section>
-        <h3>CHILDREN IN HOME:</h3>
-        <section>
-          <div id='children'>
-            <%= f.simple_fields_for :children do |child| %>
-              <%= render 'child_fields', :f => child %>
-            <% end %>
-            <div class='links'>
-              <%= link_to_add_association 'Add child', f, :children %>
-            </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Wednesday', checked('Wednesday'), id:'weekly_schedule_wed'%>
+            <%= label_tag 'weekly_schedule_wed' ,'Wednesday' %>
           </div>
-        </section>
-        <h3>Finish</h3>
-        <section>
-          <%= f.input :profile_image, as: :file, label: 'Profile Image', required: true%>
-          <%= f.input :goal, label: 'GOAL:' %>
-          <%= f.input :age_range, label: 'Age range you want to have?' %>
-          <%= f.input :local_school, as: :select, label: '*Are you willing to take children to local schools?', collection: choose_option, include_blank: false, include_hidden: false %>
-          <%= f.input :school_name, label: 'Name of School(s):' %>
-          <%= f.input :comments, label: 'Comments' %>
-        </section>
-    </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Thursday', checked('Thursday'), id:'weekly_schedule_thur'%>
+            <%= label_tag 'weekly_schedule_thur' ,'Thursday' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Friday', checked('Friday'), id:'weekly_schedule_fri'%>
+            <%= label_tag 'weekly_schedule_fri' ,'Friday' %>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary btn-custom next_button">Next</button>
+          </div>
+        </div>
+
+
+
+        <div class="show_after_next">
+          <%= f.input :desired_schedule, label: 'HOW MUCH CARE DO YOU NEED? WHAT IS YOUR DESIRED SCHEDULE?' %>
+          <%= f.label :past_child_care, "WHAT IS YOUR CHILD'S PREVIOUS CHILDCARE EXPERIENCE?" %>
+          <p>Check all that apply</p>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'Stay-at-home_parent', checked('Stay-at-home_parent'), id:'past_child_care_home'%>
+            <%= label_tag 'past_child_care_home' ,'Stay-at-home parent' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'family_member', checked('family_member'), id: 'past_child_care_f_mamber' %>
+            <%= label_tag 'past_child_care_f_mamber' ,'Family member' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'nanny', checked('nanny'), id:'past_child_care_nanny'%>
+            <%= label_tag 'past_child_care_nanny' ,'Nanny' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'sharecare', checked('sharecare'), id:'past_child_care_sharecare'%>
+            <%= label_tag 'past_child_care_sharecare' ,'Sharecare' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'childcare', checked('childcare'), id:'past_child_care_childcare'%>
+            <%= label_tag 'past_child_care_childcare' ,'Childcare' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[past_child_care][]', 'childcare_center', checked('childcare_center'), id:'past_child_care_childcare_center'%>
+            <%= label_tag 'past_child_care_childcare_center' ,'Childcare Center' %>
+          </div>
+          <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S EATING HABITS" %>
+          <p>Picky or loves to eat, favorite foods, least favorite, frequency, any other comments</p>
+          <%= f.input :child_eat_habits, label:false %>
+          <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S SLEEP HABITS" %>
+          <p>Frequency, duration, routine before naps, sleep training, etc</p>
+          <%= f.input :child_sleep_habits,label:false %>
+          <%= f.input :describe_child, label:'WHAT THREE WORDS DESCRIBE YOUR CHILD?' %>
+          <%= f.input :child_temperament, label:"DESCRIBE YOUR CHILD'S SOCIAL EXPERIENCE / TEMPERAMENT?"%>
+          <%= f.input :behavioral_situation, label:"HOW DO YOU HANDLE BEHAVIORAL CONCERNS/SITUATIONS AT HOME?" %>
+          <%= f.label :factor_to_enroll,"WHAT ARE SOME FACTORS IMPACTING YOUR DECISION TO ENROLL IN CHILDCARE?" %>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'cost', checked('cost'), id:'factor_to_enroll_cost'%>
+            <%= label_tag 'factor_to_enroll_cost' ,'cost' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'location', checked('location'), id:'factor_to_enroll_location'%>
+            <%= label_tag 'factor_to_enroll_location' ,'location' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'prog_phil', checked('prog_phil'), id:'factor_to_enroll_prog_phil'%>
+            <%= label_tag 'factor_to_enroll_prog_phil' ,'prog_phil' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'timing', checked('timing'), id:'factor_to_enroll_timing'%>
+            <%= label_tag 'factor_to_enroll_timing' ,'timing' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'size_prog', checked('size_prog'), id:'factor_to_enroll_size_prog'%>
+            <%= label_tag 'factor_to_enroll_size_prog' ,'size_prog' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'care_giver', checked('care_giver'), id:'factor_to_enroll_care_giver'%>
+            <%= label_tag 'factor_to_enroll_care_giver' ,'care_giver' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'facility', checked('facility'), id:'factor_to_enroll_facility'%>
+            <%= label_tag 'factor_to_enroll_facility' ,'facility' %>
+          </div>
+          <%= f.input :school_meeting_concern,label:"DO YOU HAVE ANY CONCERNS ABOUT OUR SCHOOL MEETING YOUR NEEDS?" %>
+          <%= f.label :child_accomodation_needs,'FAMILY / CHILD NEEDS' %>
+          <p>We do our best to accommodate family preferences/needs. We can talk more about these during a tour.</p>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'material_for_eat', checked('material_for_eat'), id:'child_accomodation_needs_material_for_eat'%>
+            <%= label_tag 'child_accomodation_needs_material_for_eat' ,'Matel or glass only for eating/drinking' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'comp_diper', checked('comp_diper'), id:'child_accomodation_needs_comp_diper'%>
+            <%= label_tag 'child_accomodation_needs_comp_diper' ,'Compostable diapers' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'cloth_diper', checked('cloth_diper'), id:'child_accomodation_needs_cloth_diper'%>
+            <%= label_tag 'child_accomodation_needs_cloth_diper' ,'Cloth diapers' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'diet_restrict', checked('diet_restrict'), id:'child_accomodation_needs_diet_restrict'%>
+            <%= label_tag 'child_accomodation_needs_diet_restrict' ,'Dietary Restrictions/Allergies(Gluten-free,vegan,certified humane meat,vegetarian,other dietary restrictions)' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'co_sleep', checked('co_sleep'), id:'child_accomodation_needs_co_sleep'%>
+            <%= label_tag 'child_accomodation_needs_co_sleep' ,'Co-sleeping' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'dog_fear', checked('dog_fear'), id:'child_accomodation_needs_dog_fear'%>
+            <%= label_tag 'child_accomodation_needs_dog_fear' ,'Dog allergies/ Fear of Dogs' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'limit_eng', checked('limit_eng'), id:'child_accomodation_needs_limit_eng'%>
+            <%= label_tag 'child_accomodation_needs_limit_eng' ,'Limited English exposure at home' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'vaccinate_child', checked('vaccinate_child'), id:'child_accomodation_needs_vaccinate_child'%>
+            <%= label_tag 'child_accomodation_needs_vaccinate_child' ,'Child is not vaccinated,or has an alternativevaccination schedule' %>
+          </div>
+          <div class="field">
+            <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'special_needs', checked('special_needs'), id:'child_accomodation_needs_special_needs'%>
+            <%= label_tag 'child_accomodation_needs_special_needs' ,'Special Needs/Accommodations Needed' %>
+          </div>
+          <%= f.input :recent_reaction, label:"DESCRIBE YOUR CHILD'S RECENT REACTIONS WHEN IN A NEW CHILDCARE SITUATION WITH A NEW CAREGIVER OR ENVIRONMENT SUCH AS A GYM DROP IN CHILDCARE, WITH A NEW SITTER/FRIEND, ETC" %>
+          <%= f.input :hear_about_us, label:"HEAR ABOUT US" %>
+          <div class="form-actions">
+            <%=f.submit 'Send', class: 'btn btn-primary btn-custom'%>
+          </div>
+        </div>
+      </section>
   <% end %>
 </div>
+<script type="text/javascript">
+  $('.next_button').click(function(){
+    $('.hide_for_next').hide();
+    $('.show_after_next').show();
+  });
+</script>
