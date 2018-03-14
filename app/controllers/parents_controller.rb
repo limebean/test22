@@ -1,6 +1,4 @@
 class ParentsController < ApplicationController
-  layout :set_layout
-  before_action :ensure_parent, only: :dashboard
 
   def create
     parent =  Parent.new(permitted_parent_params)
@@ -52,20 +50,4 @@ class ParentsController < ApplicationController
         :email, :name, :last_name, :password
       )
     end
-
-    def set_layout
-      case action_name
-      when 'dashboard'
-        'admin'
-      else
-        'application'
-      end
-    end
-
-    def ensure_parent
-      unless current_user && current_user.parent?
-        redirect_to parents_dashboard_path
-      end
-    end
-
 end
