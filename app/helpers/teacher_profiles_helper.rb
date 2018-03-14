@@ -7,4 +7,8 @@ module TeacherProfilesHelper
     level =  [["Yes", "0"], ["No", "1"], ["N/A", "2"]]
   end
 
+  def time_option( start_time, end_time )
+    (start_time..end_time).step(100).map { |t| [t, t] }
+  end
+
 end

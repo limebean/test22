@@ -43,6 +43,10 @@ class WelcomeController < ApplicationController
       end
     end
 
+    def check_email
+      @user = User.find_by(email: params[:email_id])
+    end
+
     def show
 
     end

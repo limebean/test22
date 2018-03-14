@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'welcome#privacy_policy'
   get 'search', to: 'welcome#search'
   get 'show', to: 'welcome#show'
-
+  get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
 
 
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
+      post :tour_booking
     end
     collection do
       get :get_availability
@@ -37,6 +38,14 @@ Rails.application.routes.draw do
   resources :teacher_profiles do
     member do
       get :request_info
+    end
+  end
+
+  resources :parents, only: [:create] do
+    collection do
+      get :login
+      get :child_birth
+      get :set_child_admission
     end
   end
 

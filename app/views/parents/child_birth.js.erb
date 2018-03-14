@@ -1,0 +1,3 @@
+
+$("#request_info_body").html('<%=j render("admit_child", birth_month: params[:date][:month], birth_year: params[:date][:year], teacher_profile_id: params[:teacher_profile])%>')
+$('#request_info_modal').modal('show')

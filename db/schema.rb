@@ -119,6 +119,16 @@ ActiveRecord::Schema.define(version: 20180313132628) do
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 
+  create_table "tour_requests", force: :cascade do |t|
+    t.bigint "teacher_id"
+    t.date "tour_date"
+    t.time "tour_time"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_tour_requests_on_teacher_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
