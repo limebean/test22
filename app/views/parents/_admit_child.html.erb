@@ -1,0 +1,32 @@
+<div id = next_born_body>
+  <div class="SearchCriteriaQuestions-progress">
+    <div class="ProgressBar">
+      <div class="ProgressBar-progress " style="width: 50%;"></div>
+    </div>
+  </div>
+  <div class="SearchCriteriaQuestions-body">
+    <h3 class="SearchCriteriaQuestions-title">How soon do you need child care?</h3>
+    <svg class="SearchCriteriaQuestions-image " viewBox="0 0 161 161" aria-labelledby="tid369c215e-91c0-4222-8559-f8b436685732 " xmlns="http://www.w3.org/2000/svg">
+      <title id="tid369c215e-91c0-4222-8559-f8b436685732">Search</title>
+      <g fill="none" fill-rule="evenodd">
+        <path d="M33 78.238c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.667-52.5-52.667S33 49.15 33 78.24" fill="#9EE2B6"></path>
+        <path d="M93 120.873c13.805 0 25-23.58 25-52.667 0-29.087-11.195-52.666-25-52.666S68 39.12 68 68.206c0 29.087 11.195 52.667 25 52.667zM40.5 68.206h105M44.45 48.143H141.55M59 28.08H127M44.45 88.27H141.55M93 15.54v105.333" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M93 133.413c35.843 0 65-29.253 65-65.207C158 32.253 128.843 3 93 3S28 32.253 28 68.206c0 35.954 29.157 65.207 65 65.207z" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M40.5 68.206c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.666-52.5-52.666S40.5 39.12 40.5 68.206zM59 108.333H127M53.925 120.295L17.35 156.99c-2 2.005-5.25 2.005-7.275 0l-5.577-5.597c-1.998-2.03-1.998-5.29 0-7.298l36.577-36.69M31.926 142.367l-12.853-12.894" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </g>
+    </svg>
+    <div class="SearchCriteriaQuestions-answers">
+      <%= form_tag(set_child_admission_parents_path, id: 'set_admit', method: :get, remote: true)do %>
+        <%= hidden_field_tag "month", birth_month %>
+        <%= hidden_field_tag "year", birth_year %>
+        <%= hidden_field_tag "teacher_profile", teacher_profile_id %>
+        <%= submit_tag("ASAP", id: "button", class: "btn btn-info btn-lg") %>
+        <%= submit_tag("Next Few Months", id: "button", class: "btn btn-info btn-lg") %>
+        <%= submit_tag("Just Browsing", id: "button", class: "btn btn-info btn-lg") %>
+        <!-- <button type="button" value="0" class="btn btn-info btn-lg">ASAP</button>
+        <button type="button" value="1" class="btn btn-info btn-lg">Next Few Months</button>
+        <button type="button" value="2" class="btn btn-info btn-lg">Just Browsing</button> -->
+      <% end %>
+    </div>
+  </div>
+</div>

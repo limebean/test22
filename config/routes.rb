@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   resources :parents, only: [:create] do
     collection do
       get :login
+      get :child_birth
+      get :set_child_admission
     end
   end
 

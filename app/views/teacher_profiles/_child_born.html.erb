@@ -14,109 +14,22 @@
         <path d="M13.034 63c0-1.51.068-3.002.198-4.48.133-1.473.33-2.93.587-4.367.257-1.435.58-2.85.957-4.243.382-1.39.818-2.757 1.312-4.097.493-1.343 1.043-2.656 1.645-3.94.604-1.283 1.262-2.538 1.966-3.76.71-1.223 1.466-2.413 2.272-3.568.805-1.155 1.658-2.275 2.553-3.355.896-1.082 1.836-2.125 2.822-3.128M151 50.5h-17.56L123.408 63M40.627 138c0 5.523-4.493 10-10.034 10-5.54 0-10.034-4.477-10.034-10s4.492-10 10.033-10c5.54 0 10.034 4.477 10.034 10zM105.847 138c0 5.523-4.492 10-10.033 10-5.542 0-10.034-4.477-10.034-10s4.492-10 10.034-10c5.54 0 10.033 4.477 10.033 10z" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
       </g>
     </svg>
-    <form novalidate="">
+    <%= form_tag(child_birth_parents_path, id: 'select_birth_date', method: :get, remote: true)do %>
       <div class="Grid  Grid--skinnyGutters    ">
         <div class="Grid-cell   ">
           <div class="SelectInput">
-            <select class="SelectInput-control" name="month">
-              <option value="">MM</option>
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04">04</option>
-              <option value="05">05</option>
-              <option value="06">06</option>
-              <option value="07">07</option>
-              <option value="08">08</option>
-              <option value="09">09</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </select>
+            <%= hidden_field_tag "teacher_profile", teacher_profile.id %>
+            <%= select_month(14, {use_two_digit_numbers: true, prompt: 'MM'}, class: 'SelectInput-control', required: true)%>
           </div>
         </div>
         <div class="Grid-cell   ">
           <div class="SelectInput">
-            <%= select_year(Date.today, :start_year => Date.today.year, :end_year =>  Date.today.year-10,)%>
+            <%= select_year(14, { start_year: Date.today.year, end_year: Date.today.year-10, prompt: 'YYYY' }, {class: "SelectInput-control", required: true})%>
           </div>
         </div>
         <div class="Grid-cell  Grid-cell--flexNone ">
-        <%= link_to 'Next', '#', class: 'Button Button--large Button--arrow next_born_btn', id: 'sdasdasd'%>
-       <!--  <button class="Button     Button--large Button--arrow  " type="submit">Next</button> --></div>
+        <button class="Button     Button--large Button--arrow  " type="submit">Next</button></div>
       </div>
-    </form>
-  </div>
-</div>
-
-
-<div id = next_born_body>
-  <div class="SearchCriteriaQuestions-progress">
-    <div class="ProgressBar">
-      <div class="ProgressBar-progress " style="width: 50%;"></div>
-    </div>
-  </div>
-  <div class="SearchCriteriaQuestions-body">
-    <h3 class="SearchCriteriaQuestions-title">How soon do you need child care?</h3>
-    <svg class="SearchCriteriaQuestions-image " viewBox="0 0 161 161" aria-labelledby="tid369c215e-91c0-4222-8559-f8b436685732 " xmlns="http://www.w3.org/2000/svg">
-      <title id="tid369c215e-91c0-4222-8559-f8b436685732">Search</title>
-      <g fill="none" fill-rule="evenodd">
-        <path d="M33 78.238c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.667-52.5-52.667S33 49.15 33 78.24" fill="#9EE2B6"></path>
-        <path d="M93 120.873c13.805 0 25-23.58 25-52.667 0-29.087-11.195-52.666-25-52.666S68 39.12 68 68.206c0 29.087 11.195 52.667 25 52.667zM40.5 68.206h105M44.45 48.143H141.55M59 28.08H127M44.45 88.27H141.55M93 15.54v105.333" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path d="M93 133.413c35.843 0 65-29.253 65-65.207C158 32.253 128.843 3 93 3S28 32.253 28 68.206c0 35.954 29.157 65.207 65 65.207z" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path d="M40.5 68.206c0 29.087 23.505 52.667 52.5 52.667s52.5-23.58 52.5-52.667c0-29.087-23.505-52.666-52.5-52.666S40.5 39.12 40.5 68.206zM59 108.333H127M53.925 120.295L17.35 156.99c-2 2.005-5.25 2.005-7.275 0l-5.577-5.597c-1.998-2.03-1.998-5.29 0-7.298l36.577-36.69M31.926 142.367l-12.853-12.894" stroke="#27345B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </g>
-    </svg>
-    <div class="SearchCriteriaQuestions-answers">
-      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">ASAP</button>
-      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">Next Few Months</button>
-      <button type="button" class="btn btn-info btn-lg second_step_btn" data-toggle="modal" data-target="#emailModal">Just Browsing</button>
-    </div>
-  </div>
-</div>
-
-
-
-<div id = 'email_body'>
-  <p>Please log in or create an account so we can get in touch with you.</p>
-    <%= form_tag('/check_email', id: 'check_mail', method: :get, remote: true)do %>
-      <div class="FormGroup">
-        <div class="FormControl ">
-          <label class="FormControl-label" for="127f6000-268a-11e8-856c-110e22d94a4a">Email</label>
-          <label class="FormControl-sublabel" for="127f6000-268a-11e8-856c-110e22d94a4a"></label>
-        <div class="FormControl-control">
-          <div class="TextInput">
-          <%= hidden_field_tag "teacher_profile", teacher_profile.id %>
-          <%= text_field_tag :email_id, nil, required: true, class: 'TextInput-control email_user' %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="FormActions ">
-      <button class="Button Button--full" type="submit">Next</button>
-    </div>
     <% end %>
+  </div>
 </div>
-
-
-
-<script type="text/javascript">
-  $(function() {
-    $("#next_born_body").hide();
-    $("#email_body").hide();
-    $("#sing_up_body").hide();
-    $(".next_born_btn").click(function(event) {
-        event.preventDefault();
-        $('#first_step_born').hide();
-        $("#next_born_body").toggle();
-    });
-
-    $(".second_step_btn").click(function(event) {
-        event.preventDefault();
-        $('#first_step_born').hide();
-        $("#next_born_body").hide();
-        $("#email_body").toggle();
-    });
-
-});
-
-</script>

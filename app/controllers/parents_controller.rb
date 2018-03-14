@@ -35,6 +35,12 @@ class ParentsController < ApplicationController
   def dashboard
   end
 
+  def child_birth
+  end
+  def set_child_admission
+    @teacher_profile = TeacherProfile.find(params[:teacher_profile])
+  end
+
   private
 
     def login_params

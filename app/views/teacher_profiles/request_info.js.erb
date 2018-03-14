@@ -3,6 +3,5 @@
   $('#request_info_modal').modal('show')
 <% else %>
   $("#request_info_body").html('<%=j render("child_born", teacher_profile: @teacher_profile)%>')
-  $('#next_born_body').hide();
   $('#request_info_modal').modal('show')
 <% end %>
