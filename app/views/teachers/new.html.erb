@@ -40,7 +40,9 @@
                   </div>
                   <div class="P">
                     <span class="new_colored_text new_colored_text__gray">
-                      <span class="small_text">By performing this action, you agree to our <a class="new-link" target="_blank" href="/terms-of-use">Terms&nbsp;of&nbsp;Use</a> and <a class="new-link" target="_blank" href="/privacy-policy">Privacy&nbsp;Policy</a>.
+                      <span class="small_text">By performing this action, you agree to our&nbsp;
+                      <%= link_to ' Terms  of  use', terms_of_use_path, class: 'new-link', target: 'blank'%> &nbsp;and&nbsp;
+                     <%= link_to 'Privacy Policy', privacy_policy_path, class: 'new-link', target: 'blank'%>
                       </span>
                     </span>
                   </div>
@@ -140,10 +142,11 @@
           <div class="P">
             <div class="Ttos_agree_light">
               <span class="colored_text colored_text_white">
-                <span class="small_text">By performing this action, you agree to your <a class="new-link" target="_blank" href="/terms-of-use">
-                  <span class="colored_text colored_text_white"><span class="underlined_text">Terms&nbsp;of&nbsp;Use</span></span></a> and <a class="Link " target="_blank" href="/privacy-policy"><span class="colored_text colored_text_white"><span class="underlined_text">Privacy&nbsp;Policy</span></span></a>.
+              <span class="small_text">By performing this action, you agree to your  and <%= link_to ' Terms  of  use', terms_of_use_path, class: 'text_underline', target: 'blank'%> and
+              <%= link_to 'Privacy Policy', privacy_policy_path, class: 'text_underline', target: 'blank'%>.
                 </span>
               </span>
+            </div>                    
             </div>
           </div>
         </div>
