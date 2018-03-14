@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get '/parents/check_email_availability', to: 'parents#check_email_availability'
   get '/parents/dashboard', to: 'parents#dashboard'
 
+  resources :parent_profiles
+
   resources :teacher_profiles do
     member do
       get :request_info
