@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       elsif current_user.teacher?
         return_path || dashboard_path
       elsif current_user.parent?
-        return_path || parents_dashboard_path
+        return_path || super || root_path
       end
     end
 
