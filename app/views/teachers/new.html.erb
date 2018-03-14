@@ -40,7 +40,9 @@
                   </div>
                   <div class="P">
                     <span class="new_colored_text new_colored_text__gray">
-                      <span class="small_text">By performing this action, you agree to our <a class="new-link" target="_blank" href="/terms-of-use">Terms&nbsp;of&nbsp;Use</a> and <a class="new-link" target="_blank" href="/privacy-policy">Privacy&nbsp;Policy</a>.
+                      <span class="small_text">By performing this action, you agree to our
+                      <%= link_to 'Terms  of  use', terms_of_use_path, class: 'new-link', target: 'blank'%> &nbsp;&nbsp; and &nbsp;&nbsp;
+                     <%= link_to 'Privacy Policy', privacy_policy_path, class: 'new-link', target: 'blank'%>
                       </span>
                     </span>
                   </div>
