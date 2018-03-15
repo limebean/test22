@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   before_action :check_if_teacher_or_admin, only: :index
-  #before_action :check_text_for_search, only: :search
     def index
 
     end
@@ -58,14 +57,6 @@ class WelcomeController < ApplicationController
     end
 
   private
-    def check_text_for_search
-      #binding.pry
-      available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
-      unless available_text.include?(params[:q])
-        redirect_back(fallback_location: root_path, notice: "An error occurred and the image failed to be uploaded.")
-      end
-    end
-
     def check_if_teacher_or_admin
         if current_user && (current_user.teacher? || current_user.admin?)
             redirect_to dashboard_path
