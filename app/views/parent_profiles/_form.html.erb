@@ -1,0 +1,183 @@
+<h3 class="fonts_profile">Family Profile</h3>
+<hr>
+<p>We'd love to know a little more about your family before we talk. Please take a moment to fill this out. You'll only fill this out once for all Wonderschools. Wonderschool is a network of boutique in-home early childhood programs. Learn more »</p>
+<hr>
+<section class="parent_section_form">
+  <div class="hide_for_next">
+    <%= f.label :guardian_name,"PARENT/GUARDIAN NAME", class:'heading_label' %>
+    <%= f.input :guardian_name, label:false %>
+    <%= f.label :guardian_email, "PARENT/GUARDIAN EMAIL", class:'heading_label' %>
+    <%= f.input :guardian_email, label:false %>
+    <%= f.label :guardian_occupation, "PARENT/GUARDIAN EMPLOYER/OCCUPATION", class:'heading_label' %>
+    <%= f.input :guardian_occupation, label:false %>
+    <%= f.label :guardian_phone, "PARENT/GUARDIAN PHONE", class:'heading_label' %>
+    <%= f.input :guardian_phone, label:false %>
+    <%= f.label :second_guardian_name, "SECOND PARENT/GUARDIAN NAME", class:'heading_label' %>
+    <%= f.input :second_guardian_name, label:false %>
+    <%= f.label :second_guardian_email, "SECOND PARENT/GUARDIAN EMAIL", class:'heading_label' %>
+    <%= f.input :second_guardian_email, label:false %>
+    <%= f.label :second_guardian_occupation, "SECOND PARENT/GUARDIAN EMPLOYER/OCCUPATION", class:'heading_label' %>
+    <%= f.input :second_guardian_occupation, label:false %>
+    <%= f.label :second_guardian_phone, "SECOND PARENT/GUARDIAN PHONE", class:'heading_label' %>
+    <%= f.input :second_guardian_phone, label:false %>
+    <%= f.label :child_name, "CHILD NAME", class:'heading_label' %>
+    <%= f.input :child_name, label:false %>     
+    <%= f.label :child_date_of_birth, "CHILD DATE OF BIRTH", class:'heading_label' %>
+    <span class="inline_date_picker">
+      <%= f.input :child_date_of_birth, as: :string,label:false ,wrapper_html: { class: 'your-class' } %>
+    </span>
+    <%= f.label :start_of_care, "DESIRED START OF CARE", class:'heading_label' %>
+    <span class="inline_date_picker">
+      <%= f.input :start_of_care, as: :string,label:false %>
+    </span>
+    <%= f.label :end_of_care, "PROBABLE END OF CARE", class:'heading_label' %>
+    <span class="inline_date_picker">
+      <%= f.input :end_of_care, label:false %>
+    </span>
+    <%= f.label :weekly_schedule,'PREFFERD WEEKLY SCHEDULE',class:'heading_label' %>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Monday', checked('Monday'), id:'weekly_schedule_mon'%>
+      <%= label_tag 'weekly_schedule_mon' ,'Monday',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Tuesday', checked('Tuesday'), id:'weekly_schedule_tues'%>
+      <%= label_tag 'weekly_schedule_tues' ,'Tuesday',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Wednesday', checked('Wednesday'), id:'weekly_schedule_wed'%>
+      <%= label_tag 'weekly_schedule_wed' ,'Wednesday',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Thursday', checked('Thursday'), id:'weekly_schedule_thur'%>
+      <%= label_tag 'weekly_schedule_thur' ,'Thursday',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Friday', checked('Friday'), id:'weekly_schedule_fri'%>
+      <%= label_tag 'weekly_schedule_fri' ,'Friday',class:'heading_label_check' %>
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary btn-custom next_button">Next</button>
+    </div>
+  </div>
+
+
+
+  <div class="show_after_next">
+    <%= f.label :desired_schedule,'HOW MUCH CARE DO YOU NEED? WHAT IS YOUR DESIRED SCHEDULE?',class:'heading_label' %>
+    <%= f.input :desired_schedule, label: false %>
+    <%= f.label :past_child_care, "WHAT IS YOUR CHILD'S PREVIOUS CHILDCARE EXPERIENCE?",class:'heading_label' %>
+    <p>Check all that apply</p>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'Stay-at-home_parent', checked('Stay-at-home_parent'), id:'past_child_care_home'%>
+      <%= label_tag 'past_child_care_home' ,'Stay-at-home parent',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'family_member', checked('family_member'), id: 'past_child_care_f_mamber' %>
+      <%= label_tag 'past_child_care_f_mamber' ,'Family member',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'nanny', checked('nanny'), id:'past_child_care_nanny'%>
+      <%= label_tag 'past_child_care_nanny' ,'Nanny' ,class:'heading_label_check'%>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'sharecare', checked('sharecare'), id:'past_child_care_sharecare'%>
+      <%= label_tag 'past_child_care_sharecare' ,'Sharecare',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'childcare', checked('childcare'), id:'past_child_care_childcare'%>
+      <%= label_tag 'past_child_care_childcare' ,'Childcare',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[past_child_care][]', 'childcare_center', checked('childcare_center'), id:'past_child_care_childcare_center'%>
+      <%= label_tag 'past_child_care_childcare_center' ,'Childcare Center',class:'heading_label_check' %>
+    </div>
+    <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S EATING HABITS",class:'heading_label' %>
+    <p>Picky or loves to eat, favorite foods, least favorite, frequency, any other comments</p>
+    <%= f.input :child_eat_habits, label:false %>
+    <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S SLEEP HABITS",class:'heading_label' %>
+    <p>Frequency, duration, routine before naps, sleep training, etc</p>
+    <%= f.input :child_sleep_habits,label:false %>
+    <%= f.label :describe_child, "WHAT THREE WORDS DESCRIBE YOUR CHILD?",class:'heading_label' %>
+    <%= f.input :describe_child, label: false %>
+    <%= f.label :child_temperament, "DESCRIBE YOUR CHILD'S SOCIAL EXPERIENCE / TEMPERAMENT?",class:'heading_label' %>
+    <%= f.input :child_temperament, label:false%>
+    <%= f.label :behavioral_situation, "HOW DO YOU HANDLE BEHAVIORAL CONCERNS/SITUATIONS AT HOME?",class:'heading_label' %>
+    <%= f.input :behavioral_situation, label:false %>
+    <%= f.label :factor_to_enroll,"WHAT ARE SOME FACTORS IMPACTING YOUR DECISION TO ENROLL IN CHILDCARE?",class:'heading_label' %>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'cost', checked('cost'), id:'factor_to_enroll_cost'%>
+      <%= label_tag 'factor_to_enroll_cost' ,'cost',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'location', checked('location'), id:'factor_to_enroll_location'%>
+      <%= label_tag 'factor_to_enroll_location' ,'location',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'prog_phil', checked('prog_phil'), id:'factor_to_enroll_prog_phil'%>
+      <%= label_tag 'factor_to_enroll_prog_phil' ,'prog_phil',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'timing', checked('timing'), id:'factor_to_enroll_timing'%>
+      <%= label_tag 'factor_to_enroll_timing' ,'timing',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'size_prog', checked('size_prog'), id:'factor_to_enroll_size_prog'%>
+      <%= label_tag 'factor_to_enroll_size_prog' ,'size_prog',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'care_giver', checked('care_giver'), id:'factor_to_enroll_care_giver'%>
+      <%= label_tag 'factor_to_enroll_care_giver' ,'care_giver',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'facility', checked('facility'), id:'factor_to_enroll_facility'%>
+      <%= label_tag 'factor_to_enroll_facility' ,'facility',class:'heading_label_check' %>
+    </div>
+    <%= f.label :factor_to_enroll,"DO YOU HAVE ANY CONCERNS ABOUT OUR SCHOOL MEETING YOUR NEEDS?",class:'heading_label' %>
+    <%= f.input :school_meeting_concern,label:false %>
+    <%= f.label :child_accomodation_needs,'FAMILY / CHILD NEEDS',class:'heading_label' %>
+    <p>We do our best to accommodate family preferences/needs. We can talk more about these during a tour.</p>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'material_for_eat', checked('material_for_eat'), id:'child_accomodation_needs_material_for_eat'%>
+      <%= label_tag 'child_accomodation_needs_material_for_eat' ,'Matel or glass only for eating/drinking',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'comp_diper', checked('comp_diper'), id:'child_accomodation_needs_comp_diper'%>
+      <%= label_tag 'child_accomodation_needs_comp_diper' ,'Compostable diapers',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'cloth_diper', checked('cloth_diper'), id:'child_accomodation_needs_cloth_diper'%>
+      <%= label_tag 'child_accomodation_needs_cloth_diper' ,'Cloth diapers',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'diet_restrict', checked('diet_restrict'), id:'child_accomodation_needs_diet_restrict'%>
+      <%= label_tag 'child_accomodation_needs_diet_restrict' ,'Dietary Restrictions/Allergies(Gluten-free,vegan,certified humane meat,vegetarian,other dietary restrictions)',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'co_sleep', checked('co_sleep'), id:'child_accomodation_needs_co_sleep'%>
+      <%= label_tag 'child_accomodation_needs_co_sleep' ,'Co-sleeping',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'dog_fear', checked('dog_fear'), id:'child_accomodation_needs_dog_fear'%>
+      <%= label_tag 'child_accomodation_needs_dog_fear' ,'Dog allergies/ Fear of Dogs',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'limit_eng', checked('limit_eng'), id:'child_accomodation_needs_limit_eng'%>
+      <%= label_tag 'child_accomodation_needs_limit_eng' ,'Limited English exposure at home',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'vaccinate_child', checked('vaccinate_child'), id:'child_accomodation_needs_vaccinate_child'%>
+      <%= label_tag 'child_accomodation_needs_vaccinate_child' ,'Child is not vaccinated,or has an alternativevaccination schedule',class:'heading_label_check' %>
+    </div>
+    <div class="field">
+      <%= check_box_tag 'parent_profile[child_accomodation_needs][]', 'special_needs', checked('special_needs'), id:'child_accomodation_needs_special_needs'%>
+      <%= label_tag 'child_accomodation_needs_special_needs' ,'Special Needs/Accommodations Needed',class:'heading_label_check' %>
+    </div>
+    <%= f.label :recent_reaction,"DESCRIBE YOUR CHILD'S RECENT REACTIONS WHEN IN A NEW CHILDCARE SITUATION WITH A NEW CAREGIVER OR ENVIRONMENT SUCH AS A GYM DROP IN CHILDCARE, WITH A NEW SITTER/FRIEND, ETC",class:'heading_label' %>
+    <%= f.input :recent_reaction, label:false %>
+    <%= f.label :recent_reaction,"HEAR ABOUT US",class:'heading_label' %>
+    <%= f.input :hear_about_us, label:false %>
+    <div class="form-actions">
+      <%=f.submit 'Send', class: 'btn btn-primary btn-custom'%>
+    </div>
+  </div>
+</section>
