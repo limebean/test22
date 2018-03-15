@@ -4,7 +4,7 @@
       <div class="ProgressBar-progress " style="width: 0%;"></div>
     </div>
   </div>
-  <div class="SearchCriteriaQuestions-body">
+  <div class="SearchCriteriaQuestions-body text-center">
     <h3 class="SearchCriteriaQuestions-title">What month was your child born?</h3>
     <svg class="SearchCriteriaQuestions-image " viewBox="0 0 154 151" aria-labelledby="tid2d7e4dc9-2564-486c-b809-ce1f219c71c8 " xmlns="http://www.w3.org/2000/svg">
       <title id="tid2d7e4dc9-2564-486c-b809-ce1f219c71c8">Search</title>
@@ -19,16 +19,16 @@
         <div class="Grid-cell   ">
           <div class="SelectInput">
             <%= hidden_field_tag "teacher_profile", teacher_profile.id %>
-            <%= select_month(14, {use_two_digit_numbers: true, prompt: 'MM'}, class: 'SelectInput-control', required: true)%>
+            <%= select_month(14, {use_two_digit_numbers: true, prompt: 'MM'}, class: 'SelectInput-control born_child_date', required: true)%>
           </div>
         </div>
         <div class="Grid-cell   ">
           <div class="SelectInput">
-            <%= select_year(14, { start_year: Date.today.year, end_year: Date.today.year-10, prompt: 'YYYY' }, {class: "SelectInput-control", required: true})%>
+            <%= select_year(14, { start_year: Date.today.year, end_year: Date.today.year-10, prompt: 'YYYY' }, {class: "SelectInput-control born_child_date", required: true})%>
           </div>
         </div>
         <div class="Grid-cell  Grid-cell--flexNone ">
-        <button class="Button     Button--large Button--arrow  " type="submit">Next</button></div>
+        <button class="Button Button--large Button--arrow  " type="submit">Next</button></div>
       </div>
     <% end %>
   </div>

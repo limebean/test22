@@ -4,7 +4,7 @@
     <p>We'd love to know a little more about your family before we talk. Please take a moment to fill this out. You'll only fill this out once for all Wonderschools. Wonderschool is a network of boutique in-home early childhood programs. Learn more »</p>
     <hr>
     <p>Thank you, your application has been submitted!</p>
-    <p><b>Your responses</b></p>
+    <p><b>Your responses</b></p><span><%= link_to 'Edit', edit_parent_profile_path(current_user.parent_profile&.id) %>Edit</span>
     <section class="parent_section_form">
       <div class="guardian_details">
 

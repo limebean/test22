@@ -31,7 +31,11 @@
         <%if current_user %>
           <% if current_user.parent? %>
             <li><a href="/partner" class="nav-link">MY SCHOOLS</a></li>
-            <li><%= link_to 'FAMILY PROFILE',  new_parent_profile_path, class:'nav-link' %></li>
+            <% if current_user.parent_profile.present? %>
+              <li><%= link_to 'FAMILY PROFILE',  parent_profile_path(current_user.parent_profile&.id), class:'nav-link' %></li>
+            <% else %>
+              <li><%= link_to 'FAMILY PROFILE',  new_parent_profile_path, class:'nav-link' %></li>
+            <% end %>
           <% else %>
             <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
             <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>

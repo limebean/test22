@@ -1988,8 +1988,6 @@ Button.Button--full {
     font-weight: 700;
     height: auto;
     line-height: 1;
-    margin: 0;
-
     text-align: center;
     text-decoration: none;
 
@@ -2062,7 +2060,7 @@ svg:not(:root) {
 }
 
 .Button.Button--large {
-    padding: 16px 24px;
+    padding: 16px 30px;
     text-transform: uppercase;
 }
 

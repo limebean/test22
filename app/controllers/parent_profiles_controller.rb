@@ -1,9 +1,7 @@
 class ParentProfilesController < ApplicationController
 
-
-
 	def new
-    @parent_profile = current_user.build_parent_profile
+    @parent_profile = ParentProfile.new
   end
 
   def create
@@ -17,7 +15,9 @@ class ParentProfilesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+     
+  end
 
   def update
     if @parent_profile.present? && @parent_profile.update_attributes(permitted_parent_params)
