@@ -1171,7 +1171,7 @@ h3 {
 }
 
 .small_text {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .new_partner_page_section__white {
@@ -2075,4 +2075,8 @@ svg:not(:root) {
     min-width: 130px;
     padding: 16px 24px;
     text-transform: uppercase;
+}
+a.text_underline {
+    color: white;
+    text-decoration: underline;
 }

@@ -40,7 +40,9 @@
                   </div>
                   <div class="P">
                     <span class="new_colored_text new_colored_text__gray">
-                      <span class="small_text">By performing this action, you agree to our <a class="new-link" target="_blank" href="/terms-of-use">Terms&nbsp;of&nbsp;Use</a> and <a class="new-link" target="_blank" href="/privacy-policy">Privacy&nbsp;Policy</a>.
+                      <span class="small_text">By performing this action, you agree to our&nbsp;
+                      <%= link_to ' Terms  of  use', terms_of_use_path, class: 'new-link', target: 'blank'%> &nbsp;and&nbsp;
+                     <%= link_to 'Privacy Policy', privacy_policy_path, class: 'new-link', target: 'blank'%>
                       </span>
                     </span>
                   </div>
@@ -89,9 +91,9 @@
               <li> Easy-to-use online bill and management tools</li>
               <li> Connect to the Dreamschool Network</li>
             </ol>
-          <div class="new-patner-para"> 
+          <div class="new-patner-para">
            <p> For more information, see “how it works”.</p>
-          </div> 
+          </div>
 
           </div>
         </div>
@@ -99,6 +101,62 @@
     </div>
   </div>
   <div class="new_partner_page_section new_partner_page_section__blue">
+    <div class="custom_content_width_constraint">
+      <h3 class="new_partner_page_section_head">Get in touch to explore your dreams!  </h3>
+      <div class="new_aligned_text new_aligned_text__center">
+        <div class="new_partner_page_section_narrow">
+          <div class="new_partner_page_bottom_cta_form">
+            <div class="new_prospect_capture_form">
+              <%= simple_form_for(@teacher) do |f| %>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="new_text_input new_text_input__white">
+                    <%= f.text_field :name, :placeholder => "Name", class: 'form-control new_text_input_control', required: true %>
+                  </div>
+                </div>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="new_text_input new_text_input__white">
+                    <%= f.email_field :email, :placeholder => "Email", class: 'form-control new_text_input_control', required: true %>
+                  </div>
+                </div>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="new_text_input new_text_input__white">
+                    <%= f.text_field :telephone_no, :placeholder => "Telephone Number", class: 'form-control new_text_input_control', required: true %>
+                  </div>
+                </div>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="new_text_input new_text_input__white">
+                    <%= f.text_field :postal_code, :placeholder => "Postal Code", class: 'form-control new_text_input_control', required: true %>
+                  </div>
+                </div>
+                <div class="new_prospect_capture_form_form_control">
+                  <div class="P">
+                    <%= f.submit 'Submit', class: "button button_full button__large button_arrow  button__white" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="new_partner_page_section_narrow"><br>
+          <p>Do you enjoy working with children? Do you want to work for yourself and own your own child care centre? Do you live in Toronto or its surrounding area? Let’s talk about it!</p>
+          <p>Schedule an appointment to meet our team today!</p>
+          <div class="P">
+            <div class="Ttos_agree_light">
+              <span class="colored_text colored_text_white">
+              <span class="small_text">By performing this action, you agree to your  and <%= link_to ' Terms  of  use', terms_of_use_path, class: 'text_underline', target: 'blank'%> and
+              <%= link_to 'Privacy Policy', privacy_policy_path, class: 'text_underline', target: 'blank'%>.
+                </span>
+              </span>
+            </div>                    
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="new_partner_page_section new_partner_page_section__blue">
     <div class="custom_content_width_constraint">
       <h3 class="new_partner_page_section_head">Get in touch to explore your dreams! </h3>
       <div class="new_aligned_text new_aligned_text__center">
@@ -109,5 +167,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
