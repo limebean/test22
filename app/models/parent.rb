@@ -1,4 +1,4 @@
 class Parent < User
-	has_one :parent_profile, foreign_key: :parent_id, dependent: :destroy
-  has_many :tour_requests, dependent: :destroy
+  has_one :parent_profile, foreign_key: :parent_id, dependent: :destroy
+
 end

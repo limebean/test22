@@ -21,25 +21,30 @@ class WelcomeController < ApplicationController
     end
 
     def search
-      if params[:q].present?
-        @teachers = TeacherProfile.where("city ILIKE ?", "%#{params[:q]}%")
-        if @teachers.blank?
-          @teachers = TeacherProfile.near("%#{params[:q]}%", 50)
-        end
+      available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
+      unless available_text.include?(params[:q])
+        @message = 'not found'
       else
-        @teachers = TeacherProfile.all
-      end
-      @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
-        marker.lat teacher.latitude
-        marker.lng teacher.longitude
-        marker.picture({
-          marker_anchor: [40, 58],
-          url: ActionController::Base.helpers.asset_path("map_icon.png"),
-          width: "45",
-          height: "45"
-        })
-        marker.title teacher.school_name
-        marker.infowindow render_to_string(:partial => "/welcome/info", locals: {:teacher => teacher})
+        # if params[:q].present?
+        #   @teachers = TeacherProfile.where("city ILIKE ?", "%#{params[:q]}%")
+        #   if @teachers.blank?
+        #     @teachers = TeacherProfile.near("%#{params[:q]}%", 50)
+        #   end
+        # else
+          @teachers = TeacherProfile.all
+        # end
+        @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
+          marker.lat teacher.latitude
+          marker.lng teacher.longitude
+          marker.picture({
+            marker_anchor: [40, 58],
+            url: ActionController::Base.helpers.asset_path("map_icon.png"),
+            width: "45",
+            height: "45"
+          })
+          marker.title teacher.school_name
+          marker.infowindow render_to_string(:partial => "/welcome/info", locals: {:teacher => teacher})
+        end
       end
     end
 

@@ -46,7 +46,8 @@ class TeachersController < ApplicationController
   def get_schedule
     @tour_request = TourRequest.new
     @teacher = Teacher.find(params[:id])
-    availabilty = @teacher.availabilities.where(day_index: params[:date].to_date.wday)
+    day = params[:date].to_date.wday == 0 ? 7 : params[:date].to_date.wday
+    availabilty = @teacher.availabilities.where(day_index: day)
     if availabilty.present?
       @start_time = availabilty.first.start_time.to_s(:time)
       @end_time = availabilty.first.end_time.to_s(:time)
@@ -54,14 +55,9 @@ class TeachersController < ApplicationController
   end
 
   def tour_booking
-    teacher = Teacher.find(params[:id])
-    tour_request = TourRequest.new(permitted_tour_request_param)
-    if tour_request.save
-      flash[:notice] = 'Tour request successfully created.'
-    else
-      flash[:notice] = 'Something went wrong! Try again later.'
-    end
-    redirect_to teacher_profile_path(teacher.teacher_profile)
+    @teacher = Teacher.find(params[:id])
+    tour_request = current_user.tour_requests.new(permitted_tour_request_param)
+    @status = tour_request.save ? true : false
   end
 
   def availability
