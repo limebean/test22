@@ -35,8 +35,13 @@ class ParentsController < ApplicationController
 
   def child_birth
   end
+
   def set_child_admission
     @teacher_profile = TeacherProfile.find(params[:teacher_profile])
+  end
+
+  def change_favourite_status
+    binding.pry
   end
 
   private

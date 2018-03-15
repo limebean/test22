@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'show', to: 'welcome#show'
   get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
-  
+
 
 
   devise_for :users, controllers: { registrations: "users/registrations" }
@@ -43,6 +43,9 @@ Rails.application.routes.draw do
   end
 
   resources :parents, only: [:create] do
+    member do
+      get :change_favourite_status
+    end
     collection do
       get :login
       get :child_birth
