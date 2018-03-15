@@ -4,7 +4,7 @@
       <div class="ProgressBar-progress " style="width: 50%;"></div>
     </div>
   </div>
-  <div class="SearchCriteriaQuestions-body">
+  <div class="SearchCriteriaQuestions-body text-center">
     <h3 class="SearchCriteriaQuestions-title">How soon do you need child care?</h3>
     <svg class="SearchCriteriaQuestions-image " viewBox="0 0 161 161" aria-labelledby="tid369c215e-91c0-4222-8559-f8b436685732 " xmlns="http://www.w3.org/2000/svg">
       <title id="tid369c215e-91c0-4222-8559-f8b436685732">Search</title>
@@ -20,9 +20,9 @@
         <%= hidden_field_tag "month", birth_month %>
         <%= hidden_field_tag "year", birth_year %>
         <%= hidden_field_tag "teacher_profile", teacher_profile_id %>
-        <%= submit_tag("ASAP", id: "button", class: "btn btn-info btn-lg") %>
-        <%= submit_tag("Next Few Months", id: "button", class: "btn btn-info btn-lg") %>
-        <%= submit_tag("Just Browsing", id: "button", class: "btn btn-info btn-lg") %>
+        <%= submit_tag("ASAP", id: "button", class: "btn btn-info btn-lg child_admit_buttons") %>
+        <%= submit_tag("NEXT FEW MONTHS", id: "button", class: "btn btn-info btn-lg child_admit_buttons") %>
+        <%= submit_tag("JUST BROWSING", id: "button", class: "btn btn-info btn-lg child_admit_buttons") %>
         <!-- <button type="button" value="0" class="btn btn-info btn-lg">ASAP</button>
         <button type="button" value="1" class="btn btn-info btn-lg">Next Few Months</button>
         <button type="button" value="2" class="btn btn-info btn-lg">Just Browsing</button> -->
