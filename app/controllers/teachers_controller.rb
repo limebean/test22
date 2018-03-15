@@ -46,7 +46,8 @@ class TeachersController < ApplicationController
   def get_schedule
     @tour_request = TourRequest.new
     @teacher = Teacher.find(params[:id])
-    availabilty = @teacher.availabilities.where(day_index: params[:date].to_date.wday)
+    day = params[:date].to_date.wday == 0 ? 7 : 1
+    availabilty = @teacher.availabilities.where(day_index: day)
     if availabilty.present?
       @start_time = availabilty.first.start_time.to_s(:time)
       @end_time = availabilty.first.end_time.to_s(:time)

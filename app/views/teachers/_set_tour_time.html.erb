@@ -1,37 +1,40 @@
-<%= simple_form_for(TourRequest.new, url: tour_booking_teacher_path(@teacher), html: { method: :post }) do |f| %>
-  <div id = 'choose_time' >
-    <div class="ScheduleTour-selectedDay">
-      <%= f.hidden_field :tour_date, value: date%>
-      <%= f.hidden_field :teacher_id, value: @teacher.id%>
-      <div class="ScheduleTour-selectedDayLabel"><%= date.to_date.strftime('%A %B %dth') %></div>
-      <div class="ScheduleTour-selectedDayLink"><%= link_to 'Change', request_info_teacher_profile_path(teacher_profile, status: "login"), class: 'button button__large', remote: true %></div>
-    </div>
-    <div class="SelectInput">
-      <%= f.input :tour_time, as: :select, collection: time_option(start_time, end_time), :required => true ,class: "SelectInput-control" %>
-      <div id="message">
-       <p>please select the time</p>
+<% unless start_time. present? %>
+  <p> Teacher will not Available on this date</p>
+<% else %>
+  <%= simple_form_for(TourRequest.new, url: tour_booking_teacher_path(@teacher), html: { method: :post }) do |f| %>
+    <div id = 'choose_time' >
+      <div class="ScheduleTour-selectedDay">
+        <%= f.hidden_field :tour_date, value: date%>
+        <%= f.hidden_field :teacher_id, value: @teacher.id%>
+        <div class="ScheduleTour-selectedDayLabel"><%= date.to_date.strftime('%A %B %dth') %></div>
+        <div class="ScheduleTour-selectedDayLink"><%= link_to 'Change', request_info_teacher_profile_path(teacher_profile, status: "login"), class: 'button button__large', remote: true %></div>
       </div>
-    </div>
+      <div class="SelectInput">
+        <%= f.input :tour_time, as: :select, collection: time_option(start_time, end_time), :required => true ,class: "SelectInput-control" %>
+        <div id="message">
+         <p>please select the time</p>
+        </div>
+      </div>
 
-    <%= link_to 'Continue', '#', class: 'Button   Button--full  Button--large Button--arrow', id: 'time_choose_btn'%>
-  </div>
-  <div id='phone_body'>
-    <div class="AlignedText AlignedText--center">
-      <div class="P">
-        <div class="H3">Where can we reach you?</div>
-      </div>
-      <div class="P">Please share your phone number so we can get in touch about your tour request.</div>
-      <div class="P">
-          <div class="TextInput   ">
-            <%= f.input :phone, required: true%>
-          </div>
-          <div class="FormActions "><button class="Button" type="submit">Send Tour Request</button></div>
-        </form>
+      <%= link_to 'Continue', '#', class: 'Button   Button--full  Button--large Button--arrow', id: 'time_choose_btn'%>
+    </div>
+    <div id='phone_body'>
+      <div class="AlignedText AlignedText--center">
+        <div class="P">
+          <div class="H3">Where can we reach you?</div>
+        </div>
+        <div class="P">Please share your phone number so we can get in touch about your tour request.</div>
+        <div class="P">
+            <div class="TextInput   ">
+              <%= f.input :phone, required: true%>
+            </div>
+            <div class="FormActions "><button class="Button" type="submit">Send Tour Request</button></div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
-
 <script type="text/javascript">
   $(function() {
     $("#phone_body").hide();
