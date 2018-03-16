@@ -258,10 +258,6 @@ p.about-section-bold-para {
   margin: -24px 0 0 -24px;
 }
 
-.Grid-cell {
-  flex: 1;
-  padding: 24px 0 0 24px;
-}
 
 .article-news {
   &:link, &:visited {
@@ -1910,7 +1906,6 @@ h3 {
 
 .Grid-cell {
     flex: 1;
-    padding: 24px 0 0 24px;
 }
 
 .ScheduleTour-day {
@@ -1921,6 +1916,7 @@ h3 {
     line-height: 43px;
     text-align: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .ScheduleTour-selectedDay {

@@ -26,6 +26,9 @@ $border_color:#5196cb;
     opacity: .5;
   }
 }
+.ScheduleTour-day a {
+  color: rgba(0,0,0,.5);
+}
 .born_child_date {
   background-image: asset_url("down_arrow.png");
   background-position: 100%;
@@ -88,6 +91,25 @@ input.child_admit_buttons[type=submit] {
 .email_auth_submit {
   margin-top: 30px;
   padding: 12px;
+  width: 100%;
+}
+.tour_request_tour_time {
+  margin-bottom: 0px;
+}
+.H3 {
+  color: #333;
+  font-family: Merriweather,Gerogia,serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+.P {
+  text-align: center;
+}
+.Button.tour_request {
+  padding: 10px 15px;
+  margin-top: 15px;
 }
 .form_label_fields {
   font-size: 13px;
