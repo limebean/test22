@@ -21,26 +21,29 @@
                             <%= image_tag(teacher.profile_image.url, class: 'custom_callout_school_aspect_ratio_image_img')%>
                           <%end%>
                         </div>
-                        <div class="custom_callout_school_bookmark">
-                          <button class="button button_naked custom-btn" type="button">
-                            <div class="custom_callout_school_bookmark_icon">
-                              <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
-                                <svg class="SVGResponsive-svg" viewBox="0 0 29 24" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg">
-                                  <g fill-rule="nonzero" fill="none">
-                                    <path fill="transparent" fill-rule="evenodd" d="M14.12 4.441c-.036.038-.072.038-.109 0l-2.22-2.315C10.481.759 8.734 0 6.915 0a6.69 6.69 0 0 0-4.877 2.126A7.344 7.344 0 0 0 0 7.212c0 1.936.728 3.758 2.038 5.086L11.9 22.585a3.074 3.074 0 0 0 2.22.95c.838 0 1.602-.343 2.22-.95l9.863-10.287a7.344 7.344 0 0 0 2.038-5.086c0-1.936-.728-3.758-2.038-5.086-2.766-2.81-7.17-2.81-9.863 0L14.12 4.44z"></path>
-                                    <path stroke="#fff" stroke-width="2" d="M14.842 5.133a1.064 1.064 0 0 1-1.553 0l-2.22-2.315C9.947 1.648 8.461 1 6.915 1A5.698 5.698 0 0 0 2.76 2.818 6.344 6.344 0 0 0 1 7.212c0 1.678.628 3.246 1.76 4.394l9.862 10.287c.394.41.934.641 1.498.641.555 0 1.073-.224 1.499-.64l9.862-10.288a6.344 6.344 0 0 0 1.76-4.394c0-1.678-.628-3.246-1.75-4.385-2.373-2.41-6.128-2.41-8.429-.01l-2.22 2.316z"></path>
-                                  </g>
-                                </svg>
-                              </div>
-                            </div>
-                          </button>
-                        </div>
+
                         <div class="custom_callout_school_info">
                           <h2 class="custom_callout_school_name"> <%= teacher.school_name %></h2>
                         </div>
                       </div>
                     <% end %>
-                    <!-- </a> -->
+                    <%= form_tag(change_favourite_status_parents_path, method: :get, remote: true)do %>
+                      <%= hidden_field_tag 'teacher_id', teacher.teacher.id%>
+                      <div class="custom_callout_school_bookmark enroll_btn">
+                        <button class="button button_naked custom-btn" type="submit">
+                          <div class="custom_callout_school_bookmark_icon">
+                            <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 82.7586%;">
+                              <svg class="SVGResponsive-svg" viewBox="0 0 29 24" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg">
+                                <g fill-rule="nonzero" fill="none">
+                                  <path fill="transparent" fill-rule="evenodd" d="M14.12 4.441c-.036.038-.072.038-.109 0l-2.22-2.315C10.481.759 8.734 0 6.915 0a6.69 6.69 0 0 0-4.877 2.126A7.344 7.344 0 0 0 0 7.212c0 1.936.728 3.758 2.038 5.086L11.9 22.585a3.074 3.074 0 0 0 2.22.95c.838 0 1.602-.343 2.22-.95l9.863-10.287a7.344 7.344 0 0 0 2.038-5.086c0-1.936-.728-3.758-2.038-5.086-2.766-2.81-7.17-2.81-9.863 0L14.12 4.44z"></path>
+                                  <path stroke="#fff" stroke-width="2" d="M14.842 5.133a1.064 1.064 0 0 1-1.553 0l-2.22-2.315C9.947 1.648 8.461 1 6.915 1A5.698 5.698 0 0 0 2.76 2.818 6.344 6.344 0 0 0 1 7.212c0 1.678.628 3.246 1.76 4.394l9.862 10.287c.394.41.934.641 1.498.641.555 0 1.073-.224 1.499-.64l9.862-10.288a6.344 6.344 0 0 0 1.76-4.394c0-1.678-.628-3.246-1.75-4.385-2.373-2.41-6.128-2.41-8.429-.01l-2.22 2.316z"></path>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    <% end %>
                   </div>
                 </div>
               <% end %>
@@ -60,6 +63,7 @@
 
 
 <script type="text/javascript">
+
 	$(function(){
     var mapOptions = {
       center: new google.maps.LatLng(43.653226, -79.3831843),

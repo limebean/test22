@@ -44,10 +44,10 @@ Rails.application.routes.draw do
 
   resources :parents, only: [:create] do
     member do
-      get :change_favourite_status
       get :school
     end
     collection do
+      get :change_favourite_status
       get :login
       get :child_birth
       get :set_child_admission
