@@ -7,16 +7,16 @@
         <%= f.hidden_field :tour_date, value: date%>
         <%= f.hidden_field :teacher_id, value: @teacher.id%>
         <div class="ScheduleTour-selectedDayLabel"><%= date.to_date.strftime('%A %B %dth') %></div>
-        <div class="ScheduleTour-selectedDayLink"><%= link_to 'Change', request_info_teacher_profile_path(teacher_profile, status: "login"), class: 'button button__large', remote: true %></div>
+        <div class="ScheduleTour-selectedDayLink"><%= link_to 'Change', request_info_teacher_profile_path(teacher_profile, status: "login"), class: '', remote: true %></div>
       </div>
       <div class="SelectInput">
-        <%= f.input :tour_time, as: :select, collection: time_option(start_time, end_time), required: true, prompt: 'Select', class: "SelectInput-control" %>
+        <%= f.input :tour_time, label:false,as: :select, collection: time_option(start_time, end_time), required: true, prompt: 'Select',input_html:{class:'email_auth'} %>
         <div id="message">
          <p>please select the time</p>
         </div>
       </div>
 
-      <%= link_to 'Continue', '#', class: 'Button   Button--full  Button--large Button--arrow', id: 'time_choose_btn'%>
+      <%= link_to 'Continue', '#', class: 'Button   Button--full  Button--large Button--arrow email_auth_submit', id: 'time_choose_btn'%>
     </div>
     <div id='phone_body'>
       <div class="AlignedText AlignedText--center">
@@ -26,9 +26,9 @@
         <div class="P">Please share your phone number so we can get in touch about your tour request.</div>
         <div class="P">
             <div class="TextInput   ">
-              <%= f.input :phone, required: true%>
+              <%= f.input :phone,label:false, required: true ,input_html:{class:'email_auth'} %>
             </div>
-            <div class="FormActions "><button class="Button" type="submit">Send Tour Request</button></div>
+            <div class="FormActions "><button class="Button tour_request" type="submit">Send Tour Request</button></div>
           </form>
         </div>
       </div>
