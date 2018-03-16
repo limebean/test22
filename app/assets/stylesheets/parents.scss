@@ -1,3 +1,140 @@
 // Place all the styles related to the parents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container.container-fixed {
+  max-width: 112rem;
+}
+main.container {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.card {
+  margin-bottom: .5rem;
+}
+.card>* {
+  background: #fff;
+  padding: 3rem;
+}
+.spaced-row{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+.spaced-row>* {
+  margin-bottom: inherit;
+  padding: 0 3rem;
+}
+h5, h6 {
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: inherit;
+  font-weight: 700;
+}
+
+.p:last-child, blockquote:last-child, dl:last-child, figure:last-child, form:last-child, ol:last-child, p:last-child, pre:last-child, table:last-child, ul:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+.muted {
+    color: #999;
+}
+h6 {
+  font-weight: 400;
+}
+.full {
+  width: 100%;
+}
+.button-lg {
+  font-size: 1.2rem !important;
+  height: 5rem !important;
+  line-height: 4.8rem !important;
+  font-weight: 400 !important;
+  letter-spacing: .1rem !important;
+  padding: 0px !important;
+}
+
+.link.link-red, a.link-red {
+    color: #f76157;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 2rem;
+}
+.spaced+.spaced {
+    margin-top: 3rem;
+}
+h4 {
+  font-family: Merriweather,serif;
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+hr {
+  border: 0;
+  border-top: .1rem solid #ddd;
+  margin: 2rem 0;
+}
+
+
+
+@media (max-width: 699.999px) {
+  .card>* {
+      padding: 2.25rem;
+  }
+  .spaced-row>* {
+    margin-bottom: 3rem;
+    padding: 0;
+  }
+}
+
+
+@media (min-width: 700px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+  h5 {
+    font-size: 1.8rem;
+  }
+  .spaced-row {
+    flex-direction: row;
+    margin-left: -3rem;
+    margin-bottom: 0;
+    width: calc(100% + 2 * 3rem);
+  }
+  .spaced-row>* {
+    display: block;
+    flex: 1;
+    margin-left: 0;
+    margin-bottom: 3rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  h6 {
+    font-size: 1.3rem;
+  }
+
+}

@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'welcome#privacy_policy'
   get 'search', to: 'welcome#search'
   get 'show', to: 'welcome#show'
-
+  get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
+
 
 
   devise_for :users, controllers: { registrations: "users/registrations" }
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
       post :set_availability
       get :availability
       match :bank_account, via: [:get, :post]
+      get :get_price
+      get :get_schedule
+      post :tour_booking
     end
     collection do
       get :get_availability
@@ -30,7 +34,25 @@ Rails.application.routes.draw do
   get '/parents/check_email_availability', to: 'parents#check_email_availability'
   get '/parents/dashboard', to: 'parents#dashboard'
 
-  resources :teacher_profiles
+  resources :parent_profiles
+
+  resources :teacher_profiles do
+    member do
+      get :request_info
+    end
+  end
+
+  resources :parents, only: [:create] do
+    member do
+      get :school
+    end
+    collection do
+      get :change_favourite_status
+      get :login
+      get :child_birth
+      get :set_child_admission
+    end
+  end
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard

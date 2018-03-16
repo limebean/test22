@@ -11,4 +11,10 @@ class UserMailer < ApplicationMailer
     mail(to: @teacher.email, subject: 'Welcome to the wonder school')
   end
 
+  def notify_parent_for_tour_booking(tour_request, user)
+  	@tour_request = tour_request
+    @user = user
+    mail(to: @user.email, subject: 'Your tour booking information')
+  end
+
 end

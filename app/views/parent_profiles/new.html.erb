@@ -1,0 +1,12 @@
+<div class="form-content custom-form-content for_parent_profile">
+  <%= simple_form_for @parent_profile, html: { class: 'form-horizontal' } do |f| %>
+    <%= render 'form', f: f %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $('.next_button').click(function(){
+    $('.hide_for_next').hide();
+    $('.show_after_next').show();
+  });
+  $('.inline_date_picker .form-group input').addClass('datepicker');
+</script>

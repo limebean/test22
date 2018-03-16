@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guardian_name: MyString
+  guardian_email: MyString
+  guardian_occupation: MyString
+  guardian_phone: MyString
+  second_guardian_name: MyString
+  second_guardian_email: MyString
+  second_guardian_phone: MyString
+  child_name: MyString
+  child_date_of_birth: 2018-03-12
+  start_of_care: 2018-03-12
+  end_of_care: MyString
+  weekly_schedule: MyString
+  past_child_care: MyString
+  child_eat_habits: MyString
+  child_sleep_habits: MyString
+  describe_child: MyString
+  child_temperament: MyString
+  behavioral_situation: MyString
+  factor_to_enroll: MyString
+  parent_needs: MyString
+  child_accomodation_needs: MyString
+  recent_reaction: MyString
+  school_meeting_concern: MyString
+  hear_about_us: MyString
+
+two:
+  guardian_name: MyString
+  guardian_email: MyString
+  guardian_occupation: MyString
+  guardian_phone: MyString
+  second_guardian_name: MyString
+  second_guardian_email: MyString
+  second_guardian_phone: MyString
+  child_name: MyString
+  child_date_of_birth: 2018-03-12
+  start_of_care: 2018-03-12
+  end_of_care: MyString
+  weekly_schedule: MyString
+  past_child_care: MyString
+  child_eat_habits: MyString
+  child_sleep_habits: MyString
+  describe_child: MyString
+  child_temperament: MyString
+  behavioral_situation: MyString
+  factor_to_enroll: MyString
+  parent_needs: MyString
+  child_accomodation_needs: MyString
+  recent_reaction: MyString
+  school_meeting_concern: MyString
+  hear_about_us: MyString

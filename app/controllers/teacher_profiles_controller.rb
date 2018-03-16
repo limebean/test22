@@ -1,7 +1,7 @@
 class TeacherProfilesController < ApplicationController
   layout :set_layout
-  before_action :authenticate_user!, except: %i[show]
-  before_action :set_teacher_profile, only: %i[edit show update]
+  before_action :authenticate_user!, except: %i[show request_info]
+  before_action :set_teacher_profile, only: %i[edit show update request_info]
 
   def new
     @teacher_profile = current_user.build_teacher_profile
@@ -33,6 +33,10 @@ class TeacherProfilesController < ApplicationController
 
   def show
     @prices = @teacher_profile.teacher.prices
+  end
+
+  def request_info
+    @teacher_profile
   end
 
   private

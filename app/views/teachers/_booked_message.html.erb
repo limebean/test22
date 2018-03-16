@@ -1,0 +1,25 @@
+<div id = "show_message">
+  <div class="AlignedText AlignedText--center">
+    <% unless status %>
+      <div class="Section">
+        <div class="P">
+          <div class="H3">Something went wrong! Try again later.</div>
+        </div>
+    <% else %>
+      <div class="Section">
+        <div class="P">
+          <div class="H3">We’ve received your tour request.</div>
+        </div>
+        <div class="P">We will be in touch soon to confirm your requested time or suggest an alternate time.</div>
+      </div>
+      <div class="Section">
+        <div class="P">
+          <div class="H5 ">Would you like to see other great programs in your area?</div>
+        </div>
+      <% end %>
+      <div class="P">
+        <%= link_to 'Show me more programs', teacher_profile_path(teacher_profile), class: "Button email_auth_submit"%>
+      </div>
+    </div>
+  </div>
+</div>

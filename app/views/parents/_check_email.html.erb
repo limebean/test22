@@ -1,0 +1,20 @@
+<div id = 'email_body'>
+  <p>Please log in or create an account so we can get in touch with you.</p>
+    <%= form_tag('/check_email', id: 'check_mail', method: :get, remote: true)do %>
+      <div class="FormGroup">
+        <div class="FormControl">
+          <label class="FormControl-label form_label_fields" for="127f6000-268a-11e8-856c-110e22d94a4a">Email</label>
+          <label class="FormControl-sublabel" for="127f6000-268a-11e8-856c-110e22d94a4a"></label>
+        <div class="FormControl-control">
+          <div class="TextInput">
+          <%= hidden_field_tag "teacher_profile", teacher_profile.id %>
+          <%= text_field_tag :email_id, nil, required: true, class: 'TextInput-control email_user email_auth' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="FormActions ">
+      <button class="Button Button--full email_auth_submit" type="submit">Next</button>
+    </div>
+    <% end %>
+</div>

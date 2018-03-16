@@ -1,0 +1,16 @@
+<div class="Section">
+  <div class="Section-heading">
+    <div class="Grid Grid--alignItemsFlexEnd  Grid--justifyContentSpaceBetween   ">
+      <div class="Grid-cell">Request a Tour</div>
+    </div>
+  </div>
+  <div id = 'date_schedule'>
+    <% start_date = Date.today() +2 %>
+    <% 6.times do |i| %>
+      <div class="ScheduleTour-day">
+      <%= link_to (start_date + i).strftime('%A %B %dth'), get_schedule_teacher_path(@teacher_profile.teacher, date: start_date + i), remote: true %>
+
+      </div>
+    <% end %>
+  </div>
+</div>

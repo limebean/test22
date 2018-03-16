@@ -1,10 +1,12 @@
-<div class="row">
-	  <div class = "col-md-12">
-	    <div class = "thumbnail">
-	      <%= image_tag(teacher.profile_image.thumb, class: 'style_image')%>
-	    </div>
-	    <div class = "caption">
-	       <h3><%="#{teacher.first_name} #{teacher.last_name}"%></h3>
-	    </div>
-	  </div>
-	</div>
+<%= link_to teacher_profile_path(teacher) do %>
+    <div class="row">
+      <div class = "col-md-12">
+        <div class = "thumbnail">
+          <%= image_tag(teacher.profile_image.thumb, class: 'style_image')%>
+        </div>
+        <div class = "caption">
+           <h3><%="#{teacher.first_name} #{teacher.last_name}"%></h3>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -28,11 +28,22 @@
         <!-- </form> -->
       </div>
       <ul class="nav navbar-nav navbar-right custom-right-navbar">
-        <li><%=link_to 'ABOUT',about_path,class: 'nav-link'%></li>
         <%if current_user %>
-          <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
-          <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></li>
+          <% if current_user.parent? %>
+            <li><%= link_to 'MY SCHOOLS',  school_parent_path(current_user), class:'nav-link' %>
+            <!-- <a href="/partner" class="nav-link">MY SCHOOLS</a></li> -->
+            <% if current_user.parent_profile.present? %>
+              <li><%= link_to 'FAMILY PROFILE',  parent_profile_path(current_user.parent_profile&.id), class:'nav-link' %></li>
+            <% else %>
+              <li><%= link_to 'FAMILY PROFILE',  new_parent_profile_path, class:'nav-link' %></li>
+            <% end %>
+          <% else %>
+            <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
+            <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
+          <% end %>
+          <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
         <%else%>
+          <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
           <li><a href="/partner" class="nav-link">START A DREAMSCHOOL</a></li>
           <li><%= link_to 'LOG IN', new_user_session_path %></li>
           <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
@@ -40,5 +51,5 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
-  
+
 </header>

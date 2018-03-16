@@ -21,8 +21,19 @@ class WelcomeController < ApplicationController
     end
 
     def search
-      @teachers = params[:q].present? ? TeacherProfile.where(postal_code: params[:q]) : TeacherProfile.all
-      @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
+      available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
+      unless available_text.include?(params[:q])
+        @message = 'not found'
+      else
+        # if params[:q].present?
+        #   @teachers = TeacherProfile.where("city ILIKE ?", "%#{params[:q]}%")
+        #   if @teachers.blank?
+        #     @teachers = TeacherProfile.near("%#{params[:q]}%", 50)
+        #   end
+        # else
+          @teachers = TeacherProfile.all
+        # end
+        @hash = Gmaps4rails.build_markers(@teachers) do |teacher, marker|
           marker.lat teacher.latitude
           marker.lng teacher.longitude
           marker.picture({
@@ -34,6 +45,11 @@ class WelcomeController < ApplicationController
           marker.title teacher.school_name
           marker.infowindow render_to_string(:partial => "/welcome/info", locals: {:teacher => teacher})
         end
+      end
+    end
+
+    def check_email
+      @user = User.find_by(email: params[:email_id])
     end
 
     def show

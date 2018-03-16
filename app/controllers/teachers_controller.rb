@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   layout :set_layout
   before_action :authenticate_user!, except: [:show, :new, :create, :set_password, :update_password]
+  before_action :authenticate_user!, except: [:show, :new, :create, :set_password, :update_password]
   before_action :set_teacher, only: [ :update_password, :set_password ]
   before_action :ensure_teacher, only: :dashboard
 
@@ -34,6 +35,29 @@ class TeachersController < ApplicationController
     unless current_user.teacher_profile.presence
       redirect_to new_teacher_profile_path, notice: 'You need to update your profile!'
     end
+  end
+
+  def get_price
+    teacher = Teacher.find(params[:id])
+    redirect_to teacher_profile_path(teacher.teacher_profile) unless request.xhr?
+    @prices = Teacher.find(params[:id]).prices
+  end
+
+  def get_schedule
+    @tour_request = TourRequest.new
+    @teacher = Teacher.find(params[:id])
+    day = params[:date].to_date.wday == 0 ? 7 : params[:date].to_date.wday
+    availabilty = @teacher.availabilities.where(day_index: day)
+    if availabilty.present?
+      @start_time = availabilty.first.start_time.to_s(:time)
+      @end_time = availabilty.first.end_time.to_s(:time)
+    end
+  end
+
+  def tour_booking
+    @teacher = Teacher.find(params[:id])
+    tour_request = current_user.tour_requests.new(permitted_tour_request_param)
+    @status = tour_request.save ? true : false
   end
 
   def availability
@@ -152,6 +176,15 @@ class TeachersController < ApplicationController
       params.require(:teacher).permit(
         :password,
         :password_confirmation
+      )
+    end
+
+    def permitted_tour_request_param
+      params.require(:tour_request).permit(
+        :tour_date,
+        :tour_time,
+        :phone,
+        :teacher_id
       )
     end
 

@@ -1,0 +1,7 @@
+<% if @user.present? %>
+  $("#request_info_body").html('<%=j render("sign_in", email: params[:email_id])%>')
+  $('#request_info_modal').modal('show')
+<% else %>
+  $("#request_info_body").html('<%=j render("sign_up", email: params[:email_id])%>')
+  $('#request_info_modal').modal('show')
+<% end %>
