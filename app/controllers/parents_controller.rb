@@ -41,7 +41,9 @@ class ParentsController < ApplicationController
   end
 
   def change_favourite_status
-    binding.pry
+  end
+
+  def school
   end
 
   private

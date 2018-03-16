@@ -1,6 +1,6 @@
 <div class="custom-search-section">
   <div class="row">
-    <div class="col-md-8 custom-md">
+    <div class="col-md-8 col-sm-8 col-xs-12 custom-md">
       <div class="search_homepage_result">
         <div class="custom_content_width_constraint">
           <div class="custom_grid Grid--full ">
@@ -11,7 +11,7 @@
               Sign up to be notified when we open in your area.</div>
             <% else %>
               <% @teachers.each_with_index do |teacher, index|%>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="Grid-cell   ">
                   	<%= link_to teacher_profile_path(teacher)  do %>
                     <!-- <a class="new-link" href="#"> -->
@@ -49,8 +49,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 custom-md">
-    	<div style='position: fixed; width: 470px;'>
+    <div class="col-md-4 col-sm-4 col-xs-12 custom-md">
+    	<div class="fixed-map-4">
 			  <div id="map" style='height: 100vh;'></div>
 			</div>
     </div>

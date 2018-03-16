@@ -1765,6 +1765,15 @@ h3 {
   .school-page-hide-mobile, .mobile-hidden, .school-page-save-and-compare {
     display: none;
   }
+  .col-md-8.custom-md {
+    padding: 0px;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  fixed-map-4 {
+    position: initial;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {

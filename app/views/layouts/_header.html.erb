@@ -30,7 +30,8 @@
       <ul class="nav navbar-nav navbar-right custom-right-navbar">
         <%if current_user %>
           <% if current_user.parent? %>
-            <li><a href="/partner" class="nav-link">MY SCHOOLS</a></li>
+            <li><%= link_to 'MY SCHOOLS',  school_parent_path(current_user), class:'nav-link' %>
+            <!-- <a href="/partner" class="nav-link">MY SCHOOLS</a></li> -->
             <% if current_user.parent_profile.present? %>
               <li><%= link_to 'FAMILY PROFILE',  parent_profile_path(current_user.parent_profile&.id), class:'nav-link' %></li>
             <% else %>
@@ -50,5 +51,5 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
-  
+
 </header>
