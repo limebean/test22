@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
       return_path = session["user_return_to"]
       session.delete("user_return_to")
       if current_user.admin?
-        return_path || admin_dashboard_path
+        admin_dashboard_path
       elsif current_user.teacher?
-        return_path || dashboard_path
+        dashboard_path
       elsif current_user.parent?
         return_path || super || root_path
       end

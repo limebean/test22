@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>      
+    <h1>Dear <%= @user.name %>,</h1>
+    <% if @user.parent? %>
+      <p>
+        <p>
+          Thanks You for interest 
+        </p>
+        <p>
+          we are checking on requested tour time <%= @tour_request.tour_date.strftime("'%A' %B %dth")%> at <%= @tour_request.tour_time.strftime("%H")%> and we will get back shortly to confirm  a time.
+          <p>
+            we would love to learn more about family!. 
+          </p>
+        </p>
+        <p>
+          we will be in touch soon!
+        </p>
+      </p>
+      <p>Thanks for joining and have a great day!</p>
+    <% elsif @user.teacher? %>
+      <p>
+        Parent have requested for tour.
+      </p>
+      <p>
+        Booking Detail: <%=  @tour_request.tour_date.strftime("'%A' %B %dth")%> at <%= @tour_request.tour_time.strftime("%H: %M")%>         
+      </p>
+    <% end %>
+  </body>
+</html>

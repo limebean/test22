@@ -1,5 +1,5 @@
 <% if params[:status].eql?('login')%>
-  $("#date_schedule").html('<%=j render("schedule_date", teacher_profile: @teacher_profile)%>')
+  $("#request_info_body").html('<%=j render("schedule_date", teacher_profile: @teacher_profile)%>')
   $('#request_info_modal').modal('show')
 <% else %>
   $("#request_info_body").html('<%=j render("child_born", teacher_profile: @teacher_profile)%>')

@@ -28,7 +28,10 @@
         </div>
       </div>
       <br>
-      <div class="LoginForm-emailFormForgotPassword"><a class="Link " href="#">Forgot Password?</a></div>
+      <div class="LoginForm-emailFormForgotPassword">
+        <!-- <a class="Link " href="#">Forgot Password?</a> -->
+        <%= link_to "Forgot Password?", new_password_path('user') %>
+      </div>
       <div class="FormActions "><button class="Button Button--full email_auth_submit" type="submit">Log In</button></div>
    <% end %>
   </div>

@@ -665,6 +665,7 @@ label + {
 .section_page_footer {
   border-top: 6px solid #f1f1f1;
   padding: 16px 32px;
+  padding-top: 50px;
 }
 
 .custom_content_width_constraint {
@@ -1761,6 +1762,15 @@ h3 {
   .school-page-hide-mobile, .mobile-hidden, .school-page-save-and-compare {
     display: none;
   }
+  .col-md-8.custom-md {
+    padding: 0px;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  fixed-map-4 {
+    position: initial;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2083,3 +2093,7 @@ a.text_underline {
     line-height: 1.1;
     margin-bottom: 24px;
 }
+p.view_text {
+    text-align: center;
+    font-size: 20px;
+    }
