@@ -51,8 +51,24 @@ class ParentsController < ApplicationController
       end
     end
   end
+  def toggle_favourite_status
+    if current_user
+      @fav_teacher = current_user.favourites.find_by(teacher_id: params[:teacher_id])
+      if @fav_teacher.present?
+        @fav_teacher.toggle!(:status)
+        #flash[:notice] = "Updated favourite teacher"
+      else
+        @fav_teacher = current_user.favourites.create(teacher_id: params[:teacher_id])
+        #@fav_teacher.toggle!(:status)
+        #flash[:notice] = "Teacher added"
+      end
+    else
+      redirect_to new_user_session_path, notice: 'Please Login'
+    end
+  end
 
   def school
+
     @teacher = Teacher.includes(:teacher_profile)
   end
 

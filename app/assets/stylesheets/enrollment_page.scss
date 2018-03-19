@@ -1,0 +1,38 @@
+.enrollment_application {
+	max-width: 1024px;
+  margin: 74px auto;
+	.main_enroll_heading {
+		color: #333;
+		padding-top: 1px;
+	}
+	.form_area {
+		background: #fff;
+    padding: 24px;
+	}
+	.Add_child_area {
+		display: flex;
+		h3 {
+			margin: 0px;
+		}
+		p {
+	    margin-top: 7px;
+	    margin-left: 5px;
+	    font-weight: 900;
+	    margin-bottom: 0px;
+		}
+	}
+	.under_form_details {
+		margin-top: 4px;
+	}
+	.form_of_calender {
+		input {
+			width: 100%;
+	    padding: 10px;
+	    border-radius: 4px;
+	    border: 1px solid lightgrey;
+	    &:focus {
+	    	outline: none;
+	    }
+		}
+	}
+}
