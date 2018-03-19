@@ -17,7 +17,9 @@
             </div>
             <div class="text-center">
               <!-- <span class="button button-lg full apply_enrol">Apply to Enroll</span> -->
-              <button type="button" class="button button-lg full apply_enrol" data-toggle="modal" data-target="#apply_enroll_modal">Open Modal</button>
+              <%= link_to enroll_modal_teacher_path(teacher.id), remote: true do %>
+                <button type="button" class="button button-lg full apply_enrol" id="<%=teacher.id%>">Apply to Enroll</button>
+              <% end %>
               <h6 class="link link-red abc ">Remove from Waitlist</h6>
             </div>
           </div>
@@ -76,17 +78,17 @@
   </div>
 </main>
 
-<%= render 'enroll_modal' %>
+<%= render 'teachers/enroll_modal' %>
 
 <script type="text/javascript">
 
   // $(".abc").click(function(){
   //   alert("asdsadsadas")
-  //   $.ajax({
-  //     url: '/parents/'+id+'/change_favourite_status',
-  //     type: 'get',
-  //     data:
-  //   })
+  //   // $.ajax({
+  //   //   url: '/parents/'+id+'/change_favourite_status',
+  //   //   type: 'get',
+  //   //   data:
+  //   // })
   // });
 
   $(".abc").click(function(){
