@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180315113226) do
     t.string "place_of_birth"
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
     t.index ["user_id"], name: "index_children_on_user_id"
+<<<<<<< HEAD
   end
 
   create_table "parent_profiles", force: :cascade do |t|
@@ -79,6 +80,8 @@ ActiveRecord::Schema.define(version: 20180315113226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_prices_on_teacher_id"
+=======
+>>>>>>> 58cfa67228515284616b5ef50e20920e6b089a84
   end
 
   create_table "teacher_profiles", force: :cascade do |t|
@@ -157,5 +160,8 @@ ActiveRecord::Schema.define(version: 20180315113226) do
 
   add_foreign_key "children", "teacher_profiles"
   add_foreign_key "children", "users"
+<<<<<<< HEAD
   add_foreign_key "tour_requests", "users"
+=======
+>>>>>>> 58cfa67228515284616b5ef50e20920e6b089a84
 end
