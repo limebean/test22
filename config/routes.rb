@@ -31,6 +31,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :children do
+    member do
+      get :abcd
+    end
+  end
+
   get '/parents/check_email_availability', to: 'parents#check_email_availability'
   get '/parents/dashboard', to: 'parents#dashboard'
 
@@ -39,6 +45,7 @@ Rails.application.routes.draw do
   resources :teacher_profiles do
     member do
       get :request_info
+      get :enroll_application
     end
   end
 

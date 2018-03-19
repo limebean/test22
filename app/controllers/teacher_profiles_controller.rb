@@ -39,6 +39,10 @@ class TeacherProfilesController < ApplicationController
     @teacher_profile
   end
 
+  def enroll_application
+  end
+
+
   private
 
     def set_teacher_profile

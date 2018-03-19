@@ -45,6 +45,14 @@ $('#parent_profile_start_of_care').datepicker({
 $('#parent_profile_end_of_care').datepicker({
   format: 'dd/mm/yyyy', "autoclose": true,
 });
+$('#enroll_start_date').datepicker({
+    format: 'dd/mm/yyyy', "autoclose": true,
+    endDate: '-13y',
+});
+$('#enroll_start_date1').datepicker({
+    format: 'dd/mm/yyyy', "autoclose": true,
+    endDate: '-13y',
+});
 
 form.children("div").steps({
     headerTag: "h3",
