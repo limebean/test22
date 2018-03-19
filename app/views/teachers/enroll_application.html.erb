@@ -6,7 +6,7 @@
       <div class="Add_child_area">
         <h3>CHILD</h3>
         <p><%#= link_to ,'javascript:void(0)' %>
-          <%= link_to 'ADD A CHILD', {controller: "children", action: "new"}, remote: :true %>
+          <%= link_to 'ADD A CHILD', {controller: "children", action: "new", val: "#{params[:id]}"}, remote: :true %>
         </p>
         <div class="append_childs">
           

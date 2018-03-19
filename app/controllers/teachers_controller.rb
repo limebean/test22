@@ -37,6 +37,12 @@ class TeachersController < ApplicationController
     end
   end
 
+  def enroll_modal
+  end
+
+  def enroll_application
+  end
+
   def get_price
     teacher = Teacher.find(params[:id])
     redirect_to teacher_profile_path(teacher.teacher_profile) unless request.xhr?

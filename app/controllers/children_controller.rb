@@ -5,18 +5,21 @@ class ChildrenController < ApplicationController
   end
 
   def create
-    @child = Child.new(permitted_teacher_password_params)
+    @child = Child.new(permitted_children_params)
     if @child.save
       @child.invitation_token
-      redirect_to root_path, notice: "Thanks for register, Please open email for reset passowrd and complete registration"
+      redirect_to child_path(@child), notice: "success"
     else
       redirect_to partner_path, alert: "Something went wrong! Please try again."
     end
   end
 
+  def show
+  end
+
   private
 
-  def permitted_teacher_password_params
+  def permitted_children_params
     params.require(:child).permit(
       :teacher_profile_id,
       :full_name,

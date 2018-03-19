@@ -31,6 +31,7 @@ class ParentsController < ApplicationController
     end
   end
 
+
   def dashboard
   end
 
