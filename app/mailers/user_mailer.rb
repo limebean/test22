@@ -1,9 +1,18 @@
 class UserMailer < ApplicationMailer
   default from: 'no-reply@web_ds.com'
 
-  def notify_admin_for_new_application(teacher)
+  def notify_admin_for_new_application(teacher, email)
     @teacher = teacher
+    @email = email
     mail(to: 'admin@dreamschool.com', subject: 'Approve the teacher profile')
+    if(email.eql?('admin@dreamschool.com'))
+      mail(to: email, subject: 'Approve the teacher profile')
+    elsif(email.eql?('support@dreamschools.co'))
+      mail(to: email, subject: 'User support mail')
+    else
+      mail(to: email, subject: 'Thank you for your interest')
+    end
+        
   end
 
   def teacher_invitaion_email(teacher)

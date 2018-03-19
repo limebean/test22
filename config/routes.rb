@@ -59,6 +59,7 @@ Rails.application.routes.draw do
       get :login
       get :child_birth
       get :set_child_admission
+      put :toggle_favourite_status
     end
   end
 

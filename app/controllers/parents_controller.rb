@@ -44,11 +44,24 @@ class ParentsController < ApplicationController
 
   def change_favourite_status
     if(current_user)
-      favourites = current_user.favourites.new(teacher_id: params[:teacher_id])
-      if favourites.save
-        render :js => "window.location = '#{request.referer}'", notice: "Teacher added"
+      @favourite = current_user.favourites.find_by(teacher_id: params[:teacher_id])
+      if @favourite
+        @favourite.toggle!(:status)
       else
-        render :js => "window.location = '#{request.referer}'", notice: "Something went wrong! Please try again."
+        @favourite = current_user.favourites.new(teacher_id: params[:teacher_id], status: params[:status])
+      end
+    end
+  end
+  def toggle_favourite_status
+    if current_user
+      @fav_teacher = current_user.favourites.find_by(teacher_id: params[:teacher_id])
+      if @fav_teacher.present?
+        @fav_teacher.toggle!(:status)
+        #flash[:notice] = "Updated favourite teacher"
+      else
+        @fav_teacher = current_user.favourites.create(teacher_id: params[:teacher_id])
+        #@fav_teacher.toggle!(:status)
+        #flash[:notice] = "Teacher added"
       end
     else
       redirect_to new_user_session_path, notice: 'Please Login'
@@ -56,6 +69,7 @@ class ParentsController < ApplicationController
   end
 
   def school
+
     @teacher = Teacher.includes(:teacher_profile)
   end
 
