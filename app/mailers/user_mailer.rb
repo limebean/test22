@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
     else
       mail(to: email, subject: 'Thank you for your interest')
     end
-        
+
   end
 
   def teacher_invitaion_email(teacher)
@@ -24,6 +24,11 @@ class UserMailer < ApplicationMailer
   	@tour_request = tour_request
     @user = user
     mail(to: @user.email, subject: 'Your tour booking information')
+  end
+
+  def notify_support_for_family_profile(family_profile)
+    @family_profile = family_profile
+    mail(to: 'support@dreamschools.co', subject: 'Parent have completed family profile')
   end
 
 end

@@ -21,10 +21,10 @@
     <%= f.label :second_guardian_phone, "SECOND PARENT/GUARDIAN PHONE", class:'heading_label' %>
     <%= f.input :second_guardian_phone, label:false %>
     <%= f.label :child_name, "CHILD NAME", class:'heading_label' %>
-    <%#= f.input :child_name, label:false %>
+    <%= f.input :child_name, label:false %>
     <%= f.label :child_date_of_birth, "CHILD DATE OF BIRTH", class:'heading_label' %>
     <span class="inline_date_picker">
-      <%#= f.input :child_date_of_birth, as: :string,label:false ,wrapper_html: { class: 'your-class' } %>
+      <%= f.input :child_date_of_birth, as: :string,label:false ,wrapper_html: { class: 'your-class' } %>
     </span>
     <%= f.label :start_of_care, "DESIRED START OF CARE", class:'heading_label' %>
     <span class="inline_date_picker">
@@ -34,7 +34,7 @@
     <span class="inline_date_picker">
       <%= f.input :end_of_care, label:false %>
     </span>
-    <%= f.label :weekly_schedule,'PREFFERD WEEKLY SCHEDULE',class:'heading_label' %>
+    <%= f.label :weekly_schedule,'PREFERRED SCHEDULE',class:'heading_label' %>
     <div class="field">
       <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Monday', checked('Monday'), id:'weekly_schedule_mon'%>
       <%= label_tag 'weekly_schedule_mon' ,'Monday',class:'heading_label_check' %>
