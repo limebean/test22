@@ -20,6 +20,9 @@
       <li>
         <a href="#"> Managing Enrollment pages</a>
       </li>
+      <li>
+        <a href="#"> Parents Applications</a>
+      </li>
     <%elsif current_user.teacher? %>
       <li  class=" <%=is_active_menu('edit')%>">
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
