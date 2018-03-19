@@ -1,20 +1,20 @@
 <div class="add_child_form form_of_calender">
   <p class="under_form_details">Before applying to enroll, please tell us a little more about your child.</p>
   <%= form_for @child do |f| %>
-    <%= f.label :full_name,'Name' %>
-    <%= f.text_field :full_name, placeholder: 'Full Name' %>
+    <%= f.label :full_name,'Name',class:'heading_label' %>
+    <%= f.text_field :full_name, placeholder: 'Full Name', class:'bottom_space' %>
     <br>
-    <%= f.label :full_name,'BIRTHDAY' %>
-    <%= f.text_field :date_of_birth, placeholder:'MM/DD/YYYY' %>
+    <%= f.label :date_of_birth,'BIRTHDAY',class:'heading_label' %>
+    <%= f.text_field :date_of_birth, placeholder:'MM/DD/YYYY' ,class:'bottom_space'%>
     <br>
-    <%= f.label :full_name,'Place of Birth' %>
-    <%= f.text_field :place_of_birth, Placeholder: 'Place of Birth' %>
-    <%= hidden_field_tag "user_id", current_user.id %>
+    <%= f.label :place_of_birth,'Place of Birth',class:'heading_label' %>
+    <%= f.text_field :place_of_birth, Placeholder: 'Place of Birth',class:'bottom_space' %>
+    <%= f.hidden_field :user_id ,value:"#{current_user.id}"%>
+    <%= f.hidden_field :teacher_profile_id ,value:"#{TeacherProfile.find(params[:val]).id}"%>
     <br>
     <div class='actions'>
       <button name="button" class="btn btn-info" type="submit">Next</button>
       <button class="btn btn-info">Cancel</button>
     </div>
-    
   <% end %>
 </div>

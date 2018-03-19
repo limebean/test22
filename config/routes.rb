@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       get :get_price
       get :get_schedule
       post :tour_booking
+      get :enroll_modal
+      get :enroll_application
     end
     collection do
       get :get_availability
@@ -45,7 +47,6 @@ Rails.application.routes.draw do
   resources :teacher_profiles do
     member do
       get :request_info
-      get :enroll_application
     end
   end
 

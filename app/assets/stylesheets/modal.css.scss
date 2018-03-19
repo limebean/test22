@@ -19,6 +19,7 @@ $border_color:#5196cb;
   top: 15px;
   font-weight: 400;
   font-size: 40px;
+  opacity: .5;
   &:hover {
     background-color: transparent;
   }
@@ -135,6 +136,47 @@ input.child_admit_buttons[type=submit] {
     top: 0;
     transition: width .1s ease;
     width: 0;
+}
+.Modal-contentWrapper {
+  padding: {
+    left: 18px;
+    right: 18px;
+    top: 15px;
+  }
+  .Modal-header {
+    padding: {
+      top: 10px;
+      left: 10px;
+    }
+  }
+  .button.button-gray {
+    background: #ddd;
+    border-color: #ddd;
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 13px 19px;
+  }
+  .button.button-gray:hover {
+    background: #999;
+    border-color: #999;
+    color: #333;
+  }
+  .button.button {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 13px 19px;
+  }
+}
+.bottom_align {
+  margin-bottom: 52px;
+}
+.enroll_modal_dilog {
+  margin: 48px auto;
+  min-width: 645px;
+  box-shadow: none;
 }
 @media (min-width:768px) {
   .modal_diifrent_dialog {
