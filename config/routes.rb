@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   resources :parents, only: [:create] do
     member do
       get :school
+      get :interest_open_house
     end
     collection do
       get :change_favourite_status

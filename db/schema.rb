@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320055337) do
+ActiveRecord::Schema.define(version: 20180320071852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,9 @@ ActiveRecord::Schema.define(version: 20180320055337) do
     t.float "latitude"
     t.float "longitude"
     t.string "cover_photo"
+    t.boolean "request_info", default: false
+    t.boolean "tour", default: false
+    t.boolean "open_house", default: false
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 
