@@ -19,6 +19,9 @@ class WelcomeController < ApplicationController
     def privacy_policy
 
     end
+    def faq_home_page
+
+    end 
 
     def search
       available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
