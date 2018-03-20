@@ -48,7 +48,8 @@ class ParentsController < ApplicationController
       if @favourite
         @favourite.toggle!(:status)
       else
-        @favourite = current_user.favourites.new(teacher_id: params[:teacher_id], status: params[:status])
+        @favourite = current_user.favourites.new(teacher_id: params[:teacher_id])
+        @favourite.save
       end
     end
   end
