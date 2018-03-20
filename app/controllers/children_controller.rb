@@ -7,8 +7,7 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(permitted_children_params)
     if @child.save
-      @child.invitation_token
-      redirect_to child_path(@child), notice: "success"
+      redirect_to enroll_application_teacher(params[:id]), notice: "success"
     else
       redirect_to partner_path, alert: "Something went wrong! Please try again."
     end
@@ -26,7 +25,7 @@ class ChildrenController < ApplicationController
       :age,
       :care_by,
       :date_of_birth,
-      :user_id,
+      :parent_id,
       :place_of_birth
     )
   end
