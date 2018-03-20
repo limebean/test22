@@ -31,6 +31,10 @@ class ParentsController < ApplicationController
     end
   end
 
+  def make_payment
+
+  end
+
 
   def dashboard
   end

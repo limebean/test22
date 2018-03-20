@@ -54,6 +54,7 @@ Rails.application.routes.draw do
     member do
       get :school
       get :interest_open_house
+      get :make_payment
     end
     collection do
       get :change_favourite_status
