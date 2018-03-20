@@ -36,9 +36,11 @@ $('#birth_date').datepicker({
     endDate: '-13y',
 });
 $('#parent_profile_child_date_of_birth').datepicker({
-    format: 'dd/mm/yyyy', "autoclose": true,
-    endDate: '-13y',
+  todayHighlight: true,
+  format: 'dd/mm/yyyy', "autoclose": true,
 });
+date = new Date();
+$('#parent_profile_child_date_of_birth').datepicker('setDate', date);
 $('#parent_profile_start_of_care').datepicker({
   format: 'dd/mm/yyyy', "autoclose": true,
 });

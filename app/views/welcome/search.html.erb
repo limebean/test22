@@ -10,8 +10,6 @@
              <%= link_to 'Sign Up', new_user_registration_path %>
               Sign up to be notified when we open in your area.</div>
             <% else %>
-              <% teachers_id = Teacher.pluck(:id)%>
-              <% favourites = current_user.favourites.pluck(:teacher_id)%>
               <% @teachers.each_with_index do |teacher, index|%>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="Grid-cell   ">
@@ -31,9 +29,8 @@
                     <% end %>
                     <%= form_tag(change_favourite_status_parents_path, method: :get, remote: true)do %>
                       <%= hidden_field_tag 'teacher_id', teacher.teacher.id%>
-                      <%= hidden_field_tag 'status', true %>
                       <div class="custom_callout_school_bookmark enroll_btn" id = "teacher_image_<%=teacher.teacher.id%>">
-                        <% if check_favourite(teacher.teacher.id) %>
+                        <% if current_user && check_favourite(teacher.teacher.id) %>
                           <%= render 'parents/red_favourite' %>
                         <% else %>
                           <%= render 'parents/white_favourite' %>

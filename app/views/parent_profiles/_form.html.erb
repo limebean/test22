@@ -21,7 +21,7 @@
     <%= f.label :second_guardian_phone, "SECOND PARENT/GUARDIAN PHONE", class:'heading_label' %>
     <%= f.input :second_guardian_phone, label:false %>
     <%= f.label :child_name, "CHILD NAME", class:'heading_label' %>
-    <%= f.input :child_name, label:false %>     
+    <%= f.input :child_name, label:false %>
     <%= f.label :child_date_of_birth, "CHILD DATE OF BIRTH", class:'heading_label' %>
     <span class="inline_date_picker">
       <%= f.input :child_date_of_birth, as: :string,label:false ,wrapper_html: { class: 'your-class' } %>
@@ -34,7 +34,7 @@
     <span class="inline_date_picker">
       <%= f.input :end_of_care, label:false %>
     </span>
-    <%= f.label :weekly_schedule,'PREFFERD WEEKLY SCHEDULE',class:'heading_label' %>
+    <%= f.label :weekly_schedule,'PREFERRED SCHEDULE',class:'heading_label' %>
     <div class="field">
       <%= check_box_tag 'parent_profile[weekly_schedule][]', 'Monday', checked('Monday'), id:'weekly_schedule_mon'%>
       <%= label_tag 'weekly_schedule_mon' ,'Monday',class:'heading_label_check' %>
@@ -64,7 +64,7 @@
 
   <div class="show_after_next">
     <%= f.label :desired_schedule,'HOW MUCH CARE DO YOU NEED? WHAT IS YOUR DESIRED SCHEDULE?',class:'heading_label' %>
-    <%= f.input :desired_schedule, label: false %>
+    <%= f.input :desired_schedule, as: :text, label: false %>
     <%= f.label :past_child_care, "WHAT IS YOUR CHILD'S PREVIOUS CHILDCARE EXPERIENCE?",class:'heading_label' %>
     <p>Check all that apply</p>
     <div class="field">
@@ -93,44 +93,44 @@
     </div>
     <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S EATING HABITS",class:'heading_label' %>
     <p>Picky or loves to eat, favorite foods, least favorite, frequency, any other comments</p>
-    <%= f.input :child_eat_habits, label:false %>
+    <%= f.input :child_eat_habits, as: :text,label:false %>
     <%= f.label :child_eat_habits, "DESCRIBE YOUR CHILD'S SLEEP HABITS",class:'heading_label' %>
     <p>Frequency, duration, routine before naps, sleep training, etc</p>
-    <%= f.input :child_sleep_habits,label:false %>
+    <%= f.input :child_sleep_habits, as: :text,label:false %>
     <%= f.label :describe_child, "WHAT THREE WORDS DESCRIBE YOUR CHILD?",class:'heading_label' %>
-    <%= f.input :describe_child, label: false %>
+    <%= f.input :describe_child, as: :text, label: false %>
     <%= f.label :child_temperament, "DESCRIBE YOUR CHILD'S SOCIAL EXPERIENCE / TEMPERAMENT?",class:'heading_label' %>
-    <%= f.input :child_temperament, label:false%>
+    <%= f.input :child_temperament, as: :text,label:false%>
     <%= f.label :behavioral_situation, "HOW DO YOU HANDLE BEHAVIORAL CONCERNS/SITUATIONS AT HOME?",class:'heading_label' %>
-    <%= f.input :behavioral_situation, label:false %>
+    <%= f.input :behavioral_situation, as: :text, label:false %>
     <%= f.label :factor_to_enroll,"WHAT ARE SOME FACTORS IMPACTING YOUR DECISION TO ENROLL IN CHILDCARE?",class:'heading_label' %>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'cost', checked('cost'), id:'factor_to_enroll_cost'%>
-      <%= label_tag 'factor_to_enroll_cost' ,'cost',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_cost' ,'Cost',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'location', checked('location'), id:'factor_to_enroll_location'%>
-      <%= label_tag 'factor_to_enroll_location' ,'location',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_location' ,'Location',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'prog_phil', checked('prog_phil'), id:'factor_to_enroll_prog_phil'%>
-      <%= label_tag 'factor_to_enroll_prog_phil' ,'prog_phil',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_prog_phil' ,'Program Philosophy',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'timing', checked('timing'), id:'factor_to_enroll_timing'%>
-      <%= label_tag 'factor_to_enroll_timing' ,'timing',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_timing' ,'Timing(date of start/end)',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'size_prog', checked('size_prog'), id:'factor_to_enroll_size_prog'%>
-      <%= label_tag 'factor_to_enroll_size_prog' ,'size_prog',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_size_prog' ,'Size of Program',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'care_giver', checked('care_giver'), id:'factor_to_enroll_care_giver'%>
-      <%= label_tag 'factor_to_enroll_care_giver' ,'care_giver',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_care_giver' ,'Caregiver experience/qualifications/personality',class:'heading_label_check' %>
     </div>
     <div class="field">
       <%= check_box_tag 'parent_profile[factor_to_enroll][]', 'facility', checked('facility'), id:'factor_to_enroll_facility'%>
-      <%= label_tag 'factor_to_enroll_facility' ,'facility',class:'heading_label_check' %>
+      <%= label_tag 'factor_to_enroll_facility' ,'Facilities(Indoor/Outdoor)',class:'heading_label_check' %>
     </div>
     <%= f.label :factor_to_enroll,"DO YOU HAVE ANY CONCERNS ABOUT OUR SCHOOL MEETING YOUR NEEDS?",class:'heading_label' %>
     <%= f.input :school_meeting_concern,label:false %>
@@ -174,7 +174,7 @@
     </div>
     <%= f.label :recent_reaction,"DESCRIBE YOUR CHILD'S RECENT REACTIONS WHEN IN A NEW CHILDCARE SITUATION WITH A NEW CAREGIVER OR ENVIRONMENT SUCH AS A GYM DROP IN CHILDCARE, WITH A NEW SITTER/FRIEND, ETC",class:'heading_label' %>
     <%= f.input :recent_reaction, label:false %>
-    <%= f.label :recent_reaction,"HEAR ABOUT US",class:'heading_label' %>
+    <%= f.label :recent_reaction,"HOW DID YOU HEAR ABOUT US?",class:'heading_label' %>
     <%= f.input :hear_about_us, label:false %>
     <div class="form-actions">
       <%=f.submit 'Send', class: 'btn btn-primary btn-custom'%>
