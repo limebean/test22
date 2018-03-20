@@ -1,0 +1,22 @@
+<h1>Teachers applications</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parents.each do |parent| %>
+      <tr>
+        <td><%= parent.name %></td>
+        <td><%= parent.email %></td>
+        <% if parent.parent_profile.present? %>
+          <td><%= link_to 'Show', parent_profile_path(parent.parent_profile) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
