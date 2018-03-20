@@ -21,7 +21,7 @@
         <a href="#"> Managing Enrollment pages</a>
       </li>
       <li>
-        <a href="#"> Parents Applications</a>
+        <%= link_to 'Parents Applications', admin_parents_path %>
       </li>
     <%elsif current_user.teacher? %>
       <li  class=" <%=is_active_menu('edit')%>">

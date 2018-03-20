@@ -74,6 +74,7 @@ Rails.application.routes.draw do
         patch :reject
       end
     end
+    resources :parents
   end
   get '/partner', to: "teachers#new", as: :partner
 end
