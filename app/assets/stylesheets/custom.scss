@@ -2097,3 +2097,23 @@ p.view_text {
     text-align: center;
     font-size: 20px;
     }
+.defaut_button {
+    background-color: #5196cb;
+    border: .1rem solid #5196cb;
+    border-radius: .4rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    height: 3.8rem;
+    line-height: 3.6rem;
+    padding: 0 2rem;
+    transition: all .1s ease;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12px;
+}
+img.school-logo {
+    width: 260px;
+}

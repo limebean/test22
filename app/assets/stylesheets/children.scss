@@ -1,3 +1,32 @@
 // Place all the styles related to the children controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.frame_of_child {
+	padding: 24px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  .full_name {
+  	font-size: 15px;
+  	font-weight: 700;
+  }
+  .date_of_birth {
+  	font-size: 15px;
+  }
+}
+.left_wall_reduce {
+	padding-left: 0px;
+}
+.button-gray {
+  background: #ddd;
+  border-color: #ddd;
+  color: #999;
+  font-size: 12px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  &:hover {
+  	background: #999;
+    border-color: #999;
+    color: #333;
+  }
+}

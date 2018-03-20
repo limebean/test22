@@ -1,40 +1,140 @@
 .enrollment_application {
-	max-width: 1024px;
+  max-width: 1024px;
   margin: 74px auto;
-	.main_enroll_heading {
-		color: #333;
-		padding-top: 1px;
-	}
-	.form_area {
-		background: #fff;
+  .main_enroll_heading {
+    color: #333;
+    padding-top: 1px;
+  }
+  .form_area {
+    background: #fff;
     padding: 24px;
-	}
-	.Add_child_area {
-		display: flex;
-		h3 {
-			margin: 0px;
-			font-size: 18px;
-		}
-		p {
-	    margin-top: 4px;
-	    margin-left: 3px;
-	    font-weight: 900;
-	    margin-bottom: 0px;
-	    font-size: 13px;
-		}
-	}
-	.under_form_details {
-		margin-top: 4px;
-	}
-	.form_of_calender {
-		input {
-			width: 100%;
-	    padding: 10px;
-	    border-radius: 4px;
-	    border: 1px solid lightgrey;
-	    &:focus {
-	    	outline: none;
-	    }
-		}
-	}
+  }
+  .Add_child_area {
+    display: flex;
+    h3 {
+      margin: 0px;
+      font-size: 18px;
+    }
+    p {
+      margin-top: 4px;
+      margin-left: 3px;
+      font-weight: 900;
+      margin-bottom: 0px;
+      font-size: 13px;
+    }
+  }
+  .under_form_details {
+    margin-top: 4px;
+    margin-bottom: 5px;
+  }
+}
+input.comments {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid lightgrey;
+  &:focus {
+    outline: none;
+  }
+  &.other_comments {
+    padding: 20px;
+  }
+}
+.EnrollmentApplicationForm-control+.EnrollmentApplicationForm-control {
+    margin-top: 48px;
+}
+.EnrollmentApplicationForm-control--centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.submit_colors {
+  text-align: center;
+  button {
+    background-color: #5196cb;
+    border: .1rem solid #5196cb;
+    border-radius: .4rem;
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 16px;
+    margin-top: 35px;
+    &.disabled {
+      opacity: .5;
+      &.hover {
+        color: #fff;
+        background-color: #5196cb;
+      }
+    }
+  }
+}
+.PeriodPicker.PeriodPicker--disabled {
+    border-color: #eee;
+    color: #eee;
+}
+.PeriodPicker {
+    background: #fff;
+    border: 2px solid #5196cb;
+    margin-bottom: 1rem;
+}
+.PeriodPicker.PeriodPicker--disabled label {
+    background: #eee;
+}
+.PeriodPicker label {
+    background: #5196cb;
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    padding: .25rem .5rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.PeriodPicker span {
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+.EnrollmentApplication-heading {
+    color: #333;
+    font-family: Merriweather,Gerogia,serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+.EnrollmentApplicationForm-controlHeading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    margin-top: 48px;
+}
+@media (max-width: 768px) {
+  .main_enroll_heading {
+    padding-left: 20px;
+  }
+  .PeriodPickers {
+    margin-top: 30px;
+  }
+}
+@media (min-width: 769px) {
+  .PeriodPicker {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0 0 1rem 1rem;
+      min-width: 10rem;
+      margin-top: 45px;
+  }
+  .PeriodPickers {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+  }
 }
