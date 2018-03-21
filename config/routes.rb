@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'show', to: 'welcome#show'
   get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
+  get 'faq_home_page', to: 'welcome#faq_home_page'
   get '/contact_us', to: 'welcome#contact_us', as: :contact
+
 
 
   devise_for :users, controllers: { registrations: "users/registrations" }
