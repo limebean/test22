@@ -8,8 +8,8 @@
       <li class="<%=is_active_menu('index')%>">
         <%= link_to 'Teachers', admin_teachers_path %>
       </li>
-      <li>
-        <a href="#">Curriculum PDF</a>
+      <li class="<%=is_active_menu('document')%> <%=is_active_menu('upload_document')%>">
+        <%= link_to 'Curriculum PDF', document_admin_teachers_path %>
       </li>
       <li>
         <a href="#">Transaction Settings</a>

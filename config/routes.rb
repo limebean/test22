@@ -79,6 +79,10 @@ Rails.application.routes.draw do
         patch :approve
         patch :reject
       end
+      collection do
+        match :upload_document, via: [:get, :post, :delete]
+        get :document
+      end
     end
     resources :parents
   end

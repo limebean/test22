@@ -170,6 +170,7 @@ class TeachersController < ApplicationController
       UserMailer.make_payment_link(@enroll)
     else
       @enroll.update_attributes(status: params[status])
+    end
     redirect_to dashboard_path
   end
 
