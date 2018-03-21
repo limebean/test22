@@ -4,6 +4,7 @@ class Teacher < User
   has_many :prices,  dependent: :destroy
   has_many :tour_requests, dependent: :destroy
   has_many :favourites, dependent: :destroy
+  has_many :children
   has_many :payments
   delegate :first_name, :last_name, :street_address, :date_of_birth, to: :teacher_profile, allow_nil: true
 

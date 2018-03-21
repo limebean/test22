@@ -666,6 +666,7 @@ label + {
   border-top: 6px solid #f1f1f1;
   padding: 16px 32px;
   padding-top: 50px;
+  margin-top: 50px;
 }
 
 .custom_content_width_constraint {
@@ -2115,7 +2116,9 @@ p.view_text {
     font-size: 12px;
 }
 img.school-logo {
-    width: 260px;
+  width: 205px;
+  height: 45px;
+  margin-top: 12px;
 }
 .SchoolPage-railThumb {
   background-size: cover;
@@ -2158,42 +2161,3 @@ button.Button.Button--link {
     text-align: left;
 }
 
-.wrap {
-    overflow: auto;
-}
-.main {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.no-carousel {
-    padding-top: 40px;
-}
-.page-header {
-    border-bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    text-align: center;
-}
-
-.editor-content h1 {
-    color: #367c2b;
-    text-align: center;
-    font-size: 42px;
-}
-.anchor {
-    padding-top: 210px;
-    margin-top: -210px;
-}
-a {
-    color: #367c2b;
-    text-decoration: none;
-    background-color: transparent;
-}
-.editor-content h2 {
-    font-size: 22px;
-    line-height: 27px;
-    margin-bottom: 40px;
-    color: #367c2b;
-}

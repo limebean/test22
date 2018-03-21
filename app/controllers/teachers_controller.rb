@@ -40,9 +40,6 @@ class TeachersController < ApplicationController
   def enroll_modal
   end
 
-  def enroll_application
-  end
-
   def get_price
     teacher = Teacher.find(params[:id])
     redirect_to teacher_profile_path(teacher.teacher_profile) unless request.xhr?
@@ -173,7 +170,7 @@ class TeachersController < ApplicationController
     end
     redirect_to dashboard_path
   end
-
+end
   private
 
     def upload_identity(file)
@@ -230,4 +227,3 @@ class TeachersController < ApplicationController
         redirect_to admin_dashboard_path
       end
     end
-end

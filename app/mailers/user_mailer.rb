@@ -15,6 +15,8 @@ class UserMailer < ApplicationMailer
 
   end
 
+  
+
   def teacher_invitaion_email(teacher)
     @teacher = teacher
     mail(to: @teacher.email, subject: 'Welcome to the wonder school')
