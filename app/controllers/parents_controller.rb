@@ -31,8 +31,7 @@ class ParentsController < ApplicationController
     end
   end
 
-  def make_payment
-
+  def payment
   end
 
 

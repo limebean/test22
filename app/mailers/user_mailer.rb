@@ -37,4 +37,10 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: 'Interest for open house')
   end
 
+  def make_payment_link(enroll)
+    @enroll = enroll
+    @parent = @enroll.parent
+    @teacher = @enroll.teacher
+  end
+
 end
