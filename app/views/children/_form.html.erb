@@ -9,12 +9,44 @@
     <br>
     <%= f.label :place_of_birth,'Place of Birth',class:'heading_label' %>
     <%= f.text_field :place_of_birth, Placeholder: 'Place of Birth',class:'bottom_space comments' %>
+    <%= f.label :gender,"GENDER",class:'heading_label' %>
+    <div class="inline_gender_options">
+      <div class="field">
+        <%= f.radio_button :gender, 'Boy', id:'gender_boy' ,checked: true %>
+        <%= label_tag 'gender_boy' ,'Boy', class:'heading_label_check' %>
+      </div>
+      <div class="field">
+        <%= f.radio_button :gender, 'Girl', id:'gender_girl'%>
+        <%= label_tag 'gender_girl' ,'Girl', class:'heading_label_check' %>
+      </div>
+      <div class="field">
+        <%= f.radio_button :gender, 'Other', id:'gender_other'%>
+        <%= label_tag 'gender_other' ,'Male', class:'heading_label_check' %>
+      </div>
+    </div>
+    <div class="input_field">
+      <%= f.label :allergies, 'ALLERGIES', class:'heading_label' %>
+      <p>Please list all allergies below. Include food, skin, medicine, sting, and latex allergies. Please indicate if any allergies are severe and may cause an anaphylactic response requiring the use of an Epi-pen and hospitalization. If no allergies, type “none.”</p>
+      <%= f.text_area :allergies, class:'comments' %>
+    </div>
+    <div class="input_field">
+      <%= f.label :medication, 'MEDICATIONS', class:'heading_label' %>
+      <p>Please list any medications you would like us to administer during care. Please give the name, dosage, and any other instructions. If no medication need to be administered during care, write in “none.”</p>
+      <%= f.text_area :medication, class:'comments' %>
+    </div>
+    <div class="input_field">
+      <%= f.label :medical_condition, 'MEDICAL CONDITIONS', class:'heading_label' %>
+      <p>Please list any medical conditions that are relevant to your child's care. If there are no medical conditions relevant to care, write in “none.”</p>
+      <%= f.text_area :medical_condition, class:'comments' %>
+    </div>
     <%= f.hidden_field :parent_id ,value:"#{current_user.id}"%>
     <%= f.hidden_field :teacher_profile_id ,value:"#{TeacherProfile.find(params[:val]).id}"%>
     <br>
     <div class='actions'>
       <button name="button" class="btn btn-info defaut_button" type="submit">Next</button>
-      <button class="btn btn-info button-gray">Cancel</button>
+      <%= link_to new_enrollment_path do %>
+        <button class="btn btn-info button-gray">Cancel</button>
+      <% end %>
     </div>
   <% end %>
 </div>

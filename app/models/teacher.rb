@@ -4,6 +4,7 @@ class Teacher < User
   has_many :prices,  dependent: :destroy
   has_many :tour_requests, dependent: :destroy
   has_many :favourites, dependent: :destroy
+  has_many :children
   delegate :first_name, :last_name, :street_address, :date_of_birth, to: :teacher_profile, allow_nil: true
 
   after_create :notify_admin_for_new_application

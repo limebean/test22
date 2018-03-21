@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320055337) do
+ActiveRecord::Schema.define(version: 20180320134005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 20180320055337) do
     t.string "medical_condition"
     t.index ["parent_id"], name: "index_children_on_parent_id"
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "child_id"
+    t.bigint "teacher_id"
+    t.string "start_date"
+    t.string "weekdays_and_time"
+    t.string "other_comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["child_id"], name: "index_enrollments_on_child_id"
+    t.index ["teacher_id"], name: "index_enrollments_on_teacher_id"
   end
 
   create_table "favourites", force: :cascade do |t|
