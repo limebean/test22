@@ -169,7 +169,7 @@ class TeachersController < ApplicationController
       @enroll.update_attributes(status: params[status])
     redirect_to dashboard_path
   end
-
+end
   private
 
     def upload_identity(file)
@@ -226,5 +226,4 @@ class TeachersController < ApplicationController
         redirect_to admin_dashboard_path
       end
     end
-end
 end
