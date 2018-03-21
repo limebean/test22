@@ -1,16 +1,18 @@
 <div class="enrollment_application">
-  <div class="main_enroll_heading"><h1 class="EnrollmentApplication-heading">Enrollment Application</h1></div>
+  <div class="main_enroll_heading">
+    <h1 class="EnrollmentApplication-heading">Enrollment Application</h1>
+  </div>
   <div class="col-md-12 form_area" id="appned_child_form">
     <div class="col-md-12 no_padding_default enroll_start_area">
       <p>We are so excited that you would like to enroll your child at Gramercy Park Childcare and Playgroup! Please submit the information below; Afsana Khundkar will review the information and send you an enrollment invitation. After you accept the invitation, you’ll pay your deposit and sign your parent handbook.</p>
       <div class="Add_child_area">
         <h3>CHILD</h3>
         <p>
-          <%= link_to 'ADD A CHILD', {controller: "children", action: "new", val: "#{params[:id]}"}, remote: :true %>
+          <%= link_to 'ADD A CHILD', {controller: "children", action: "new", val: "#{params[:teacher][:teacher_profile_id]}"}, remote: :true %>
         </p>
       </div>
       <p class="under_form_details">Please submit separate applications for each child.</p>
-      <%= simple_form_for @enroll_app, url:  new_enrollment_path do |f| %>
+      <%= simple_form_for @enroll_app do |f| %>
         <div class="append_childs col-md-12 no_padding_default">
           <% if current_user.children.present? %>
             <%= render 'children/children_all' %>

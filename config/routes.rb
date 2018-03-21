@@ -29,7 +29,6 @@ Rails.application.routes.draw do
       get :get_schedule
       post :tour_booking
       get :enroll_modal
-      get :enroll_application
     end
     collection do
       get :get_availability
@@ -68,6 +67,7 @@ Rails.application.routes.draw do
       put :toggle_favourite_status
     end
   end
+  resources :enrollments
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
