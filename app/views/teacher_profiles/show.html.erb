@@ -197,7 +197,7 @@
           <% end %>
           <% if @teacher_profile.request_info %>
             <div class="link_default_color">
-              <%= link_to  request_info_teacher_profile_path(@teacher_profile, status: "login"), class: '', remote: true do %>
+            <%= link_to "#", data: {toggle: "modal", target: "#request_info_new"} do %>             
                 <div class="Hero-module_onsiteSpotlight_C5i2Z">
                   <div class="OnsiteSpotlight">
                     <div class="OnsiteSpotlight-ctaList">
@@ -509,8 +509,6 @@
            </table>
            <div class="rail-section-synopsis">We hold ongoing  new enrollment as space allows.  Check back here for Opening Day!  Also check here for any schedule changes including updates to party times and for the Summer 2019 calendar.  </div>
         </div> -->
-=======
->>>>>>> a21820717546fc50d0c89740b00a8de54b2a1823
       </div>
          <div class="school-page-content">
             <div class="school-page-content">
@@ -620,6 +618,7 @@
 </div>
 <%= render 'price_modal' %>
 <%= render 'request_info'%>
+<%= render 'request_info_new'%>
 <%= render 'view_rating'%>
 <% if current_user %>
   <%= render 'open_house'%>

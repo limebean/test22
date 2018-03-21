@@ -1,60 +1,3 @@
-<header class="fixed-header">
-  <nav class="navbar navbar-default custom-navbar" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to (image_tag('Dream_school_hd_logo.png', class: 'school-logo')), root_path %>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <div class="col-sm-8 col-md-4">
-        <%= form_tag search_path, id: 'search_form', method: :get do |f| %>
-          <!-- <form class="" role="search"> -->
-            <div class="input-group page_header_desktop_search_control">
-            <%= text_field_tag :q, nil, placeholder: "Where are you looking for child care?", class: 'form-control page_header_desktop_search_input' %>
-            <!-- <input type="text" class="form-control page_header_desktop_search_input" placeholder="Where are you looking for child care?" name="q"> -->
-            <div class="input-group-btn">
-              <button class="btn btn-default custom_page_header_desktop_search_submit_button" type="submit"><i class="glyphicon glyphicon-search submit-search-icon"></i></button>
-            </div>
-            </div>
-        <% end %>
-        <!-- </form> -->
-      </div>
-      <ul class="nav navbar-nav navbar-right custom-right-navbar">
-        <%if current_user %>
-          <% if current_user.parent? %>
-            <li><%= link_to 'MY SCHOOLS',  school_parent_path(current_user), class:'nav-link' %>
-            <!-- <a href="/partner" class="nav-link">MY SCHOOLS</a></li> -->
-            <% if current_user.parent_profile.present? %>
-              <li><%= link_to 'FAMILY PROFILE',  parent_profile_path(current_user.parent_profile&.id), class:'nav-link' %></li>
-            <% else %>
-              <li><%= link_to 'FAMILY PROFILE',  new_parent_profile_path, class:'nav-link' %></li>
-            <% end %>
-          <% else %>
-            <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
-            <li><a href="<%=dashboard_path%>" class="nav-link">DASHBOARD</a></li>
-          <% end %>
-          <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
-        <%else%>
-          <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
-          <li><a href="/partner" class="nav-link">START A DREAMSCHOOL</a></li>
-          <li><%= link_to 'LOG IN', new_user_session_path %></li>
-          <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
-        <%end%>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
-
-</header>
-
-
 <div class="wrap" role="document">
       <div class="content">
         <main class="main">
@@ -63,105 +6,34 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
-
-              <div class="page-header">
-        <h1>FAQ</h1>
-        <hr>
+         <div class="page-header">
+        <p class="faq_heading_text">Frequently Asked Questions</p>
       </div>
-    
-    <p><strong><a class="anchor" href="#what">What is the Roots of Empathy organization?<br>
-</a></strong><strong><a href="#roecur">How do I purchase the Roots of Empathy curriculum?</a><br>
-<a href="#getroe">How can I get Roots of Empathy into my school / community / country?</a><br>
-<a href="#beinstruct">How can I become a Roots of Empathy instructor?<br>
-</a></strong><strong><a href="#roefamily">How can my baby and I volunteer to become a Roots of Empathy family?</a><br>
-<a href="#soe">What is Seeds of Empathy?</a><br>
-<a href="#getsoe">How do I purchase the Seeds of Empathy curriculum?<br>
-How can I get Seeds of Empathy into my early childhood centre / community / country?</a><br>
-<a href="#soefamily">How can my baby and I volunteer to become a Seeds of Empathy family?<br>
-</a><a href="#register">How can I keep in touch with the Roots of Empathy organization and find out more about Roots of Empathy programs and Seeds of Empathy programs?</a></strong></p>
-<p>&nbsp;</p>
-<hr>
 <p><strong><a name="what"></a></strong></p>
-<p><strong>What is the Roots of Empathy organization?</strong><br>
-Roots of Empathy is a powerful idea whose time has come. A charitable organization, our mission is to build caring, peaceful, and civil societies through the development of empathy in children and adults. Our vision is to change the world, child by child.</p>
-<p>Incorporated in 2000, Roots of Empathy was named after its flagship evidence-based program, which was created in 1996 by Mary Gordon. Roots of Empathy is considered a model of social innovation. We have two programs: a program for children in elementary school (Roots of Empathy) and its “younger sibling,” a program for children three to five years old in early childhood settings (Seeds of Empathy).</p>
-<p>Mary Gordon has written a best-selling book,&nbsp;<em>Roots of Empathy: changing the world child by child</em>, which describes the Roots of Empathy philosophy. The book is available in fine bookstores across Canada and the United States, or can be ordered online at&nbsp;<a href="http://www.amazon.com/" target="_blank" rel="noopener noreferrer">www.amazon.com</a>, <a href="http://www.barnesandnoble.com/" target="_blank" rel="noopener noreferrer">www.barnesandnoble.com</a>, <a href="http://www.amazon.ca/" target="_blank" rel="noopener noreferrer">www.amazon.ca</a>, or <a href="http://www.chapters.indigo.ca/" target="_blank" rel="noopener noreferrer">www.chapters.indigo.ca</a>.</p>
-<p>You can&nbsp;<a class="jce_file" href="http://www.rootsofempathy.org/wp-content/uploads/2016/04/RootsofEmpathyBook_Chapter1-FromaTinySeed.pdf" target="_blank" rel="noopener noreferrer">download the first chapter for free</a>.</p>
-<p>The National/International office is located in Toronto, Canada, which is also the location of the Roots of Empathy Centre of Excellence. For more information on the Roots of Empathy organization and our Roots of Empathy and Seeds of Empathy programs, please visit&nbsp;<a href="http://www.rootsofempathy.org/" target="_self">www.rootsofempathy.org</a>.</p>
-<p><a href="#top">back to top</a></p>
-<p>&nbsp;</p>
-<hr>
-<p>&nbsp;</p>
-<h2><strong><br>
-Roots of Empathy Programs</strong></h2>
-<p><strong><a name="roecur"></a><br>
-How do I purchase the Roots of Empathy Curriculum?</strong><br>
-The Roots of Empathy curriculum documents are not available for purchase. The curriculum is leased to instructors for as long as they deliver the program and must be returned when the instructor stops teaching. It is made available as part of the instructor training process.</p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p><strong><a name="getroe"></a><br>
-How can I get Roots of Empathy into my school/community/country?</strong><br>
-Currently the program is active in all Canadian provinces. Please see the <a title="Contact Us" href="http://www.rootsofempathy.org/contact-us/" target="_blank" rel="noopener noreferrer">Contact Us</a>&nbsp;page on our website for Canadian contact information.</p>
-<p>We also have programs in:</p>
-<p>England<br>
-Northern Ireland<br>
-Republic of Ireland<br>
-Scotland<br>
-Wales<br>
-Costa Rica<br>
-Germany<br>
-Switzerland<br>
-United States: Washington, California, New Mexico, New York, Washington D.C., Hawaii<br>
-New Zealand: Auckland, Wellington, Christchurch and Rotorua</p>
-<p>Over the coming years, we plan to continue expanding Roots of Empathy. Typically programs are launched after community partnerships are formed and a great deal of development work is in place. We generally expect an initial three-year commitment to allow the program to become successful.</p>
-<p>If you are outside Canada, and might be in a position to offer an initial three-year commitment, please feel welcome to share a description of the organization or group you represent and details about your interest in growing the program by emailing&nbsp;<span id="cloak33657"><a href="mailto:international@rootsofempathy.org">international@rootsofempathy.org</a></span>.</p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p><strong><a name="beinstruct"></a><br>
-How can I become a Roots of Empathy instructor?</strong><br>
-We train instructors where we have established programs. We offer training where the program will be delivered. It is not possible to train in another location or country and return home to set up a program in an individual school. We provide training to 20 people at a time.</p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p>&nbsp;</p>
-<p><a name="roefamily"></a><br>
-<strong>How can my baby and I volunteer to become a Roots of Empathy family?</strong><br>
-If you live in a Roots of Empathy community, and your baby is between two and four months old at the beginning of the program, you can apply to become a Roots of Empathy Family. If you are within Canada, please contact the staff contact for your area as listed on our website’s&nbsp;<a title="Contact Us" href="http://www.rootsofempathy.org/contact-us/">Contact Us</a> page and indicate where you live. If you are outside of Canada, and live in an area where we have programs (see list above), please contact <span id="cloak82430"><a href="mailto:international@rootsofempathy.org">international@rootsofempathy.org</a></span>&nbsp; being sure to mention the community where you live.</p>
-<p><a href="#top">back to top</a></p>
-<p>&nbsp;</p>
-<hr>
-<p>&nbsp;</p>
-<h2><strong> Seeds of Empathy Programs</strong></h2>
-<p>&nbsp;</p>
-<p>(see also <a href="http://www.seedsofempathy.org/" target="_blank" rel="noopener noreferrer">seedsofempathy.org</a> )</p>
-<p><strong><a name="soe"></a><br>
-What is Seeds of Empathy?</strong><br>
-Seeds of Empathy is the “younger sibling” of Roots of Empathy. It is designed for early childhood settings to foster social and emotional competence and early literacy skills and attitudes in children three to five years old. At the same time it provides professional development for their educators. For more information please visit <a href="http://www.rootsofempathy.org/">www.rootsofempathy.org.</a></p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p>&nbsp;</p>
-<p><a name="soecur"></a><br>
-<strong>How do I purchase the Seeds of Empathy curriculum?</strong><br>
-The Seeds of Empathy curriculum is not available for purchase. The curriculum is leased to staff members in a Seeds of Empathy centre for as long as they deliver the program and must be returned when the early childhood centre is no longer accredited to deliver the Seeds of Empathy program. It is made available as part of the training process.</p>
-<p><a href="http://rootsofempathy.org/contact-us-12/7-public-pages/contact-us/96-frequently-asked-questions.html#top">back to top<br>
-</a></p>
-<p><strong><a name="getsoe"></a><br>
-How can I get Seeds of Empathy into my early childhood centre / community / country?</strong><br>
-Currently the program is active in the Canadian provinces of Ontario, Manitoba, Alberta and British Columbia as well as the greater Seattle area of Washington State.</p>
-<p>Over the coming years, we plan to expand Seeds of Empathy. Typically programs are launched after a great deal of development work is in place. It is not possible to train in another location or country and return home to set up a program in an individual early childhood centre. If you are associated with a group or organization that might be interested in growing Seeds of Empathy, please feel welcome to share a description of the organization or group and details about your interest by emailing <span id="cloak61457"><a href="mailto:inquiries@seedsofempathy.org">inquiries@seedsofempathy.org</a></span>.</p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p>&nbsp;</p>
-<p><a name="soefamily"></a><br>
-<strong>How can my baby and I volunteer to become a Seeds of Empathy family?</strong><br>
-If you live in a Seeds of Empathy community, and your baby is between two and four months old at the beginning of the program, you can apply to become a Seeds of Empathy Family. (See list above of where Seeds of Empathy is active.) Please contact <span id="cloak10386"><a href="mailto:inquiries@seedsofempathy.org">inquiries@seedsofempathy.org</a></span> and indicate where you live.</p>
-<p><a href="#top">back to top<br>
-</a></p>
-<p>&nbsp;</p>
-<p><a name="register"></a><br>
-<strong>How can I keep in touch with the Roots of Empathy organization and find out more about Roots of Empathy programs and Seeds of Empathy programs?</strong><br>
-If you’d like to receive our Roots of Empathy newsletter Green Blanket, and an occasional update on our news and plans for expansion, please fill in our <a href="https://app.etapestry.com/onlineforms/RootsofEmpathy/mailing.html">online registration form</a>.</p>
-<p>Thank you for your interest in the Roots of Empathy organization.</p>
-<p><a href="#top">back to top</a></p>
+<p><strong>1. What is Dreamschool?</strong><br>
+Dreamschool is a network of quality, affordable in-home child care programs. We provide qualified child care providers with the support and tools they need to successfully start and run their own child care centres. At the same time, we connect parents with high-quality, affordable, reliable and convenient child care close to home.</p>
+
+<p><strong>2. What is the Dreamschool model?</strong><br>
+Dreamschool is designed with a child’s well-being in mind. We used the latest evidence in early childhood education and care and worked with experts in the field to design the Dreamschool model. To learn more, check out our <%=link_to 'About Us', about_path, class: 'faq_about_text'%> page. </p>
+
+<p><strong>3. How can I sign up my child for Dreamschool?</strong><br> 
+We are just months away from launching Dreamschool in your neighbourhood. To get on the waitlist, sign up <%= link_to 'here', new_user_registration_path, class: 'faq_sign_up_text' %>. We will be in touch very soon! </p>
+
+<p><strong>4. What is the cost of enrolling my child in Dreamschool?</strong><br> Do you accept a subsidy?We are working to make sure that Dreamschool is the most affordable day care option for you. To get learn more, please reach out in our <%= link_to 'Contact Us', contact_path, class: 'faq_contact_text'%> page and we will be in touch shortly! </p>
+
+<p><strong>5. Can the ratings of the provider be revealed before the visit?</strong><br>Unfortunately, the ratings cannot be provided until a visit to the provider occurs.</p>
+
+<p><strong>6. How do you select your child care providers? What is the process?</strong><br>Your child’s well-being and safety is our #1 priority. This is why we have a thorough recruitment and vetting process to ensure that we answer all of your burning questions about your child’s day care provider.  Our process includes: </p>
+<ul>
+  <li>Police check </li>
+  <li>First aid certification</li> 
+  <li>Reference checks</li>  
+  <li>Verification of educational and/or work experience</li> 
+  <li>1:1 interview </li>
+</ul>
+
+<p>We also provide our care providers with training and 1:1 coaching support to set-up and maintain their daycare centre.</p> 
+<p>Before your child is placed in a care provider’s home, we will share all the details and answer any questions you have.</p>
       </div>
     </div>
   </div>
