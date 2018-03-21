@@ -230,3 +230,4 @@ class TeachersController < ApplicationController
       end
     end
 end
+end
