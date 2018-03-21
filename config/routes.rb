@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get 'show', to: 'welcome#show'
   get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
+  get 'faq_home_page', to: 'welcome#faq_home_page'
   get '/contact_us', to: 'welcome#contact_us', as: :contact
+  post 'support', to: 'welcome#support'
+
 
 
   devise_for :users, controllers: { registrations: "users/registrations" }
@@ -20,6 +23,7 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
+      get :accept_child_enrollment
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
@@ -52,6 +56,8 @@ Rails.application.routes.draw do
   resources :parents, only: [:create] do
     member do
       get :school
+      get :interest_open_house
+      match :payment, via: [:get, :post]
     end
     collection do
       get :change_favourite_status

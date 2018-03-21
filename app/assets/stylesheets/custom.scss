@@ -2116,7 +2116,46 @@ p.view_text {
     font-size: 12px;
 }
 img.school-logo {
-  width: 205px;
-  height: 45px;
-  margin-top: 12px;
+    width: 260px;
 }
+.SchoolPage-railThumb {
+  background-size: cover;
+  cursor: pointer;
+  margin-bottom: 8px;
+  width: calc(50% - 8px / 2);
+  background-image: url(https://www.wonderschool.com/uploads/e3d4c813-3d8b-47cb-b6df-4cb0568a20aa.jpg);
+}
+.RailSection {
+    border-top: 1px solid #eee;
+    padding: 16px 0 48px;
+}
+.RailSection-title {
+    color: #9a9a9a;
+    margin-bottom: 16px;
+}
+
+.Button.Button--link:hover {
+    background-color: inherit;
+    color: #2a618c;
+}
+.SchoolPage-railGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+button.Button.Button--link {
+    background-color: transparent;
+    color: #5196cb;
+}
+.SchoolPage-table {
+    width: 100%;
+}
+.SchoolPage-tableRow--left .SchoolPage-tableKey {
+    font-weight: 700;
+    white-space: nowrap;
+}
+.SchoolPage-tableRow--left .SchoolPage-tableValue {
+    font-weight: 300;
+    text-align: left;
+}
+

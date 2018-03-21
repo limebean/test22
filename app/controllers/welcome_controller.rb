@@ -1,24 +1,15 @@
 class WelcomeController < ApplicationController
   before_action :check_if_teacher_or_admin, only: :index
-    def index
 
-    end
+    def index;    end
 
-    def about_us
+    def about_us;    end
 
-    end
+    def terms_of_use;    end
 
-    def method_name
+    def privacy_policy;    end
 
-    end
-
-    def terms_of_use
-
-    end
-
-    def privacy_policy
-
-    end
+    def faq_home_page;    end
 
     def search
       available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
@@ -52,12 +43,13 @@ class WelcomeController < ApplicationController
       @user = User.find_by(email: params[:email_id])
     end
 
-    def show
+    def show;    end
 
-    end
+    def contact_us;    end
 
-    def contact_us
-      
+    def support
+      UserMailer.support_mail(params[:name], params[:email], params[:subject], params[:message_body]).deliver_now
+      redirect_back fallback_location: root_path
     end
 
   private

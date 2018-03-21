@@ -18,7 +18,6 @@
 </header>
 <div class="map_google">
 	<div id="map" style="width:100%;height:400px;"></div>
-
 <script>
 function myMap() {
   var mapCanvas = document.getElementById("map");
@@ -40,20 +39,20 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 		<h2 class="conatct_heading">Contact Us</h2>
 		<div class="col-md-6 col-sm-12 col-xs-12 no_padding_default">
 			<p>The greatest happiness is family happiness. Give your family the joy of Dreamschool and our DreamCare App</p>
-			<%= form_tag '/',class:'contact_form_fields' do %>
-				<div class="col-sm-12 col-xs-12 no_padding_default">  
-			  	<%= text_field_tag :name,nil,class:'name',placeholder:'Name *' %>
+			<%= form_tag support_path,class:'contact_form_fields' do %>
+				<div class="col-sm-12 col-xs-12 no_padding_default">
+			  	<%= text_field_tag :name,nil,class:'name',placeholder:'Name *', required: true %>
 			  </div>
 				<div class="col-sm-12 col-xs-12 no_padding_default">
-			  	<%= text_field_tag :email,nil,class:'Email',placeholder:'Email *' %>
+			  	<%= email_field_tag :email,nil,class:'Email',placeholder:'Email *', required: true %>
 			  </div>
 				<div class="col-sm-12 col-xs-12 no_padding_default">
-			  	<%= text_field_tag :subject,nil,class:'Subject',placeholder:'Subject' %>
+			  	<%= text_field_tag :subject,nil,class:'Subject',placeholder:'Subject',required: true %>
 			  </div>
 			  <div class="col-sm-12 col-xs-12 no_padding_default">
-			  	<%= text_area_tag :message_body,nil, class:'message',:size =>"9x6",placeholder:'Message' %>
+			  	<%= text_area_tag :message_body,nil, class:'message',:size =>"9x6",placeholder:'Message', required: true %>
 			  </div>
-			  <%= submit_tag "Send",class:'submit_send_contact_info' %>    
+			  <%= submit_tag "Send",class:'submit_send_contact_info' %>
 			<% end %>
 		</div>
 		<div class="col-md-6 col-sm-12 col-xs-12 desktop_content">

@@ -31,6 +31,9 @@ class ParentsController < ApplicationController
     end
   end
 
+  def payment
+  end
+
 
   def dashboard
   end
@@ -56,6 +59,13 @@ class ParentsController < ApplicationController
 
   def school
     @teacher = Teacher.includes(:teacher_profile)
+  end
+
+  def interest_open_house
+    teacher = Teacher.find(params[:teacher_id])
+    parent = Parent.find(params[:id])
+    UserMailer.interest_for_open_house(teacher, parent).deliver_now
+    UserMailer.interest_for_open_house(parent).deliver_now
   end
 
   private

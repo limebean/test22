@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320134005) do
+ActiveRecord::Schema.define(version: 20180321054656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,17 @@ ActiveRecord::Schema.define(version: 20180320134005) do
     t.string "desired_schedule"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.bigint "teacher_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_payments_on_parent_id"
+    t.index ["teacher_id"], name: "index_payments_on_teacher_id"
+  end
+
   create_table "prices", force: :cascade do |t|
     t.bigint "teacher_id"
     t.integer "child_time"
@@ -142,6 +153,9 @@ ActiveRecord::Schema.define(version: 20180320134005) do
     t.float "latitude"
     t.float "longitude"
     t.string "cover_photo"
+    t.boolean "request_info", default: false
+    t.boolean "tour", default: false
+    t.boolean "open_house", default: false
     t.index ["teacher_id"], name: "index_teacher_profiles_on_teacher_id"
   end
 
@@ -177,6 +191,9 @@ ActiveRecord::Schema.define(version: 20180320134005) do
     t.datetime "updated_at", null: false
     t.string "telephone_no"
     t.string "last_name"
+    t.string "stripe_customer_id"
+    t.date "expiry_date"
+    t.boolean "active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
