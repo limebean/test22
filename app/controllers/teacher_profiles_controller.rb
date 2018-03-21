@@ -9,6 +9,7 @@ class TeacherProfilesController < ApplicationController
   end
 
   def create
+    binding.pry
     @teacher_profile = current_user.build_teacher_profile(permitted_teacher_params)
     if @teacher_profile.save
       flash[:notice] = 'Teacher profile successfully created.'
