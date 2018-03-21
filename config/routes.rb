@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get :enroll_modal
     end
     collection do
+      get :document
       get :get_availability
       get :bank_account_detail
     end

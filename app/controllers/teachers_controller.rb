@@ -37,7 +37,10 @@ class TeachersController < ApplicationController
     end
   end
 
-  def enroll_modal
+  def enroll_modal;  end
+
+  def document
+    @documents = AdminInfo.all
   end
 
   def get_price
@@ -215,7 +218,7 @@ end
 
     def set_layout
       case action_name
-      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail'
+      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail', 'document'
         'admin'
       else
         'application'

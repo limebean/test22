@@ -9,9 +9,7 @@
 <% end %>
 
 <div class="form-content">
-
   <%= simple_form_for @document, url: upload_document_admin_teachers_path, method: :post, html: { class: 'form-horizontal' } do |f| %>
-  <%#= form_for @document, url: upload_documnet_admin_teachers_path, method: :post, html: { multipart: true }, class: 'form-horizontal' do |f| %>
     <%= f.input :name, autofocus: true %>
     <%= f.input :document, as: :file%>
     <%= f.submit "Save", class: "btn btn-primary" %>
