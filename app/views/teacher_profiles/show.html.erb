@@ -260,7 +260,8 @@
       <div class="school-page-director">
         <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);">
         </div>
-        <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
+        <h3 class="school-page-director-name">
+        <%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
         <!-- <div class="school-page-director-title">School Director</div> -->
       </div>
     </div>
@@ -292,7 +293,8 @@
            <div class="school-page-director">
               <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);"></div>
               <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
-              <%= link_to new_enrollment_path do %>
+
+              <%= link_to new_enrollment_path(teacher:{teacher_profile_id: params[:id]}) do %>
                 <button type="button" class="btn btn-info">Enroll Me</button>
               <% end %>
            </div>

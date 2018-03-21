@@ -7,7 +7,7 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(permitted_children_params)
     if @child.save
-      redirect_to new_enrollment_path, notice: "success"
+      redirect_back fallback_location: new_enrollment_path
     else
       redirect_to partner_path, alert: "Something went wrong! Please try again."
     end

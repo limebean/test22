@@ -40,11 +40,11 @@
       <%= f.text_area :medical_condition, class:'comments' %>
     </div>
     <%= f.hidden_field :parent_id ,value:"#{current_user.id}"%>
-    <%= f.hidden_field :teacher_profile_id ,value:"#{TeacherProfile.find(params[:val]).id}"%>
+    <%= f.hidden_field :teacher_profile_id ,value:"#{Teacher.find(params[:val]).teacher_profile.id}"%>
     <br>
     <div class='actions'>
       <button name="button" class="btn btn-info defaut_button" type="submit">Next</button>
-      <%= link_to new_enrollment_path do %>
+      <%= link_to new_enrollment_path(teacher:{teacher_profile_id:Teacher.find(params[:val]).teacher_profile.id}) do %>
         <button class="btn btn-info button-gray">Cancel</button>
       <% end %>
     </div>
