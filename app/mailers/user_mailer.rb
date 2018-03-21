@@ -37,4 +37,18 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: 'Interest for open house')
   end
 
+  def make_payment_link(enroll)
+    @enroll = enroll
+    @parent = @enroll.parent
+    @teacher = @enroll.teacher
+  end
+
+  def support_mail(name, email, subject, message)
+    @name = name
+    @email = email
+    @subject = subject
+    @message = message
+    mail(to: 'support@dreamschools.co', subject: 'contact us')
+  end
+
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
   get 'faq_home_page', to: 'welcome#faq_home_page'
   get '/contact_us', to: 'welcome#contact_us', as: :contact
+  post 'support', to: 'welcome#support'
 
 
 
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
+      get :accept_child_enrollment
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
@@ -56,7 +58,7 @@ Rails.application.routes.draw do
     member do
       get :school
       get :interest_open_house
-      get :make_payment
+      match :payment, via: [:get, :post]
     end
     collection do
       get :change_favourite_status

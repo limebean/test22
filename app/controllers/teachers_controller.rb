@@ -163,6 +163,16 @@ class TeachersController < ApplicationController
     @teacher
   end
 
+  def accept_child_enrollment
+    @enroll = Enrollment.find(params[:id])
+    if params[status]
+      @enroll.update_attributes(status: params[status])
+      UserMailer.make_payment_link(@enroll)
+    else
+      @enroll.update_attributes(status: params[status])
+    redirect_to dashboard_path
+  end
+
   private
 
     def upload_identity(file)

@@ -1,6 +1,5 @@
 
-<%= form_tag( make_payment_parent_path, html: { class: 'make_payment' }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(@parent, url: make_payment_parents_path, html: { class: 'make_payment' }) do |f| %>
   <span class="payment-errors"></span>
   <div class="billing_informtion_col">
   <h3> Billing Information </h3>
@@ -22,7 +21,7 @@
   </div><br><br>
 </div>
 <div class='sign_now actions'>
-  <button name="button" type="submit" class="btn login_btn">SIGNUP NOW</button>
+  <button name="button" type="submit" class="btn login_btn">Submit</button>
 </div>
 <% end %>
 
