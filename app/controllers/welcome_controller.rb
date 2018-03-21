@@ -59,6 +59,10 @@ class WelcomeController < ApplicationController
 
     end
 
+    def contact_us
+      
+    end
+
   private
     def check_if_teacher_or_admin
         if current_user && (current_user.teacher? || current_user.admin?)

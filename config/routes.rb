@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
   get 'faq_home_page', to: 'welcome#faq_home_page'
+  get '/contact_us', to: 'welcome#contact_us', as: :contact
+
 
 
   devise_for :users, controllers: { registrations: "users/registrations" }
@@ -53,6 +55,8 @@ Rails.application.routes.draw do
   resources :parents, only: [:create] do
     member do
       get :school
+      get :interest_open_house
+      get :make_payment
     end
     collection do
       get :change_favourite_status

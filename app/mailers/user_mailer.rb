@@ -31,4 +31,10 @@ class UserMailer < ApplicationMailer
     mail(to: 'support@dreamschools.co', subject: 'Parent have completed family profile')
   end
 
+  def interest_for_open_house(user, parent = nil)
+    @user = user
+    @parent = parent
+    mail(to: user.email, subject: 'Interest for open house')
+  end
+
 end

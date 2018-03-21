@@ -28,21 +28,24 @@
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
         <%= link_to 'Profile Details', settings_path %>
       </li>
-      <li class="<%=is_active_menu('availability')%>" >
-        <%= link_to 'Manage Availability', availability_teacher_path(current_user) %>
+      <li>
+        <a href="#">Curriculum PDF</a>
       </li>
       <li class="<%=is_active_menu('bank_account')%>" >
-        <%= link_to 'Bank Account', bank_account_teacher_path(current_user) %>
+        <%= link_to 'Transaction Settings', bank_account_teacher_path(current_user) %>
+      </li>
+      <li class="<%=is_active_menu('availability')%>" >
+        <%= link_to 'Scheduling Availability', availability_teacher_path(current_user) %>
       </li>
       <li>
-        <a href="#">Enrollments</a>
+        <a href="#"> Managing Enrollment pages</a>
       </li>
       <li>
-        <a href="#">Calendar</a>
+        <%= link_to 'Parents Applications', admin_parents_path %>
       </li>
-      <li>
+      <!-- <li>
         <a href="#">Payments</a>
-      </li>
+      </li> -->
     <%end%>
   </ul>
 </div>
