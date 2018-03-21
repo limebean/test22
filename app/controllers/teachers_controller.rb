@@ -227,4 +227,3 @@ end
         redirect_to admin_dashboard_path
       end
     end
-end

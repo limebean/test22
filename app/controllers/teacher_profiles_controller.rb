@@ -1,4 +1,4 @@
-class TeacherProfilesController < ApplicationController
+Pclass TeacherProfilesController < ApplicationController
   layout :set_layout
   before_action :authenticate_user!, except: %i[show request_info]
   before_action :set_teacher_profile, only: %i[edit show update request_info]
@@ -9,7 +9,6 @@ class TeacherProfilesController < ApplicationController
   end
 
   def create
-    binding.pry
     @teacher_profile = current_user.build_teacher_profile(permitted_teacher_params)
     if @teacher_profile.save
       flash[:notice] = 'Teacher profile successfully created.'
