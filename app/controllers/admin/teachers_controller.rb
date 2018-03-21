@@ -1,5 +1,5 @@
 class Admin::TeachersController < Admin::AdminBaseController
-  before_action :set_teacher, except: [:index]
+  before_action :set_teacher, except: [:index, :upload_document, :document]
 
   def index
     @teachers = Teacher.all.order(:id)
@@ -61,6 +61,30 @@ class Admin::TeachersController < Admin::AdminBaseController
     @prices = @teacher.prices
   end
 
+  def upload_document
+    if request.get?
+      @document = AdminInfo.new
+    elsif request.post?
+      @document = AdminInfo.new(document_params)
+      if @document.save
+        redirect_to document_admin_teachers_path, notice: "The document #{@document.name} has been uploaded."
+      else
+        render "upload_documnet"
+       end
+    elsif request.delete?
+      @document = AdminInfo.find(params[:document_id])
+      if @document.destroy
+        redirect_to document_admin_teachers_path, notice: "The document #{@document.name} has been deleted."
+      else
+        redirect_to document_admin_teachers_path, notice: "Something went wrong! Try again later."
+       end
+    end
+  end
+
+  def document
+    @documents = AdminInfo.all
+  end
+
   private
     def permitted_teacher_params
       params.require(:teacher_profile).permit(
@@ -80,6 +104,12 @@ class Admin::TeachersController < Admin::AdminBaseController
       params.require(:price).permit(
         :child_time, :two_days_price, :three_days_price, :five_days_price
       )
+    end
+
+    def document_params
+      params.require(:admin_info).permit(
+        :name, :document
+        )
     end
 
     def set_teacher

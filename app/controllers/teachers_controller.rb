@@ -37,7 +37,10 @@ class TeachersController < ApplicationController
     end
   end
 
-  def enroll_modal
+  def enroll_modal;  end
+
+  def document
+    @documents = AdminInfo.all
   end
 
   def get_price
@@ -170,7 +173,7 @@ class TeachersController < ApplicationController
     end
     redirect_to dashboard_path
   end
-
+end
   private
 
     def upload_identity(file)
@@ -215,7 +218,7 @@ class TeachersController < ApplicationController
 
     def set_layout
       case action_name
-      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail'
+      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail', 'document'
         'admin'
       else
         'application'
@@ -227,4 +230,3 @@ class TeachersController < ApplicationController
         redirect_to admin_dashboard_path
       end
     end
-end

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get :enroll_modal
     end
     collection do
+      get :document
       get :get_availability
       get :bank_account_detail
     end
@@ -78,6 +79,10 @@ Rails.application.routes.draw do
         get :edit_profile
         patch :approve
         patch :reject
+      end
+      collection do
+        match :upload_document, via: [:get, :post, :delete]
+        get :document
       end
     end
     resources :parents

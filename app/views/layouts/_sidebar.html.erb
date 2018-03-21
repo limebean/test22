@@ -8,8 +8,8 @@
       <li class="<%=is_active_menu('index')%>">
         <%= link_to 'Teachers', admin_teachers_path %>
       </li>
-      <li>
-        <a href="#">Curriculum PDF</a>
+      <li class="<%=is_active_menu('document')%> <%=is_active_menu('upload_document')%>">
+        <%= link_to 'Curriculum PDF', document_admin_teachers_path %>
       </li>
       <li>
         <a href="#">Transaction Settings</a>
@@ -28,8 +28,8 @@
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
         <%= link_to 'Profile Details', settings_path %>
       </li>
-      <li>
-        <a href="#">Curriculum PDF</a>
+      <li class="<%=is_active_menu('document')%>">
+        <%= link_to 'Curriculum PDF', document_teachers_path %>
       </li>
       <li class="<%=is_active_menu('bank_account')%>" >
         <%= link_to 'Transaction Settings', bank_account_teacher_path(current_user) %>

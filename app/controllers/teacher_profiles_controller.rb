@@ -1,4 +1,4 @@
-class TeacherProfilesController < ApplicationController
+Pclass TeacherProfilesController < ApplicationController
   layout :set_layout
   before_action :authenticate_user!, except: %i[show request_info]
   before_action :set_teacher_profile, only: %i[edit show update request_info]

@@ -1,0 +1,20 @@
+<div class="form-content">
+<br />
+<br />
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Download Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |doc| %>
+      <tr>
+        <td><%= doc.name %></td>
+        <td><%= link_to "Download Document", doc.document_url, download: doc.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
