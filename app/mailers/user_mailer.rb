@@ -43,4 +43,12 @@ class UserMailer < ApplicationMailer
     @teacher = @enroll.teacher
   end
 
+  def support_mail(name, email, subject, message)
+    @name = name
+    @email = email
+    @subject = subject
+    @message = message
+    mail(to: 'support@dreamschools.co', subject: 'contact us')
+  end
+
 end

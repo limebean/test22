@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
   get 'faq_home_page', to: 'welcome#faq_home_page'
   get '/contact_us', to: 'welcome#contact_us', as: :contact
+  post 'support', to: 'welcome#support'
 
 
 
