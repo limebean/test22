@@ -1,5 +1,5 @@
 class Child < ApplicationRecord
-  belongs_to :parent
+  belongs_to :parent,optional:true
   belongs_to :teacher_profile
   validates :full_name, presence: true
 
