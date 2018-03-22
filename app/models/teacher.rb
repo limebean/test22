@@ -6,6 +6,7 @@ class Teacher < User
   has_many :favourites, dependent: :destroy
   has_many :children
   has_many :payments
+  has_many :enrollments
   delegate :first_name, :last_name, :street_address, :date_of_birth, to: :teacher_profile, allow_nil: true
 
   after_create :notify_admin_for_new_application

@@ -39,17 +39,17 @@ class UserMailer < ApplicationMailer
     mail(to: user.email, subject: 'Interest for open house')
   end
 
-  def notify_teacher_parent_for_new_enroll(enroll, email)
+  def notify_teacher_parent_for_new_enroll(enroll, user)
     @enroll = enroll
-    @email = email
-    mail(to: email, subject: 'We have received your application').
+    @user = user
+    mail(to: @user.email, subject: 'We have received your application')
   end
 
-  def make_payment_link(enroll, parent, child)
-    @enroll = enroll
-    @parent = parent
-    @child = child
-    mail(to: parent.email, subject: 'We have received your application')
+  def make_payment_link(enroll)
+    @teacher = enroll.teacher
+    @child= enroll.child
+    @parent = @child.parent
+    mail(to: @parent.email, subject: 'We have received your application')
   end
 
   def support_mail(name, email, subject, message)

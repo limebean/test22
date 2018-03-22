@@ -33,24 +33,30 @@ class ParentsController < ApplicationController
 
   def payment
     if request.get?
-      @parent = parent.find(params[:id])
+      @parent = Parent.find(params[:id])
     elsif request.post?
       @parent = Parent.find(params[:id])
-      @customer = if @parent.customer_id
-        Stripe::Customer.retrieve(@parent.customer_id)
+      @teacher = Teacher.find(params[:teacher_id])
+      if @parent.stripe_customer_id
+        @customer = Stripe::Customer.retrieve(@parent.customer_id)
       else
-        Stripe::Customer.create(
+        @customer = Stripe::Customer.create(
           email: email,
           source: params[:stripeToken]
         )
+        @parent = @parent.update_attributes(stripe_customer_id: @customer.id)
       end
-      charge = Stripe::charge.create({
-        amount: 1,
-        currency:'usd',
-        description: 'hggg',
-        token: stripeToken
-        })
-
+      charge = Stripe::Charge.create({
+            source: params[:stripeToken],
+            amount: amount,
+            description: @parent.email,
+            currency: 'usd',
+            capture: false,
+            destination: {
+              account: @teacher.teacher_profile.stripe_account_id,
+              amount: amount - fee
+            }
+          })
     end
   end
 
