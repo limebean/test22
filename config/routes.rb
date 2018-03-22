@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
-      get :accept_child_enrollment
+      get :child_enrollment
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule

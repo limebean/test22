@@ -1,27 +1,28 @@
-
-<%= form_for(@parent, url: make_payment_parents_path, html: { class: 'make_payment' }) do |f| %>
-  <span class="payment-errors"></span>
-  <div class="billing_informtion_col">
-  <h3> Billing Information </h3>
-  <div class="form-group">
-    <label for="frmCCNum">Card Number</label>
-    <input name= "cardnumber" id="frmCCNum" class="cstm_input" placeholder="Card number" maxlength="16" data-stripe="number" required autocomplete="cc-number" />
+<div class="form-content custom-form-content">
+  <%= form_for(@parent, url: payment_parent_path(@parent), html: { class: 'make_payment' }) do |f| %>
+    <span class="payment-errors"></span>
+    <div class="billing_informtion_col">
+    <h3> Billing Information </h3>
+    <div class="form-group">
+      <label for="frmCCNum">Card Number</label>
+      <input name= "cardnumber" id="frmCCNum" class="cstm_input" placeholder="Card number" maxlength="16" data-stripe="number" required autocomplete="cc-number" />
+    </div>
+    <div class="form-group">
+      <label for="frmCCCVC">Security Code</label>
+      <input name="cvc" id="frmCCCVC" class="cstm_input" placeholder="3-4 digit code" maxlength="4" type="password"  data-stripe="cvc" required autocomplete="cc-csc"/>
+    </div>
+    <div class="form-group">
+      <label for="frmCCExp" class="pull-left">Expiration</label>
+      <span class="expire_col">
+        <input name="ccmonth" id="frmCCExp" class="cstm_input expire_time" placeholder="MM" maxlength="2" type="text" data-stripe="exp-month" autocomplete="cc-exp-month"/>
+        <span class="pull-left slash"> / </span>
+        <input name="ccyear" id="frmCCExp" class="cstm_input expire_time" maxlength="4" placeholder="YYYY" type="text"  data-stripe="exp-year" autocomplete="cc-exp-year"/>
+      </span>
+    </div><br><br>
   </div>
-  <div class="form-group">
-    <label for="frmCCCVC">Security Code</label>
-    <input name="cvc" id="frmCCCVC" class="cstm_input" placeholder="3-4 digit code" maxlength="4" type="password"  data-stripe="cvc" required autocomplete="cc-csc"/>
+  <div>
+    <button name="button" type="submit" class="btn login_btn">Submit</button>
   </div>
-  <div class="form-group">
-    <label for="frmCCExp" class="pull-left">Expiration</label>
-    <span class="expire_col">
-      <input name="ccmonth" id="frmCCExp" class="cstm_input expire_time" placeholder="MM" maxlength="2" type="text" data-stripe="exp-month" autocomplete="cc-exp-month"/>
-      <span class="pull-left slash"> / </span>
-      <input name="ccyear" id="frmCCExp" class="cstm_input expire_time" maxlength="4" placeholder="YYYY" type="text"  data-stripe="exp-year" autocomplete="cc-exp-year"/>
-    </span>
-  </div><br><br>
+  <% end %>
 </div>
-<div class='sign_now actions'>
-  <button name="button" type="submit" class="btn login_btn">Submit</button>
-</div>
-<% end %>
 

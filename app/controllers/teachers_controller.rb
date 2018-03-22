@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :new, :create, :set_password, :update_password]
   before_action :authenticate_user!, except: [:show, :new, :create, :set_password, :update_password]
   before_action :set_teacher, only: [ :update_password, :set_password ]
-  before_action :ensure_teacher, only: :dashboard
+  before_action :ensure_teacher, only: [:dashboard, :child_enrollment]
 
   def new
     @teacher = Teacher.new
@@ -167,13 +167,13 @@ class TeachersController < ApplicationController
     @teacher
   end
 
-  def accept_child_enrollment
-    @enroll = Enrollment.find(params[:id])
-    if params[status]
-      @enroll.update_attributes(status: params[status])
-      UserMailer.make_payment_link(@enroll)
+  def child_enrollment
+    enroll = Enrollment.find(params[:enroll])
+    if params[:status]
+      enroll.update_attributes(status: params[:status])
+      UserMailer.make_payment_link(enroll).deliver_now
     else
-      @enroll.update_attributes(status: params[status])
+      enroll.update_attributes(status: params[:status])
     end
     redirect_to dashboard_path
   end
