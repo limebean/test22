@@ -1,11 +1,17 @@
 <% current_user.children.each do |child|%>
 	<div class="col-md-6 left_wall_reduce">
 		<div class="frame_of_child">
-			<div class="full_name">
-				<span>Born</span><%= child.full_name%></div>
+			<label class="full_name">
+				<span>Born</span><%= child.full_name%>
 			<div class="date_of_birth">
-				<%= child.date_of_birth%>
-			</div>
+				<%= child.date_of_birth%></div>
+			<%= f.radio_button :child_id, child.id,class: "radio_child" %>
+			</label>
 		</div>
 	</div>
 <% end %>
+<script type="text/javascript">
+	$(".full_name").click(function(){
+    $(this).parents(".frame_of_child").css('border', '2px solid #5196cb;');
+	});
+</script>

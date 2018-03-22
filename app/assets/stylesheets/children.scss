@@ -9,6 +9,12 @@
   .full_name {
   	font-size: 15px;
   	font-weight: 700;
+    width: 100%;
+    .radio_child {
+      position: absolute;
+      top: 26px;
+      right: 50px;
+    }
   }
   .date_of_birth {
   	font-size: 15px;
