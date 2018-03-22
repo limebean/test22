@@ -13,25 +13,43 @@
       </div>
       <p class="under_form_details">Please submit separate applications for each child.</p>
       <%= simple_form_for @enroll_app do |f| %>
-        <div class="append_childs col-md-12 no_padding_default">
-          <% if current_user.children.present? %>
-            <%= render 'children/children_all' %>
-          <% end %>
-        </div>
-        <div class="col-md-12 no_padding_default start_date_form">
-          <div class="EnrollmentApplicationForm-controlHeading">START DATE</div>
-          <input type="text" name="" placeholder="MM/DD/YYYY" class="comments" id="enroll_start_date"/>
-          <div class="PeriodPickers">
-            <div class="PeriodPicker"><label><input type="checkbox" class="PeriodPicker-checkbox" value="on">Monday &nbsp;</label><span>8:30am to 6:00pm</span></div>
-            <div class="PeriodPicker PeriodPicker--disabled"><label><input type="checkbox" class="PeriodPicker-checkbox" value="on">Tuesday &nbsp;</label><span>8:30am to 6:00pm</span></div>
-            <div class="PeriodPicker PeriodPicker--disabled"><label><input type="checkbox" class="PeriodPicker-checkbox" value="on">Wednesday &nbsp;</label><span>8:30am to 6:00pm</span></div>
-            <div class="PeriodPicker PeriodPicker--disabled"><label><input type="checkbox" class="PeriodPicker-checkbox" value="on">Thursday &nbsp;</label><span>8:30am to 6:00pm</span></div>
-            <div class="PeriodPicker PeriodPicker--disabled"><label><input type="checkbox" class="PeriodPicker-checkbox" value="on">Friday &nbsp;</label><span>8:30am to 6:00pm</span></div>
+      <div class="append_childs col-md-12 no_padding_default">
+        <% if current_user.children.present? %>
+        <%= render 'children/children_all', f: f %>
+        <% end %>
+      </div>
+      <div class="col-md-12 no_padding_default start_date_form">
+        <div class="EnrollmentApplicationForm-controlHeading">START DATE</div>
+        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments", id: "enroll_start_date" %>
+        <div class="PeriodPickers">
+          <div class="PeriodPicker">
+            <label>
+            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Monday,8:30am to 6:00pm", "" %>Monday &nbsp;</label>
+            <span>8:30am to 6:00pm</span>
           </div>
-          <div class="EnrollmentApplicationForm-controlHeading">ANY OTHER COMMENTS?</div>
-          <input type="text" class="comments other_comments">
-          <div class="top_space submit_colors"><button class="disabled" type="submit">Submit</button></div>
+          <div class="PeriodPicker PeriodPicker--disabled">
+            <label>
+            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Tuesday,8:30am to 6:00pm", "" %>Tuesday &nbsp;</label>
+            <span>8:30am to 6:00pm</span>
+          </div>
+          <div class="PeriodPicker PeriodPicker--disabled">
+          <label>
+            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Wednesday,8:30am to 6:00pm", "" %>Wednesday &nbsp;</label><span>8:30am to 6:00pm</span></div>
+          <div class="PeriodPicker PeriodPicker--disabled">
+          <label>
+          <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Thursday,8:30am to 6:00pm", "" %>Thursday &nbsp;</label>
+          <span>8:30am to 6:00pm</span></div>
+          <div class="PeriodPicker PeriodPicker--disabled">
+          <label>
+          <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Friday,8:30am to 6:00pm", "" %>Friday &nbsp;</label>
+          <span>8:30am to 6:00pm</span></div>
         </div>
+        <div class="EnrollmentApplicationForm-controlHeading">ANY OTHER COMMENTS?</div>
+        <%= f.text_field :other_comments , class: "comments other_comments", id: "enroll_start_date" %>
+        <%= f.hidden_field :teacher_id ,value:"#{ params[:teacher][:teacher_profile_id]}"%>
+        <%#= f.hidden_field :teacher_profile_id ,value:"#{Teacher.find(params[:val]).teacher_profile.id}"%>
+        <div class="top_space submit_colors"><button class="disabled" type="submit">Submit</button></div>
+      </div>
       <% end %>
     </div>
   </div>
