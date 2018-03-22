@@ -81,7 +81,7 @@ class Admin::TeachersController < Admin::AdminBaseController
     end
   end
 
-  def document
+  def document 
     @documents = AdminInfo.all
   end
 

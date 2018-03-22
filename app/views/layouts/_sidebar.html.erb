@@ -37,8 +37,8 @@
       <li class="<%=is_active_menu('availability')%>" >
         <%= link_to 'Scheduling Availability', availability_teacher_path(current_user) %>
       </li>
-      <li>
-        <a href="#"> Managing Enrollment pages</a>
+      <li class="<%=is_active_menu(' Managing Enrollment pages')%>">
+        <%= link_to 'Managing Enrollment page', manage_enrollment_teachers_path %>
       </li>
       <li>
         <%= link_to 'Parents Applications', admin_parents_path %>

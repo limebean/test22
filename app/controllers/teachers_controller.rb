@@ -159,6 +159,10 @@ class TeachersController < ApplicationController
     end
   end
 
+  def manage_enrollment
+    @enrollments = current_user.enrollments
+  end
+
   def set_password
     @teacher
   end
@@ -218,7 +222,7 @@ end
 
     def set_layout
       case action_name
-      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail', 'document'
+      when 'dashboard', 'availability', 'bank_account', 'bank_account_detail', 'document', 'manage_enrollment'
         'admin'
       else
         'application'

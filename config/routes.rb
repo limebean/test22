@@ -28,12 +28,13 @@ Rails.application.routes.draw do
       get :get_price
       get :get_schedule
       post :tour_booking
-      get :enroll_modal
+      get :enroll_modal   
     end
     collection do
       get :document
       get :get_availability
       get :bank_account_detail
+      get :manage_enrollment
     end
   end
 
