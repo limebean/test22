@@ -163,13 +163,15 @@ class TeachersController < ApplicationController
     @teacher
   end
 
-  def accept_child_enrollment
-    @enroll = Enrollment.find(params[:id])
+  def child_enrollment
+    enroll = Enrollment.find(params[:enroll])
+    child= Child.find(enroll.child_id)
+    parent = child.parent
     if params[status]
-      @enroll.update_attributes(status: params[status])
-      UserMailer.make_payment_link(@enroll)
+      enroll.update_attributes(status: params[status])
+      UserMailer.make_payment_link(enroll, parent, child ).deliver_now
     else
-      @enroll.update_attributes(status: params[status])
+      enroll.update_attributes(status: params[status])
     end
     redirect_to dashboard_path
   end

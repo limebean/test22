@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% if @user.teacher? %>
+      <h1>Hello Admin,</h1>
+      <p>
+        <p>
+          You have a new application from a enroll, Please have a look at the information and take the action at given below link.
+        </p>
+        <p>
+          <%=link_to "Accept", child_enrollment_teacher_url(@teacher.id enroll: @enroll, status: true) %>
+        </p>
+        <p>
+          <%=link_to "Reject", child_enrollment_teacher_url(@teacher.id enroll: @enroll, status: false) %>
+        </p>
+      </p>
+    <elsif @user.parent?>
+      <p>
+        Dear parent
+      </p>
+      <p>
+        We have received your application to enroll and will get back to you with next steps shortly.
+      </p>
+    <% end %>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
