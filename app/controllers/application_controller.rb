@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
       if current_user.admin?
         admin_dashboard_path
       elsif current_user.teacher?
-        dashboard_path
+        return_path || super || dashboard_path
       elsif current_user.parent?
         return_path || super || root_path
       end

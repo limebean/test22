@@ -7,7 +7,7 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(permitted_children_params)
     if @child.save
-      redirect_to enroll_application_teacher(params[:id]), notice: "success"
+      redirect_back fallback_location: new_enrollment_path
     else
       redirect_to partner_path, alert: "Something went wrong! Please try again."
     end
@@ -26,7 +26,11 @@ class ChildrenController < ApplicationController
       :care_by,
       :date_of_birth,
       :parent_id,
-      :place_of_birth
+      :place_of_birth,
+      :gender,
+      :allergies,
+      :medication,
+      :medical_condition
     )
   end
 end

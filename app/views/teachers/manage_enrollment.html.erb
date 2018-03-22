@@ -1,0 +1,25 @@
+<h1>Teachers applications</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Date of Birth</th>
+      <th>Place of Birth</th>
+      <th>Gender</th>
+
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollments.each do |e| %>    
+      <tr>
+        <td><%= e.child.full_name %></td>
+        <td><%= e.child.date_of_birth %></td>
+        <td><%= e.child.place_of_birth %></td>
+        <td><%= e.child.gender %></td>
+        <td><button class="btn btn-sm btn-primary" type="button">Accept</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger" type="button">Reject</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

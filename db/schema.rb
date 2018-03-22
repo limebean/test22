@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320071852) do
+ActiveRecord::Schema.define(version: 20180322060844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_infos", force: :cascade do |t|
+    t.string "name"
+    t.string "document"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "availabilities", force: :cascade do |t|
     t.bigint "teacher_id"
@@ -41,6 +48,19 @@ ActiveRecord::Schema.define(version: 20180320071852) do
     t.string "medical_condition"
     t.index ["parent_id"], name: "index_children_on_parent_id"
     t.index ["teacher_profile_id"], name: "index_children_on_teacher_profile_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "child_id"
+    t.bigint "teacher_id"
+    t.string "start_date"
+    t.string "weekdays_and_time"
+    t.string "other_comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+    t.index ["child_id"], name: "index_enrollments_on_child_id"
+    t.index ["teacher_id"], name: "index_enrollments_on_teacher_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -82,6 +102,17 @@ ActiveRecord::Schema.define(version: 20180320071852) do
     t.integer "parent_id"
     t.string "second_guardian_occupation"
     t.string "desired_schedule"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.bigint "teacher_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_payments_on_parent_id"
+    t.index ["teacher_id"], name: "index_payments_on_teacher_id"
   end
 
   create_table "prices", force: :cascade do |t|
@@ -168,6 +199,9 @@ ActiveRecord::Schema.define(version: 20180320071852) do
     t.datetime "updated_at", null: false
     t.string "telephone_no"
     t.string "last_name"
+    t.string "stripe_customer_id"
+    t.date "expiry_date"
+    t.boolean "active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

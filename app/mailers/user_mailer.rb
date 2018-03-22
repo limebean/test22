@@ -15,6 +15,8 @@ class UserMailer < ApplicationMailer
 
   end
 
+
+
   def teacher_invitaion_email(teacher)
     @teacher = teacher
     mail(to: @teacher.email, subject: 'Welcome to the wonder school')
@@ -35,6 +37,27 @@ class UserMailer < ApplicationMailer
     @user = user
     @parent = parent
     mail(to: user.email, subject: 'Interest for open house')
+  end
+
+  def notify_teacher_parent_for_new_enroll(enroll, user)
+    @enroll = enroll
+    @user = user
+    mail(to: @user.email, subject: 'We have received your application')
+  end
+
+  def make_payment_link(enroll)
+    @teacher = enroll.teacher
+    @child= enroll.child
+    @parent = @child.parent
+    mail(to: @parent.email, subject: 'We have received your application')
+  end
+
+  def support_mail(name, email, subject, message)
+    @name = name
+    @email = email
+    @subject = subject
+    @message = message
+    mail(to: 'support@dreamschools.co', subject: 'contact us')
   end
 
 end

@@ -1,0 +1,24 @@
+<div class="form-content">
+<br/>
+<%= link_to "New Document", upload_document_admin_teachers_path, class: "btn btn-primary" %>
+<br />
+<br />
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Download Link</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |doc| %>
+      <tr>
+        <td><%= doc.name %></td>
+        <td><%= link_to "Download Document", doc.document_url, download: doc.name %></td>
+        <td><%= button_to "Delete",  upload_document_admin_teachers_path(document_id: doc.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{doc.name}?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

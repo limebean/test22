@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
   get 'faq_home_page', to: 'welcome#faq_home_page'
   get '/contact_us', to: 'welcome#contact_us', as: :contact
+  post 'support', to: 'welcome#support'
 
 
 
@@ -22,16 +23,18 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
+      get :child_enrollment
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
       post :tour_booking
-      get :enroll_modal
-      get :enroll_application
+      get :enroll_modal   
     end
     collection do
+      get :document
       get :get_availability
       get :bank_account_detail
+      get :manage_enrollment
     end
   end
 
@@ -56,7 +59,7 @@ Rails.application.routes.draw do
     member do
       get :school
       get :interest_open_house
-      get :make_payment
+      match :payment, via: [:get, :post]
     end
     collection do
       get :change_favourite_status
@@ -66,6 +69,7 @@ Rails.application.routes.draw do
       put :toggle_favourite_status
     end
   end
+  resources :enrollments
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
@@ -76,6 +80,10 @@ Rails.application.routes.draw do
         get :edit_profile
         patch :approve
         patch :reject
+      end
+      collection do
+        match :upload_document, via: [:get, :post, :delete]
+        get :document
       end
     end
     resources :parents
