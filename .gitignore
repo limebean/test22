@@ -26,3 +26,4 @@ config/database.yml
 public/assets/*
 public/asset/*
 public/system/*
+public/uploads/*
