@@ -10,6 +10,62 @@ body {
 
 /*custom-navbar */
 
+
+/* navbar toggle */
+
+span.glyphicon.glyphicon-th-list.my-toggle {
+  top: 12px;
+  right: 5px;
+  font-size: 22px;
+  color: #777;
+}
+
+@media screen and (max-width: 767px) {
+  span.glyphicon.glyphicon-th-list.my-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  span.glyphicon.glyphicon-th-list.my-toggle {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  span.glyphicon.glyphicon-th-list.my-toggle {
+    display: none;
+  }
+}
+
+.desktop-menu {
+  position: relative;
+  width: 100%;
+  display: none;
+  .desktop-menu-list {
+    padding: 0;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f7f7f7;
+    li {
+      padding-bottom: 10px;
+      .nav-link {
+        color: #5196cb;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover{
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+
+/* navbar toggle */
+
 .fixed-header {
   position: fixed;
   right: 0;
@@ -82,9 +138,10 @@ ul.about-section-list {
 }
 
 .page_header_desktop_search_control {
-  width: 500px;
   position: relative;
   top: 16px;
+  width: 302px;
+  float: left;
 }
 
 h3.new_partner_page_section_head {
@@ -737,7 +794,7 @@ a {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .school-logo {
     height: 70px;
     margin-left: 10px;
@@ -784,9 +841,10 @@ a {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .school-logo {
+    width: 230px;
     height: 70px;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 20px;
     margin-top: 2px;
   }
   .custom-right-navbar {
