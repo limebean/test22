@@ -20,7 +20,7 @@
       </div>
       <div class="col-md-12 no_padding_default start_date_form">
         <div class="EnrollmentApplicationForm-controlHeading">START DATE</div>
-        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments ", id: "enroll_start_date" %>
+        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments ", id: "enroll_start_date", required: true %>
         <div class="PeriodPickers">
           <div class="PeriodPicker">
             <label>
@@ -72,9 +72,18 @@
         <%= f.text_field :other_comments , class: "comments other_comments", id: "enroll_start_date" %>
         <%= f.hidden_field :teacher_id ,value:"#{ params[:teacher][:teacher_profile_id]}"%>
         <%#= f.hidden_field :teacher_profile_id ,value:"#{Teacher.find(params[:val]).teacher_profile.id}"%>
-        <div class="top_space submit_colors"><button class="disabled" type="submit">Submit</button></div>
+        <div class="top_space submit_colors"><button class="disabled enroll_submit" type="submit" disabled id = 'enr_btn'>Submit</button></div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(".PeriodPicker input:radio").click(function()
+    {
+      $("#enr_btn").removeClass("disabled");
+      $('.enroll_submit').prop("disabled", false);
+    }
+  );
+</script>
