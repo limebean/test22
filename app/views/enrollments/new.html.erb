@@ -1,0 +1,89 @@
+<div class="enrollment_application">
+  <div class="main_enroll_heading">
+    <h1 class="EnrollmentApplication-heading">Enrollment Application</h1>
+  </div>
+  <div class="col-md-12 form_area" id="appned_child_form">
+    <div class="col-md-12 no_padding_default enroll_start_area">
+      <p>We are so excited that you would like to enroll your child at Gramercy Park Childcare and Playgroup! Please submit the information below; Afsana Khundkar will review the information and send you an enrollment invitation. After you accept the invitation, you’ll pay your deposit and sign your parent handbook.</p>
+      <div class="Add_child_area">
+        <h3>CHILD</h3>
+        <p>
+          <%= link_to 'ADD A CHILD', {controller: "children", action: "new", val: "#{params[:teacher][:teacher_profile_id]}"}, remote: :true %>
+        </p>
+      </div>
+      <p class="under_form_details">Please submit separate applications for each child.</p>
+      <%= simple_form_for @enroll_app do |f| %>
+      <div class="append_childs col-md-12 no_padding_default">
+        <% if current_user.children.present? %>
+        <%= render 'children/children_all', f: f %>
+        <% end %>
+      </div>
+      <div class="col-md-12 no_padding_default start_date_form">
+        <div class="EnrollmentApplicationForm-controlHeading">START DATE</div>
+        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments ", id: "enroll_start_date", required: true %>
+        <div class="PeriodPickers">
+          <div class="PeriodPicker">
+            <label>
+            <%= f.radio_button :weekdays_and_time, "two_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %>
+            <%#= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Monday,8:30am to 6:00pm", "" %> 2 Day  &nbsp;</label>
+            <span>Full Time</span>
+          </div>
+          <div class="PeriodPicker">
+            <label>
+            <%= f.radio_button :weekdays_and_time, "three_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 3 Day &nbsp;</label>
+            <span>Full Time</span>
+          </div>
+          <div class="PeriodPicker ">
+          <label>
+            <%= f.radio_button :weekdays_and_time, "five_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;</label><span>Full Time</span></div>
+          <div class="PeriodPicker">
+          <label>
+          <%= f.radio_button :weekdays_and_time, "two_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 2 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
+          <label>
+          <%= f.radio_button :weekdays_and_time, "three_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 3 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
+          <label>
+          <%= f.radio_button :weekdays_and_time, "five_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 2 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %>5 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+
+        </div>
+        <div class="EnrollmentApplicationForm-controlHeading">ANY OTHER COMMENTS?</div>
+        <%= f.text_field :other_comments , class: "comments other_comments", id: "enroll_start_date" %>
+        <%= f.hidden_field :teacher_id ,value:"#{ params[:teacher][:teacher_profile_id]}"%>
+        <%#= f.hidden_field :teacher_profile_id ,value:"#{Teacher.find(params[:val]).teacher_profile.id}"%>
+        <div class="top_space submit_colors"><button class="disabled enroll_submit" type="submit" disabled id = 'enr_btn'>Submit</button></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(".PeriodPicker input:radio").click(function()
+    {
+      $("#enr_btn").removeClass("disabled");
+      $('.enroll_submit').prop("disabled", false);
+    }
+  );
+</script>

@@ -1,0 +1,9 @@
+<p>Have you visited Queen Anne Wonderschool?</p>
+<p>We require that prospective families take a tour or attend an open house before they apply.</p>
+<br>
+<div class="bottom_align">
+	<button type="button" class="button button-gray" data-dismiss="modal">No, I haven't visited yet.</button>
+	<%= link_to new_enrollment_path(teacher:{teacher_profile_id:params[:id]}), class: "Link Link--blend" do %>
+	  <div class="button">Yes, I’ve visited.</div>
+	<% end %>
+</div>

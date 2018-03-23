@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'show', to: 'welcome#show'
   get 'check_email', to: 'welcome#check_email'
   get :dashboard, to: 'teachers#dashboard', as: :dashboard
+  get 'faq_home_page', to: 'welcome#faq_home_page'
+  get '/contact_us', to: 'welcome#contact_us', as: :contact
+  post 'support', to: 'welcome#support'
 
 
 
@@ -20,14 +23,24 @@ Rails.application.routes.draw do
       patch :update_password
       post :set_availability
       get :availability
+      get :child_enrollment
       match :bank_account, via: [:get, :post]
       get :get_price
       get :get_schedule
       post :tour_booking
+      get :enroll_modal   
     end
     collection do
+      get :document
       get :get_availability
       get :bank_account_detail
+      get :manage_enrollment
+    end
+  end
+
+  resources :children do
+    member do
+      get :abcd
     end
   end
 
@@ -45,12 +58,20 @@ Rails.application.routes.draw do
   resources :parents, only: [:create] do
     member do
       get :school
+      get :interest_open_house
+      match :payment, via: [:get, :post]
     end
     collection do
       get :change_favourite_status
       get :login
       get :child_birth
       get :set_child_admission
+      put :toggle_favourite_status
+    end
+  end
+  resources :enrollments do
+    member do
+      get :change_enrollment_status
     end
   end
 
@@ -63,8 +84,15 @@ Rails.application.routes.draw do
         get :edit_profile
         patch :approve
         patch :reject
+        get :set_transaction
+      end
+      collection do
+        match :upload_document, via: [:get, :post, :delete]
+        get :document
+        get :transaction_setting
       end
     end
+    resources :parents
   end
   get '/partner', to: "teachers#new", as: :partner
 end

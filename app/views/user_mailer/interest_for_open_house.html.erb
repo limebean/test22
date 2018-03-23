@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% if @user.parent? %>
+      <p>
+        <p>
+          Thank you for your interest.
+        </p>
+        <p>
+          A Dreamschool staff will reach out to you for next steps
+        </p>
+      </p>
+    <% else %>
+      <p>
+        <p>
+          parent have interested for open house.
+        </p>
+        <p>
+          parent Detail: <br>
+          Parent Name  : <%= "#{@parent.name} #{@parent.last_name}"%><br>
+          Parent Email : <%= @parent.email%>
+        </p>
+      </p>
+
+    <% end %>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

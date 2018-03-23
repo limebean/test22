@@ -1,0 +1,7 @@
+<% if @fav_teacher.status? %>
+  $("#<%=params[:teacher_id]%>").find('.inner_heart').attr('fill','#fc9688');
+  $("#<%=params[:teacher_id]%>").find('.heart_border').attr('stroke','#fc9688');
+<%else%>
+  $("#<%=params[:teacher_id]%>").find('.inner_heart').attr('fill','transparent');
+  $("#<%=params[:teacher_id]%>").find('.heart_border').attr('stroke','#fff');
+<%end%>

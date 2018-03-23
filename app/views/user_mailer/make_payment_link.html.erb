@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello ,</h1>
+    <p>
+      <p>
+        An Application has been Approved, You have make payment throgh below link
+      </p>
+      <p>
+        Child Details:<br>
+        Name : <%= @child.full_name %><br>
+        Date of Birth: <%= @child.date_of_birth%><br>
+        Place of Birth : <%= @child.place_of_birth %><br>
+        Gender : <%= @child.gender %>
+      </p>
+      <p>
+        <%=link_to "Payment", payment_parent_url(@parent, enroll_id: @enroll.id) %>
+      </p>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

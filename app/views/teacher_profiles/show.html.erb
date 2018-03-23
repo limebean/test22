@@ -8,11 +8,245 @@
           <p class="new-hero-module-subtitle-3tmqs">A creative, fun and loving 'home away from home' for little ones</p>
           <!-- <p class="new-hero-module-subtitle-3tmqs">Coming Soon Summer 2018</p> -->
           <div class="new-hero-module_inquiry-button-2NVd5">
-          <% if current_user%>
-            <%= link_to 'Request Info', request_info_teacher_profile_path(@teacher_profile, status: "login"), class: 'button button__large', remote: true %>
-          <% else %>
-            <%= link_to 'Request Info', request_info_teacher_profile_path(@teacher_profile, status: "without_login"), class: 'button button__large', remote: true %>
+            <div class="inline_three_tabs">
+          <% if @teacher_profile.tour %>
+            <div class="link_default_color">
+              <% if current_user%>
+                <%= link_to  request_info_teacher_profile_path(@teacher_profile, status: "login"), class: '', remote: true  do %>
+                  <div class="Hero-module_onsiteSpotlight_C5i2Z">
+                    <div class="OnsiteSpotlight">
+                      <div class="OnsiteSpotlight-ctaList">
+                        <div class="OnsiteSpotlight-ctaListItem">
+                          <div>
+                            <div class="OnsiteSpotlight-cta">
+                              <div class="OnsiteSpotlight-ctaIcon">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 104.545%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 22 23" aria-labelledby="tidb5358cd9-fd0c-46c3-81a5-7b8969292598 " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidb5358cd9-fd0c-46c3-81a5-7b8969292598">Tour</title>
+                                    <g fill="none" fill-rule="evenodd">
+                                      <g transform="translate(.5 3.75)">
+                                        <path fill="#28325A" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                      </g>
+                                      <path fill="#28325A" d="M6.907 2.625c0 1.036-.798 1.875-1.78 1.875-.983 0-1.78-.84-1.78-1.875 0-1.036.797-1.875 1.78-1.875.982 0 1.78.839 1.78 1.875z"></path>
+                                      <g>
+                                        <g transform="matrix(-1 0 0 1 21.094 4.018)">
+                                          <path fill="#5196CB" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                        </g>
+                                        <path fill="#5196CB" d="M14.23 2.812c0 1.11.855 2.01 1.908 2.01s1.905-.9 1.905-2.01c0-1.11-.852-2.008-1.905-2.008s-1.908.898-1.908 2.008z"></path>
+                                      </g>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaDetailsContainer">
+                                <div class="OnsiteSpotlight-ctaDetails">
+                                  <div class="OnsiteSpotlight-ctaTitle">Tour</div>
+                                  <div class="OnsiteSpotlight-ctaSubtitle"><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--full">Request a Tour</span><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--mini">Request a Tour</span></div>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaChevron">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 127.273%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 11 14" aria-labelledby="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b">See More</title>
+                                    <path stroke="#5196CB" d="M2 1l6 6-6 6" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= link_to request_info_teacher_profile_path(@teacher_profile, status: "without_login"), class: '', remote: true do  %>
+                  <div class="Hero-module_onsiteSpotlight_C5i2Z">
+                    <div class="OnsiteSpotlight">
+                      <div class="OnsiteSpotlight-ctaList">
+                        <div class="OnsiteSpotlight-ctaListItem">
+                          <div>
+                            <div class="OnsiteSpotlight-cta">
+                              <div class="OnsiteSpotlight-ctaIcon">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 104.545%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 22 23" aria-labelledby="tidb5358cd9-fd0c-46c3-81a5-7b8969292598 " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidb5358cd9-fd0c-46c3-81a5-7b8969292598">Tour</title>
+                                    <g fill="none" fill-rule="evenodd">
+                                      <g transform="translate(.5 3.75)">
+                                        <path fill="#28325A" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                      </g>
+                                      <path fill="#28325A" d="M6.907 2.625c0 1.036-.798 1.875-1.78 1.875-.983 0-1.78-.84-1.78-1.875 0-1.036.797-1.875 1.78-1.875.982 0 1.78.839 1.78 1.875z"></path>
+                                      <g>
+                                        <g transform="matrix(-1 0 0 1 21.094 4.018)">
+                                          <path fill="#5196CB" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                        </g>
+                                        <path fill="#5196CB" d="M14.23 2.812c0 1.11.855 2.01 1.908 2.01s1.905-.9 1.905-2.01c0-1.11-.852-2.008-1.905-2.008s-1.908.898-1.908 2.008z"></path>
+                                      </g>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaDetailsContainer">
+                                <div class="OnsiteSpotlight-ctaDetails">
+                                  <div class="OnsiteSpotlight-ctaTitle">Tour</div>
+                                  <div class="OnsiteSpotlight-ctaSubtitle"><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--full">Request a Tour</span><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--mini">Request a Tour</span></div>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaChevron">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 127.273%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 11 14" aria-labelledby="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b">See More</title>
+                                    <path stroke="#5196CB" d="M2 1l6 6-6 6" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           <% end %>
+          <% if @teacher_profile.open_house %>
+            <div class="link_default_color">
+              <% if current_user %>
+                <%= link_to "#", data: {toggle: "modal", target: "#open_house_modal"} do %>
+                  <div class="Hero-module_onsiteSpotlight_C5i2Z">
+                    <div class="OnsiteSpotlight">
+                      <div class="OnsiteSpotlight-ctaList">
+                        <div class="OnsiteSpotlight-ctaListItem">
+                          <div>
+                            <div class="OnsiteSpotlight-cta">
+                              <div class="OnsiteSpotlight-ctaIcon">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 100%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 20 20" aria-labelledby="tid44893949-d536-492d-8cd9-6b76226440d6 " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tid44893949-d536-492d-8cd9-6b76226440d6">Open House</title>
+                                    <g fill="none" fill-rule="evenodd">
+                                      <path fill="#5196CB" d="M11.724 20v-4.138H8.276V20H3.448V10h13.104v10h-4.828z"></path>
+                                      <path fill="#28325A" d="M10 0l10 10H0z"></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaDetailsContainer">
+                                <div class="OnsiteSpotlight-ctaDetails">
+                                  <div class="OnsiteSpotlight-ctaTitle">Open House</div>
+                                  <div class="OnsiteSpotlight-ctaSubtitle"><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--full">&nbsp</span><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--mini">Request a Tour</span></div>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaChevron">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 127.273%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 11 14" aria-labelledby="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b">See More</title>
+                                    <path stroke="#5196CB" d="M2 1l6 6-6 6" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path  do %>
+                  <div class="Hero-module_onsiteSpotlight_C5i2Z">
+                    <div class="OnsiteSpotlight">
+                      <div class="OnsiteSpotlight-ctaList">
+                        <div class="OnsiteSpotlight-ctaListItem">
+                          <div>
+                            <div class="OnsiteSpotlight-cta">
+                              <div class="OnsiteSpotlight-ctaIcon">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 100%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 20 20" aria-labelledby="tid44893949-d536-492d-8cd9-6b76226440d6 " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tid44893949-d536-492d-8cd9-6b76226440d6">Open House</title>
+                                    <g fill="none" fill-rule="evenodd">
+                                      <path fill="#5196CB" d="M11.724 20v-4.138H8.276V20H3.448V10h13.104v10h-4.828z"></path>
+                                      <path fill="#28325A" d="M10 0l10 10H0z"></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaDetailsContainer">
+                                <div class="OnsiteSpotlight-ctaDetails">
+                                  <div class="OnsiteSpotlight-ctaTitle">Open House</div>
+                                  <div class="OnsiteSpotlight-ctaSubtitle"><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--full">&nbsp</span><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--mini">Request a Tour</span></div>
+                                </div>
+                              </div>
+                              <div class="OnsiteSpotlight-ctaChevron">
+                                <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 127.273%;">
+                                  <svg class="SVGResponsive-svg" viewBox="0 0 11 14" aria-labelledby="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b " xmlns="http://www.w3.org/2000/svg">
+                                    <title id="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b">See More</title>
+                                    <path stroke="#5196CB" d="M2 1l6 6-6 6" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @teacher_profile.request_info %>
+            <div class="link_default_color">
+            <%= link_to "#", data: {toggle: "modal", target: "#request_info_new"} do %>             
+                <div class="Hero-module_onsiteSpotlight_C5i2Z">
+                  <div class="OnsiteSpotlight">
+                    <div class="OnsiteSpotlight-ctaList">
+                      <div class="OnsiteSpotlight-ctaListItem">
+                        <div>
+                          <div class="OnsiteSpotlight-cta">
+                            <!-- <div class="OnsiteSpotlight-ctaIcon">
+                              <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 104.545%;">
+                                <svg class="SVGResponsive-svg" viewBox="0 0 22 23" aria-labelledby="tidb5358cd9-fd0c-46c3-81a5-7b8969292598 " xmlns="http://www.w3.org/2000/svg">
+                                  <title id="tidb5358cd9-fd0c-46c3-81a5-7b8969292598">Tour</title>
+                                  <g fill="none" fill-rule="evenodd">
+                                    <g transform="translate(.5 3.75)">
+                                      <path fill="#28325A" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                    </g>
+                                    <path fill="#28325A" d="M6.907 2.625c0 1.036-.798 1.875-1.78 1.875-.983 0-1.78-.84-1.78-1.875 0-1.036.797-1.875 1.78-1.875.982 0 1.78.839 1.78 1.875z"></path>
+                                    <g>
+                                      <g transform="matrix(-1 0 0 1 21.094 4.018)">
+                                        <path fill="#5196CB" d="M10.468 4.73C9.08 4.461 7.88 3.827 7.11 2.542a1.106 1.106 0 0 0-.386-.39c-.403-.458-1.042-.773-1.809-.842a2.632 2.632 0 0 0-1.056.12c-.119.017-.24.05-.365.12C1.736 2.505.565 4.142.044 6.14c-.364 1.393 1.642 2.185 2.009.784.123-.478.288-.927.495-1.343l-.063 3.51c-.001.021.004.04.004.058l-.012.655-.13 3.274-.28 4.096c-.002.103.02.2.06.29-.008.452.398.81.91.818.51.005.931-.342.94-.778l.545-5.387.096-.799.226.004.263 3.195.18 2.774c-.003.12.03.233.083.335.088.352.449.621.889.627.513.005.931-.343.94-.779l-.132-4.101-.01-3.276.01-.544.073-3.825a6.994 6.994 0 0 0 2.758 1.178c.296.056.65-2.16.57-2.176z"></path>
+                                      </g>
+                                      <path fill="#5196CB" d="M14.23 2.812c0 1.11.855 2.01 1.908 2.01s1.905-.9 1.905-2.01c0-1.11-.852-2.008-1.905-2.008s-1.908.898-1.908 2.008z"></path>
+                                    </g>
+                                  </g>
+                                </svg>
+                              </div>
+                            </div> -->
+                            <div class="OnsiteSpotlight-ctaDetailsContainer">
+                              <div class="OnsiteSpotlight-ctaDetails">
+                                <div class="OnsiteSpotlight-ctaTitle">Request Info</div>
+                                <div class="OnsiteSpotlight-ctaSubtitle"><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--full"> &nbsp </span><span class="OnsiteSpotlight-ctaSubtileText OnsiteSpotlight-ctaSubtileText--mini">Request Info</span></div>
+                              </div>
+                            </div>
+                            <div class="OnsiteSpotlight-ctaChevron">
+                              <div class="SVGResponsive SVGResponsive--layoutWidthConstrained" style="padding-bottom: 127.273%;">
+                                <svg class="SVGResponsive-svg" viewBox="0 0 11 14" aria-labelledby="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b " xmlns="http://www.w3.org/2000/svg">
+                                  <title id="tidf9f8b2d6-0ffa-4c56-86d9-dc925f56179b">See More</title>
+                                  <path stroke="#5196CB" d="M2 1l6 6-6 6" stroke-width="3" fill="none" fill-rule="evenodd"></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
 
             <!-- <button class="button button__large" type="button" id="request_info" data-toggle="modal" data-target="#request_info_modal">Request Info</button> -->
           </div>
@@ -26,7 +260,8 @@
       <div class="school-page-director">
         <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);">
         </div>
-        <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
+        <h3 class="school-page-director-name">
+        <%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
         <!-- <div class="school-page-director-title">School Director</div> -->
       </div>
     </div>
@@ -58,7 +293,10 @@
            <div class="school-page-director">
               <div class="school-page-director-avatar" style="background-image: url(&quot;<%= @teacher_profile.profile_image.url %>&quot;);"></div>
               <h3 class="school-page-director-name"><%= "#{@teacher_profile.first_name} #{@teacher_profile.last_name}"  %></h3>
-              <!-- <div class="school-page-director-name-title">School Director</div> -->
+
+              <%= link_to new_enrollment_path(teacher:{teacher_profile_id: params[:id]}) do %>
+                <button type="button" class="btn btn-info">Enroll Me</button>
+              <% end %>
            </div>
         </div>
 
@@ -77,7 +315,7 @@
                       <tr class="SchoolPage-tableRow ">
                         <td class="SchoolPage-tableKey">2 days/wk</td>
                         <td class="SchoolPage-tableValue">
-                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button--link', remote: current_user ? true : false %>
                         </td>
                       </tr>
                     <% end %>
@@ -85,7 +323,7 @@
                       <tr class="SchoolPage-tableRow ">
                         <td class="SchoolPage-tableKey">3 days/wk</td>
                         <td class="SchoolPage-tableValue">
-                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button--link', remote: current_user ? true : false %>
                         </td>
                       </tr>
                     <% end %>
@@ -93,7 +331,7 @@
                       <tr class="SchoolPage-tableRow ">
                         <td class="SchoolPage-tableKey">5 days/wk</td>
                         <td class="SchoolPage-tableValue">
-                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button Button--link', remote: current_user ? true : false %>
+                          <%= link_to 'See Pricing', get_price_teacher_path(@teacher_profile.teacher), class: 'Button--link', remote: current_user ? true : false %>
                         </td>
                       </tr>
                     <% end %>
@@ -104,6 +342,99 @@
             <div class="RailSection-synopsis">For families in need of scholarships or financial assistance, we accept subsidy payments from Wu Yee and Children’s Council of San Francisco. Inquire to learn more.</div>
           </div>
         <% end %>
+      <div class="RailSection">
+  <div class="RailSection-title">Gallery</div>
+  <div>
+    <div class="SchoolPage-railGallery">
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/8e3e837f-e207-4236-87f5-1342accec72b.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/48a0f73c-0d20-4083-a447-49be6e7e16e0.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/e3d4c813-3d8b-47cb-b6df-4cb0568a20aa.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/6e06f9ff-4e4d-4f3a-9e77-c6bc29f97349.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/3fd182b2-1e82-4474-89f1-585358a72469.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/b43c8c78-f931-40db-bd3e-5863bd81aaad.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/31daab98-9e7c-40af-a20c-8cbb46c53392.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="SchoolPage-railThumb" style="background-image: url(&quot;https://www.wonderschool.com/uploads/c222adb1-3f7b-4995-8d91-090ac7e4651d.jpg&quot;);">
+        <svg class="SVGIcon " viewBox="0 0 640 480" aria-labelledby=" " xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </div>
+    <div class="SchoolPage-railSectionSynopsis"><button class="Button        Button--link" type="button">View All Images</button></div>
+  </div>
+</div>  
+       
+       
+<div class="RailSection">
+  <div class="RailSection-title">Rhythm of the Day</div>
+  <table class="SchoolPage-table">
+    <tbody>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">8:00 AM</td>
+        <td class="SchoolPage-tableValue">Arrival</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">9:00 AM</td>
+        <td class="SchoolPage-tableValue">Meal Time</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">9:30 AM</td>
+        <td class="SchoolPage-tableValue">Bathroom Break</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">10:00 AM</td>
+        <td class="SchoolPage-tableValue">Morning Activity </td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">11:00 AM</td>
+        <td class="SchoolPage-tableValue">Free Play</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">11:30 AM</td>
+        <td class="SchoolPage-tableValue">Lunch</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">12:30 PM</td>
+        <td class="SchoolPage-tableValue">Nap</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">2:30 PM</td>
+        <td class="SchoolPage-tableValue">Bathroom Break</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">3:00 PM</td>
+        <td class="SchoolPage-tableValue">Afternoon Snack</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">3:30 PM</td>
+        <td class="SchoolPage-tableValue">Afternoon Activity</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">4:15 PM</td>
+        <td class="SchoolPage-tableValue">Free Play</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">4:45 PM</td>
+        <td class="SchoolPage-tableValue">Quiet Time</td>
+      </tr>
+      <tr class="SchoolPage-tableRow SchoolPage-tableRow--left">
+        <td class="SchoolPage-tableKey">5:45 PM</td>
+        <td class="SchoolPage-tableValue">Dismissal</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
        <!--  <div class="rail-section">
            <h5 class="rail-section-title">2018-2019 Calendar</h5>
            <table class="school-page-table">
@@ -182,54 +513,6 @@
         </div> -->
       </div>
          <div class="school-page-content">
-            <div class="school-page-section">
-               <!-- <h2 class="school-page-section-title">PERSONAL INFORMATION</h2> -->
-               <!-- <div>
-                  <p><Strong>First Name </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.first_name%></p>
-                  <p><Strong>Last Name </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.last_name%></p>
-                  <p><Strong>Apt# </strong>&nbsp;&nbsp;&nbsp;<%=@teacher_profile.apt_no%></p>
-                  <p><Strong>Street Address </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.street_address%></p>
-                  <p><Strong>City </strong><%= @teacher_profile.city%></p>
-                  <p><Strong>Postal Code </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.postal_code%></p>
-                  <p><Strong>Home Phone </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_phone%></p>
-                  <p><Strong>Cell Phone </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.cell_phone%>
-                  </p>
-                  <p><Strong>Date of Birth </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.date_of_birth%>
-                  </p>
-                  <p><Strong>Work </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.work%>
-                  </p>
-               </div> -->
-            </div>
-            <div class="school-page-section">
-              <!--  <h2 class="school-page-section-title">PREMISES</h2>
-              <div>
-                  <p><Strong>Apt No </strong><%= @teacher_profile.apt_no %>
-                  </p>
-                  <p><Strong>Condo </strong><%= @teacher_profile.condo %>
-                  </p>
-                <h3 class="school-page-section-title-subheading-Second">House</h3>
-                  <p><Strong>Basement Premises </strong><%= @teacher_profile.basement_premises %>
-                  </p>
-                  <p><Strong>Two exit</strong><%= @teacher_profile.two_exit %>
-                  </p>
-               <h3 class="school-page-section-title-subheading-first">Apartment</
-                <h3 class="school-page-section-title-subheading-third">Smoking in home</h3>
-                  <p><Strong>Home Smoke</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.home_smoke%>
-                  </p>
-                  <p><Strong>Pet</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.pet%>
-                  </p>
-                  <p><Strong>Vaccine</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.vaccine%></p>
-                  <h3 class="school-page-section-title-subheading-forth">Languages Spoken</h3>
-                  <p><Strong>Language </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.language%>
-                  </p>
-                  <h3 class="school-page-section-title-subheading-fifth">Ability to Work</h3>
-                  <p><Strong>Legal to Work </strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.legal_to_work%>
-                  </p>
-                  <h3 class="school-page-section-title-subheading-six">Children in Home</h3>
-                  <p><Strong>Total children</strong>&nbsp;&nbsp;&nbsp;<%= @teacher_profile.children.count%>
-                  </p>
-              </div> -->
-            </div>
             <div class="school-page-content">
             <div class="school-page-section">
                <h2 class="school-page-section-title">Philosophy</h2>
@@ -337,8 +620,11 @@
 </div>
 <%= render 'price_modal' %>
 <%= render 'request_info'%>
+<%= render 'request_info_new'%>
 <%= render 'view_rating'%>
-
+<% if current_user %>
+  <%= render 'open_house'%>
+<% end %>
 
 
 
@@ -369,3 +655,10 @@
     handler.fitMapToBounds();
   });
 </script>
+<script type="text/javascript">
+var marker = null;
+function gmaps4rails_callback() {
+   Gmaps4Rails.clear_markers();
+   if (marker != null) { marker.setMap(null); }
+   google.maps.event.addListener(Gmaps4Rails.map, 'click', function(object){ marker = new google.maps.Marker({position: object.latLng, map: Gmaps4Rails.map});});
+}</script>

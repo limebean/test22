@@ -1,16 +1,16 @@
-<footer class="section_page_footer">
+<footer class="col-md-12 col-sm-12 col-xs-12 section_page_footer">
    <div class="custom_content_width_constraint">
       <div class="custom_grid Grid--full ">
          <div class="Grid-cell">
             <div>
                <div class="section_page_footer_link_list_title">Child Care Near You</div>
-               <a class="new-link link_blend" href="#">Toronto</a>
+               <a class="new-link link_blend" href="#">Toronto, Ontario</a>
                <br>
-               <a class="new-link link_blend" href="#">Ontario</a>
-               <br>
+               <a class="new-link link_blend" href="#">Calgary, Alberta</a>
+               <!-- <br>
                <a class="new-link link_blend" href="#">Calgary</a>
                <br>
-               <a class="new-link link_blend" href="#">Albert</a>
+               <a class="new-link link_blend" href="#">Albert</a> -->
             </div>
          </div>
          <div class="Grid-cell">
@@ -24,9 +24,14 @@
          <div class="Grid-cell">
             <div>
                <div class="section_page_footer_link_list_title">Contact</div>
-                <%= link_to 'Contact Us', "https://www.wedreamcare.com/contact", class: 'new-link link_blend'%>
+                <%= link_to 'Contact Us', contact_path, class: 'new-link link_blend'%>
                <br>
-               <span>Address: Centre for Social Innovation Toronto</span>
+               <span>Address:
+                <p>
+                  Centre for Social Innovation<br>
+                  585 Dundas St. East, Toronto
+                </p>
+               </span>
             </div>
          </div>
          <div class="Grid-cell">
@@ -36,7 +41,7 @@
                <br>
                <%=link_to 'Jobs', 'javascript:void(0)', class: 'new-link link_blend'%>
                <br>
-               <%=link_to 'FAQ', "https://onepreschool.zendesk.com/hc/en-us", class: 'new-link link_blend'%>
+               <%=link_to 'FAQ', faq_home_page_path, class: 'new-link link_blend'%>
                <br>
                <%=link_to 'Terms of Use', terms_of_use_path, class: 'new-link link_blend'%>
                <br>

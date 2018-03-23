@@ -31,6 +31,21 @@ class ParentsController < ApplicationController
     end
   end
 
+  def payment
+    if request.get?
+      @parent = Parent.find(params[:id])
+    elsif request.post?
+      begin
+        Price.calculate_price(params[:enroll_id], params[:id], params[:stripeToken])
+        flash[:notice] = 'Payment have sucessfully completed'
+      rescue Exception => e
+        flash[:notice] = e.message
+      end
+      redirect_to root_path
+    end
+  end
+
+
   def dashboard
   end
 
@@ -43,19 +58,25 @@ class ParentsController < ApplicationController
 
   def change_favourite_status
     if(current_user)
-      favourites = current_user.favourites.new(teacher_id: params[:teacher_id])
-      if favourites.save
-        render :js => "window.location = '#{request.referer}'", notice: "Teacher added"
+      @favourite = current_user.favourites.find_by(teacher_id: params[:teacher_id])
+      if @favourite
+        @favourite.toggle!(:status)
       else
-        render :js => "window.location = '#{request.referer}'", notice: "Something went wrong! Please try again."
+        @favourite = current_user.favourites.new(teacher_id: params[:teacher_id])
+        @favourite.save
       end
-    else
-      redirect_to new_user_session_path, notice: 'Please Login'
     end
   end
 
   def school
     @teacher = Teacher.includes(:teacher_profile)
+  end
+
+  def interest_open_house
+    teacher = Teacher.find(params[:teacher_id])
+    parent = Parent.find(params[:id])
+    UserMailer.interest_for_open_house(teacher, parent).deliver_now
+    UserMailer.interest_for_open_house(parent).deliver_now
   end
 
   private

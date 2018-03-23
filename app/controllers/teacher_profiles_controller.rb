@@ -1,4 +1,4 @@
-class TeacherProfilesController < ApplicationController
+  class TeacherProfilesController < ApplicationController
   layout :set_layout
   before_action :authenticate_user!, except: %i[show request_info]
   before_action :set_teacher_profile, only: %i[edit show update request_info]
@@ -39,6 +39,7 @@ class TeacherProfilesController < ApplicationController
     @teacher_profile
   end
 
+
   private
 
     def set_teacher_profile
@@ -66,5 +67,4 @@ class TeacherProfilesController < ApplicationController
         'application'
       end
     end
-
-end
+  end

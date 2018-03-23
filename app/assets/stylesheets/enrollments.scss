@@ -1,0 +1,86 @@
+// Place all the styles related to the enrollments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container.container-fixed {
+    max-width: 112rem;
+}
+main.container {
+    margin-bottom: 3rem;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+    width: 100%;
+}
+.EnrollmentApplication {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 auto 24px;
+    max-width: 1120px;
+    padding: 0 24px;
+    width: 100%;
+}
+.EnrollmentApplication-heading {
+    color: #333;
+    font-family: Merriweather,Gerogia,serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+
+}
+.EnrollmentApplication-body {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 24px;
+}
+.EnrollmentApplication-lede {
+    margin-bottom: 48px;
+}
+.EnrollmentApplicationSubmission-sectionHeading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+.EnrollmentApplicationSubmission-sectionHeading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+.EnrollmentApplicationSubmission-section+.EnrollmentApplicationSubmission-section {
+    margin-top: 48px;
+}
+.EnrollmentApplicationSubmission-sectionHeading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.EnrollmentApplicationSubmission-section+.EnrollmentApplicationSubmission-section {
+    margin-top: 48px;
+}
+.EnrollmentApplicationSubmission-sectionHeading {
+    color: #333;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+

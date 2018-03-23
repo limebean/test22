@@ -1,3 +1,198 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//header_styles lies here for contact_us page in welcome controller
+$blue_text_color:#343f64;
+.header_section_center {
+  height: 71px;
+  background-color: #343f64;
+  float: left;
+  width: 100%;
+  .content_center {
+    max-width: 992px;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
+  .inline_details_menus {
+    display: flex;
+    list-style: none;
+    padding-left: 0px;
+    color: #fff;
+    li {
+      margin-right: 25px;
+      font-weight: 100;
+    }
+  }
+}
+.contact-logo {
+  width: 205px;
+  height: 45px;
+  margin-top: -10px;
+}
+section.contact_us {
+  background: #fff;
+  .center_area_content {
+    max-width: 806px;
+    margin: 0 auto;
+    p {
+      line-height: 1.6em;
+      letter-spacing: normal;
+      color: #343F64;
+      font-weight: 300;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+  }
+  .conatct_heading {
+    margin-top: 49px;
+    text-align: center;
+    color: $blue_text_color;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    margin-bottom: 65px;
+  }
+}
+.contact_form_fields {
+  input {
+    &.name,&.Email,&.Subject {
+      width: 100%;
+      border: 1px solid rgba(52, 63, 100, 1);
+      color: #1A2032;
+      margin: 0 0 5px;
+      padding: 3px 5px;
+    }
+    &::-webkit-input-placeholder {
+      color: rgb(134, 140, 161);
+      font-weight: 100;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  textarea.message {
+    width: 100%;
+    border: 1px solid rgba(52, 63, 100, 1);
+    color: #1A2032;
+    margin: 0 0 5px;
+    padding: 3px 5px;
+    &::-webkit-input-placeholder {
+      color: rgb(134, 140, 161);
+      font-weight: 100;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+input.submit_send_contact_info {
+  background-color: rgba(233, 219, 137, 1);
+  font: normal normal normal 16px/1.4em helvetica-w01-light,helvetica-w02-light,sans-serif;
+  border: 0;
+  color: #343F64;
+  cursor: pointer;
+  float: right;
+  margin: 0;
+  max-width: 35%;
+  border-radius: 0;
+  padding: 6px 5px;
+  float: right;
+  &:hover {
+    background-color: rgba(233, 219, 137, 1);
+    color: #343F64;
+  }
+}
+.style-imknta49 {
+  border-bottom: 3px solid rgba(233, 219, 137, 1);
+  height: 0 !important;
+  min-height: 0 !important;
+  width: 40px;
+  margin-top: 19px;
+  position: absolute;
+}
+.desktop_content {
+  padding: {
+    left: 45px;
+    right: 25px;
+  }
+}
+address.address_of_org {
+   position: relative;
+    top: 65px;
+    font-weight: 100;
+    color: #343f64;
+    width: 57%;
+    font-size: 15px;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .header_section_center {
+    height: auto;
+  }
+  .contact-logo {
+    margin: 0 auto;
+    display: flex;
+  }
+  .header_section_center .inline_details_menus {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    li {
+      margin-right: 19px;
+      font-weight: 100;
+      display: -webkit-inline-box;
+      margin-bottom: 10px;
+    }
+  }
+  section.contact_us .conatct_heading {
+    margin-bottom: 20px;
+  }
+  .desktop_content {
+    padding: 0px;
+    margin-top: 15px;
+  }
+  .style-imknta49 {
+    width: 100%;
+    position: relative;
+  }
+  address.address_of_org {
+    top: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width:1024px) {
+  .tablet_list {
+    padding:0px;
+  }
+  section.contact_us .center_area_content p {
+    margin-bottom: 15px;
+  }
+  .style-imknta49 {
+    width: 100%;
+    position: relative;
+  }
+  address.address_of_org {
+    top: 10px;
+  }
+}
+a.faq_about_text {
+    text-decoration: underline;
+    font-weight: bold;
+}
+a.faq_contact_text {
+    text-decoration: underline;
+    font-weight: bold;
+}
+a.faq_sign_up_text {
+    text-decoration: underline;
+    font-weight: bold;
+}
+section.page-content.editor-content.no-carousel {
+    background-color: white;
+}
+p.faq_text {
+    font-weight: bold;
+}
+p.faq_heading_text {
+    font-weight: bold;
+}

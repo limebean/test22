@@ -1,0 +1,5 @@
+<% if @favourite.status? %>
+  $("#teacher_image_<%=@favourite.teacher_id%>").html('<%=j render("parents/red_favourite")%>')
+<% else %>
+  $("#teacher_image_<%=@favourite.teacher_id%>").html('<%=j render("parents/white_favourite")%>')
+<% end %>

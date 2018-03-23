@@ -1,0 +1,26 @@
+<div id="open_house_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog enroll_modal_dilog">
+    <div class="modal-content">
+      <div class="Modal-contentWrapper">
+        <button type="button" class="close position_top_corner" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+        <div class="Modal-header ">
+          <div class="Modal-title"></div>
+        </div>
+        <div class="Modal-body " id="open_house_append">
+          <div class="Section">
+            <div class="P">
+              <div class="H3">Would you like to attend. Yes or No.</div>
+            </div>
+          </div>
+          <div class="bottom_align">
+            <%= link_to interest_open_house_parent_path(current_user, teacher_id: @teacher_profile.teacher), class: "Link Link--blend" , remote: true do %>
+              <div class="button">Yes</div>
+            <% end %>
+            <button type="button" class="button button-gray" data-dismiss="modal">No..</button>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>

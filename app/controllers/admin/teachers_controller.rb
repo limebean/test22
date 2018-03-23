@@ -1,5 +1,5 @@
 class Admin::TeachersController < Admin::AdminBaseController
-  before_action :set_teacher, except: [:index]
+  before_action :set_teacher, except: [:index, :upload_document, :document, :transaction_setting]
 
   def index
     @teachers = Teacher.all.order(:id)
@@ -61,6 +61,40 @@ class Admin::TeachersController < Admin::AdminBaseController
     @prices = @teacher.prices
   end
 
+  def upload_document
+    if request.get?
+      @document = AdminInfo.new
+    elsif request.post?
+      @document = AdminInfo.new(document_params)
+      if @document.save
+        redirect_to document_admin_teachers_path, notice: "The document #{@document.name} has been uploaded."
+      else
+        render "upload_documnet"
+       end
+    elsif request.delete?
+      @document = AdminInfo.find(params[:document_id])
+      if @document.destroy
+        redirect_to document_admin_teachers_path, notice: "The document #{@document.name} has been deleted."
+      else
+        redirect_to document_admin_teachers_path, notice: "Something went wrong! Try again later."
+       end
+    end
+  end
+
+  def document 
+    @documents = AdminInfo.all
+  end
+
+  def transaction_setting
+    @teacher = Teacher.all
+  end
+
+  def set_transaction
+    teacher_profile = TeacherProfile.find(params[:id])
+    teacher_profile.update_attributes(transaction_fee: params[:teacher_profile][:transaction_fee])
+    redirect_to transaction_setting_admin_teachers_path, notice: 'transaction_fee successfully created'
+  end
+
   private
     def permitted_teacher_params
       params.require(:teacher_profile).permit(
@@ -70,7 +104,8 @@ class Admin::TeachersController < Admin::AdminBaseController
         :legal_to_work, :apartment, :floor,
         :condo, :house, :basement_premises, :two_exit,
         :home_smoke, :pet, :vaccine, :goal, :age_range,
-        :local_school, :school_name, :comments, :profile_image, :cover_photo,
+        :local_school, :school_name, :request_info, :tour, :open_house,
+        :comments, :profile_image, :cover_photo,
         children_attributes: [:id, :full_name, :age, :care_by, :_destroy]
       )
     end
@@ -79,6 +114,12 @@ class Admin::TeachersController < Admin::AdminBaseController
       params.require(:price).permit(
         :child_time, :two_days_price, :three_days_price, :five_days_price
       )
+    end
+
+    def document_params
+      params.require(:admin_info).permit(
+        :name, :document
+        )
     end
 
     def set_teacher
