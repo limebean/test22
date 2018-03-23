@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322103835) do
+ActiveRecord::Schema.define(version: 20180323084020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20180322103835) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "amount", default: 0.0
     t.index ["parent_id"], name: "index_payments_on_parent_id"
     t.index ["teacher_id"], name: "index_payments_on_teacher_id"
   end
@@ -148,7 +149,7 @@ ActiveRecord::Schema.define(version: 20180322103835) do
     t.integer "vaccine", null: false
     t.string "goal"
     t.string "age_range", null: false
-    t.boolean "local_school", null: false
+    t.boolean "local_school"
     t.string "school_name", null: false
     t.text "comments", null: false
     t.datetime "created_at", null: false

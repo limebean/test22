@@ -1,11 +1,18 @@
+<% size = current_user.children.count %>
+<% count = 0%>
 <% current_user.children.each do |child|%>
+	<% count += 1%>
 	<div class="col-md-6 left_wall_reduce">
 		<div class="frame_of_child">
 			<label class="full_name">
 				<span>Born: </span><%= child.full_name%>
 			<div class="date_of_birth">
 				<%= child.date_of_birth%></div>
-			<%= f.radio_button :child_id, child.id,class: "radio_child" %>
+			<% if count == size%>
+				<%= f.radio_button :child_id, child.id, :checked => true, class: "radio_child" %>
+			<% else %>
+				<%= f.radio_button :child_id, child.id,class: "radio_child" %>
+			<% end %>
 			</label>
 		</div>
 	</div>

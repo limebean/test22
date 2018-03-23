@@ -57,7 +57,7 @@ class Price < ApplicationRecord
       }
     })
     end_date = enrollment.start_date.to_date + 7
-    Payment.create!(parent_id: parent.id, teacher_id: teacher.id, start_date: enrollment.start_date, end_date: end_date)
+    Payment.create!(parent_id: parent.id, teacher_id: teacher.id, start_date: enrollment.start_date, end_date: end_date, amount: amount)
   end
 
 end
