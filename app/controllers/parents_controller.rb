@@ -38,10 +38,8 @@ class ParentsController < ApplicationController
       begin
         Price.calculate_price(params[:enroll_id], params[:id], params[:stripeToken])
         flash[:notice] = 'Payment have sucessfully completed'
-      rescue Stripe::CardError => e
-        flash[:notice] = e.message
       rescue Exception => e
-        flash[:notice] = 'Something went wrong! Please try again.'
+        flash[:notice] = e.message
       end
       redirect_to root_path
     end
