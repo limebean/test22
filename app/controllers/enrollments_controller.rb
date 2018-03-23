@@ -15,6 +15,12 @@ class EnrollmentsController < ApplicationController
   def show
   end
 
+  def change_enrollment_status
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.toggle!(:status)
+    redirect_back fallback_location: root_path
+  end
+
   private
 
   def permitted_enrollment_params

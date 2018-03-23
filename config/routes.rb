@@ -69,7 +69,11 @@ Rails.application.routes.draw do
       put :toggle_favourite_status
     end
   end
-  resources :enrollments
+  resources :enrollments do
+    member do
+      get :change_enrollment_status
+    end
+  end
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
@@ -80,10 +84,12 @@ Rails.application.routes.draw do
         get :edit_profile
         patch :approve
         patch :reject
+        get :set_transaction
       end
       collection do
         match :upload_document, via: [:get, :post, :delete]
         get :document
+        get :transaction_setting
       end
     end
     resources :parents

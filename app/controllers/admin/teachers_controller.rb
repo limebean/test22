@@ -1,5 +1,5 @@
 class Admin::TeachersController < Admin::AdminBaseController
-  before_action :set_teacher, except: [:index, :upload_document, :document]
+  before_action :set_teacher, except: [:index, :upload_document, :document, :transaction_setting]
 
   def index
     @teachers = Teacher.all.order(:id)
@@ -83,6 +83,17 @@ class Admin::TeachersController < Admin::AdminBaseController
 
   def document 
     @documents = AdminInfo.all
+  end
+
+  def transaction_setting
+    @teacher = Teacher.all
+  end
+
+  def set_transaction
+    teacher_profile = TeacherProfile.find(params[:id])
+    teacher_profile.update_attributes(transaction_fee: params[:teacher_profile][:transaction_fee])
+    binding.pry
+    redirect_to transaction_setting_admin_teachers_path, notice: 'transaction_fee successfully created'
   end
 
   private

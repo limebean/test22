@@ -18,7 +18,13 @@
         <td><%= e.child.date_of_birth %></td>
         <td><%= e.child.place_of_birth %></td>
         <td><%= e.child.gender %></td>
-        <td><button class="btn btn-sm btn-primary" type="button">Accept</button>&nbsp;&nbsp;<button class="btn btn-sm btn-danger" type="button">Reject</button></td>
+        <td>
+          <% if e.status %>
+          <%= link_to 'Accept', change_enrollment_status_enrollment_path(e), class:'btn btn-sm btn-primary'%> 
+          <% else %>
+           <%= link_to 'Reject', change_enrollment_status_enrollment_path(e), class:'btn btn-sm btn-danger'%> 
+          <% end %>
+          </td>
       </tr>
     <% end %>
   </tbody>
