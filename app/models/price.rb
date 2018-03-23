@@ -24,7 +24,7 @@ class Price < ApplicationRecord
 
   def self.find_child_time(day, date_of_birth)
     months =Time.zone.today.month + Time.zone.today.year * 12 - date_of_birth.month - date_of_birth.year * 12
-    result = if months >= 1 && months <= 18
+    result = if months >= 0 && months <= 18
         '1-18 months'
     elsif months > 18 && months <= 30
         '18-30 months'

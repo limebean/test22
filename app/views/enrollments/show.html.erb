@@ -1,1 +1,29 @@
-<h1>show all</h1>
+<main class="container container-fixed">
+  <div class="EnrollmentApplication">
+    <h1 class="EnrollmentApplication-heading">Enrollment Application</h1>
+    <div class="EnrollmentApplication-body">
+      <div>
+        <p class="EnrollmentApplication-lede"><b><%="#{@enrollment.teacher.name}  #{@enrollment.teacher.last_name}"%></b> will review the information and send you an enrollment invitation. After you accept the invitation, you’ll pay your deposit and sign your parent handbook.</p>
+        <div class="EnrollmentApplicationSubmission">
+          <div class="EnrollmentApplicationSubmission-section">
+            <div class="EnrollmentApplicationSubmission-sectionHeading">Child</div>
+            <div class="EnrollmentApplicationSubmission-line"><%=@child.full_name%></div>
+            <div class="EnrollmentApplicationSubmission-line"> Born <%= date_format(@child.date_of_birth.to_date) %></div>
+          </div>
+          <div class="EnrollmentApplicationSubmission-section">
+            <div class="EnrollmentApplicationSubmission-sectionHeading">Start Date</div>
+            <div class="EnrollmentApplicationSubmission-line"><%= date_format(@enrollment.start_date.to_date) %></div>
+          </div>
+          <!-- <div class="EnrollmentApplicationSubmission-section">
+            <div class="EnrollmentApplicationSubmission-sectionHeading">Schedule</div>
+            <div class="EnrollmentApplicationSubmission-line"><%= @enrollment%></div>
+          </div> -->
+          <div class="EnrollmentApplicationSubmission-section">
+            <div class="EnrollmentApplicationSubmission-sectionHeading">Any Other Comments</div>
+            <div class="EnrollmentApplicationSubmission-line"><%= @enrollment.other_comments%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
