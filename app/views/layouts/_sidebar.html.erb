@@ -11,8 +11,8 @@
       <li class="<%=is_active_menu('document')%> <%=is_active_menu('upload_document')%>">
         <%= link_to 'Curriculum PDF', document_admin_teachers_path %>
       </li>
-      <li>
-        <a href="#">Transaction Settings</a>
+      <li class="<%=is_active_menu('bank_account')%>" >
+        <%= link_to 'Transaction Settings',  transaction_setting_admin_teachers_path %>
       </li>
       <li>
         <a href="#">Scheduling Availability</a>
@@ -37,8 +37,8 @@
       <li class="<%=is_active_menu('availability')%>" >
         <%= link_to 'Scheduling Availability', availability_teacher_path(current_user) %>
       </li>
-      <li>
-        <a href="#"> Managing Enrollment pages</a>
+      <li class="<%=is_active_menu(' Managing Enrollment pages')%>">
+        <%= link_to 'Managing Enrollment page', manage_enrollment_teachers_path %>
       </li>
       <li>
         <%= link_to 'Parents Applications', admin_parents_path %>

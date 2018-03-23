@@ -28,12 +28,13 @@ Rails.application.routes.draw do
       get :get_price
       get :get_schedule
       post :tour_booking
-      get :enroll_modal
+      get :enroll_modal   
     end
     collection do
       get :document
       get :get_availability
       get :bank_account_detail
+      get :manage_enrollment
     end
   end
 
@@ -68,7 +69,11 @@ Rails.application.routes.draw do
       put :toggle_favourite_status
     end
   end
-  resources :enrollments
+  resources :enrollments do
+    member do
+      get :change_enrollment_status
+    end
+  end
 
   namespace :admin do
     get '', to: "teachers#index", as: :dashboard
@@ -79,10 +84,12 @@ Rails.application.routes.draw do
         get :edit_profile
         patch :approve
         patch :reject
+        get :set_transaction
       end
       collection do
         match :upload_document, via: [:get, :post, :delete]
         get :document
+        get :transaction_setting
       end
     end
     resources :parents

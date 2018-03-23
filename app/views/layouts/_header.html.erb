@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <div class="col-sm-8 col-md-4">
+      <div class="">
         <%= form_tag search_path, id: 'search_form', method: :get do |f| %>
           <!-- <form class="" role="search"> -->
             <div class="input-group page_header_desktop_search_control">
@@ -28,6 +28,7 @@
         <!-- </form> -->
       </div>
       <ul class="nav navbar-nav navbar-right custom-right-navbar">
+        <li><span class="glyphicon glyphicon-th-list my-toggle"></span></li>
         <%if current_user %>
           <% if current_user.parent? %>
             <li><%= link_to 'MY SCHOOLS',  school_parent_path(current_user), class:'nav-link' %>
@@ -51,5 +52,20 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
+  <div class="desktop-menu">
+    <ul class="desktop-menu-list">
+      <li><%=link_to 'ABOUT', about_path, class: 'nav-link'%></li>
+      <li><a href="/partner" class="nav-link">START A DREAMSCHOOL</a></li>
+    </ul>
+  </div>
 
 </header>
+
+
+<script>
+  $(document).ready(function(){
+      $(".my-toggle").click(function(){
+        $(".desktop-menu").toggle();
+      });
+  });
+</script>
