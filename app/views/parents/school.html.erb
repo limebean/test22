@@ -2,69 +2,32 @@
   <div>
     <h4>My Schools</h4>
     <% @teacher.each do |teacher|%>
-      <div class="card spaced">
-        <div>
-          <h5>Waitlist</h5>
-          <hr>
-          <div class="row spaced-row">
-            <div>
-              <h5><a href="/queenanne"><%= teacher.name%></a></h5>
-              <p><br><%= teacher.email%></p>
-            </div>
-            <div>
-              <h6 class="muted no-margin">Details</h6>
-              <p>We’ll contact you if a spot becomes available or if we host an open house.</p>
-            </div>
-            <div class="text-center">
-              <!-- <span class="button button-lg full apply_enrol">Apply to Enroll</span> -->
-              <%= link_to enroll_modal_teacher_path(teacher.id), remote: true do %>
-                <button type="button" class="button button-lg full apply_enrol" id="<%=teacher.id%>">Apply to Enroll</button>
-              <% end %>
-              <h6 class="link link-red abc ">Remove from Waitlist</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="card spaced">
-        <div>
-          <h5>Waitlist</h5>
-          <hr>
-          <div class="row spaced-row">
-            <div>
-              <h5><a href="/wildforest">The Wild Forest School</a></h5>
-              <p>Kyla Basher<br>wildforest@wonderschool.com<br>541-961-7016</p>
-            </div>
-            <div>
-              <h6 class="muted no-margin">Details</h6>
-              <p>We’ll contact you if a spot becomes available or if we host an open house.</p>
-            </div>
-            <div class="text-center">
-              <span class="button button-lg full">Apply to Enroll</span>
-              <h6 class="link link-red">Remove from Waitlist</h6>
+      <% if teacher.teacher_profile.present? %>
+        <div class="card spaced">
+          <div>
+            <h5>Waitlist</h5>
+            <hr>
+            <div class="row spaced-row">
+              <div>
+                <h5><a href="/queenanne"><%= teacher.name%></a></h5>
+                <p><br><%= teacher.email%></p>
+              </div>
+              <div>
+                <h6 class="muted no-margin">Details</h6>
+                <p>We’ll contact you if a spot becomes available or if we host an open house.</p>
+              </div>
+              <div class="text-center">
+                <%= link_to enroll_modal_teacher_path(teacher.id), remote: true do %>
+                  <button type="button" class="button button-lg full apply_enrol" id="<%=teacher.id%>">Apply to Enroll</button>
+                <% end %>
+                <%= link_to "#", remote: true do %>
+                  <h6 class="link link-red abc ">Remove from Waitlist</h6>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="card spaced">
-        <div>
-          <h5>Waitlist</h5>
-          <hr>
-          <div class="row spaced-row">
-            <div>
-              <h5><a href="/hummingbird">Hummingbird</a></h5>
-              <p>Alefesh Tiku<br>alefesha@hotmail.com<br>206-228-4507</p>
-            </div>
-            <div>
-              <h6 class="muted no-margin">Details</h6>
-              <p>We’ll contact you if a spot becomes available or if we host an open house.</p>
-            </div>
-            <div class="text-center">
-              <span class="button button-lg full">Apply to Enroll</span>
-              <h6 class="link link-red">Remove from Waitlist</h6>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      <% end %>
     <% end %>
     <br>
     <h4>More Wonderschools in Your Area<span class="muted"> (near Queen Anne, Seattle)</span></h4>

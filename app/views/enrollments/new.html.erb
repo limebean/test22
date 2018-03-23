@@ -20,29 +20,53 @@
       </div>
       <div class="col-md-12 no_padding_default start_date_form">
         <div class="EnrollmentApplicationForm-controlHeading">START DATE</div>
-        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments", id: "enroll_start_date" %>
+        <%= f.text_field :start_date ,placeholder:'MM/DD/YYYY' , class: "comments ", id: "enroll_start_date" %>
         <div class="PeriodPickers">
           <div class="PeriodPicker">
             <label>
-            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Monday,8:30am to 6:00pm", "" %>Monday &nbsp;</label>
-            <span>8:30am to 6:00pm</span>
+            <%= f.radio_button :weekdays_and_time, "two_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %>
+            <%#= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Monday,8:30am to 6:00pm", "" %> 2 Day  &nbsp;</label>
+            <span>Full Time</span>
           </div>
-          <div class="PeriodPicker PeriodPicker--disabled">
+          <div class="PeriodPicker">
             <label>
-            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Tuesday,8:30am to 6:00pm", "" %>Tuesday &nbsp;</label>
-            <span>8:30am to 6:00pm</span>
+            <%= f.radio_button :weekdays_and_time, "three_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 3 Day &nbsp;</label>
+            <span>Full Time</span>
           </div>
-          <div class="PeriodPicker PeriodPicker--disabled">
+          <div class="PeriodPicker ">
           <label>
-            <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Wednesday,8:30am to 6:00pm", "" %>Wednesday &nbsp;</label><span>8:30am to 6:00pm</span></div>
-          <div class="PeriodPicker PeriodPicker--disabled">
+            <%= f.radio_button :weekdays_and_time, "five_days_price,Full Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;</label><span>Full Time</span></div>
+          <div class="PeriodPicker">
           <label>
-          <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Thursday,8:30am to 6:00pm", "" %>Thursday &nbsp;</label>
-          <span>8:30am to 6:00pm</span></div>
-          <div class="PeriodPicker PeriodPicker--disabled">
+          <%= f.radio_button :weekdays_and_time, "two_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 2 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
           <label>
-          <%= f.check_box :weekdays_and_time, {:class => "PeriodPicker-checkbox", :style => "mystyle"}, "Friday,8:30am to 6:00pm", "" %>Friday &nbsp;</label>
-          <span>8:30am to 6:00pm</span></div>
+          <%= f.radio_button :weekdays_and_time, "three_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 3 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
+          <label>
+          <%= f.radio_button :weekdays_and_time, "five_days_price,Half Day", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;</label>
+          <span>Half Day</span></div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 2 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %> 5 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+          <div class="PeriodPicker">
+            <label>
+              <%= f.radio_button :weekdays_and_time, "five_days_price,Night Time", {:class => "PeriodPicker-checkbox", :style => "mystyle"} %>5 Day &nbsp;
+            </label>
+              <span>Night Time</span>
+          </div>
+
         </div>
         <div class="EnrollmentApplicationForm-controlHeading">ANY OTHER COMMENTS?</div>
         <%= f.text_field :other_comments , class: "comments other_comments", id: "enroll_start_date" %>

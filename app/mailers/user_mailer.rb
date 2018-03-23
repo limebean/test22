@@ -46,6 +46,7 @@ class UserMailer < ApplicationMailer
   end
 
   def make_payment_link(enroll)
+    @enroll = enroll
     @teacher = enroll.teacher
     @child= enroll.child
     @parent = @child.parent

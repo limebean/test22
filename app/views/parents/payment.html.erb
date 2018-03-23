@@ -1,8 +1,9 @@
 <div class="form-content custom-form-content">
-  <%= form_for(@parent, url: payment_parent_path(@parent), html: { class: 'make_payment' }) do |f| %>
+  <%= form_for(@parent, url: payment_parent_path(@parent), method: :post, html: { class: 'make_payment' }) do |f| %>
     <span class="payment-errors"></span>
     <div class="billing_informtion_col">
     <h3> Billing Information </h3>
+    <%= hidden_field_tag "enroll_id", params[:enroll_id] %>
     <div class="form-group">
       <label for="frmCCNum">Card Number</label>
       <input name= "cardnumber" id="frmCCNum" class="cstm_input" placeholder="Card number" maxlength="16" data-stripe="number" required autocomplete="cc-number" />

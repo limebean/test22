@@ -3,7 +3,6 @@ ready = function() {
 
   jQuery(function($) {
     $('.make_payment').submit(function(event) {
-      alert("dddgsgsdg")
       var $form;
       $form = $(this);
       $form.find('button').prop('disabled', true);
