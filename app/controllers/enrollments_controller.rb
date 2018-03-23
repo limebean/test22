@@ -13,6 +13,8 @@ class EnrollmentsController < ApplicationController
 	end
 
   def show
+    @enrollment = Enrollment.find(params[:id])
+    @child = @enrollment.child
   end
 
   def change_enrollment_status

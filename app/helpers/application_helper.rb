@@ -21,4 +21,8 @@ module ApplicationHelper
     "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=400x600&zoom=17"
   end
 
+  def date_format(date)
+    date.strftime("%B  %d, %Y ")
+  end
+
 end
