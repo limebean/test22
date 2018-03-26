@@ -1,7 +1,9 @@
 ready = function() {
   setTimeout(function(){
     $('#teacher_profile_date_of_birth').datepicker({
-        format: 'dd/mm/yyyy', "autoclose": true
+        format: 'dd/mm/yyyy', 
+        autoclose: true,
+        endDate: '-13y'
     });
 
     $("#apartment").css('display', 'none');

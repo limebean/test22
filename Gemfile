@@ -73,4 +73,5 @@ gem 'carrierwave', '~> 1.0'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'mini_magick', '~> 4.3'
+gem 'time_difference'
 

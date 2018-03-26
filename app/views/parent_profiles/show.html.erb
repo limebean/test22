@@ -5,7 +5,7 @@
     <hr>
     <p><b>Your responses</b></p><span>
     <% if current_user.id == @parent_profile.parent.id %>
-        <%= link_to 'Edit', edit_parent_profile_path(current_user.parent_profile&.id) %>Edit</span>
+        <%= link_to 'Edit', edit_parent_profile_path(current_user.parent_profile&.id) %>
     <% end %>
     <section class="parent_section_form">
       <div class="guardian_details">

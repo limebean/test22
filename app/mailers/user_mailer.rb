@@ -15,8 +15,6 @@ class UserMailer < ApplicationMailer
 
   end
 
-
-
   def teacher_invitaion_email(teacher)
     @teacher = teacher
     mail(to: @teacher.email, subject: 'Welcome to the wonder school')
@@ -42,7 +40,12 @@ class UserMailer < ApplicationMailer
   def notify_teacher_parent_for_new_enroll(enroll, user)
     @enroll = enroll
     @user = user
-    mail(to: @user.email, subject: 'We have received your application')
+    subject = if @user.teacher?
+      "New Enrollment Application"
+    else
+      "Waiting For Teacher Approval"
+    end
+    mail(to: @user.email, subject: subject)
   end
 
   def make_payment_link(enroll)

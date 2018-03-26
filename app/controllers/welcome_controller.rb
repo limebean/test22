@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
 
     def search
       available_text = ['child care', 'child-care', 'daycare', 'provider', 'Toronto', 'Ontario', 'Calgary', 'Alberta']
-      unless available_text.include?(params[:q])
+      if params[:q].present? && available_text.exclude?(params[:q])
         @message = 'not found'
       else
         # if params[:q].present?

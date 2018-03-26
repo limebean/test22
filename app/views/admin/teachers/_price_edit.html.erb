@@ -1,5 +1,5 @@
 <%= form_for(@price, url: price_admin_teacher_path, html: { method: :post }) do |f| %>
-  <table>
+  <table class="table">
     <tbody>
       <tr>
         <th></th>
@@ -12,9 +12,9 @@
           <%= f.fields_for "#{index}" do |option| %>
             <td><%= label_tag 'day_time_over_2', tp.child_time%></td>
             <%= option.hidden_field :child_time, value: Price.child_times[tp.child_time]%>
-            <td><%= option.number_field :two_days_price, value: tp.two_days_price %></td>
-            <td><%= option.number_field :three_days_price, value: tp.three_days_price %></td>
-            <td><%= option.number_field :five_days_price, value: tp.five_days_price %></td>
+            <td><%= option.number_field :two_days_price, value: tp.two_days_price, class: "form-control", required: true %></td>
+            <td><%= option.number_field :three_days_price, value: tp.three_days_price, class: "form-control", required: true %></td>
+            <td><%= option.number_field :five_days_price, value: tp.five_days_price, class: "form-control", required: true %></td>
           <% end %>
         </tr>
       <% end %>

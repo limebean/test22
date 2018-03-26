@@ -7,7 +7,7 @@ ready = function() {
     "user[password]": {required: true, minlength: 6},
     },
     messages: {
-      "user[email]": {required: "Email is already used. "}
+      "user[email]": {required: "Email already exists. "}
     },
     onkeyup: false,
     submitHandler: function(form) {

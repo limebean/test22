@@ -1,30 +1,81 @@
 <div class="form-content custom-form-content">
-  <%= form_for(@parent, url: payment_parent_path(@parent), method: :post, html: { class: 'make_payment' }) do |f| %>
+  <%= form_for(@parent, url: payment_parent_path(@parent), method: :post, html: { class: 'make_payment', id: "payment-form" }) do |f| %>
     <span class="payment-errors"></span>
-    <div>
-    <h3 class="text_card"> Card Information </h3>
+    <h3 class="text_card"> Make Payment </h3>
     <%= hidden_field_tag "enroll_id", params[:enroll_id] %>
+    <%= hidden_field_tag "stripeToken", nil, id: "stripe_token" %>
     <div class="content_center">
       <div class="form-group">
-        <label for="frmCCNum">Card Number</label>&nbsp;&nbsp;
-        <input name= "cardnumber" id="frmCCNum" class="cstm_input_card_number" placeholder="Card number" maxlength="16" data-stripe="number" required autocomplete="cc-number" />
+        <div id="card-element"></div>
+        <div id="card-errors" role="alert"></div>
       </div>
-      <div class="form-group">
-        <label for="frmCCCVC">Security Code</label>&nbsp;&nbsp;
-        <input name="cvc" id="frmCCCVC" class="cstm_input_security_text" placeholder="3-4 digit code" maxlength="4" type="password"  data-stripe="cvc" required autocomplete="cc-csc"/>
+      <div class='actions text-center'>
+        <button name="button" type="submit" class="btn btn-primary">Submit</button>
       </div>
-      <div class="form-group">
-        <label for="frmCCExp" class="pull">Expiration</label>
-        <span class="expire_col">
-          <input name="ccmonth" id="frmCCExp" class="cstm_input expire_time" placeholder="MM" maxlength="2" type="text" data-stripe="exp-month" autocomplete="cc-exp-month"/>
-          <input name="ccyear" id="frmCCExp" class="cstm_input expire_time" maxlength="4" placeholder="YYYY" type="text"  data-stripe="exp-year" autocomplete="cc-exp-year"/>
-        </span>
-      </div><br><br>
     </div>
-  </div>
-  <div>
-    <button name="button" type="submit" class="btn btn-primary">Submit</button>
-  </div>
+    
   <% end %>
 </div>
 
+<script type="text/javascript">
+  // Create a Stripe client
+  var stripe = Stripe("<%= Rails.configuration.stripe[:publishable_key] %>");
+
+  // Create an instance of Elements
+  var elements = stripe.elements();
+
+  // Custom styling can be passed to options when creating an Element.
+  // (Note that this demo uses a wider set of styles than the guide below.)
+  var style = {
+    base: {
+      color: '#32325d',
+      lineHeight: '18px',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+        color: '#aab7c4'
+      }
+    },
+    invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+    }
+  };
+
+  // Create an instance of the card Element
+  var card = elements.create('card', {style: style});
+
+  // Add an instance of the card Element into the `card-element` <div>
+  card.mount('#card-element');
+
+  // Handle real-time validation errors from the card Element.
+  card.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+      $("#submit_button").attr('disabled', true);
+    } else {
+      displayError.textContent = '';
+      $("#submit_button").attr('disabled', false);
+      $("#submit_button").text('Submit');
+    }
+  });
+
+  // Handle form submission
+  var form = document.getElementById('payment-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // Inform the user if there was an error
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        $("#stripe_token").val(result.token.id)
+        form.submit();
+      }
+    });
+  });
+</script>

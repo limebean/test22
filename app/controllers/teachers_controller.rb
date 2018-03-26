@@ -152,9 +152,10 @@ class TeachersController < ApplicationController
         })
 
         current_user.teacher_profile.update_attributes(stripe_account_id: stripe_account.id) if stripe_account.present?
-        redirect_to bank_account_detail_teachers_path, notice: 'Stripe account succesfully created'
+        redirect_to bank_account_detail_teachers_path, notice: 'Your Bank account information is successfully updated'
       rescue Stripe::StripeError => e
-        render 'bank_account', alert: e.message
+        flash[:error] = e.message
+        render 'bank_account'
       end
     end
   end

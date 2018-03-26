@@ -1,6 +1,6 @@
 <h3>Create Teacher Price </h3>
 <%= form_for(@price, url: price_admin_teacher_path, html: { method: :post }) do |f| %>
-  <table>
+  <table class="table">
   <tbody>
     <tr>
       <th></th>
@@ -12,80 +12,80 @@
       <%= f.fields_for '0' do |first_option| %>
         <td class="day_time_over_2"><%= label_tag 'full_day_1_18', 'Full Day, 1-18 months'%></td>
         <%= first_option.hidden_field :child_time, value: Price.child_times['Full Day, 1-18 months'] %>
-        <td class="Box-size"><%= first_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= first_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= first_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= first_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= first_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= first_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '1' do |second_option| %>
         <td class="day_time_over_2"><%= label_tag 'full_day_18_30', 'Full Day, 18-30 months'%></td>
         <%= second_option.hidden_field :child_time, value: Price.child_times['Full Day, 18-30 months'] %>
-        <td class="Box-size"><%= second_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= second_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= second_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= second_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= second_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= second_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '2' do |third_option| %>
         <td class="day_time_over_2"><%= label_tag 'full_day_31_72', 'Full Day, 31-72 months'%></td>
         <%= third_option.hidden_field :child_time, value: Price.child_times['Full Day, 31-72 months'] %>
-        <td class="Box-size"><%= third_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= third_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= third_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= third_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= third_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= third_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '3' do |fourth_option| %>
         <td class="day_time_over_2"><%= label_tag 'half_day_1_18', 'Half Day, 1-18 months'%></td>
         <%= fourth_option.hidden_field :child_time, value: Price.child_times['Half Day, 1-18 months'] %>
-        <td class="Box-size"><%= fourth_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= fourth_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= fourth_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= fourth_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= fourth_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= fourth_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     <tr>
       <%= f.fields_for '4' do |fifth_option| %>
         <td class="day_time_over_2"><%= label_tag 'half_day_18_30', 'Half Day, 18-30 months'%></td>
         <%= fifth_option.hidden_field :child_time, value: Price.child_times['Half Day, 18-30 months'] %>
-        <td class="Box-size"><%= fifth_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= fifth_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= fifth_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= fifth_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= fifth_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= fifth_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '5' do |sixth_option| %>
         <td class="day_time_over_2"><%= label_tag 'half_day_31_72', 'Half Day, 31-72 months'%></td>
         <%= sixth_option.hidden_field :child_time, value: Price.child_times['Half Day, 31-72 months'] %>
-        <td class="Box-size"><%= sixth_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= sixth_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= sixth_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= sixth_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= sixth_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= sixth_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '6' do |seventh_option| %>
         <td class="day_time_over_2"><%= label_tag 'night_time_1_18', 'Nighttime, 1-18 months'%></td>
         <%= seventh_option.hidden_field :child_time, value: Price.child_times['Nighttime, 1-18 months'] %>
-        <td class="Box-size"><%= seventh_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= seventh_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= seventh_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= seventh_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= seventh_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= seventh_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '7' do |eight_option| %>
         <td class="day_time_over_2"><%= label_tag 'night_time_18_30', 'Nighttime, 18-30 months'%></td>
         <%= eight_option.hidden_field :child_time, value: Price.child_times['Nighttime, 18-30 months'] %>
-        <td class="Box-size"><%= eight_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= eight_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= eight_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= eight_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= eight_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= eight_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     </tr>
     <tr>
       <%= f.fields_for '8' do |ninth_option| %>
         <td class="day_time_over_2"><%= label_tag 'night_time_under_2', 'Nighttime, 31-72 months'%></td>
         <%= ninth_option.hidden_field :child_time, value: Price.child_times['Nighttime, 31-72 months'] %>
-        <td class="Box-size"><%= ninth_option.number_field :two_days_price %></td>
-        <td class="Box-size"><%= ninth_option.number_field :three_days_price %></td>
-        <td class="Box-size"><%= ninth_option.number_field :five_days_price %></td>
+        <td class="Box-size"><%= ninth_option.number_field :two_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= ninth_option.number_field :three_days_price, class: "form-control", required: true %></td>
+        <td class="Box-size"><%= ninth_option.number_field :five_days_price, class: "form-control", required: true %></td>
       <% end%>
     <tr>
 

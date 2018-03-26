@@ -16,7 +16,7 @@
           <td><%= teacher.email %></td>
           <%= simple_form_for teacher.teacher_profile, url: set_transaction_admin_teacher_path(teacher.teacher_profile), method: :get do |f| %>
             <td><%= f.input :transaction_fee, label: false, required: true, input_html: { class: 'field_size' } %></td>
-            <td><%= f.submit "set_transaction", class: "btn btn-primary" %></td>
+            <td><%= f.submit "Set Fee", class: "btn btn-primary" %></td>
           <% end %>
         </tr>
       <% end %>

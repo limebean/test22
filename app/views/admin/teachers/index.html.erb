@@ -17,9 +17,9 @@
         <td><%= teacher.postal_code %></td>
         <% if teacher.approve %>
           <td><%= link_to 'Edit Profile', edit_profile_admin_teacher_path(teacher)%></td>
-          <td><%= link_to 'Edit Page', teacher_profile_path(teacher) %></td>
+          <!-- <td><%#= link_to 'Edit Page', teacher_profile_path(teacher.teacher_profile) %></td> -->
           <% if teacher.teacher_profile.present? %>
-            <td><%= link_to 'Show', teacher_profile_path(teacher) %></td>
+            <td><%= link_to 'Show', teacher_profile_path(teacher.teacher_profile) %></td>
           <% end %>
           <td><%= link_to 'Reject', reject_admin_teacher_path(teacher), method: :patch %></td>
           <td><%= link_to 'Set Price', price_admin_teacher_path(teacher), method: :get %></td>

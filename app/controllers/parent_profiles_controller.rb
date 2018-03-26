@@ -1,4 +1,5 @@
 class ParentProfilesController < ApplicationController
+  before_action :set_teacher_profile, only: [:show, :edit, :update]
 
 	def new
     @parent_profile = ParentProfile.new
@@ -15,9 +16,7 @@ class ParentProfilesController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit;end
 
   def update
     if @parent_profile.present? && @parent_profile.update_attributes(permitted_parent_params)
@@ -29,9 +28,7 @@ class ParentProfilesController < ApplicationController
     end
   end
 
-  def show
-    @parent_profile= ParentProfile.find(params[:id])
-  end
+  def show;end
 
   private
 

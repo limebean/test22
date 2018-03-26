@@ -12,17 +12,11 @@
         <%= link_to 'Curriculum PDF', document_admin_teachers_path %>
       </li>
       <li class="<%=is_active_menu('bank_account')%>" >
-        <%= link_to 'Transaction Settings',  transaction_setting_admin_teachers_path %>
+        <%= link_to 'Transaction Fee Setting',  transaction_setting_admin_teachers_path %>
       </li>
-      <li>
-        <a href="#">Scheduling Availability</a>
-      </li>
-      <li>
-        <a href="#"> Managing Enrollment pages</a>
-      </li>
-      <li>
+      <!-- <li>
         <%= link_to 'Parents Applications', admin_parents_path %>
-      </li>
+      </li> -->
     <%elsif current_user.teacher? %>
       <li  class=" <%=is_active_menu('edit')%>">
         <%settings_path = current_user.teacher_profile ? edit_teacher_profile_path(current_user.teacher_profile) : new_teacher_profile_path%>
@@ -32,7 +26,7 @@
         <%= link_to 'Curriculum PDF', document_teachers_path %>
       </li>
       <li class="<%=is_active_menu('bank_account')%>" >
-        <%= link_to 'Transaction Settings', bank_account_teacher_path(current_user) %>
+        <%= link_to 'Bank Account Settings', bank_account_teacher_path(current_user) %>
       </li>
       <li class="<%=is_active_menu('availability')%>" >
         <%= link_to 'Scheduling Availability', availability_teacher_path(current_user) %>

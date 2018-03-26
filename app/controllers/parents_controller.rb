@@ -26,18 +26,25 @@ class ParentsController < ApplicationController
     else
       @user = User.find_by_email(params[:user][:email])
       respond_to do |format|
-          format.json { render :json => !@user }
+        format.json { render :json => !@user }
       end
     end
   end
 
   def payment
     if request.get?
-      @parent = Parent.find(params[:id])
+      enrollment = Enrollment.find_by(id: params[:enroll_id])
+      if enrollment 
+        if enrollment.payment.blank?
+          @parent = Parent.find(params[:id])
+        else
+          redirect_to enrollment, notice: "You have already paid for this enrollment."
+        end
+      end
     elsif request.post?
       begin
         Price.calculate_price(params[:enroll_id], params[:id], params[:stripeToken])
-        flash[:notice] = 'Payment have sucessfully completed'
+        flash[:notice] = 'Payment have been sucessfully completed'
       rescue Exception => e
         flash[:notice] = e.message
       end

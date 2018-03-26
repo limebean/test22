@@ -15,38 +15,39 @@ class Price < ApplicationRecord
     day = enrollment.weekdays_and_time.split(',')
     parent = child.parent
     teacher = enrollment.teacher
-    child_time  = Price.find_child_time(day[1], date_of_birth)
-    amount = teacher.prices.where(child_time: child_time).first.send(day[0])
-    fee = teacher.teacher_profile.transaction_fee ?  teacher.teacher_profile.transaction_fee : 0
-    Price.parent_payment(parent, teacher, amount, fee, stripe_token, enrollment)
+    child_time  = find_child_time(day[1], date_of_birth)
+    amount = teacher.prices.find_by(child_time: child_time).send(day[0])
+    fee = teacher.teacher_profile.transaction_fee ? teacher.teacher_profile.transaction_fee : 0
+    parent_payment(parent, teacher, (amount* 100), (fee * 100), stripe_token, enrollment)
   end
 
-
   def self.find_child_time(day, date_of_birth)
-    months =Time.zone.today.month + Time.zone.today.year * 12 - date_of_birth.month - date_of_birth.year * 12
+    months = TimeDifference.between(Date.today, date_of_birth).in_months
     result = if months >= 0 && months <= 18
-        '1-18 months'
+      '1-18 months'
     elsif months > 18 && months <= 30
-        '18-30 months'
+      '18-30 months'
     elsif months > 30 && months <= 72
-        '31-72 months'
+      '31-72 months'
     end
     "#{day}, #{result}"
   end
 
   def self.parent_payment(parent, teacher, amount, fee, stripe_token, enrollment)
     if parent.stripe_customer_id
-      @customer = Stripe::Customer.retrieve(parent.stripe_customer_id)
+      customer = Stripe::Customer.retrieve(parent.stripe_customer_id)
+      customer.source = stripe_token
+      customer.save
     else
       customer = Stripe::Customer.create(
         email: parent.email,
         source: stripe_token
-    )
-    parent = parent.update_attributes(stripe_customer_id: customer.id)
+      )
+      parent.update_attributes(stripe_customer_id: customer.id)
     end
 
     charge = Stripe::Charge.create({
-      source: stripe_token,
+      customer: customer.id,
       amount: amount.to_i,
       description: parent.email,
       currency: 'usd',
@@ -57,7 +58,7 @@ class Price < ApplicationRecord
       }
     })
     end_date = enrollment.start_date.to_date + 7
-    Payment.create!(parent_id: parent.id, teacher_id: teacher.id, start_date: enrollment.start_date, end_date: end_date, amount: amount)
+    Payment.create!(parent_id: parent.id, teacher_id: teacher.id, start_date: enrollment.start_date, end_date: end_date, amount: amount, enrollment_id: enrollment.id)
   end
 
 end
