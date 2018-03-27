@@ -96,7 +96,7 @@ Rails.application.configure do
     :port                 => 587,
     :domain               => 'sendgrid.net',
     :user_name            => 'apikey',
-    :password             => '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',
+    :password             => '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',
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }
